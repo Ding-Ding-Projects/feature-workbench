@@ -1,0 +1,207 @@
+/* All rules belong to this scene, including its compact design. */
+.cpr {
+  & .ss-stage {
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+    color: var(--ss-text-strong);
+    font: 12px/1.4 var(--ss-font);
+  }
+
+  /* Material Symbols Rounded, filled, one size for the scene */
+  .cpr-glyph {
+    display: inline-block;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    font-family: 'Material Symbols Rounded';
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--ss-icon-faint);
+  }
+
+  /* One column, centered, the assets card off the bottom */
+  .cpr-stack {
+    position: absolute;
+    top: 24px;
+    left: 40px;
+    display: grid;
+    gap: 12px;
+    width: 600px;
+  }
+
+  .cpr-card {
+    display: grid;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-card);
+  }
+
+  .cpr-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--ss-line);
+  }
+
+  .cpr-mark {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--ss-warning-soft);
+  }
+
+  .cpr-mark .cpr-glyph { color: var(--ss-warning); }
+
+  .cpr-name {
+    display: grid;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .cpr-version {
+    font-family: var(--ss-mono);
+    font-size: 11px;
+    line-height: 14px;
+    color: var(--ss-text-faint);
+  }
+
+  .cpr-food {
+    font-size: 17px;
+    line-height: 22px;
+    color: var(--ss-text-strong);
+  }
+
+  .cpr-food span { font-family: "Noto Sans HK", sans-serif; font-weight: 700; letter-spacing: 0; }
+
+  .cpr-version {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cpr-latest {
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent-text);
+    font-family: var(--ss-font);
+    font-size: 10.5px;
+    font-weight: 600;
+    line-height: 14px;
+    text-box: trim-both cap alphabetic;
+    padding-block: 5px;
+  }
+
+  /* The timing rows share one grid: a fixed label track, a value track */
+  .cpr-timing {
+    display: grid;
+    margin-top: -10px;
+  }
+
+  .cpr-row {
+    display: grid;
+    grid-template-columns: 136px 232px;
+    align-items: center;
+    height: 28px;
+    border-bottom: 1px solid var(--ss-line-faint);
+  }
+
+  .cpr-row:last-child { border-bottom: 0; }
+
+  .cpr-label {
+    font-size: 12px;
+    color: var(--ss-text-faint);
+  }
+
+  .cpr-value {
+    font-family: var(--ss-mono);
+    font-size: 12px;
+    color: var(--ss-text-strong);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Build, package, publish: the measured span as one band of three */
+  .cpr-band {
+    display: flex;
+    gap: 4px;
+    width: 368px;
+  }
+
+  .cpr-phase {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .cpr-phase__bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--ss-accent);
+  }
+
+  .cpr-phase + .cpr-phase .cpr-phase__bar { opacity: 0.7; }
+  .cpr-phase + .cpr-phase + .cpr-phase .cpr-phase__bar { opacity: 0.45; }
+
+  .cpr-phase__name {
+    font-size: 10.5px;
+    line-height: 14px;
+    color: var(--ss-text-faint);
+  }
+
+  /* The assets card runs on past the stage's bottom edge */
+  .cpr-assets {
+    gap: 0;
+    padding: 2px 20px 80px;
+  }
+
+  .cpr-asset {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 30px;
+    border-bottom: 1px solid var(--ss-line-faint);
+  }
+
+  .cpr-file {
+    font-family: var(--ss-mono);
+    font-size: 12px;
+    color: var(--ss-text-strong);
+    white-space: nowrap;
+  }
+
+  /* Files on one grid: the name track, then the size, both inside the crop */
+  .cpr-asset { display: grid; grid-template-columns: 18px 254px 80px; }
+
+  .cpr-size {
+    font-family: var(--ss-mono);
+    font-size: 11px;
+    color: var(--ss-text-faint);
+    text-align: right;
+  }
+
+  /* Compact: the column fills the stage less a 16px gutter each side */
+  & .ss-stage[data-layout='compact'] .cpr-stack {
+    top: 16px;
+    left: 16px;
+    width: 400px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-asset { grid-template-columns: 18px auto; }
+
+  & .ss-stage[data-layout='compact'] .cpr-card { padding: 16px; gap: 12px; }
+  & .ss-stage[data-layout='compact'] .cpr-card { padding-bottom: 120px; }
+  & .ss-stage[data-layout='compact'] .cpr-assets-inline { margin-top: -4px; }
+  & .ss-stage[data-layout='compact'] .cpr-assets-inline .cpr-asset:first-child { border-top: 1px solid var(--ss-line); }
+  & .ss-stage[data-layout='compact'] .cpr-row { grid-template-columns: 136px 1fr; height: 26px; }
+  & .ss-stage[data-layout='compact'] .cpr-value { font-size: 11px; }
+  & .ss-stage[data-layout='compact'] .cpr-label { font-size: 11.5px; }
+}

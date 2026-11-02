@@ -1,0 +1,322 @@
+/* Commonplace, two-key confirmation. Every rule is scoped to this scene. */
+.cps {
+  & .ss-stage {
+    --gutter: 24px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  & .ss-stage[data-layout="compact"] {
+    --gutter: 16px;
+  }
+
+  /* Material Symbols Rounded, filled, one size for the whole scene */
+  .cps-sym {
+    display: inline-block;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    font-family: 'Material Symbols Rounded';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .cps-window {
+    position: absolute;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cps-body {
+    display: flex;
+    flex-direction: column;
+    background: var(--ss-canvas);
+  }
+
+  /* The workspace's own toolbar row: a title and the selection's Delete */
+  .cps-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px 12px;
+  }
+
+  .cps-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cps-card__title {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--ss-text-strong);
+    white-space: normal;
+  }
+
+  .cps-card:has(.cps-card__title) {
+    gap: 6px;
+  }
+
+  .cps-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cps-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 132px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+    color: #667085;
+  }
+
+  .cps-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px 0 10px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+    color: var(--ss-text-strong);
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+
+  /* Pressed while its confirmation is open */
+  .cps-delete[data-on] {
+    background: var(--ss-text-strong);
+    box-shadow: none;
+    color: #fff;
+  }
+
+  /* ---- The board behind: three lanes of filler cards ---- */
+
+  .cps-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 16px;
+    align-items: start;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-board {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 12px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-toolbar {
+    padding: 8px 12px 6px;
+  }
+
+  .cps-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 8px 8px;
+    border-radius: 14px;
+    margin-bottom: 0;
+    background: #E9EDF4;
+  }
+
+  .cps-col[data-kind="doing"] {
+    background: #FFEEDD;
+  }
+
+  .cps-col[data-kind="done"] {
+    background: #E8EDFF;
+  }
+
+  .cps-col__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 4px;
+    color: #475467;
+  }
+
+  .cps-col[data-kind="doing"] .cps-col__head { color: #C2570C; }
+  .cps-col[data-kind="done"] .cps-col__head { color: #2546D6; }
+
+  .cps-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+  }
+
+  .cps-card[data-selected] {
+    background: var(--ss-accent-soft);
+  }
+
+  .cps-card__chips {
+    display: flex;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  /* ---- The confirmation, anchored under Delete ---- */
+
+  .cps-dialog {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 16px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-float), 0 0 0 1px var(--ss-line);
+  }
+
+  .cps-dialog__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: var(--ss-text-strong);
+  }
+
+  /* The data it affects, named once */
+  .cps-task {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    height: 36px;
+    margin-top: 12px;
+    padding: 0 12px 0 10px;
+    border-radius: 10px;
+    background: #EEF1F6;
+    color: #475467;
+  }
+
+  .cps-task__name {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ss-text-strong);
+  }
+
+  .cps-keys {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .cps-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 36px;
+    border-radius: 10px;
+    border: 1.5px dashed #98A2B3;
+    color: var(--ss-text-strong);
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .cps-key[data-turned] {
+    border: 0;
+    background: var(--ss-accent);
+    color: #fff;
+  }
+
+  /* Asleep until both keys are turned: a full-range track, knob at the start */
+  .cps-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-top: 10px;
+    padding: 4px;
+    border-radius: 12px;
+    background: #EEF1F6;
+  }
+
+  .cps-slide__knob {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: var(--ss-surface);
+    box-shadow: 0 0 0 1px var(--ss-line);
+    color: #98A2B3;
+  }
+
+  .cps-slide__label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #667085;
+    pointer-events: none;
+  }
+
+  .cps-foot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .cps-exit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px 0 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+    color: var(--ss-text-strong);
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-dialog {
+    padding: 14px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-dialog__title {
+    font-size: 13px;
+    letter-spacing: -0.005em;
+  }
+
+
+
+  .ss-stage[data-layout="compact"] .cps-keys {
+    margin-top: 12px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-slide {
+    margin-top: 8px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-foot {
+    margin-top: 10px;
+  }
+}

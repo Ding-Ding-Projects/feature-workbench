@@ -1,0 +1,315 @@
+/* Commonplace, Navigation: every rule nested under the scene's root class. */
+.cpn {
+  & .ss-stage {
+    --gutter: 36px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  /* Material Symbols Rounded, filled, one size for the whole scene */
+  .cpn-icon {
+    font-family: 'Material Symbols Rounded';
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    font-size: 18px;
+    line-height: 1;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    display: inline-block;
+    flex: none;
+    color: var(--ss-icon-faint);
+  }
+
+  .cpn-icon--accent { color: var(--ss-accent); }
+
+  /* Pinned with one gutter left, right and top; off the bottom */
+  .cpn-win {
+    position: absolute;
+    top: var(--gutter);
+    left: var(--gutter);
+    width: 640px;
+    height: 440px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cpn-app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--ss-canvas);
+  }
+
+  .cpn-header {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    padding: 0 16px;
+    background: var(--ss-surface);
+    border-bottom: 1px solid var(--ss-line);
+  }
+
+  /* The header's content row ends at the trigger; past it the header runs
+     on under the crop */
+  .cpn-header__in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 472px;
+  }
+
+  .cpn-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    height: 34px;
+    padding: 0 16px;
+    border-radius: 17px;
+    background: var(--ss-line-faint);
+  }
+
+  /* The trigger, open: its pressed look while the palette hangs from it */
+  .cpn-find {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    padding: 0 5px 0 10px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+  }
+
+  .cpn-find[data-open] {
+    background: var(--ss-line-faint);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+  }
+
+  .cpn-find__label {
+    color: var(--ss-text-faint);
+    font-size: 12.5px;
+    line-height: 1.3;
+  }
+
+  .cpn-kbd {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 7px;
+    border-radius: 6px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line), 0 1px 0 var(--ss-line);
+    color: var(--ss-text-strong);
+    font: 600 11px/1 var(--ss-font);
+    white-space: nowrap;
+  }
+
+  .cpn-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+    padding: 24px 16px;
+  }
+
+  .cpn-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cpn-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .cpn-lane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 8px 8px;
+    border-radius: 12px;
+    background: #E9EDF4;
+  }
+
+  .cpn-lane[data-tone='progress'] { background: #FFEEDD; }
+  .cpn-lane[data-tone='done'] { background: #E8EDFF; }
+  .cpn-lane__icon { color: #475467; }
+  .cpn-lane[data-tone='progress'] .cpn-lane__icon { color: #C2570C; }
+  .cpn-lane[data-tone='done'] .cpn-lane__icon { color: #2546D6; }
+
+  .cpn-lane__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 4px 2px;
+  }
+
+  .cpn-card__title {
+    color: var(--ss-text-strong);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: -2px;
+  }
+
+  .cpn-card {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 13px 12px;
+    border-radius: 9px;
+    background: var(--ss-surface);
+  }
+
+  /* The page dims under the open palette */
+  .cpn-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 21, 38, 0.035);
+    pointer-events: none;
+  }
+
+  /* The palette hangs from the trigger, its right edge on the trigger's */
+  .cpn-palette {
+    top: 134px;
+    right: var(--gutter);
+    width: 336px;
+    padding: 0;
+    border-radius: 14px;
+    --ss-popover-bg: var(--ss-surface);
+    --ss-popover-shadow: 0 0 0 1px var(--ss-line), 0 24px 48px -16px rgba(13, 21, 38, 0.22), 0 8px 16px -8px rgba(13, 21, 38, 0.1);
+  }
+
+  /* The palette's input is its own top line, not a boxed field */
+  .cpn-field .ss-field__box,
+  .cpn-field[data-focused] .ss-field__box {
+    height: 48px;
+    padding: 0 10px 0 14px;
+    gap: 10px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid var(--ss-line);
+    font-size: 14px;
+  }
+
+  .cpn-field .ss-field__caret { background: var(--ss-accent); }
+
+  .cpn-regex {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 24px;
+    flex: none;
+    border-radius: 6px;
+    background: var(--ss-line-faint);
+    color: var(--ss-text-faint);
+    font: 600 11px/1 var(--ss-mono);
+  }
+
+  .cpn-results {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 6px;
+  }
+
+  .cpn-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 9px;
+  }
+
+  .cpn-item[data-active] { background: var(--ss-accent-soft); }
+
+  .cpn-item__label {
+    color: var(--ss-text-strong);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .cpn-item[data-active] .cpn-item__label { color: var(--ss-accent-text); font-weight: 600; }
+
+  .cpn-item__end { margin-left: auto; }
+
+  .cpn-item__value {
+    flex: none;
+    width: 34px;
+    color: var(--ss-accent-text);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The setting's own live control, in its row: 85 to 150, 110 at 38% */
+  .cpn-slider {
+    position: relative;
+    flex: 1;
+    min-width: 60px;
+    height: 14px;
+    margin-left: 6px;
+  }
+
+  .cpn-slider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    height: 4px;
+    border-radius: 2px;
+    background: #C9D3F5;
+  }
+
+  .cpn-slider__fill {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 38%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ss-accent);
+  }
+
+  .cpn-slider__thumb {
+    position: absolute;
+    top: 0;
+    left: calc(38% - 7px);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ss-accent);
+    box-shadow: 0 0 0 2px var(--ss-surface);
+  }
+
+  /* Narrow: the same window a closer crop, the palette at the content width */
+  & .ss-stage[data-layout='compact'] {
+    --gutter: 16px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpn-board {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  & .ss-stage[data-layout='compact'] .cpn-win { width: 420px; }
+
+  & .ss-stage[data-layout='compact'] .cpn-header__in { width: 294px; }
+
+  & .ss-stage[data-layout='compact'] .cpn-palette {
+    top: 114px;
+    left: 28px;
+    right: 36px;
+    width: auto;
+  }
+}

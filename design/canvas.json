@@ -16,6 +16,10 @@
   {
    "id": "features",
    "name": "Feature deep dive"
+  },
+  {
+   "id": "faux-ui",
+   "name": "Faux UI (Stageshow)"
   }
  ],
  "boards": {
@@ -190,6 +194,16 @@
    "title": "Canonical instruction deliverables",
    "expand": "fill",
    "page": "features"
+  },
+  "Stageshow.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 2600,
+   "title": "Faux UI showcase",
+   "expand": "fill",
+   "page": "faux-ui",
+   "is_interactive": true
   }
  },
  "order": [
@@ -211,7 +225,8 @@
   "Features-Build.dc.html",
   "Features-Release.dc.html",
   "Features-Repository.dc.html",
-  "Features-Canonical.dc.html"
+  "Features-Canonical.dc.html",
+  "Stageshow.dc.html"
  ],
  "notes": {
   "t1": {

@@ -15,6 +15,7 @@ A fully new visual design for the Commonplace sample workbench (the GitHub Pages
 | `frames/*.png` | Rendered stills of the five screen artboards at 1440 and 390 wide (the canonical originals listed in `docs/design-parity-inventory.json`; keep them byte for byte). |
 | `frames/Features-*.jpg` | Rendered stills of the deep-dive pages (1440 stills scaled to 1080 wide to keep the repository small). |
 | `Features-*.dc.html` | Feature deep dive: 14 pages (canvas page "Feature deep dive") covering all 112 tracked features in `src/features.json`, one card per feature with its spec and a drawn mock. |
+| `Stageshow.dc.html` | Faux UI showcase (canvas page "Faux UI (Stageshow)"): the animated hero and fourteen feature-card product shots. Sources and stills in `stageshow/`. |
 | `REHEARSAL.md` | Review record: what was checked, what was found and fixed. |
 
 Artboards are Design Component HTML files. They open in the design canvas this was made in; for a plain browser preview, a small renderer is needed for the `{{...}}` holes, `<sc-if>` and `<sc-for>` tags.

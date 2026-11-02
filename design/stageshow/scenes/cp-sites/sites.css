@@ -1,0 +1,260 @@
+/* Commonplace, Landing site and shared links. Every rule is scoped to the scene. */
+.cps {
+  & .ss-stage {
+    --gutter: 24px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  /* Material Symbols Rounded, filled, one size for the scene */
+  .cps-icon {
+    display: inline-block;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    font-family: 'Material Symbols Rounded';
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* The landing site: pinned top-left, off the bottom */
+  .cps-window {
+    position: absolute;
+    top: var(--gutter);
+    left: var(--gutter);
+    width: 440px;
+    height: 420px;
+    border-radius: 14px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cps-window .ss-window__body {
+    background: var(--ss-surface);
+  }
+
+  .cps-site {
+    padding: 16px 24px;
+  }
+
+  .cps-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .cps-wordmark {
+    font-size: 14px;
+    line-height: 1.3;
+    color: var(--ss-text-strong);
+  }
+
+  .cps-nav__links {
+    display: flex;
+    gap: 14px;
+  }
+
+  .cps-hero {
+    display: grid;
+    justify-items: start;
+    gap: 9px;
+    margin-bottom: 26px;
+  }
+
+  .cps-heading {
+    margin-bottom: 6px;
+    font-size: 24px;
+    line-height: 1.15;
+    color: var(--ss-text-strong);
+  }
+
+  .cps-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .cps-tile {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 12px;
+    background: var(--ss-canvas);
+  }
+
+  .cps-tile__mark {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 4px;
+    border-radius: 9px;
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent);
+  }
+
+  /* The chat: a chromeless panel a level above the site, straddling its
+     right edge over the page's empty right side */
+  .cps-chat {
+    position: absolute;
+    top: 80px;
+    right: var(--gutter);
+    width: 272px;
+    border-radius: 14px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-satellite);
+  }
+
+  .cps-chat__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 14px;
+    border-bottom: 1px solid var(--ss-line);
+    color: var(--ss-icon-faint);
+  }
+
+  .cps-msg {
+    display: grid;
+    grid-template-columns: 26px 1fr;
+    gap: 10px;
+    padding: 12px 14px 13px;
+  }
+
+  .cps-avatar {
+    font-weight: 600;
+  }
+
+  .cps-msg__body {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .cps-msg__who {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 16px;
+  }
+
+  .cps-sender {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--ss-text-strong);
+  }
+
+  .cps-link {
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--ss-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* The unfurled preview: the share image over its site and title */
+  .cps-preview {
+    margin-top: 6px;
+    overflow: hidden;
+    border: 1px solid var(--ss-line);
+    border-radius: 12px;
+    background: var(--ss-surface);
+  }
+
+  .cps-preview__text {
+    display: grid;
+    gap: 4px;
+    padding: 8px 12px 10px;
+    border-top: 1px solid var(--ss-line);
+  }
+
+  .cps-preview__site {
+    font-size: 10.5px;
+    line-height: 14px;
+    color: var(--ss-text-faint);
+  }
+
+  .cps-preview__title {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--ss-text-strong);
+  }
+
+  /* The share image, at 1200 x 630 */
+  .cps-shot {
+    aspect-ratio: 1200 / 630;
+    padding: 10px 12px 0;
+    background: var(--ss-canvas);
+    overflow: hidden;
+  }
+
+  .cps-shot__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .cps-shot__new {
+    width: 22px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--ss-accent);
+  }
+
+  .cps-shot__lanes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .cps-lane {
+    display: grid;
+    align-content: start;
+    gap: 5px;
+    height: 110px;
+    padding: 6px;
+    border-radius: 6px;
+    background: var(--ss-surface);
+  }
+
+  .cps-lane[data-lane='1'] {
+    background: var(--ss-warning-soft);
+  }
+
+  .cps-lane[data-lane='1'] .cps-lane__head {
+    background: var(--ss-warning);
+    opacity: 0.55;
+  }
+
+  .cps-task {
+    height: 14px;
+    border-radius: 4px;
+    background: var(--ss-surface);
+    box-shadow: 0 0 0 1px var(--ss-line);
+  }
+
+  /* Narrow: the chat alone, pinned top, off the bottom, the preview whole */
+  & .ss-stage[data-layout='compact'] {
+    --gutter: 16px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cps-chat {
+    top: var(--gutter);
+    right: var(--gutter);
+    width: 326px;
+    height: 320px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  & .ss-stage[data-layout='compact'] .cps-preview {
+    width: 216px;
+  }
+}

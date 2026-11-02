@@ -1,0 +1,408 @@
+/* Commonplace hero: the workspace board. Every rule belongs to this scene. */
+.cpb {
+  /* Corner bleed: the browser sits a gutter in from the top, runs off the
+     right and the bottom, and leaves a column on the left for the saved
+     status to straddle its edge. */
+  & .ss-stage {
+    --gutter: 32px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: var(--ss-well);
+  }
+
+  .cp-ms {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    font-size: 18px;
+    line-height: 1;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    display: inline-block;
+    flex: none;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+  }
+
+  .cpb-browser {
+    position: absolute;
+    top: var(--gutter);
+    left: 130px;
+    width: 712px;
+    height: 600px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cpb-body {
+    height: 100%;
+    padding: 18px 20px;
+    background: var(--ss-canvas);
+    color: var(--ss-text);
+    font-family: var(--ss-font);
+  }
+
+  /* The header shares the board's columns, so the New task button ends on
+     the In progress lane's edge and the tools start on Done's. */
+  .cpb-head {
+    display: grid;
+    grid-template-columns: repeat(3, 216px);
+    column-gap: 12px;
+    align-items: center;
+    height: 36px;
+    margin-bottom: 14px;
+  }
+
+  .cpb-filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid var(--ss-line);
+    border-radius: 10px;
+    background: var(--ss-surface);
+    color: var(--ss-text-faint);
+  }
+
+  .cpb-new {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 36px;
+    padding: 0 13px 0 11px;
+    border-radius: 10px;
+    background: var(--ss-accent);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.12s ease;
+  }
+
+  .cpb-new[data-hover] { background: #1F3DC4; }
+  .cpb-new[data-pressed] { background: var(--ss-accent-2); transform: scale(0.97); }
+
+  .cpb-tools {
+    display: inline-flex;
+    gap: 8px;
+  }
+
+  .cp-icon-btn {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    color: var(--ss-icon-faint);
+  }
+
+  .cp-icon-btn--framed {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--ss-line);
+    border-radius: 10px;
+    background: var(--ss-surface);
+    color: var(--ss-icon);
+    box-sizing: border-box;
+  }
+
+  .cpb-board {
+    display: grid;
+    grid-template-columns: repeat(3, 216px);
+    column-gap: 12px;
+    align-items: start;
+  }
+
+  .cp-lane {
+    padding: 10px 10px 2px;
+    border-radius: 16px;
+    background: #E9EDF4;
+  }
+
+  .cp-lane[data-kind='ip'] { background: var(--ss-warning-soft); }
+  .cp-lane[data-kind='done'] { background: var(--ss-accent-soft); }
+
+  .cp-lane__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 28px;
+    padding: 0 6px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ss-text);
+  }
+
+  .cp-lane[data-kind='todo'] .cp-lane__head .cp-ms { color: var(--ss-text-faint); }
+  .cp-lane[data-kind='ip'] .cp-lane__head { color: var(--ss-warning-text); }
+  .cp-lane[data-kind='done'] .cp-lane__head { color: var(--ss-accent-text); }
+
+  .cp-lane__count {
+    margin-left: auto;
+    color: inherit;
+  }
+
+  .cp-lane[data-kind='todo'] .cp-lane__count { color: var(--ss-text-faint); }
+
+  /* Each task carries its own gap, so a closed slot leaves none behind */
+  .cp-item {
+    padding-bottom: 8px;
+  }
+
+  .cp-item[data-hidden],
+  .cp-card--new[data-hidden] {
+    visibility: hidden;
+  }
+
+  .cp-card {
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: 0 1px 2px rgba(13, 21, 38, 0.06);
+  }
+
+  .cp-card--new[data-look='ip'] {
+    box-shadow: 0 6px 18px rgba(122, 47, 6, 0.12), 0 1px 2px rgba(13, 21, 38, 0.06);
+  }
+
+  /* The story's card keeps one lasting layer: it travels by transform and
+     rests exactly as it moved. */
+  .cp-card--new {
+    position: relative;
+    will-change: transform;
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Travelling in from To do: drawn at its old place (a snap), then eased home */
+  .cp-card--new[data-travel] {
+    z-index: 2;
+    box-shadow: 0 14px 30px rgba(13, 21, 38, 0.16), 0 2px 4px rgba(13, 21, 38, 0.08);
+    transition: transform 0.82s cubic-bezier(0.45, 0, 0.1, 1), box-shadow 0.3s ease, opacity 0.14s ease;
+  }
+
+  .cp-card--new[data-arriving] {
+    opacity: 0;
+  }
+
+  /* Leaving for Done: it slides toward the Done lane and fades as its room closes */
+  .cp-card--new[data-leaving] {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0);
+    transition: transform 0.45s cubic-bezier(0.45, 0, 0.1, 1), opacity 0.36s ease;
+  }
+
+  /* The In progress lane's opening for the card: a plain height, nothing clipped */
+  .cp-slot {
+    height: 0;
+    transition: height 0.5s cubic-bezier(0.45, 0, 0.2, 1);
+  }
+
+  .cp-slot[data-open] {
+    height: 96px;
+  }
+
+  /* Labels change in place: a plain crossfade, no blur and no rise */
+  .cp-actions .ss-states__item {
+    filter: none;
+    transform: none;
+  }
+
+  .cp-seed {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--ss-text-strong);
+  }
+
+  .cp-line {
+    display: flex;
+    align-items: center;
+    height: 18px;
+  }
+
+  .cp-line--sub {
+    height: 16px;
+    margin-top: 2px;
+  }
+
+  .cp-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cp-row--filler {
+    margin-top: 10px;
+  }
+
+  /* The title: a focused field while it is written, plain card text once
+     saved. The words never move: the field's surface is drawn around them
+     and gives way, and the row's margins close with it. */
+  .cp-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 18px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    color: var(--ss-text-strong);
+    white-space: nowrap;
+    transition: margin 0.32s cubic-bezier(0.45, 0, 0.1, 1);
+  }
+
+  .cp-title::before {
+    content: '';
+    position: absolute;
+    inset: -7px -10px;
+    border: 1px solid var(--ss-accent);
+    border-radius: 8px;
+    box-shadow: 0 0 0 3px rgba(37, 70, 214, 0.14);
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 0.22s ease, transform 0.32s cubic-bezier(0.45, 0, 0.1, 1);
+  }
+
+  .cp-title[data-editing] {
+    margin: 7px 0 7px;
+  }
+
+  .cp-title[data-editing]::before {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cp-title__text {
+    position: relative;
+  }
+
+  .cp-caret {
+    flex: none;
+    width: 1.5px;
+    height: 16px;
+    margin-left: 1px;
+    background: var(--ss-accent);
+    opacity: 0;
+  }
+
+  .cp-caret[data-show] {
+    opacity: 1;
+    animation: cpb-blink 1s steps(1) infinite;
+  }
+
+  .cp-caret[data-show][data-typing] {
+    animation: none;
+  }
+
+  .cp-actions {
+    display: grid;
+    margin-top: 10px;
+  }
+
+  .cp-btn {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--ss-line);
+    border-radius: 8px;
+    background: var(--ss-surface);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ss-text);
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.12s ease;
+  }
+
+  .cpb-new, .cp-btn, .cpb-saved { will-change: transform; }
+
+  .cp-btn[data-hover] { background: #EEF1F6; }
+  .cp-btn[data-pressed] { background: var(--ss-line); transform: scale(0.97); }
+
+  .cp-btn--primary {
+    padding: 0 14px;
+    border-color: var(--ss-accent);
+    background: var(--ss-accent);
+    color: #fff;
+  }
+
+  .cp-btn--primary[data-hover] { background: #1F3DC4; }
+  .cp-btn--primary[data-pressed] { background: var(--ss-accent-2); }
+
+  /* The saved status: the product's dark notice, half over the browser's edge */
+  .cpb-saved {
+    position: absolute;
+    z-index: 40;
+    left: var(--gutter);
+    bottom: var(--gutter);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 196px;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #0D1526;
+    color: #fff;
+    font-family: var(--ss-font);
+    box-shadow: 0 8px 24px rgba(13, 21, 38, 0.18), var(--ss-shadow-satellite);
+    opacity: 0;
+    transform: scale(0.96);
+    transform-origin: 50% 100%;
+    transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  .cpb-saved[data-show] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cpb-saved .cp-ms {
+    margin-top: 1px;
+    color: #B9C6FF;
+  }
+
+  .cpb-saved__text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+
+  .cpb-saved__yue {
+    font-family: 'Noto Sans HK', var(--ss-font);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #C9D2E3;
+  }
+
+  /* Compact: a closer crop. To do and In progress side by side, each card
+     keeps the one move that matters (as the phone layout does), the count
+     sits beside its lane's name, and the status stacks over the board's foot. */
+  & .ss-stage[data-layout='compact'] { --gutter: 16px; }
+  & .ss-stage[data-layout='compact'] .cpb-browser { left: var(--gutter); width: 400px; height: 560px; }
+  & .ss-stage[data-layout='compact'] .cpb-body { padding: 12px; }
+  & .ss-stage[data-layout='compact'] .cpb-head { display: flex; margin-bottom: 12px; }
+  & .ss-stage[data-layout='compact'] .cpb-board { grid-template-columns: repeat(2, 170px); column-gap: 10px; }
+  & .ss-stage[data-layout='compact'] .cp-lane__count { margin-left: 0; }
+  & .ss-stage[data-layout='compact'] .cp-lane__head { gap: 6px; }
+  & .ss-stage[data-layout='compact'] .cp-btn--second { display: none; }
+  & .ss-stage[data-layout='compact'] .cpb-saved { left: 30px; right: 30px; width: auto; bottom: var(--gutter); }
+}
+
+@keyframes cpb-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}

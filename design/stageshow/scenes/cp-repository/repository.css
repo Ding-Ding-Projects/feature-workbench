@@ -1,0 +1,182 @@
+.cpr {
+  & .ss-stage {
+    --gutter: 32px;
+    overflow: hidden;
+    background: var(--ss-well);
+  }
+
+  /* A ruled page with real margins: the document, not a window. It runs off
+     the top, right and bottom; its left edge is the one the satellite
+     straddles. */
+  .cpr-page {
+    position: absolute;
+    top: -40px;
+    left: 136px;
+    width: 520px;
+    height: 480px;
+    padding: 64px 32px 0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cpr-ms {
+    display: inline-block;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    color: var(--ss-icon-faint);
+    font-family: 'Material Symbols Rounded';
+    font-size: 18px;
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    line-height: 1;
+  }
+
+  .cpr-file {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .cpr-filename {
+    color: var(--ss-text-faint);
+    font-family: var(--ss-mono);
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* A Markdown second-level heading: its rule runs the text column */
+  .cpr-h2 {
+    width: 360px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ss-line);
+    color: var(--ss-text-strong);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  /* The table runs the text column; every row shares one template */
+  .cpr-table {
+    display: grid;
+    width: 360px;
+    margin-top: 4px;
+  }
+
+  .cpr-tr {
+    display: grid;
+    grid-template-columns: 1fr 64px;
+    column-gap: 24px;
+    align-items: center;
+    height: 32px;
+    border-bottom: 1px solid var(--ss-line-faint);
+  }
+
+  .cpr-tr > :last-child {
+    justify-self: end;
+  }
+
+  .cpr-lang,
+  .cpr-num {
+    color: var(--ss-text);
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .cpr-num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cpr-total {
+    border-top: 1px solid var(--ss-line);
+    border-bottom: 0;
+  }
+
+  .cpr-total > * {
+    font-weight: 600;
+  }
+
+  /* The next section: filler, under the satellite and off the bottom */
+  .cpr-after {
+    display: grid;
+    justify-items: start;
+    gap: 9px;
+    margin-top: 28px;
+  }
+
+  .cpr-after > :first-child {
+    margin-bottom: 4px;
+  }
+
+  /* The satellite: the estimate beside the counts, straddling the page's
+     left edge below the table */
+  .cpr-estimate {
+    position: absolute;
+    bottom: var(--gutter);
+    left: var(--gutter);
+    display: grid;
+    justify-items: start;
+    gap: 2px;
+    width: 216px;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-satellite);
+  }
+
+  .cpr-est-label {
+    color: var(--ss-text-faint);
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .cpr-est-value {
+    color: var(--ss-accent-text);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  .cpr-est-value + * {
+    margin-top: 8px;
+  }
+
+  /* Narrow: the page fills the stage less a gutter on the left and runs off
+     the other three edges; the estimate sits over the filler under the table */
+  & .ss-stage[data-layout='compact'] {
+    --gutter: 16px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-page {
+    left: 16px;
+    width: 380px;
+    padding: 56px 24px 0;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-file {
+    margin-bottom: 10px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-h2,
+  & .ss-stage[data-layout='compact'] .cpr-table {
+    width: 294px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-tr {
+    height: 28px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-estimate {
+    left: 40px;
+    width: 232px;
+    padding: 12px 16px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpr-estimate > .ss-bar {
+    display: none;
+  }
+}

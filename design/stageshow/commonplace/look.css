@@ -1,0 +1,52 @@
+/* Commonplace look for Stageshow stages. Use className="look-commonplace" on every Stage.
+   Tokens mapped from the Commonplace redesign (design/HANDOFF.md). */
+@import './fonts.css';
+
+.look-commonplace .ss-stage {
+  --ss-canvas: #F3F5F9;
+  --ss-surface: #FFFFFF;
+  --ss-chrome: #FFFFFF;
+  --ss-well: #E9EDF4;
+  --ss-raised: #FFFFFF;
+  --ss-line: #DCE2EC;
+  --ss-line-faint: #EEF1F6;
+  --ss-text-strong: #0D1526;
+  --ss-text: #0D1526;
+  --ss-text-faint: #475467;
+  --ss-icon: #0D1526;
+  --ss-icon-faint: #667085;
+  --ss-accent: #2546D6;
+  --ss-accent-2: #16309F;
+  --ss-accent-soft: #E8EDFF;
+  --ss-accent-text: #16309F;
+  --ss-warning: #C2570C;
+  --ss-warning-soft: #FFEEDD;
+  --ss-warning-text: #7A2F06;
+  --ss-font: "Inter", "Noto Sans HK", system-ui, sans-serif;
+  --ss-mono: "JetBrains Mono", ui-monospace, monospace;
+  --ss-radius-sm: 8px;
+  --ss-radius-md: 12px;
+  --ss-radius-lg: 14px;
+  --ss-radius-window: 16px;
+  --ss-control: 36px;
+  --ss-row: 30px;
+}
+.look-commonplace .ss-stage[data-theme="dark"] {
+  --ss-canvas: #0B1220;
+  --ss-surface: #172238;
+  --ss-chrome: #0B1220;
+  --ss-well: #0B1220;
+  --ss-raised: #26334F;
+  --ss-line: #26334F;
+  --ss-line-faint: #1B2740;
+  --ss-text-strong: #F2F5FA;
+  --ss-text: #F2F5FA;
+  --ss-text-faint: #A9B4C8;
+  --ss-icon: #F2F5FA;
+  --ss-icon-faint: #A9B4C8;
+  --ss-accent: #8EA2FF;
+  --ss-accent-soft: #1B2A5C;
+  --ss-accent-text: #B9C6FF;
+}
+/* Display type for titles inside the product: Bricolage Grotesque. */
+.look-commonplace .cp-display { font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif; font-weight: 700; letter-spacing: -0.02em; }

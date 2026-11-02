@@ -1,0 +1,285 @@
+/* Commonplace, local history. Every rule is scoped to this scene. */
+.cpr {
+  & .ss-stage {
+    --gutter: 24px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  & .ss-stage[data-layout="compact"] {
+    --gutter: 16px;
+  }
+
+  /* Material Symbols Rounded, filled, one size for the whole scene */
+  .cpr-sym {
+    display: inline-block;
+    flex: none;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    font-family: 'Material Symbols Rounded';
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .cpr-window {
+    position: absolute;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cpr-body {
+    display: flex;
+    flex-direction: column;
+    background: var(--ss-canvas);
+  }
+
+  /* The workspace toolbar: title, filter, history (open) and undo */
+  .cpr-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px 12px;
+  }
+
+  .cpr-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cpr-card:has(.cpr-card__title) {
+    gap: 6px;
+  }
+
+  .cpr-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cpr-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 124px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+    color: #667085;
+  }
+
+  .cpr-icon {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+    color: var(--ss-text-strong);
+  }
+
+  /* Pressed while its panel is open */
+  .cpr-icon[data-on] {
+    background: var(--ss-text-strong);
+    box-shadow: none;
+    color: #fff;
+  }
+
+  /* ---- The board: three lanes ---- */
+
+  .cpr-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 16px;
+    align-items: start;
+  }
+
+  .ss-stage[data-layout="compact"] .cpr-board {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 12px;
+  }
+
+  .ss-stage[data-layout="compact"] .cpr-toolbar {
+    padding: 8px 12px 6px;
+  }
+
+  .cpr-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 8px 8px;
+    border-radius: 14px;
+    background: #E9EDF4;
+  }
+
+  .cpr-col[data-kind="doing"] { background: #FFEEDD; }
+  .cpr-col[data-kind="done"] { background: #E8EDFF; }
+
+  .cpr-col__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    padding: 0 4px;
+    color: #475467;
+  }
+
+  .cpr-col[data-kind="doing"] .cpr-col__head { color: #C2570C; }
+  .cpr-col[data-kind="done"] .cpr-col__head { color: #2546D6; }
+
+  .cpr-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+  }
+
+  /* The restored task: on its own raised surface, nothing outlined */
+  .cpr-card[data-restored] {
+    gap: 6px;
+    box-shadow: var(--ss-shadow-card);
+  }
+
+  .cpr-card__title {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--ss-text-strong);
+    white-space: normal;
+  }
+
+  .cpr-card__chips {
+    display: flex;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  /* ---- Local history, anchored under its toolbar button ---- */
+
+  .cpr-panel {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 6px 8px 8px;
+    border-radius: 16px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-float), 0 0 0 1px var(--ss-line);
+  }
+
+  .cpr-panel__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    height: 40px;
+    padding: 0 8px;
+  }
+
+  .cpr-panel__title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ss-text-strong);
+  }
+
+  .cpr-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cpr-row {
+    border-radius: 10px;
+    color: #475467;
+  }
+
+  .cpr-row[data-selected] {
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent);
+  }
+
+  .cpr-row__label {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ss-text-strong);
+  }
+
+  .cpr-row__time {
+    font-size: 11.5px;
+    color: #475467;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- The toast: bottom corner, one gutter up ---- */
+
+  .ss-toast.cpr-toast {
+    position: absolute;
+    left: 40px;
+    bottom: var(--gutter);
+    z-index: 5;
+    gap: 10px;
+    height: 44px;
+    padding: 0 8px 0 14px;
+    border-radius: 12px;
+    background: #0D1526;
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+
+  .cpr-toast .ss-toast__icon {
+    opacity: 1;
+    color: #B9C6FF;
+  }
+
+  .cpr-toast .ss-toast__action {
+    margin-left: 6px;
+    color: #B9C6FF;
+  }
+
+  .cpr-toast__actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .cpr-toast__undo {
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-weight: 700;
+  }
+
+  .cpr-toast__x {
+    margin: 0 4px;
+    color: #C9D2E3;
+  }
+
+  .ss-stage[data-layout="compact"] .ss-toast.cpr-toast {
+    left: 28px;
+  }
+
+  .ss-stage[data-layout="compact"] .cpr-panel__head {
+    height: 30px;
+  }
+
+  .ss-stage[data-layout="compact"] .ss-toast.cpr-toast {
+    height: 40px;
+  }
+
+
+}

@@ -1,0 +1,158 @@
+/* Commonplace, Completeness and evidence. Every rule is scoped to the scene. */
+.cpe {
+  & .ss-stage {
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  /* Material Symbols Rounded, filled, one size for the scene */
+  .cpe-icon {
+    display: inline-block;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    font-family: 'Material Symbols Rounded';
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  /* One column, one gutter from the top and left, off the right edge; the
+     output off the bottom */
+  .cpe-stack {
+    --gutter: 24px;
+    position: absolute;
+    top: var(--gutter);
+    left: var(--gutter);
+    display: grid;
+    gap: 12px;
+    width: 600px;
+  }
+
+  .cpe-card {
+    padding: 18px 18px 10px;
+    border-radius: 14px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-card);
+  }
+
+  .cpe-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .cpe-title {
+    font-size: 15px;
+    line-height: 1.3;
+    color: var(--ss-text-strong);
+  }
+
+  /* One grid for the header and every row: fixed tracks, so columns line up */
+  .cpe-grid {
+    display: grid;
+    grid-template-columns: 124px 44px 52px 80px 44px 76px 1fr;
+    column-gap: 8px;
+    align-items: center;
+  }
+
+  .cpe-colhead {
+    padding-bottom: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+    color: var(--ss-text-faint);
+  }
+
+  .cpe-row {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: center;
+    height: 38px;
+    border-top: 1px solid var(--ss-line-faint);
+  }
+
+  .cpe-name {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+    color: var(--ss-text-strong);
+  }
+
+  /* A check per cell: the accent's soft fill, the tick in its text shade */
+  .cpe-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+    gap: 8px;
+    height: 24px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent-text);
+  }
+
+  .cpe-chip[data-missing] {
+    gap: 4px;
+    padding: 0 10px 0 7px;
+    background: var(--ss-warning-soft);
+    color: var(--ss-warning-text);
+  }
+
+  .cpe-chip__label {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+  }
+
+  /* The check's output: the product's dark log block, at the card's width */
+  .cpe-log {
+    height: 220px;
+    border-radius: 14px;
+    background: #0B1220;
+    box-shadow: var(--ss-shadow-card);
+  }
+
+  .cpe-term {
+    --ss-term-path: #A9B4C8;
+    --ss-term-sigil: #8EA2FF;
+    --ss-term-ok: #B9C6FF;
+    --ss-term-err: #FFEEDD;
+    padding: 14px 20px;
+    color: #A9B4C8;
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .cpe-term .ss-term__cmd {
+    color: #F2F5FA;
+  }
+
+  .cpe-term .ok,
+  .cpe-term .err {
+    font-weight: 700;
+  }
+
+  /* Narrow: the same pin at a 16px gutter, the title goes, two columns stay */
+  & .ss-stage[data-layout='compact'] .cpe-stack {
+    --gutter: 16px;
+    width: 400px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpe-card {
+    padding: 14px 16px 6px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpe-grid {
+    grid-template-columns: 112px 52px 80px 44px 1fr;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpe-term {
+    padding: 12px 16px;
+    font-size: 10.5px;
+  }
+}

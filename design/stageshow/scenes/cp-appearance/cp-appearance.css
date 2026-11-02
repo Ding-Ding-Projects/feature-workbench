@@ -1,0 +1,305 @@
+/* Commonplace, Appearance: every rule nested under the scene's root class. */
+.cpa {
+  & .ss-stage {
+    --gutter: 28px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  /* Material Symbols Rounded, filled, one size for the whole scene */
+  .cpa-icon {
+    font-family: 'Material Symbols Rounded';
+    font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
+    font-size: 16px;
+    line-height: 1;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    display: inline-block;
+    flex: none;
+    color: var(--ss-icon-faint);
+  }
+
+  .cpa-icon--accent { color: var(--ss-accent); }
+  .cpa-icon--todo { color: #475467; }
+  .cpa-icon--progress { color: #C2570C; }
+
+  /* The product: pinned top-left, off the right and the bottom */
+  .cpa-win {
+    position: absolute;
+    top: var(--gutter);
+    left: var(--gutter);
+    width: 640px;
+    height: 540px;
+    box-shadow: var(--ss-shadow-hero);
+  }
+
+  .cpa-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100%;
+    padding: 18px 16px;
+    background: var(--ss-canvas);
+  }
+
+  .cpa-head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 4px 0 6px;
+  }
+
+  /* The setup strip under the page title, as filler */
+  .cpa-setup {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: 52px;
+    margin-top: 8px;
+    padding: 0 14px;
+    border-radius: 12px;
+    background: var(--ss-surface);
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+  }
+
+  .cpa-setup__steps { display: inline-flex; gap: 8px; }
+
+  /* Two lanes in view; the In progress lane's right edge lines up with the
+     panel's, a gutter from the stage edge */
+  .cpa-board {
+    display: grid;
+    grid-template-columns: 240px 236px;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .cpa-lane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 8px 8px;
+    border-radius: 14px;
+    background: #E9EDF4;
+  }
+
+  .cpa-lane[data-tone='progress'] { background: #FFEEDD; }
+
+  .cpa-lane__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 4px 2px;
+  }
+
+  .cpa-lane__count { margin-left: auto; margin-right: 4px; }
+
+  .cpa-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--ss-surface);
+    box-shadow: 0 1px 2px rgba(13, 21, 38, 0.06);
+  }
+
+  /* A neighbor at the base size */
+  .cpa-card__name {
+    color: var(--ss-text-strong);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.25;
+    white-space: normal;
+    margin-bottom: -2px;
+  }
+
+  /* The card the setting changed: its title at 110% of the 13px base */
+  .cpa-card__title {
+    color: var(--ss-text-strong);
+    font-size: 14.3px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: normal;
+    margin-bottom: -3px;
+  }
+
+  .cpa-card__actions {
+    display: flex;
+    gap: 6px;
+    padding-top: 2px;
+  }
+
+  /* The tool: in front of the window's top right, over the address bar and
+     the page header's filler, clear of the lanes */
+  .cpa-panel {
+    position: absolute;
+    top: var(--gutter);
+    right: var(--gutter);
+    width: 168px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 12px 12px;
+    border-radius: 16px;
+    background: var(--ss-surface);
+    box-shadow: var(--ss-shadow-satellite);
+  }
+
+  .cpa-panel__title {
+    color: var(--ss-text-strong);
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .cpa-panel__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cpa-themes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .cpa-theme {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 5px 5px 6px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 1px var(--ss-line);
+  }
+
+  .cpa-theme[data-on] { box-shadow: inset 0 0 0 2px var(--ss-accent); }
+
+  .cpa-theme__preview {
+    display: flex;
+    gap: 3px;
+    height: 26px;
+    padding: 4px;
+    border-radius: 7px;
+    background: var(--ss-canvas);
+  }
+
+  .cpa-theme__preview[data-dark] { background: #0B1220; }
+
+  .cpa-theme__preview > span {
+    flex: 1;
+    border-radius: 4px;
+  }
+
+  .cpa-theme__label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 16px;
+    padding-left: 2px;
+    color: var(--ss-text-strong);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  .cpa-size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px 12px;
+    border-radius: 12px;
+    background: #F8F9FC;
+  }
+
+  .cpa-size__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .cpa-size__label {
+    color: var(--ss-text-strong);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .cpa-size__value {
+    color: var(--ss-accent);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 85 to 150 in steps of 5: 110 sits at 38% of the track */
+  .cpa-slider {
+    position: relative;
+    height: 14px;
+  }
+
+  .cpa-slider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ss-line);
+  }
+
+  .cpa-slider__fill {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 38%;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ss-accent);
+  }
+
+  .cpa-slider__thumb {
+    position: absolute;
+    top: 0;
+    left: calc(38% - 7px);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ss-accent);
+    box-shadow: 0 0 0 2px var(--ss-surface), 0 1px 3px rgba(13, 21, 38, 0.25);
+  }
+
+  /* The leader is annotation, not product: neutral ink */
+  .ss-connector { --ss-accent: var(--ss-text-strong); }
+
+  /* Narrow: the window runs off the right with the In progress lane in view,
+     the focal card at its top; the panel lies across the window's foot in
+     one row, the theme tiles beside the slider, clear of the focal card */
+  & .ss-stage[data-layout='compact'] {
+    --gutter: 16px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpa-win { width: 420px; }
+
+  & .ss-stage[data-layout='compact'] .cpa-page { padding: 14px; }
+
+  & .ss-stage[data-layout='compact'] .cpa-board { grid-template-columns: 300px; }
+
+  & .ss-stage[data-layout='compact'] .cpa-panel {
+    top: auto;
+    bottom: var(--gutter);
+    left: var(--gutter);
+    width: auto;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpa-panel__body {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 10px;
+  }
+}

@@ -1,0 +1,137 @@
+/* All rules belong to this scene, including its compact design. */
+.cpb {
+  & .ss-stage {
+    --gutter: 24px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--ss-well);
+  }
+
+  /* The hero: the product's ink as the terminal surface, its dark-theme
+     accent for the path and the tick. Pinned top-left with room on the left
+     for the app to straddle; runs off the right and the bottom. */
+  .cpb-term {
+    position: absolute;
+    top: var(--gutter);
+    left: 136px;
+    width: 480px;
+    height: 420px;
+    border-radius: 12px;
+    --ss-term-bg: #0D1526;
+    --ss-term-path: #8EA2FF;
+    --ss-term-sigil: #A9B4C8;
+    --ss-term-ok: #8EA2FF;
+    --ss-term-dim: #7C879B;
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.07),
+      var(--ss-shadow-hero);
+  }
+
+  .cpb-term .ss-term {
+    gap: 3px;
+    padding: 10px 20px 20px;
+    font-size: 12.5px;
+    color: #A9B4C8;
+  }
+
+  .cpb-bright { color: #F2F5FA; }
+
+  /* Path and size on one grid, sizes right-aligned in their own track */
+  .cpb-dist {
+    display: grid;
+    grid-template-columns: 30ch 9ch;
+    white-space: pre;
+  }
+
+  .cpb-dist span:last-child { text-align: right; }
+
+  /* The satellite: the built app, straddling the terminal's left edge over
+     the empty lower part of the terminal, never over the log. */
+  .cpb-app {
+    position: absolute;
+    left: var(--gutter);
+    bottom: var(--gutter);
+    width: 268px;
+    border-radius: 12px;
+    box-shadow: var(--ss-shadow-satellite);
+  }
+
+  .cpb-app .ss-window__body { background: var(--ss-canvas); }
+
+  .cpb-app__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 12px 0;
+  }
+
+  .cpb-app__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .cpb-word {
+    font-size: 13px;
+    line-height: 16px;
+    color: var(--ss-text-strong);
+  }
+
+  /* To do, In progress, Done: the board's three tinted columns as filler */
+  .cpb-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .cpb-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 22px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background: var(--ss-well);
+  }
+
+  .cpb-col[data-kind="doing"] { background: var(--ss-warning-soft); }
+  .cpb-col[data-kind="done"] { background: var(--ss-accent-soft); }
+
+  .cpb-foot {
+    padding: 8px 0 10px;
+    border-top: 1px solid var(--ss-line);
+    font-size: 10.5px;
+    line-height: 14px;
+    color: var(--ss-text-faint);
+    white-space: nowrap;
+  }
+
+  .cpb-mono {
+    font-family: var(--ss-mono);
+    font-size: 10px;
+  }
+
+  /* Compact: the terminal pinned top and off the right, the app straddling
+     its bottom edge instead, whole, a gutter from the stage's foot. */
+  & .ss-stage[data-layout="compact"] {
+    --gutter: 16px;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-term {
+    left: var(--gutter);
+    width: 400px;
+    height: 180px;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-term .ss-term {
+    gap: 4px;
+    padding: 6px 16px 16px;
+    font-size: 12px;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-app {
+    left: var(--gutter);
+    width: 326px;
+  }
+}
