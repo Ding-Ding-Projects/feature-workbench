@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "baseline": "b98d433",
+  "requirements": [
+    {
+      "id": "job-experience-document-label",
+      "kind": "process",
+      "status": "conditional"
+    },
+    {
+      "id": "forge-publishing",
+      "kind": "external-service",
+      "status": "blocked"
+    },
+    {
+      "id": "product-evidence",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "screen-recording",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "design-folder",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "responsive-layout-matrix",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "public-evidence-gallery",
+      "kind": "external-service",
+      "status": "open"
+    },
+    {
+      "id": "installer-download-button",
+      "kind": "process",
+      "status": "conditional"
+    },
+    {
+      "id": "homepage-link",
+      "kind": "external-service",
+      "status": "partial"
+    },
+    {
+      "id": "status-hub",
+      "kind": "external-service",
+      "status": "blocked"
+    },
+    {
+      "id": "discord-status-bridge",
+      "kind": "external-service",
+      "status": "blocked"
+    },
+    {
+      "id": "panic-webhooks",
+      "kind": "external-service",
+      "status": "blocked"
+    },
+    {
+      "id": "tidbyt-displays",
+      "kind": "external-service",
+      "status": "suspended"
+    },
+    {
+      "id": "dependency-fetcher",
+      "kind": "process",
+      "status": "partial"
+    },
+    {
+      "id": "app-icon",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "release-workflow",
+      "kind": "process",
+      "status": "blocked"
+    },
+    {
+      "id": "release-timing",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "release-line-counts",
+      "kind": "process",
+      "status": "partial"
+    },
+    {
+      "id": "ci-bootstrap",
+      "kind": "process",
+      "status": "blocked"
+    },
+    {
+      "id": "runner-selection",
+      "kind": "process",
+      "status": "partial"
+    },
+    {
+      "id": "encrypted-public-builder",
+      "kind": "external-service",
+      "status": "not-applicable"
+    },
+    {
+      "id": "tabbed-readme",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "human-time-estimate",
+      "kind": "process",
+      "status": "partial"
+    },
+    {
+      "id": "sanitized-instruction-copy",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "agents-md-vocabulary-block",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "vocabulary-hash-lock",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "roadmap-checklist",
+      "kind": "process",
+      "status": "partial"
+    },
+    {
+      "id": "feature-docs",
+      "kind": "process",
+      "status": "partial"
+    },
+    {
+      "id": "postman-collections",
+      "kind": "process",
+      "status": "conditional"
+    },
+    {
+      "id": "wiki-documentation-sync",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "handoff-record",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "closeout-prompt",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "discussion-records",
+      "kind": "external-service",
+      "status": "open"
+    },
+    {
+      "id": "project-board",
+      "kind": "external-service",
+      "status": "blocked"
+    },
+    {
+      "id": "operational-skill",
+      "kind": "process",
+      "status": "open"
+    },
+    {
+      "id": "readme-prompt-banner",
+      "kind": "process",
+      "status": "not-applicable"
+    },
+    {
+      "id": "canonical-portable-editions",
+      "kind": "process",
+      "status": "not-applicable"
+    },
+    {
+      "id": "project-profile",
+      "kind": "process",
+      "status": "conditional"
+    },
+    {
+      "id": "roblox-model-catalogue",
+      "kind": "process",
+      "status": "not-applicable"
+    },
+    {
+      "id": "roblox-visual-realism",
+      "kind": "process",
+      "status": "not-applicable"
+    }
+  ]
+}
