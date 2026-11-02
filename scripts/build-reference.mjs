@@ -1,7 +1,14 @@
 import {readdir,readFile,mkdir,writeFile,cp} from 'node:fs/promises';
 import path from 'node:path';
 const escape=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const inline=s=>escape(s).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+const inline=source=>source.split(/(`[^`]*`)/g).map(part=>{
+ if(part.startsWith('`')&&part.endsWith('`'))return '<code>'+escape(part.slice(1,-1))+'</code>';
+ return escape(part).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/\[([^\]]+)\]\(([^)]+)\)/g,(whole,label,url)=>{
+  if(!/^(?:https?:\/\/|[a-zA-Z0-9_.-]+(?:\/|\.|$)|#)/.test(url)||url.startsWith('//')||/[\\\s]/.test(url))return whole;
+  const target=url.replace(/\.md(?=$|[?#])/,' .html').replace(' .html','.html');
+  return '<a href="'+target+'" rel="noreferrer">'+label+'</a>';
+ });
+}).join('');
 export function renderMarkdown(source){
  let code=false,list=false,output=[];
  for(const line of source.split(/\r?\n/)){
