@@ -1,9 +1,11 @@
 @echo off
 setlocal
-where node >nul 2>nul
-if errorlevel 1 (
-  echo INCOMPLETE: trusted automatic Windows dependency acquisition is not implemented.
-  exit /b 2
+set "BUILD_SILENT="
+for %%A in (%*) do (
+  if /i "%%~A"=="/s" set "BUILD_SILENT=-Silent"
+  if /i "%%~A"=="--silent" set "BUILD_SILENT=-Silent"
 )
-node scripts\build.mjs
-exit /b %errorlevel%
+if "%SILENT%"=="1" set "BUILD_SILENT=-Silent"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\build.ps1" %BUILD_SILENT%
+set "RC=%ERRORLEVEL%"
+endlocal & exit /b %RC%

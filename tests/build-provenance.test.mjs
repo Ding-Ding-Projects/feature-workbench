@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+test('build provenance never substitutes launch time or file mtime',()=>{const source=readFileSync('scripts/build.mjs','utf8');assert.match(source,/git.*status.*--porcelain/);assert.match(source,/if\(!dirty\)updatedAt=/);assert.match(source,/provenance:updatedAt\?'clean-source-commit':'unavailable'/);assert.doesNotMatch(source,/new Date\(\)|Date\.now|mtime/);});

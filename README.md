@@ -4,7 +4,11 @@ A browser-local task workspace and interactive guide. This is an **incomplete re
 
 ## Run and verify
 
-Requires an existing Node.js 20 or later. No third-party runtime dependencies are installed.
+On Windows 10/11 x64, run `build.bat` from any directory. It requests native Windows UAC consent interactively; only you can approve it. Cancellation fails without reporting a successful build. `build.bat /s`, `build.bat --silent`, or `SILENT=1` never prompts, pauses or launches anything and works without administrator rights. No machine security settings or persistent PATH values are changed.
+
+The entrypoint detects compatible Node.js (20+) and Git (2+). If either is missing, it downloads the pinned portable release from its publisher, verifies committed archive and executable SHA-256 hashes, installs in `%LOCALAPPDATA%\SampleWorkbench\tools`, verifies the executable, and continues. Valid installed tools and verified caches are reused. Network/download, checksum, consent and test failures return nonzero. The explicit tool inventory and upstream checksum sources are in `scripts/build-tools.json`; Windows PowerShell 5.1 and .NET ZIP support are built-in host requirements. No third-party project packages are needed. Adding packages requires updating the locked bootstrap inventory rather than silently installing unpinned packages.
+
+Build phases run in order: dependencies, all tests, source checks, static build. On other platforms, with Node.js 20+ and Git already available, the equivalent development checks are:
 
 ```sh
 npm test
@@ -12,9 +16,11 @@ npm run check
 npm run build
 ```
 
-Serve `dist/` with a trusted static HTTP server. Build output is self-contained; no CDN is required. Source and build provenance are displayed on the initial screen. The build records the source commit's timestamp, not the visitor's launch time. A dirty build is for development, not release evidence.
+After a successful interactive build, answer **y** to run: the built-in server chooses a free loopback port, opens its actual URL in your browser, and stays running until Ctrl+C. Silent builds never prompt or launch. You can also run `node scripts/serve.mjs` from the project root (default `http://127.0.0.1:8080`). Set `PORT` to choose a port; only explicit `HOST=0.0.0.0` enables a container bind, and no firewall setting is changed. The server rejects traversal and symbolic links. Build output is self-contained; no CDN is required. Source and build provenance are displayed on the initial screen. The build records the source commit's timestamp, not the visitor's launch time. A dirty build is for development, not release evidence.
 
-`build.bat` invokes the same build on an existing Windows Node installation. Automatic trusted dependency acquisition is incomplete and returns nonzero when Node is missing. `build-installer.bat` returns nonzero because no native installer exists. These entrypoints are not evidence of native delivery.
+`build-installer.bat` exits **2 (not applicable)**: this browser-only project has no supported installable desktop target. It produces no fake package, performs no installation, and does not publish, tag or push. Building the website does not prove native delivery.
+
+PowerShell parser and offline archive-safety tests are separate from Windows runtime proof. Fresh Windows download/install, UAC acceptance/cancellation and `.bat` execution must be verified on a Windows host before claiming this entrypoint's runtime acceptance.
 
 ## Privacy and boundaries
 

@@ -1,0 +1,11 @@
+services:
+  workbench:
+    image: ${WORKBENCH_IMAGE:?Set WORKBENCH_IMAGE to a reviewed registry image digest}
+    ports:
+      - "${WORKBENCH_BIND:-127.0.0.1}:${WORKBENCH_PORT:-8080}:8080"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped

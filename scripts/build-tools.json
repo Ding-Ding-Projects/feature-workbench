@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "platform": "windows-x64",
+  "host": "Windows 10/11 x64 with built-in Windows PowerShell 5.1 and .NET ZIP support",
+  "projectPackages": [],
+  "tools": [
+    {
+      "name": "node", "version": "24.19.0", "minimumMajor": 20,
+      "url": "https://nodejs.org/dist/v24.19.0/node-v24.19.0-win-x64.zip",
+      "sha256": "57f71ab3652e797d84acddc79c81cc9ff1c6ddb2a1974cdb83f00fee9bff4c73",
+      "checksumSource": "https://nodejs.org/dist/v24.19.0/SHASUMS256.txt",
+      "archiveRoot": "node-v24.19.0-win-x64", "executable": "node.exe",
+      "executableSha256": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237"
+    },
+    {
+      "name": "git", "version": "2.55.0.4", "minimumMajor": 2,
+      "url": "https://github.com/git-for-windows/git/releases/download/v2.55.0.windows.4/MinGit-2.55.0.4-64-bit.zip",
+      "sha256": "4e03f94c2ffbf70be337e005cee02661c732dbfc81031a078bda9299b9a7d644",
+      "checksumSource": "https://api.github.com/repos/git-for-windows/git/releases/tags/v2.55.0.windows.4",
+      "archiveRoot": "", "executable": "cmd/git.exe",
+      "executableSha256": "c470d205517c7a53ceca321df16a6e4549fcd52b576ab4d09536d36f26fda5a9"
+    }
+  ]
+}
