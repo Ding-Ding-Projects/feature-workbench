@@ -10,11 +10,13 @@ test('real static HTTP server serves MIME, blocks escapes and shuts down its own
  const dir=await mkdtemp(join(tmpdir(),'sample-server-'));let server;
  try{
   const root=join(dir,'dist');await mkdir(root);await writeFile(join(root,'index.html'),'<h1>Built fixture</h1>');await writeFile(join(root,'app.js'),'export const value=1;');await writeFile(join(dir,'private.txt'),'not public');
+  await writeFile(join(root,'fixture.ttf'),'synthetic font transport fixture');
   const running=await startStaticServer({root,port:0});server=running.server;const {url}=running;
   assert.equal(server.address().address,'127.0.0.1');
   const home=await get(url,'/');assert.equal(home.status,200);assert.match(home.headers['content-type'],/text\/html/);assert.match(home.body,/Built fixture/);assert.match(home.headers['content-security-policy'],/worker-src 'self' blob:/);
   assert.match((await get(url,'/app.js')).headers['content-type'],/javascript/);
   assert.equal((await get(url,'/app.js','HEAD')).body,'');
+  assert.equal((await get(url,'/fixture.ttf')).headers['content-type'],'font/ttf');
   assert.equal((await get(url,'/','POST')).status,405);
   assert.equal((await get(url,'/missing')).status,404);
   assert.equal((await get(url,'/%zz')).status,400);
