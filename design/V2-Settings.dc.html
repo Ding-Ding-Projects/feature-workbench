@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonplace settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0..1,0&amp;family=Noto+Sans+HK:wght@400;500&amp;display=swap">
+<style>
+:root,[data-theme="light"]{--md-primary:#2546D6;--md-on-primary:#FFFFFF;--md-primary-container:#DDE1FF;--md-on-primary-container:#001257;--md-secondary:#595D72;--md-secondary-container:#DEE1F9;--md-on-secondary-container:#161B2C;--md-tertiary:#8B5000;--md-tertiary-container:#FFDCBE;--md-on-tertiary-container:#2D1600;--md-error:#BA1A1A;--md-error-container:#FFDAD6;--md-on-error-container:#410002;--md-surface:#FBF8FF;--md-scl:#FFFFFF;--md-sc-low:#F5F2FA;--md-sc:#EFEDF4;--md-sc-high:#E9E7EF;--md-sc-highest:#E3E1E9;--md-on-surface:#1B1B21;--md-on-surface-variant:#45464F;--md-outline:#767680;--md-outline-variant:#C6C5D0;--md-inverse-surface:#303036;--md-inverse-on-surface:#F2EFF7;--md-inverse-primary:#B9C3FF;--ok-container:#C8EBC8;--on-ok-container:#002106}
+[data-theme="dark"]{--md-primary:#B9C3FF;--md-on-primary:#00218B;--md-primary-container:#0035C2;--md-on-primary-container:#DDE1FF;--md-secondary:#C2C5DD;--md-secondary-container:#424659;--md-on-secondary-container:#DEE1F9;--md-tertiary:#FFB870;--md-tertiary-container:#6A3C00;--md-on-tertiary-container:#FFDCBE;--md-error:#FFB4AB;--md-error-container:#93000A;--md-on-error-container:#FFDAD6;--md-surface:#121318;--md-scl:#0D0E13;--md-sc-low:#1B1B21;--md-sc:#1F1F25;--md-sc-high:#292A2F;--md-sc-highest:#34343A;--md-on-surface:#E4E1E9;--md-on-surface-variant:#C6C5D0;--md-outline:#90909A;--md-outline-variant:#45464F;--md-inverse-surface:#E4E1E9;--md-inverse-on-surface:#303036;--md-inverse-primary:#2546D6;--ok-container:#1E4D22;--on-ok-container:#C8EBC8}
+:root{--sf:350ms linear(0, 0.013 0.6%, 0.05 1.2%, 0.2 2.6%, 0.468 4.4%, 0.734 6.3%, 0.899 8%, 1.003 9.8%, 1.058 11.6%, 1.074 13.6%, 1.06 15.6%, 1.03 18.1%, 1.002 21.3%, 0.991 25.4%, 1.001 34.4%, 1);--sd:500ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);--ss:650ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);--fx:200ms cubic-bezier(0.34, 0.8, 0.34, 1)}
+@property --p{syntax:'<percentage>';inherits:true;initial-value:0%}
+body{margin:0;background:#FBF8FF}
+*{box-sizing:border-box}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--md-primary)}
+:focus-visible{outline:3px solid var(--md-primary);outline-offset:2px}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block;transition:font-variation-settings var(--fx)}
+.ms.l{font-size:24px;width:24px;height:24px;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 24}
+.ms.f{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.hd{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500}
+/* buttons: pill at rest, 12px corners while pressed, state layers 8/10/10 */
+.btn{position:relative;isolation:isolate;overflow:hidden;min-height:44px;padding:0 20px;border:0;border-radius:22px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:Inter,'Noto Sans HK',sans-serif;font-weight:600;font-size:14px;line-height:20px;cursor:pointer;text-decoration:none;white-space:nowrap;background:transparent;color:var(--md-primary);transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.btn::before{content:'';position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity var(--fx);z-index:-1;pointer-events:none}
+.btn:hover::before{opacity:.08}.btn:focus-visible::before,.btn:active::before{opacity:.10}
+.btn:active{border-radius:12px}
+.btn.lg{min-height:48px;border-radius:24px;padding:0 24px}.btn.lg:active{border-radius:12px}
+.btn.filled{background:var(--md-primary);color:var(--md-on-primary)}
+.btn.tonal{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.btn.outlined{box-shadow:inset 0 0 0 1px var(--md-outline-variant);color:var(--md-on-surface-variant)}
+.btn.text{padding:0 14px}
+.btn.ib{width:44px;padding:0;flex:none}
+.btn.icon-lead{padding-left:16px}
+.btn[disabled]{color:color-mix(in srgb,var(--md-on-surface) 45%,transparent);cursor:default}.btn[disabled]::before{display:none}
+/* entrance: header first, then content in 40ms steps */
+@keyframes enter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes hx{from{opacity:0;letter-spacing:.02em}to{opacity:1;letter-spacing:-.03em}}
+.en{animation:enter var(--sd) both}
+.hx{animation:hx 600ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1) both}
+/* wavy linear progress */
+.wavy{position:relative;height:12px;display:flex;align-items:center;gap:6px}
+.wact{height:12px;flex:none;transition:width var(--ss)}
+.wline{height:12px;background:var(--md-primary);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M-40 6 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E") repeat-x 0 0/40px 12px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M-40 6 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E") repeat-x 0 0/40px 12px;animation:phase 1.4s linear infinite}
+@keyframes phase{to{-webkit-mask-position:-40px 0;mask-position:-40px 0}}
+.wact .wline{border-radius:6px 0 0 6px}
+.winact{flex:1;height:4px;border-radius:2px;background:var(--md-secondary-container);min-width:8px}
+.wstop{width:4px;height:4px;border-radius:2px;background:var(--md-primary);flex:none}
+/* cookie shape */
+@keyframes spin{to{transform:rotate(360deg)}}
+.cookie{animation:spin 40s linear infinite;clip-path:polygon(100.0% 50.0%, 99.3% 52.2%, 97.3% 54.1%, 94.6% 55.9%, 91.9% 57.4%, 89.7% 58.8%, 88.6% 60.4%, 88.8% 62.2%, 89.9% 64.5%, 91.6% 67.2%, 93.0% 70.1%, 93.8% 72.8%, 93.3% 75.0%, 91.6% 76.5%, 88.9% 77.2%, 85.7% 77.4%, 82.6% 77.3%, 80.0% 77.5%, 78.3% 78.3%, 77.5% 80.0%, 77.3% 82.6%, 77.4% 85.7%, 77.2% 88.9%, 76.5% 91.6%, 75.0% 93.3%, 72.8% 93.8%, 70.1% 93.0%, 67.2% 91.6%, 64.5% 89.9%, 62.2% 88.8%, 60.4% 88.6%, 58.8% 89.7%, 57.4% 91.9%, 55.9% 94.6%, 54.1% 97.3%, 52.2% 99.3%, 50.0% 100.0%, 47.8% 99.3%, 45.9% 97.3%, 44.1% 94.6%, 42.6% 91.9%, 41.2% 89.7%, 39.6% 88.6%, 37.8% 88.8%, 35.5% 89.9%, 32.8% 91.6%, 29.9% 93.0%, 27.2% 93.8%, 25.0% 93.3%, 23.5% 91.6%, 22.8% 88.9%, 22.6% 85.7%, 22.7% 82.6%, 22.5% 80.0%, 21.7% 78.3%, 20.0% 77.5%, 17.4% 77.3%, 14.3% 77.4%, 11.1% 77.2%, 8.4% 76.5%, 6.7% 75.0%, 6.2% 72.8%, 7.0% 70.1%, 8.4% 67.2%, 10.1% 64.5%, 11.2% 62.2%, 11.4% 60.4%, 10.3% 58.8%, 8.1% 57.4%, 5.4% 55.9%, 2.7% 54.1%, 0.7% 52.2%, 0.0% 50.0%, 0.7% 47.8%, 2.7% 45.9%, 5.4% 44.1%, 8.1% 42.6%, 10.3% 41.2%, 11.4% 39.6%, 11.2% 37.8%, 10.1% 35.5%, 8.4% 32.8%, 7.0% 29.9%, 6.2% 27.2%, 6.7% 25.0%, 8.4% 23.5%, 11.1% 22.8%, 14.3% 22.6%, 17.4% 22.7%, 20.0% 22.5%, 21.7% 21.7%, 22.5% 20.0%, 22.7% 17.4%, 22.6% 14.3%, 22.8% 11.1%, 23.5% 8.4%, 25.0% 6.7%, 27.2% 6.2%, 29.9% 7.0%, 32.8% 8.4%, 35.5% 10.1%, 37.8% 11.2%, 39.6% 11.4%, 41.2% 10.3%, 42.6% 8.1%, 44.1% 5.4%, 45.9% 2.7%, 47.8% 0.7%, 50.0% 0.0%, 52.2% 0.7%, 54.1% 2.7%, 55.9% 5.4%, 57.4% 8.1%, 58.8% 10.3%, 60.4% 11.4%, 62.2% 11.2%, 64.5% 10.1%, 67.2% 8.4%, 70.1% 7.0%, 72.8% 6.2%, 75.0% 6.7%, 76.5% 8.4%, 77.2% 11.1%, 77.4% 14.3%, 77.3% 17.4%, 77.5% 20.0%, 78.3% 21.7%, 80.0% 22.5%, 82.6% 22.7%, 85.7% 22.6%, 88.9% 22.8%, 91.6% 23.5%, 93.3% 25.0%, 93.8% 27.2%, 93.0% 29.9%, 91.6% 32.8%, 89.9% 35.5%, 88.8% 37.8%, 88.6% 39.6%, 89.7% 41.2%, 91.9% 42.6%, 94.6% 44.1%, 97.3% 45.9%, 99.3% 47.8%)}
+/* switch with thumb icon */
+.sw{position:relative;flex:none;width:52px;height:32px;border-radius:16px;border:2px solid var(--md-outline);background:var(--md-sc-highest);padding:0;cursor:pointer;transition:background-color var(--fx),border-color var(--fx)}
+.sw::after{content:'';position:absolute;inset:-8px -2px}
+.sw .th{position:absolute;top:50%;left:6px;width:16px;height:16px;margin-top:-8px;border-radius:12px;background:var(--md-outline);display:grid;place-items:center;transition:left var(--sf),width var(--sf),height var(--sf),margin var(--sf),background-color var(--fx)}
+.sw .th .ms{font-size:16px;width:16px;height:16px;opacity:0;transform:scale(.4);color:var(--md-on-primary-container);transition:opacity var(--fx),transform var(--sf)}
+.sw[aria-checked="true"]{background:var(--md-primary);border-color:var(--md-primary)}
+.sw[aria-checked="true"] .th{left:22px;width:24px;height:24px;margin-top:-12px;background:var(--md-on-primary)}
+.sw[aria-checked="true"] .th .ms{opacity:1;transform:none}
+.sw:active .th{width:28px;height:28px;margin-top:-14px;left:2px}
+.sw[aria-checked="true"]:active .th{left:18px}
+.swrow{display:flex;align-items:center;gap:16px;min-height:56px;justify-content:space-between}
+/* connected button group */
+.cbg{display:flex;gap:2px;flex-wrap:nowrap}
+.cbg .btn{flex:1 1 0;min-width:0;border-radius:8px;background:var(--md-sc-high);color:var(--md-on-surface);padding:0 12px;transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.cbg .btn:first-child{border-radius:22px 8px 8px 22px}.cbg .btn:last-child{border-radius:8px 22px 22px 8px}
+.cbg .btn[aria-pressed="true"]{border-radius:22px;background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.cbg .btn .ck{width:0;opacity:0;transition:width var(--sf),opacity var(--fx)}
+.cbg .btn[aria-pressed="true"] .ck{width:20px;opacity:1}
+.cbg .btn:active{border-radius:12px}
+/* reduced motion: OS setting and the app's own setting */
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:120ms!important;transition-timing-function:linear!important}.loop,.cookie,.wline,.blob{animation:none!important}}
+[data-rm="true"] *,[data-rm="true"] *::before,[data-rm="true"] *::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:120ms!important;transition-timing-function:linear!important}
+[data-rm="true"] .loop,[data-rm="true"] .cookie,[data-rm="true"] .wline,[data-rm="true"] .blob{animation:none!important}
+
+.stage{min-height:100vh;background:var(--md-surface);color:var(--md-on-surface);font-family:Inter,'Noto Sans HK',system-ui,sans-serif;font-size:14px;line-height:20px}
+.app{display:flex;min-height:100vh;background:var(--md-surface)}
+.rail{position:sticky;top:0;align-self:flex-start;width:80px;flex:none;display:flex;flex-direction:column;align-items:center;gap:20px;padding:16px 0 24px}
+.wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.02em;line-height:16px;color:var(--md-on-surface);text-decoration:none}
+.fab{position:relative;isolation:isolate;overflow:hidden;width:56px;height:56px;border:0;border-radius:16px;background:var(--md-primary-container);color:var(--md-on-primary-container);display:grid;place-items:center;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12),0 4px 8px rgba(0,0,0,.08);transition:border-radius var(--sf),transform var(--sf)}
+.fab::before{content:'';position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity var(--fx);z-index:-1}
+.fab:hover{border-radius:28px;transform:scale(1.07)}.fab:hover::before{opacity:.08}.fab:active{border-radius:12px}.fab:active::before{opacity:.1}
+.rlist{position:relative;display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.rind{position:absolute;left:12px;top:4px;width:56px;height:32px;border-radius:16px;background:var(--md-secondary-container);transition:transform var(--sf);pointer-events:none}
+[data-nav="work"] .rind{transform:translateY(0)}
+[data-nav="guide"] .rind{transform:translateY(72px)}
+[data-nav="tools"] .rind{transform:translateY(144px)}
+[data-nav="settings"] .rind{transform:translateY(216px)}
+[data-anim="a"] .rind{animation:stA var(--sf)}[data-anim="b"] .rind{animation:stB var(--sf)}
+[data-anim="a"] .bind::before{animation:sxA var(--sf)}[data-anim="b"] .bind::before{animation:sxB var(--sf)}
+@keyframes stA{40%{scale:1 1.4}}@keyframes stB{40%{scale:1 1.4}}@keyframes sxA{40%{scale:1.3 1}}@keyframes sxB{40%{scale:1.3 1}}
+.ri{position:relative;width:80px;height:72px;border:0;background:transparent;padding:4px 0 0;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;color:var(--md-on-surface-variant);font-size:12px;line-height:16px;font-weight:600}
+.ri .pl{width:56px;height:32px;border-radius:16px;display:grid;place-items:center;position:relative}
+.ri .pl::before{content:'';position:absolute;inset:0;border-radius:16px;background:var(--md-on-surface);opacity:0;transition:opacity var(--fx)}
+.ri:hover .pl::before{opacity:.08}.ri:active .pl::before{opacity:.1}
+.ri:focus-visible{outline:none}.ri:focus-visible .pl{outline:3px solid var(--md-primary);outline-offset:2px}
+.ri[aria-current="page"]{color:var(--md-on-surface)}
+.ri[aria-current="page"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24;color:var(--md-on-secondary-container)}
+.pane{flex:1;min-width:0;margin:8px 8px 8px 0;border-radius:32px;background:var(--md-sc-low)}
+.inner{max-width:1200px;margin:0 auto;padding:40px 40px 56px}
+.topbar,.pbar{display:none}
+@media (max-width:839px){
+.rail{display:none}
+.pane{margin:0;border-radius:0;padding-bottom:72px}
+.pbar{display:block;position:sticky;bottom:0;z-index:6}
+.inner{padding:8px 16px 40px}
+.topbar{display:flex;align-items:center;gap:4px;padding:8px 8px 8px 16px;position:sticky;top:0;z-index:5;background:var(--md-sc-low)}
+.bnav{display:flex;height:80px;background:var(--md-sc);padding:12px 0 16px}
+.xfab{display:inline-flex;position:absolute;right:16px;top:-72px;height:56px;padding:0 20px 0 16px;gap:12px;align-items:center;border:0;border-radius:16px;background:var(--md-primary-container);color:var(--md-on-primary-container);font-weight:600;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.14),0 6px 14px rgba(0,0,0,.1);cursor:pointer;transition:border-radius var(--sf)}
+.xfab:active{border-radius:12px}
+}
+.bwrap{position:relative;display:flex;width:100%}
+.bind{position:absolute;left:0;top:0;width:25%;height:32px;display:flex;justify-content:center;transition:transform var(--sf);pointer-events:none}
+.bind::before{content:'';width:64px;height:32px;border-radius:16px;background:var(--md-secondary-container)}
+[data-nav="guide"] .bind{transform:translateX(100%)}[data-nav="tools"] .bind{transform:translateX(200%)}[data-nav="settings"] .bind{transform:translateX(300%)}
+.bi{position:relative;flex:1 1 0;min-width:0;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--md-on-surface-variant);font-size:12px;line-height:16px;font-weight:600;cursor:pointer;padding:0}
+.bi .pl{width:64px;height:32px;display:grid;place-items:center}
+.bi[aria-current="page"]{color:var(--md-on-surface)}
+.bi[aria-current="page"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24;color:var(--md-on-secondary-container)}
+
+.stage[data-theme="dark"]{background:#FBF8FF}.stage[data-theme="light"]{background:#121318}
+.stage{--ox:50%;--oy:44%}.stage[data-theme="dark"]{--ox:64%}
+[data-reveal="a"] .app{animation:revA var(--ss) both}[data-reveal="b"] .app{animation:revB var(--ss) both}
+@keyframes revA{from{clip-path:circle(0 at var(--ox) var(--oy))}to{clip-path:circle(150% at var(--ox) var(--oy))}}
+@keyframes revB{from{clip-path:circle(0 at var(--ox) var(--oy))}to{clip-path:circle(150% at var(--ox) var(--oy))}}
+@supports not (clip-path:circle(10px at 0 0)){[data-reveal] .app{animation:fadeIn 200ms both}}
+@keyframes fadeIn{from{opacity:0}}
+.saved{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 12px 0 8px;border-radius:8px;background:var(--ok-container);color:var(--on-ok-container);font-size:12px;line-height:16px;font-weight:600;flex:none}
+[data-pulse="a"]{animation:pulseA 420ms ease-out}[data-pulse="b"]{animation:pulseB 420ms ease-out}
+@keyframes pulseA{50%{transform:scale(1.06)}}@keyframes pulseB{50%{transform:scale(1.06)}}
+.sbar{display:flex;align-items:center;gap:4px;height:56px;padding:0 16px;border-radius:28px;background:var(--md-sc-high);color:var(--md-on-surface-variant)}
+.sbar:focus-within{outline:3px solid var(--md-primary);outline-offset:2px}
+.sbar input{flex:1;min-width:0;border:0;background:transparent;font-size:16px;line-height:24px;color:var(--md-on-surface);outline:none;padding:0 8px}
+.sbar input::placeholder{color:var(--md-on-surface-variant)}
+.layout{display:flex;gap:32px;align-items:flex-start}
+.snav{position:sticky;top:24px;flex:0 0 240px;margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+.sind{position:absolute;left:0;right:0;top:0;height:56px;border-radius:28px;background:var(--md-secondary-container);transition:transform var(--sf);pointer-events:none}
+[data-sec="language"] .sind{transform:translateY(0)}[data-sec="appearance"] .sind{transform:translateY(56px)}[data-sec="wording"] .sind{transform:translateY(112px)}[data-sec="narrator"] .sind{transform:translateY(168px)}[data-sec="data"] .sind{transform:translateY(224px)}[data-sec="about"] .sind{transform:translateY(280px)}
+.si{position:relative;isolation:isolate;height:56px;padding:0 20px 0 16px;display:flex;align-items:center;gap:12px;border-radius:28px;color:var(--md-on-surface-variant);text-decoration:none;font-weight:600;font-size:14px;line-height:20px;white-space:nowrap}
+.si::before{content:'';position:absolute;inset:0;border-radius:28px;background:var(--md-on-surface);opacity:0;transition:opacity var(--fx);z-index:-1}
+.si:hover::before{opacity:.08}.si:active::before{opacity:.1}
+.si[aria-current="true"]{color:var(--md-on-secondary-container)}
+.si[aria-current="true"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24}
+.cards{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--md-scl);border-radius:28px;padding:28px;display:flex;flex-direction:column;gap:20px;scroll-margin-top:24px}
+.card h2{margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;line-height:28px}
+.note{margin:0;color:var(--md-on-surface-variant);font-size:14px;line-height:20px}
+.sl{transition:--p var(--sf);display:flex;flex-direction:column;gap:4px;padding:16px 20px 12px;border-radius:20px;background:var(--md-sc-low);min-width:0}
+.slh{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-weight:600;font-size:14px;line-height:20px}
+.slh .lv{color:var(--md-on-surface-variant);font-weight:500;font-variant-numeric:tabular-nums}
+.slb{position:relative;height:44px;margin:40px 2px 0}
+.slb input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:2}
+.tra{position:absolute;left:0;top:14px;height:16px;width:max(0px,calc(var(--p) - 8px));border-radius:8px 3px 3px 8px;background:var(--md-primary)}
+.tri{position:absolute;right:0;top:14px;height:16px;left:min(100%,calc(var(--p) + 8px));border-radius:3px 8px 8px 3px;background:var(--md-secondary-container)}
+.stp{position:absolute;right:6px;top:20px;width:4px;height:4px;border-radius:2px;background:var(--md-on-secondary-container)}
+[data-v="5"] .stp,[data-v="150"] .stp{display:none}
+.hdl{position:absolute;top:0;left:calc(var(--p) - 2px);width:4px;height:44px;border-radius:2px;background:var(--md-primary);pointer-events:none;transition:width var(--sf),margin var(--sf)}
+.slb input:active ~ .hdl,.slb input:focus-visible ~ .hdl{width:8px;margin-left:-2px}
+.slb input:focus-visible ~ .hdl{outline:3px solid var(--md-primary);outline-offset:2px}
+.bub{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);min-width:44px;height:36px;padding:0 12px;border-radius:18px;background:var(--md-inverse-surface);color:var(--md-inverse-on-surface);display:grid;place-items:center;font-weight:600;font-size:14px;line-height:20px;font-variant-numeric:tabular-nums;transition:transform var(--sf)}
+.slb input:active ~ .hdl .bub{transform:translateX(-50%) scale(1.12)}
+.slx{display:flex;justify-content:space-between;font-size:12px;line-height:16px;color:var(--md-on-surface-variant)}
+[data-v="1"]{--p:0%}[data-v="2"]{--p:25%}[data-v="3"]{--p:50%}[data-v="4"]{--p:75%}[data-v="5"]{--p:100%}
+[data-v="85"]{--p:0%;--ts:.85}[data-v="90"]{--p:7.69%;--ts:.9}[data-v="95"]{--p:15.38%;--ts:.95}[data-v="100"]{--p:23.08%;--ts:1}[data-v="105"]{--p:30.77%;--ts:1.05}[data-v="110"]{--p:38.46%;--ts:1.1}[data-v="115"]{--p:46.15%;--ts:1.15}[data-v="120"]{--p:53.85%;--ts:1.2}[data-v="125"]{--p:61.54%;--ts:1.25}[data-v="130"]{--p:69.23%;--ts:1.3}[data-v="135"]{--p:76.92%;--ts:1.35}[data-v="140"]{--p:84.62%;--ts:1.4}[data-v="145"]{--p:92.31%;--ts:1.45}[data-v="150"]{--p:100%;--ts:1.5}
+.sample{margin:0;font-size:calc(16px * var(--ts,1));line-height:1.45;color:var(--md-on-surface-variant);transition:font-size var(--sf)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{position:relative;isolation:isolate;overflow:hidden;padding:12px 12px 14px;border:0;border-radius:16px;background:var(--md-sc-low);box-shadow:inset 0 0 0 1px var(--md-outline-variant);color:var(--md-on-surface);text-align:left;display:flex;flex-direction:column;gap:12px;cursor:pointer;transition:border-radius var(--sd),box-shadow var(--fx)}
+.tile::before{content:'';position:absolute;inset:0;background:var(--md-on-surface);opacity:0;transition:opacity var(--fx);z-index:-1}
+.tile:hover::before{opacity:.06}.tile:active{border-radius:12px}
+.tile[aria-pressed="true"]{border-radius:28px;box-shadow:inset 0 0 0 3px var(--md-primary)}
+.tile .pv{height:88px;border-radius:12px;display:flex;gap:6px;padding:8px;transition:border-radius var(--sd)}
+.tile[aria-pressed="true"] .pv{border-radius:20px}
+.tile .rb{width:20px;height:20px;border-radius:10px;box-shadow:inset 0 0 0 2px var(--md-on-surface-variant);display:grid;place-items:center;flex:none;transition:box-shadow var(--fx)}
+.tile .rb::after{content:'';width:10px;height:10px;border-radius:5px;background:var(--md-primary);transform:scale(0);transition:transform var(--sf)}
+.tile[aria-pressed="true"] .rb{box-shadow:inset 0 0 0 2px var(--md-primary)}
+.tile[aria-pressed="true"] .rb::after{transform:scale(1)}
+
+.fld{display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:16px;font-weight:600;color:var(--md-on-surface-variant);min-width:0}
+.fld .sel{position:relative;display:block}
+.fld select{appearance:none;-webkit-appearance:none;width:100%;min-height:56px;padding:0 44px 0 16px;border:0;border-radius:16px;background:var(--md-sc-high);color:var(--md-on-surface);font-size:16px;line-height:24px;font-weight:400;cursor:pointer}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.err{box-shadow:inset 0 0 0 1px var(--md-error);color:var(--md-error)}
+@media (max-width:1000px){.layout{flex-direction:column;gap:16px}.snav{position:relative;top:0;flex:none;flex-direction:row;gap:8px;width:100%;overflow-x:auto;padding-bottom:4px}.sind{display:none}.si{height:40px;border-radius:10px;padding:0 14px 0 10px;box-shadow:inset 0 0 0 1px var(--md-outline-variant)}.si[aria-current="true"]{background:var(--md-secondary-container);box-shadow:none}.si::before{border-radius:10px}.cards{width:100%;flex:none}}
+@media (max-width:640px){.card{padding:20px;border-radius:24px}.tiles{gap:8px}.tile .pv{height:72px}}
+</style>
+</helmet>
+<div class="stage" data-theme="{{theme}}" data-reveal="{{reveal}}" data-rm="{{rm}}">
+<div class="app">
+<nav class="rail" aria-label="Main" data-nav="{{nav}}" data-anim="{{navAnim}}">
+<a class="wm" href="#top">Commonplace</a>
+<button type="button" class="fab" aria-label="New task" title="New task"><span class="ms l" aria-hidden="true">edit</span></button>
+<ul class="rlist">
+<li aria-hidden="true" class="rind"></li>
+<li><button type="button" class="ri" aria-current="{{navWork}}" onClick="{{goWork}}"><span class="pl"><span class="ms l" aria-hidden="true">dashboard</span></span>Workspace</button></li>
+<li><button type="button" class="ri" aria-current="{{navGuide}}" onClick="{{goGuide}}"><span class="pl"><span class="ms l" aria-hidden="true">explore</span></span>Field guide</button></li>
+<li><button type="button" class="ri" aria-current="{{navTools}}" onClick="{{goTools}}"><span class="pl"><span class="ms l" aria-hidden="true">construction</span></span>Local tools</button></li>
+<li><button type="button" class="ri" aria-current="{{navSettings}}" onClick="{{goSettings}}"><span class="pl"><span class="ms l" aria-hidden="true">settings</span></span>Settings</button></li>
+</ul>
+</nav>
+
+<div class="pane">
+<header class="topbar en" style="animation-delay: 0ms">
+<span class="wm" style="font-size: 18px; line-height: 24px; margin-right: auto">Commonplace</span>
+<button type="button" class="btn ib" aria-label="Find an action" style="color: var(--md-on-surface-variant)"><span class="ms l" aria-hidden="true">search</span></button>
+<button type="button" class="btn ib" aria-label="Menu" style="color: var(--md-on-surface-variant)"><span class="ms l" aria-hidden="true">more_vert</span></button>
+</header>
+<main id="top" class="inner" style="display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 32px; padding-top: 16px">
+<div style="flex: 1 1 360px; min-width: 0">
+<p class="en" style="margin: 0 0 8px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--md-on-surface-variant); animation-delay: 40ms">Preferences stay in this browser <span lang="yue-Hant" style="font-weight: 500">· 設定</span></p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<h1 class="hd hx" style="margin: 0; font-size: 57px; line-height: 64px; letter-spacing: -0.03em; animation-delay: 40ms">Settings</h1>
+<span class="en" style="animation-delay: 120ms; display: inline-flex"><span class="saved" data-pulse="{{pulse}}"><span class="ms f" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">cloud_done</span><span role="status">Saved in this browser.</span></span></span>
+</div>
+</div>
+<label class="sbar en" style="flex: 1 1 320px; max-width: 440px; min-width: 0; animation-delay: 80ms">
+<span class="ms l" aria-hidden="true">search</span>
+<span class="vh">Search settings and current values</span>
+<input type="search" placeholder="Search settings and current values">
+</label>
+</div>
+
+<div class="layout">
+<ul class="snav en" aria-label="Settings sections" data-sec="{{sec}}" style="animation-delay: 120ms">
+<li aria-hidden="true" class="sind"></li>
+<li><a class="si" href="#language" aria-current="{{sLanguage}}" onClick="{{goLanguage}}"><span class="ms l" aria-hidden="true">translate</span>Language</a></li>
+<li><a class="si" href="#appearance" aria-current="{{sAppearance}}" onClick="{{goAppearance}}"><span class="ms l" aria-hidden="true">palette</span>Appearance</a></li>
+<li><a class="si" href="#wording" aria-current="{{sWording}}" onClick="{{goWording}}"><span class="ms l" aria-hidden="true">dictionary</span>Personal wording</a></li>
+<li><a class="si" href="#narrator" aria-current="{{sNarrator}}" onClick="{{goNarrator}}"><span class="ms l" aria-hidden="true">record_voice_over</span>Narrator</a></li>
+<li><a class="si" href="#data" aria-current="{{sData}}" onClick="{{goData}}"><span class="ms l" aria-hidden="true">settings_backup_restore</span>Data &amp; recovery</a></li>
+<li><a class="si" href="#about" aria-current="{{sAbout}}" onClick="{{goAbout}}"><span class="ms l" aria-hidden="true">info</span>Browser boundaries</a></li>
+</ul>
+
+<div class="cards">
+
+<section id="language" class="card en" aria-labelledby="h-language" style="animation-delay: 160ms">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 id="h-language">Language</h2>
+<p class="note">Both languages default to level 5. Playfulness styles messages, including errors and warnings, without changing facts. Set either language to 1 for a serious tone.</p>
+</div>
+<div class="cbg" role="group" aria-label="Language" style="max-width: 560px">
+<button type="button" class="btn" aria-pressed="{{lEn}}" onClick="{{pickEn}}"><span class="ms ck" aria-hidden="true">check</span>English</button>
+<button type="button" class="btn" aria-pressed="{{lYue}}" onClick="{{pickYue}}" lang="yue-Hant"><span class="ms ck" aria-hidden="true">check</span>廣東話</button>
+<button type="button" class="btn" aria-pressed="{{lBoth}}" onClick="{{pickBoth}}"><span class="ms ck" aria-hidden="true">check</span>Bilingual</button>
+</div>
+<div class="grid2">
+<div class="sl" data-v="{{en}}">
+<div class="slh"><label for="s-en">English playfulness</label><span class="lv">Level {{en}} of 5</span></div>
+<div class="slb">
+<input id="s-en" type="range" min="1" max="5" step="1" value="{{en}}" onChange="{{setEn}}">
+<span class="tra"></span><span class="tri"></span><span class="stp"></span>
+<span class="hdl"><span class="bub" aria-hidden="true">{{en}}</span></span>
+</div>
+<div class="slx"><span>Serious</span><span>Playful</span></div>
+</div>
+<div class="sl" data-v="{{yue}}">
+<div class="slh"><label for="s-yue">Cantonese playfulness</label><span class="lv">Level {{yue}} of 5</span></div>
+<div class="slb">
+<input id="s-yue" type="range" min="1" max="5" step="1" value="{{yue}}" onChange="{{setYue}}">
+<span class="tra"></span><span class="tri"></span><span class="stp"></span>
+<span class="hdl"><span class="bub" aria-hidden="true">{{yue}}</span></span>
+</div>
+<div class="slx"><span>Serious</span><span>Playful</span></div>
+</div>
+</div>
+<div class="swrow" style="border-top: 1px solid var(--md-sc-high); padding-top: 8px">
+<span id="l-emoji" style="font-size: 16px; line-height: 24px">Show emojis in dialogs and message boxes</span>
+<button type="button" class="sw" role="switch" aria-checked="{{emoji}}" aria-labelledby="l-emoji" onClick="{{toggleEmoji}}"><span class="th"><span class="ms" aria-hidden="true">check</span></span></button>
+</div>
+</section>
+
+<section id="appearance" class="card en" aria-labelledby="h-appearance" style="animation-delay: 200ms">
+<h2 id="h-appearance">Appearance</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+<span style="font-size: 14px; line-height: 20px; font-weight: 600">Theme</span>
+<div class="tiles" role="group" aria-label="Theme">
+<button type="button" class="tile" aria-pressed="{{tLight}}" onClick="{{pickLight}}">
+<span class="pv" aria-hidden="true" style="background: #F5F2FA"><span style="width: 14px; border-radius: 7px; background: #E3E1E9"></span><span style="flex: 1; border-radius: 8px; background: #DEE1F9"></span><span style="flex: 1; border-radius: 8px; background: #FFDCBE"></span><span style="flex: 1; border-radius: 8px; background: #DDE1FF"></span></span>
+<span style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; line-height: 20px"><span class="rb" aria-hidden="true"></span>Light</span>
+</button>
+<button type="button" class="tile" aria-pressed="{{tDark}}" onClick="{{pickDark}}">
+<span class="pv" aria-hidden="true" style="background: #1B1B21"><span style="width: 14px; border-radius: 7px; background: #34343A"></span><span style="flex: 1; border-radius: 8px; background: #424659"></span><span style="flex: 1; border-radius: 8px; background: #6A3C00"></span><span style="flex: 1; border-radius: 8px; background: #0035C2"></span></span>
+<span style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; line-height: 20px"><span class="rb" aria-hidden="true"></span>Dark</span>
+</button>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<div class="sl" data-v="{{ts}}">
+<div class="slh"><label for="s-ts">Text size</label><span class="lv">{{ts}}%</span></div>
+<div class="slb">
+<input id="s-ts" type="range" min="85" max="150" step="5" value="{{ts}}" onChange="{{setTs}}">
+<span class="tra"></span><span class="tri"></span><span class="stp"></span>
+<span class="hdl"><span class="bub" aria-hidden="true">{{ts}}%</span></span>
+</div>
+<p class="sample" aria-hidden="true">The quick note reads like this.</p>
+</div>
+</div>
+</div>
+<div class="swrow" style="border-top: 1px solid var(--md-sc-high); padding-top: 8px">
+<span id="l-rm" style="font-size: 16px; line-height: 24px">Reduce motion</span>
+<button type="button" class="sw" role="switch" aria-checked="{{rm}}" aria-labelledby="l-rm" onClick="{{toggleRm}}"><span class="th"><span class="ms" aria-hidden="true">check</span></span></button>
+</div>
+</section>
+
+<section id="wording" class="card en" aria-labelledby="h-wording" style="animation-delay: 240ms">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 id="h-wording">Personal wording</h2>
+<p class="note">Local JSON upload. The file is validated before use and never included in exports or history.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center">
+<p style="margin: 0; flex: 1 1 280px; min-width: 0; padding: 12px 16px; border-radius: 16px; background: var(--md-sc-low); font-size: 14px; line-height: 20px; display: flex; gap: 10px; align-items: flex-start"><span class="ms" aria-hidden="true" style="color: var(--md-on-surface-variant)">info</span>No personal wording loaded. Original labels are in use.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<label class="btn tonal icon-lead"><span class="ms" aria-hidden="true">upload_file</span>Choose JSON file<input type="file" accept=".json,application/json" class="vh"></label>
+<button type="button" class="btn outlined" disabled>Clear</button>
+</div>
+</div>
+</section>
+
+<section id="narrator" class="card en" aria-labelledby="h-narrator" style="animation-delay: 280ms">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 id="h-narrator">Narrator</h2>
+<p class="note">Off by default. Uses voices actually installed in your browser. Cantonese requires a Hong Kong Cantonese voice; unavailable voices are not substituted.</p>
+</div>
+<div class="swrow">
+<span id="l-speak" style="font-size: 16px; line-height: 24px">Speak app events</span>
+<button type="button" class="sw" role="switch" aria-checked="{{speak}}" aria-labelledby="l-speak" onClick="{{toggleSpeak}}"><span class="th"><span class="ms" aria-hidden="true">check</span></span></button>
+</div>
+<div class="grid2">
+<label class="fld">English voice<span class="sel"><select><option>Choose automatically</option></select><span class="ms" aria-hidden="true" style="position: absolute; right: 14px; top: 18px; pointer-events: none">expand_more</span></span></label>
+<label class="fld">Cantonese voice<span class="sel"><select><option>Choose automatically</option></select><span class="ms" aria-hidden="true" style="position: absolute; right: 14px; top: 18px; pointer-events: none">expand_more</span></span></label>
+</div>
+<button type="button" class="btn outlined icon-lead" style="align-self: flex-start"><span class="ms" aria-hidden="true">volume_up</span>Test narration</button>
+</section>
+
+<section id="data" class="card en" aria-labelledby="h-data" style="animation-delay: 320ms">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h2 id="h-data">Data &amp; recovery</h2>
+<p class="note">JSON backups contain tasks and preferences. Personal wording and file metadata are always omitted. Import replaces tasks and preferences after confirmation.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" class="btn filled icon-lead"><span class="ms" aria-hidden="true">download</span>Export workspace</button>
+<button type="button" class="btn tonal icon-lead"><span class="ms" aria-hidden="true">upload</span>Import workspace</button>
+<button type="button" class="btn tonal icon-lead"><span class="ms" aria-hidden="true">history</span>Local history</button>
+<button type="button" class="btn tonal icon-lead"><span class="ms" aria-hidden="true">undo</span>Undo last change</button>
+<span aria-hidden="true" style="flex: 1 1 8px"></span>
+<button type="button" class="btn err">Reset preferences</button>
+</div>
+</section>
+
+<section id="about" class="card en" aria-labelledby="h-about" style="animation-delay: 360ms; background: var(--md-tertiary-container); color: var(--md-on-tertiary-container)">
+<h2 id="h-about">Browser boundaries</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px">This is a browser-local sample, not a native application. It cannot control operating-system credentials, run installers, manage servers, or synchronize a universal lock across unrelated apps. These capabilities remain unimplemented.</p>
+</section>
+
+</div>
+</div>
+</main>
+<footer style="max-width: 1200px; margin: 0 auto; padding: 0 40px 32px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px">
+<span>No accounts. No telemetry. No remote writes.</span>
+<span class="mono">Running version [VERSION] · [COMMIT TIME]</span>
+</footer>
+</div>
+</div>
+<div class="pbar">
+<nav class="bnav" aria-label="Main" data-nav="{{nav}}" data-anim="{{navAnim}}">
+<div class="bwrap">
+<span class="bind" aria-hidden="true"></span>
+<button type="button" class="bi" aria-current="{{navWork}}" onClick="{{goWork}}"><span class="pl"><span class="ms l" aria-hidden="true">dashboard</span></span>Workspace</button>
+<button type="button" class="bi" aria-current="{{navGuide}}" onClick="{{goGuide}}"><span class="pl"><span class="ms l" aria-hidden="true">explore</span></span>Field guide</button>
+<button type="button" class="bi" aria-current="{{navTools}}" onClick="{{goTools}}"><span class="pl"><span class="ms l" aria-hidden="true">construction</span></span>Local tools</button>
+<button type="button" class="bi" aria-current="{{navSettings}}" onClick="{{goSettings}}"><span class="pl"><span class="ms l" aria-hidden="true">settings</span></span>Settings</button>
+</div>
+</nav>
+<button type="button" class="xfab"><span class="ms l" aria-hidden="true">edit</span>New task</button>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2114}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { nav: 'settings', navAnim: 'none', sec: 'language', lang: 'both', en: 5, yue: 3, emoji: true, theme: 'light', reveal: 'none', ts: 110, rm: false, speak: false, pulse: 'none' };
+  }
+  save(patch) {
+    this.setState(Object.assign({}, patch, { pulse: this.state.pulse === 'a' ? 'b' : 'a' }));
+  }
+  renderVals() {
+    const self = this, s = this.state;
+    const go = (n) => () => self.setState({ nav: n, navAnim: s.navAnim === 'a' ? 'b' : 'a' });
+    const sec = (n) => () => self.setState({ sec: n });
+    const num = (k) => (e) => self.save({ [k]: Number(e && e.target ? e.target.value : s[k]) });
+    const theme = (t) => () => { if (s.theme !== t) self.save({ theme: t, reveal: s.reveal === 'a' ? 'b' : 'a' }); };
+    return {
+      nav: s.nav, navAnim: s.navAnim,
+      navWork: s.nav === 'work' ? 'page' : false, navGuide: s.nav === 'guide' ? 'page' : false,
+      navTools: s.nav === 'tools' ? 'page' : false, navSettings: s.nav === 'settings' ? 'page' : false,
+      goWork: go('work'), goGuide: go('guide'), goTools: go('tools'), goSettings: go('settings'),
+      sec: s.sec,
+      sLanguage: s.sec === 'language', sAppearance: s.sec === 'appearance', sWording: s.sec === 'wording',
+      sNarrator: s.sec === 'narrator', sData: s.sec === 'data', sAbout: s.sec === 'about',
+      goLanguage: sec('language'), goAppearance: sec('appearance'), goWording: sec('wording'),
+      goNarrator: sec('narrator'), goData: sec('data'), goAbout: sec('about'),
+      lEn: s.lang === 'en', lYue: s.lang === 'yue', lBoth: s.lang === 'both',
+      pickEn: () => self.save({ lang: 'en' }), pickYue: () => self.save({ lang: 'yue' }), pickBoth: () => self.save({ lang: 'both' }),
+      en: s.en, yue: s.yue, ts: s.ts, setEn: num('en'), setYue: num('yue'), setTs: num('ts'),
+      emoji: s.emoji, toggleEmoji: () => self.save({ emoji: !s.emoji }),
+      theme: s.theme, reveal: s.reveal, tLight: s.theme === 'light', tDark: s.theme === 'dark',
+      pickLight: theme('light'), pickDark: theme('dark'),
+      rm: s.rm, toggleRm: () => self.save({ rm: !s.rm }),
+      speak: s.speak, toggleSpeak: () => self.save({ speak: !s.speak }),
+      pulse: s.pulse
+    };
+  }
+}
+</script>
+</body>
+</html>

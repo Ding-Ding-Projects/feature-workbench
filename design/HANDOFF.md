@@ -54,6 +54,17 @@ Artboards are Design Component HTML files. They open in the design canvas this w
 - Gold examples used for calibration: `static-card` (quiet hierarchy, restraint) and `linear` (lead with the product surface). No gold folder was copied, because these are real application screens rather than a marketing illustration.
 - Stageshow rules that do not apply to real application screens and were recorded as not applicable: hero bleed and crop, satellites, the no-real-headings rule, cursor, motion and loop rules.
 
+## v2: Material 3 Expressive (current)
+
+The owner asked for a full redesign that is more modern and much more animated. v2 replaces the v1 look; v1 artboards stay on the canvas for history.
+
+- Artboards (canvas page "v2 Expressive"): `V2-Workspace.dc.html` (interactive), `V2-Workspace-Dark.dc.html`, `V2-Mobile.dc.html` (interactive), `V2-Guide.dc.html` (interactive, 114-feature ledger), `V2-Settings.dc.html` (interactive, circular theme reveal), `V2-Setup.dc.html` (interactive). Stills in `frames/V2-*.jpg`.
+- Colour: Material 3 tonal roles from seed #2546D6 with an amber tertiary, light and dark. To do = secondary container, In progress = tertiary container, Done = primary container.
+- Shape: Expressive corner scale (4 to 48 px and full); buttons are pills that morph to 12 px corners while pressed; one slowly rotating scalloped shape per screen at most.
+- Motion: spring tokens as CSS `linear()` curves (fast spatial 350 ms, default spatial 500 ms, effects 200 ms) and ten choreographies: staggered page entrance, sliding navigation indicator, FLIP task moves with rolling counts, press shape morph, collapsing FAB, dialogs growing from their trigger, wavy setup progress, save chip pulse, staggered and expanding lists, circular theme reveal. Reduced motion (system or app setting) removes all of it.
+- Layout: navigation rail on desktop, bottom navigation bar with an extended FAB on phones, floating toolbar, connected button groups on task cards, Material 3 search bar, sliders and switches.
+- The live site implements v2 (source `d73f1e9`); see `docs/design-implementation.md`.
+
 ## Feature deep dive
 
 Every one of the 114 features tracked in `src/features.json` (statuses as of `8157584`) has a card on one of 14 pages: Language, voice and personalization (13), Games (2), Appearance and layout (13, including live charts), Navigation, search and commands (11), Safety, locks and authentication (7), Records, history and messages (7), Built-in tools and hand-off (9, including Drawesome drawing), Status Hub (4), Completeness and evidence (6), Landing site and shared links (10), Build and install (8), Release pipeline (8), Repository records and README (13), Canonical instruction deliverables (3).

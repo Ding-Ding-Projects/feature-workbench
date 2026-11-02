@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonplace setup</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0..1,0&amp;family=Noto+Sans+HK:wght@400;500&amp;display=swap">
+<style>
+:root,[data-theme="light"]{--md-primary:#2546D6;--md-on-primary:#FFFFFF;--md-primary-container:#DDE1FF;--md-on-primary-container:#001257;--md-secondary:#595D72;--md-secondary-container:#DEE1F9;--md-on-secondary-container:#161B2C;--md-tertiary:#8B5000;--md-tertiary-container:#FFDCBE;--md-on-tertiary-container:#2D1600;--md-error:#BA1A1A;--md-error-container:#FFDAD6;--md-on-error-container:#410002;--md-surface:#FBF8FF;--md-scl:#FFFFFF;--md-sc-low:#F5F2FA;--md-sc:#EFEDF4;--md-sc-high:#E9E7EF;--md-sc-highest:#E3E1E9;--md-on-surface:#1B1B21;--md-on-surface-variant:#45464F;--md-outline:#767680;--md-outline-variant:#C6C5D0;--md-inverse-surface:#303036;--md-inverse-on-surface:#F2EFF7;--md-inverse-primary:#B9C3FF;--ok-container:#C8EBC8;--on-ok-container:#002106}
+[data-theme="dark"]{--md-primary:#B9C3FF;--md-on-primary:#00218B;--md-primary-container:#0035C2;--md-on-primary-container:#DDE1FF;--md-secondary:#C2C5DD;--md-secondary-container:#424659;--md-on-secondary-container:#DEE1F9;--md-tertiary:#FFB870;--md-tertiary-container:#6A3C00;--md-on-tertiary-container:#FFDCBE;--md-error:#FFB4AB;--md-error-container:#93000A;--md-on-error-container:#FFDAD6;--md-surface:#121318;--md-scl:#0D0E13;--md-sc-low:#1B1B21;--md-sc:#1F1F25;--md-sc-high:#292A2F;--md-sc-highest:#34343A;--md-on-surface:#E4E1E9;--md-on-surface-variant:#C6C5D0;--md-outline:#90909A;--md-outline-variant:#45464F;--md-inverse-surface:#E4E1E9;--md-inverse-on-surface:#303036;--md-inverse-primary:#2546D6;--ok-container:#1E4D22;--on-ok-container:#C8EBC8}
+:root{--sf:350ms linear(0, 0.013 0.6%, 0.05 1.2%, 0.2 2.6%, 0.468 4.4%, 0.734 6.3%, 0.899 8%, 1.003 9.8%, 1.058 11.6%, 1.074 13.6%, 1.06 15.6%, 1.03 18.1%, 1.002 21.3%, 0.991 25.4%, 1.001 34.4%, 1);--sd:500ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);--ss:650ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);--fx:200ms cubic-bezier(0.34, 0.8, 0.34, 1)}
+@property --p{syntax:'<percentage>';inherits:true;initial-value:0%}
+body{margin:0;background:#FBF8FF}
+*{box-sizing:border-box}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--md-primary)}
+:focus-visible{outline:3px solid var(--md-primary);outline-offset:2px}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block;transition:font-variation-settings var(--fx)}
+.ms.l{font-size:24px;width:24px;height:24px;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 24}
+.ms.f{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.hd{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500}
+/* buttons: pill at rest, 12px corners while pressed, state layers 8/10/10 */
+.btn{position:relative;isolation:isolate;overflow:hidden;min-height:44px;padding:0 20px;border:0;border-radius:22px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:Inter,'Noto Sans HK',sans-serif;font-weight:600;font-size:14px;line-height:20px;cursor:pointer;text-decoration:none;white-space:nowrap;background:transparent;color:var(--md-primary);transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.btn::before{content:'';position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity var(--fx);z-index:-1;pointer-events:none}
+.btn:hover::before{opacity:.08}.btn:focus-visible::before,.btn:active::before{opacity:.10}
+.btn:active{border-radius:12px}
+.btn.lg{min-height:48px;border-radius:24px;padding:0 24px}.btn.lg:active{border-radius:12px}
+.btn.filled{background:var(--md-primary);color:var(--md-on-primary)}
+.btn.tonal{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.btn.outlined{box-shadow:inset 0 0 0 1px var(--md-outline-variant);color:var(--md-on-surface-variant)}
+.btn.text{padding:0 14px}
+.btn.ib{width:44px;padding:0;flex:none}
+.btn.icon-lead{padding-left:16px}
+.btn[disabled]{color:color-mix(in srgb,var(--md-on-surface) 45%,transparent);cursor:default}.btn[disabled]::before{display:none}
+/* entrance: header first, then content in 40ms steps */
+@keyframes enter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes hx{from{opacity:0;letter-spacing:.02em}to{opacity:1;letter-spacing:-.03em}}
+.en{animation:enter var(--sd) both}
+.hx{animation:hx 600ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1) both}
+/* wavy linear progress */
+.wavy{position:relative;height:12px;display:flex;align-items:center;gap:6px}
+.wact{height:12px;flex:none;transition:width var(--ss)}
+.wline{height:12px;background:var(--md-primary);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M-40 6 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E") repeat-x 0 0/40px 12px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M-40 6 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E") repeat-x 0 0/40px 12px;animation:phase 1.4s linear infinite}
+@keyframes phase{to{-webkit-mask-position:-40px 0;mask-position:-40px 0}}
+.wact .wline{border-radius:6px 0 0 6px}
+.winact{flex:1;height:4px;border-radius:2px;background:var(--md-secondary-container);min-width:8px}
+.wstop{width:4px;height:4px;border-radius:2px;background:var(--md-primary);flex:none}
+/* cookie shape */
+@keyframes spin{to{transform:rotate(360deg)}}
+.cookie{animation:spin 40s linear infinite;clip-path:polygon(100.0% 50.0%, 99.3% 52.2%, 97.3% 54.1%, 94.6% 55.9%, 91.9% 57.4%, 89.7% 58.8%, 88.6% 60.4%, 88.8% 62.2%, 89.9% 64.5%, 91.6% 67.2%, 93.0% 70.1%, 93.8% 72.8%, 93.3% 75.0%, 91.6% 76.5%, 88.9% 77.2%, 85.7% 77.4%, 82.6% 77.3%, 80.0% 77.5%, 78.3% 78.3%, 77.5% 80.0%, 77.3% 82.6%, 77.4% 85.7%, 77.2% 88.9%, 76.5% 91.6%, 75.0% 93.3%, 72.8% 93.8%, 70.1% 93.0%, 67.2% 91.6%, 64.5% 89.9%, 62.2% 88.8%, 60.4% 88.6%, 58.8% 89.7%, 57.4% 91.9%, 55.9% 94.6%, 54.1% 97.3%, 52.2% 99.3%, 50.0% 100.0%, 47.8% 99.3%, 45.9% 97.3%, 44.1% 94.6%, 42.6% 91.9%, 41.2% 89.7%, 39.6% 88.6%, 37.8% 88.8%, 35.5% 89.9%, 32.8% 91.6%, 29.9% 93.0%, 27.2% 93.8%, 25.0% 93.3%, 23.5% 91.6%, 22.8% 88.9%, 22.6% 85.7%, 22.7% 82.6%, 22.5% 80.0%, 21.7% 78.3%, 20.0% 77.5%, 17.4% 77.3%, 14.3% 77.4%, 11.1% 77.2%, 8.4% 76.5%, 6.7% 75.0%, 6.2% 72.8%, 7.0% 70.1%, 8.4% 67.2%, 10.1% 64.5%, 11.2% 62.2%, 11.4% 60.4%, 10.3% 58.8%, 8.1% 57.4%, 5.4% 55.9%, 2.7% 54.1%, 0.7% 52.2%, 0.0% 50.0%, 0.7% 47.8%, 2.7% 45.9%, 5.4% 44.1%, 8.1% 42.6%, 10.3% 41.2%, 11.4% 39.6%, 11.2% 37.8%, 10.1% 35.5%, 8.4% 32.8%, 7.0% 29.9%, 6.2% 27.2%, 6.7% 25.0%, 8.4% 23.5%, 11.1% 22.8%, 14.3% 22.6%, 17.4% 22.7%, 20.0% 22.5%, 21.7% 21.7%, 22.5% 20.0%, 22.7% 17.4%, 22.6% 14.3%, 22.8% 11.1%, 23.5% 8.4%, 25.0% 6.7%, 27.2% 6.2%, 29.9% 7.0%, 32.8% 8.4%, 35.5% 10.1%, 37.8% 11.2%, 39.6% 11.4%, 41.2% 10.3%, 42.6% 8.1%, 44.1% 5.4%, 45.9% 2.7%, 47.8% 0.7%, 50.0% 0.0%, 52.2% 0.7%, 54.1% 2.7%, 55.9% 5.4%, 57.4% 8.1%, 58.8% 10.3%, 60.4% 11.4%, 62.2% 11.2%, 64.5% 10.1%, 67.2% 8.4%, 70.1% 7.0%, 72.8% 6.2%, 75.0% 6.7%, 76.5% 8.4%, 77.2% 11.1%, 77.4% 14.3%, 77.3% 17.4%, 77.5% 20.0%, 78.3% 21.7%, 80.0% 22.5%, 82.6% 22.7%, 85.7% 22.6%, 88.9% 22.8%, 91.6% 23.5%, 93.3% 25.0%, 93.8% 27.2%, 93.0% 29.9%, 91.6% 32.8%, 89.9% 35.5%, 88.8% 37.8%, 88.6% 39.6%, 89.7% 41.2%, 91.9% 42.6%, 94.6% 44.1%, 97.3% 45.9%, 99.3% 47.8%)}
+/* switch with thumb icon */
+.sw{position:relative;flex:none;width:52px;height:32px;border-radius:16px;border:2px solid var(--md-outline);background:var(--md-sc-highest);padding:0;cursor:pointer;transition:background-color var(--fx),border-color var(--fx)}
+.sw::after{content:'';position:absolute;inset:-8px -2px}
+.sw .th{position:absolute;top:50%;left:6px;width:16px;height:16px;margin-top:-8px;border-radius:12px;background:var(--md-outline);display:grid;place-items:center;transition:left var(--sf),width var(--sf),height var(--sf),margin var(--sf),background-color var(--fx)}
+.sw .th .ms{font-size:16px;width:16px;height:16px;opacity:0;transform:scale(.4);color:var(--md-on-primary-container);transition:opacity var(--fx),transform var(--sf)}
+.sw[aria-checked="true"]{background:var(--md-primary);border-color:var(--md-primary)}
+.sw[aria-checked="true"] .th{left:22px;width:24px;height:24px;margin-top:-12px;background:var(--md-on-primary)}
+.sw[aria-checked="true"] .th .ms{opacity:1;transform:none}
+.sw:active .th{width:28px;height:28px;margin-top:-14px;left:2px}
+.sw[aria-checked="true"]:active .th{left:18px}
+.swrow{display:flex;align-items:center;gap:16px;min-height:56px;justify-content:space-between}
+/* connected button group */
+.cbg{display:flex;gap:2px;flex-wrap:nowrap}
+.cbg .btn{flex:1 1 0;min-width:0;border-radius:8px;background:var(--md-sc-high);color:var(--md-on-surface);padding:0 12px;transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.cbg .btn:first-child{border-radius:22px 8px 8px 22px}.cbg .btn:last-child{border-radius:8px 22px 22px 8px}
+.cbg .btn[aria-pressed="true"]{border-radius:22px;background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.cbg .btn .ck{width:0;opacity:0;transition:width var(--sf),opacity var(--fx)}
+.cbg .btn[aria-pressed="true"] .ck{width:20px;opacity:1}
+.cbg .btn:active{border-radius:12px}
+/* reduced motion: OS setting and the app's own setting */
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:120ms!important;transition-timing-function:linear!important}.loop,.cookie,.wline,.blob{animation:none!important}}
+[data-rm="true"] *,[data-rm="true"] *::before,[data-rm="true"] *::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:120ms!important;transition-timing-function:linear!important}
+[data-rm="true"] .loop,[data-rm="true"] .cookie,[data-rm="true"] .wline,[data-rm="true"] .blob{animation:none!important}
+
+.sl{transition:--p var(--sf);display:flex;flex-direction:column;gap:4px;padding:16px 20px 12px;border-radius:20px;background:var(--md-sc-low);min-width:0}
+.slh{display:flex;justify-content:space-between;gap:12px;align-items:baseline;font-weight:600;font-size:14px;line-height:20px}
+.slh .lv{color:var(--md-on-surface-variant);font-weight:500;font-variant-numeric:tabular-nums}
+.slb{position:relative;height:44px;margin:40px 2px 0}
+.slb input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:2}
+.tra{position:absolute;left:0;top:14px;height:16px;width:max(0px,calc(var(--p) - 8px));border-radius:8px 3px 3px 8px;background:var(--md-primary)}
+.tri{position:absolute;right:0;top:14px;height:16px;left:min(100%,calc(var(--p) + 8px));border-radius:3px 8px 8px 3px;background:var(--md-secondary-container)}
+.stp{position:absolute;right:6px;top:20px;width:4px;height:4px;border-radius:2px;background:var(--md-on-secondary-container)}
+[data-v="5"] .stp,[data-v="150"] .stp{display:none}
+.hdl{position:absolute;top:0;left:calc(var(--p) - 2px);width:4px;height:44px;border-radius:2px;background:var(--md-primary);pointer-events:none;transition:width var(--sf),margin var(--sf)}
+.slb input:active ~ .hdl,.slb input:focus-visible ~ .hdl{width:8px;margin-left:-2px}
+.slb input:focus-visible ~ .hdl{outline:3px solid var(--md-primary);outline-offset:2px}
+.bub{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);min-width:44px;height:36px;padding:0 12px;border-radius:18px;background:var(--md-inverse-surface);color:var(--md-inverse-on-surface);display:grid;place-items:center;font-weight:600;font-size:14px;line-height:20px;font-variant-numeric:tabular-nums;transition:transform var(--sf)}
+.slb input:active ~ .hdl .bub{transform:translateX(-50%) scale(1.12)}
+.slx{display:flex;justify-content:space-between;font-size:12px;line-height:16px;color:var(--md-on-surface-variant)}
+[data-v="1"]{--p:0%}[data-v="2"]{--p:25%}[data-v="3"]{--p:50%}[data-v="4"]{--p:75%}[data-v="5"]{--p:100%}
+[data-v="85"]{--p:0%;--ts:.85}[data-v="90"]{--p:7.69%;--ts:.9}[data-v="95"]{--p:15.38%;--ts:.95}[data-v="100"]{--p:23.08%;--ts:1}[data-v="105"]{--p:30.77%;--ts:1.05}[data-v="110"]{--p:38.46%;--ts:1.1}[data-v="115"]{--p:46.15%;--ts:1.15}[data-v="120"]{--p:53.85%;--ts:1.2}[data-v="125"]{--p:61.54%;--ts:1.25}[data-v="130"]{--p:69.23%;--ts:1.3}[data-v="135"]{--p:76.92%;--ts:1.35}[data-v="140"]{--p:84.62%;--ts:1.4}[data-v="145"]{--p:92.31%;--ts:1.45}[data-v="150"]{--p:100%;--ts:1.5}
+.sample{margin:0;font-size:calc(16px * var(--ts,1));line-height:1.45;color:var(--md-on-surface-variant);transition:font-size var(--sf)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tile{position:relative;isolation:isolate;overflow:hidden;padding:12px 12px 14px;border:0;border-radius:16px;background:var(--md-sc-low);box-shadow:inset 0 0 0 1px var(--md-outline-variant);color:var(--md-on-surface);text-align:left;display:flex;flex-direction:column;gap:12px;cursor:pointer;transition:border-radius var(--sd),box-shadow var(--fx)}
+.tile::before{content:'';position:absolute;inset:0;background:var(--md-on-surface);opacity:0;transition:opacity var(--fx);z-index:-1}
+.tile:hover::before{opacity:.06}.tile:active{border-radius:12px}
+.tile[aria-pressed="true"]{border-radius:28px;box-shadow:inset 0 0 0 3px var(--md-primary)}
+.tile .pv{height:88px;border-radius:12px;display:flex;gap:6px;padding:8px;transition:border-radius var(--sd)}
+.tile[aria-pressed="true"] .pv{border-radius:20px}
+.tile .rb{width:20px;height:20px;border-radius:10px;box-shadow:inset 0 0 0 2px var(--md-on-surface-variant);display:grid;place-items:center;flex:none;transition:box-shadow var(--fx)}
+.tile .rb::after{content:'';width:10px;height:10px;border-radius:5px;background:var(--md-primary);transform:scale(0);transition:transform var(--sf)}
+.tile[aria-pressed="true"] .rb{box-shadow:inset 0 0 0 2px var(--md-primary)}
+.tile[aria-pressed="true"] .rb::after{transform:scale(1)}
+
+.stage{transition:background-color var(--fx);position:relative;overflow:clip;min-height:100vh;background:var(--md-surface);color:var(--md-on-surface);font-family:Inter,'Noto Sans HK',system-ui,sans-serif;font-size:14px;line-height:20px;display:flex;align-items:center;justify-content:center;padding:48px 24px}
+.blob{position:absolute;border-radius:50%;filter:blur(72px);opacity:.85;pointer-events:none}
+.b1{width:560px;height:560px;left:-140px;top:-160px;background:var(--md-primary-container);animation:d1 20s ease-in-out infinite alternate}
+.b2{width:520px;height:520px;right:-160px;top:22%;background:var(--md-tertiary-container);animation:d2 20s ease-in-out infinite alternate}
+.b3{width:600px;height:600px;left:18%;bottom:-260px;background:var(--md-secondary-container);animation:d3 20s ease-in-out infinite alternate}
+@keyframes d1{to{transform:translate(160px,120px) scale(1.1)}}
+@keyframes d2{to{transform:translate(-180px,80px) scale(.92)}}
+@keyframes d3{to{transform:translate(140px,-120px) scale(1.08)}}
+.scard{transition:background-color var(--fx);position:relative;width:100%;max-width:680px;background:var(--md-scl);border-radius:28px;padding:40px;display:flex;flex-direction:column;gap:28px;box-shadow:0 1px 3px rgba(27,27,33,.06),0 12px 32px rgba(27,27,33,.08)}
+.cw{position:relative;width:72px;height:72px;flex:none;display:grid;place-items:center}
+.cw .cookie{position:absolute;inset:0;background:var(--md-primary-container)}
+.cw .num{position:relative;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:30px;line-height:1;color:var(--md-on-primary-container);animation:pop var(--sf) both}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.7)}}
+[data-step="1"] .wact{width:calc(33.333% - 6px)}[data-step="2"] .wact{width:calc(66.666% - 6px)}[data-step="3"] .wact{width:calc(100% - 10px)}
+[data-step="3"] .winact{display:none}
+.slab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;font-size:12px;line-height:16px;font-weight:600;color:var(--md-on-surface-variant)}
+.slab span:nth-child(2){text-align:center}.slab span:nth-child(3){text-align:right}
+.slab [aria-current="step"]{color:var(--md-primary)}
+.saved{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:0 12px 0 8px;border-radius:8px;background:var(--ok-container);color:var(--on-ok-container);font-size:12px;line-height:16px;font-weight:600;flex:none}
+[data-pulse="a"]{animation:pulseA 420ms ease-out}[data-pulse="b"]{animation:pulseB 420ms ease-out}
+@keyframes pulseA{50%{transform:scale(1.06)}}@keyframes pulseB{50%{transform:scale(1.06)}}
+.tf{display:flex;flex-direction:column;gap:6px;font-size:12px;line-height:16px;font-weight:600;color:var(--md-on-surface-variant)}
+.tf input{min-height:56px;padding:0 16px;border:0;border-bottom:2px solid var(--md-outline);border-radius:16px 16px 4px 4px;background:var(--md-sc-high);font-size:16px;line-height:24px;font-weight:400;color:var(--md-on-surface);outline:none;transition:border-color var(--fx)}
+.tf input:focus{border-bottom-color:var(--md-primary)}
+.tf input:focus-visible{outline:3px solid var(--md-primary);outline-offset:2px}
+@media (max-width:640px){.stage{padding:16px;align-items:flex-start}.scard{padding:24px 20px;gap:24px;border-radius:24px}.blob{filter:blur(56px)}}
+</style>
+</helmet>
+<div class="stage" data-theme="{{theme}}" data-rm="{{rm}}">
+<span class="blob b1" aria-hidden="true"></span>
+<span class="blob b2" aria-hidden="true"></span>
+<span class="blob b3" aria-hidden="true"></span>
+
+<main class="scard en" aria-labelledby="step-h" style="animation-delay: 0ms">
+<div class="en" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; animation-delay: 40ms">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; align-items: baseline; gap: 4px 10px; flex-wrap: wrap">
+<span class="hd" style="font-size: 22px; line-height: 28px; letter-spacing: -0.02em">Commonplace</span>
+<span style="font-size: 14px; line-height: 20px; color: var(--md-on-surface-variant)">Set up your workspace</span>
+</div>
+<span class="saved" data-pulse="{{pulse}}"><span class="ms f" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">cloud_done</span><span role="status">Saved in this browser.</span></span>
+</div>
+
+<div class="en" style="display: flex; flex-direction: column; gap: 14px; animation-delay: 80ms" data-step="{{step}}">
+<div style="display: flex; align-items: center; gap: 16px">
+<span class="cw" aria-hidden="true"><span class="cookie"></span>
+<sc-if value="{{s1}}" hint-placeholder-val="{{false}}"><span class="num">1</span></sc-if>
+<sc-if value="{{s2}}" hint-placeholder-val="{{true}}"><span class="num">2</span></sc-if>
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}"><span class="num">3</span></sc-if>
+</span>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-size: 14px; line-height: 20px; font-weight: 600; color: var(--md-on-surface-variant)">Step {{step}} of 3</span>
+<span style="font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant)">Three practical steps. Progress is saved automatically, so you can leave and resume.</span>
+</div>
+</div>
+<progress class="vh" max="3" value="{{step}}">Step {{step}} of 3</progress>
+<div class="wavy" aria-hidden="true">
+<div class="wact"><div class="wline"></div></div>
+<div class="winact"></div>
+<span class="wstop"></span>
+</div>
+<div class="slab"><span aria-current="{{c1}}">Language</span><span aria-current="{{c2}}">Look and comfort</span><span aria-current="{{c3}}">First task</span></div>
+</div>
+
+<sc-if value="{{s1}}" hint-placeholder-val="{{false}}">
+<section class="en" style="display: flex; flex-direction: column; gap: 24px; animation-delay: 120ms">
+<div>
+<h1 id="step-h" class="hd hx" style="margin: 0; font-size: 45px; line-height: 52px; letter-spacing: -0.03em">Choose how this space speaks.</h1>
+<p lang="yue-Hant" style="margin: 8px 0 0; color: var(--md-on-surface-variant); font-size: 18px; line-height: 26px">揀呢個空間用咩語言。</p>
+</div>
+<div class="cbg" role="group" aria-label="Language">
+<button type="button" class="btn" aria-pressed="{{lEn}}" onClick="{{pickEn}}"><span class="ms ck" aria-hidden="true">check</span>English</button>
+<button type="button" class="btn" aria-pressed="{{lYue}}" onClick="{{pickYue}}" lang="yue-Hant"><span class="ms ck" aria-hidden="true">check</span>廣東話</button>
+<button type="button" class="btn" aria-pressed="{{lBoth}}" onClick="{{pickBoth}}"><span class="ms ck" aria-hidden="true">check</span>Bilingual</button>
+</div>
+<p style="margin: 0; color: var(--md-on-surface-variant); font-size: 14px; line-height: 20px">Both languages default to level 5. Playfulness styles messages, including errors and warnings, without changing facts. Set either language to 1 for a serious tone.</p>
+</section>
+</sc-if>
+
+<sc-if value="{{s2}}" hint-placeholder-val="{{true}}">
+<section class="en" style="display: flex; flex-direction: column; gap: 24px; animation-delay: 120ms">
+<div>
+<h1 id="step-h" class="hd hx" style="margin: 0; font-size: 45px; line-height: 52px; letter-spacing: -0.03em">Make it comfortable.</h1>
+<p lang="yue-Hant" style="margin: 8px 0 0; color: var(--md-on-surface-variant); font-size: 18px; line-height: 26px">調整到用得舒服。</p>
+</div>
+<div class="tiles" role="group" aria-label="Theme">
+<button type="button" class="tile" aria-pressed="{{tLight}}" onClick="{{pickLight}}">
+<span class="pv" aria-hidden="true" style="background: #F5F2FA"><span style="width: 14px; border-radius: 7px; background: #E3E1E9"></span><span style="flex: 1; border-radius: 8px; background: #DEE1F9"></span><span style="flex: 1; border-radius: 8px; background: #FFDCBE"></span><span style="flex: 1; border-radius: 8px; background: #DDE1FF"></span></span>
+<span style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; line-height: 20px"><span class="rb" aria-hidden="true"></span>Light</span>
+</button>
+<button type="button" class="tile" aria-pressed="{{tDark}}" onClick="{{pickDark}}">
+<span class="pv" aria-hidden="true" style="background: #1B1B21"><span style="width: 14px; border-radius: 7px; background: #34343A"></span><span style="flex: 1; border-radius: 8px; background: #424659"></span><span style="flex: 1; border-radius: 8px; background: #6A3C00"></span><span style="flex: 1; border-radius: 8px; background: #0035C2"></span></span>
+<span style="display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; line-height: 20px"><span class="rb" aria-hidden="true"></span>Dark</span>
+</button>
+</div>
+<div class="sl" data-v="{{ts}}">
+<div class="slh"><label for="s-ts">Text size</label><span class="lv">{{ts}}%</span></div>
+<div class="slb">
+<input id="s-ts" type="range" min="85" max="150" step="5" value="{{ts}}" onChange="{{setTs}}">
+<span class="tra"></span><span class="tri"></span><span class="stp"></span>
+<span class="hdl"><span class="bub" aria-hidden="true">{{ts}}%</span></span>
+</div>
+<p class="sample" aria-hidden="true">The quick note reads like this.</p>
+</div>
+<div class="swrow" style="margin-top: -8px">
+<span id="l-rm" style="font-size: 16px; line-height: 24px">Reduce motion</span>
+<button type="button" class="sw" role="switch" aria-checked="{{rm}}" aria-labelledby="l-rm" onClick="{{toggleRm}}"><span class="th"><span class="ms" aria-hidden="true">check</span></span></button>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}">
+<section class="en" style="display: flex; flex-direction: column; gap: 24px; animation-delay: 120ms">
+<div>
+<h1 id="step-h" class="hd hx" style="margin: 0; font-size: 45px; line-height: 52px; letter-spacing: -0.03em">Give your next step a name.</h1>
+<p lang="yue-Hant" style="margin: 8px 0 0; color: var(--md-on-surface-variant); font-size: 18px; line-height: 26px">幫你嘅下一步起個名。</p>
+</div>
+<label class="tf">Title<input type="text" autocomplete="off"></label>
+<p style="margin: -12px 0 0; color: var(--md-on-surface-variant); font-size: 14px; line-height: 20px">Optional. Leave empty to start with a blank workspace.</p>
+</section>
+</sc-if>
+
+<div class="en" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between; padding-top: 4px; animation-delay: 160ms">
+<button type="button" class="btn text lg icon-lead" onClick="{{back}}" disabled="{{atStart}}"><span class="ms" aria-hidden="true">arrow_back</span>Back</button>
+<sc-if value="{{notLast}}" hint-placeholder-val="{{true}}"><button type="button" class="btn filled lg" onClick="{{next}}" style="padding-right: 20px">Continue<span class="ms" aria-hidden="true">arrow_forward</span></button></sc-if>
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}"><button type="button" class="btn filled lg" style="padding-right: 20px">Open workspace<span class="ms" aria-hidden="true">arrow_forward</span></button></sc-if>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":990}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: 2, lang: 'both', theme: 'light', ts: 110, rm: false, pulse: 'none' };
+  }
+  save(patch) {
+    this.setState(Object.assign({}, patch, { pulse: this.state.pulse === 'a' ? 'b' : 'a' }));
+  }
+  renderVals() {
+    const self = this, s = this.state;
+    return {
+      step: s.step, s1: s.step === 1, s2: s.step === 2, s3: s.step === 3, notLast: s.step < 3, atStart: s.step === 1,
+      c1: s.step === 1 ? 'step' : false, c2: s.step === 2 ? 'step' : false, c3: s.step === 3 ? 'step' : false,
+      back: () => { if (s.step > 1) self.save({ step: s.step - 1 }); },
+      next: () => { if (s.step < 3) self.save({ step: s.step + 1 }); },
+      lEn: s.lang === 'en', lYue: s.lang === 'yue', lBoth: s.lang === 'both',
+      pickEn: () => self.save({ lang: 'en' }), pickYue: () => self.save({ lang: 'yue' }), pickBoth: () => self.save({ lang: 'both' }),
+      theme: s.theme, tLight: s.theme === 'light', tDark: s.theme === 'dark',
+      pickLight: () => self.save({ theme: 'light' }), pickDark: () => self.save({ theme: 'dark' }),
+      ts: s.ts, setTs: (e) => self.save({ ts: Number(e && e.target ? e.target.value : s.ts) }),
+      rm: s.rm, toggleRm: () => self.save({ rm: !s.rm }),
+      pulse: s.pulse
+    };
+  }
+}
+</script>
+</body>
+</html>

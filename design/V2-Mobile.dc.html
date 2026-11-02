@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commonplace on a phone</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0..1,0&amp;display=swap">
+<style>
+:root{--md-primary:#2546D6;--md-on-primary:#FFFFFF;--md-primary-container:#DDE1FF;--md-on-primary-container:#001257;--md-secondary:#595D72;--md-secondary-container:#DEE1F9;--md-on-secondary-container:#161B2C;--md-tertiary:#8B5000;--md-tertiary-container:#FFDCBE;--md-on-tertiary-container:#2D1600;--md-surface:#FBF8FF;--md-surface-container-lowest:#FFFFFF;--md-surface-container-low:#F5F2FA;--md-surface-container:#EFEDF4;--md-surface-container-high:#E9E7EF;--md-surface-container-highest:#E3E1E9;--md-on-surface:#1B1B21;--md-on-surface-variant:#45464F;--md-outline:#767680;--md-outline-variant:#C6C5D0;--md-inverse-surface:#303036;--md-inverse-on-surface:#F2EFF7;--md-inverse-primary:#B9C3FF;
+--spring-fast:linear(0, 0.013 0.6%, 0.05 1.2%, 0.2 2.6%, 0.468 4.4%, 0.734 6.3%, 0.899 8%, 1.003 9.8%, 1.058 11.6%, 1.074 13.6%, 1.06 15.6%, 1.03 18.1%, 1.002 21.3%, 0.991 25.4%, 1.001 34.4%, 1);
+--spring-default:linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);
+--effects:cubic-bezier(0.34, 0.8, 0.34, 1);
+color-scheme:light}
+body{margin:0;background:var(--md-surface)}
+a{color:var(--md-primary)}
+button,input{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block;transition:font-variation-settings 200ms var(--effects)}
+.ms.fill,[data-on="true"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24}
+.ms.nav{font-size:24px;width:24px;height:24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--md-primary);outline-offset:2px}
+.sl{position:relative;isolation:isolate;cursor:pointer}
+.sl::before{content:'';position:absolute;inset:0;border-radius:inherit;background:currentColor;opacity:0;transition:opacity 200ms var(--effects);pointer-events:none;z-index:-1}
+.sl:hover::before{opacity:.08}.sl:focus-visible::before,.sl:active::before{opacity:.1}
+.morph{transition:border-radius 350ms var(--spring-fast),background-color 200ms var(--effects),color 200ms var(--effects)}
+.morph:active{border-radius:12px!important}
+@keyframes enter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.enter{animation:enter 500ms var(--spring-default) both}
+[data-stagger="0"]{animation-delay:200ms}[data-stagger="1"]{animation-delay:240ms}[data-stagger="2"]{animation-delay:280ms}[data-stagger="3"]{animation-delay:320ms}
+@keyframes h1in{from{opacity:0;letter-spacing:.02em}to{opacity:1;letter-spacing:-.03em}}
+.h1in{animation:h1in 600ms var(--spring-default) both}
+.ibtn{width:48px;height:48px;border:0;border-radius:999px;background:transparent;color:var(--md-on-surface-variant);display:inline-grid;place-items:center;padding:0}
+/* lane tabs with a sliding, stretching underline */
+.tabs{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--md-surface-container-highest)}
+.tab{min-height:48px;border:0;background:transparent;color:var(--md-on-surface-variant);font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 4px;border-radius:12px 12px 0 0}
+.tab[data-on="true"]{color:var(--md-primary)}
+.tab-ind{position:absolute;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:var(--md-primary);left:16px;right:calc(66.667% + 16px);transition:left 350ms var(--spring-fast),right 350ms var(--spring-fast)}
+[data-lane="doing"] .tab-ind{left:calc(33.333% + 8px);right:calc(33.333% + 8px)}
+[data-lane="done"] .tab-ind{left:calc(66.667% + 16px);right:16px}
+[data-ldir="right"] .tab-ind{transition:left 350ms var(--spring-fast) 70ms,right 350ms var(--spring-fast)}
+[data-ldir="left"] .tab-ind{transition:left 350ms var(--spring-fast),right 350ms var(--spring-fast) 70ms}
+.roll{display:inline-block;height:20px;overflow:hidden;line-height:20px;vertical-align:top}
+.roll-col{display:flex;flex-direction:column;transition:transform 500ms var(--spring-default)}
+.roll-col>span{height:20px;text-align:center}
+.roll-col[data-n="1"]{transform:translateY(-20px)}.roll-col[data-n="2"]{transform:translateY(-40px)}.roll-col[data-n="3"]{transform:translateY(-60px)}.roll-col[data-n="4"]{transform:translateY(-80px)}.roll-col[data-n="5"]{transform:translateY(-100px)}.roll-col[data-n="6"]{transform:translateY(-120px)}
+/* connected button group */
+.seg{flex:1 1 auto;min-height:44px;padding:0 10px;border:0;background:var(--md-surface-container-high);color:var(--md-on-surface-variant);font-size:13px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:4px;white-space:nowrap}
+.seg[data-pos="first"]{border-radius:999px 8px 8px 999px}.seg[data-pos="mid"]{border-radius:8px}.seg[data-pos="last"]{border-radius:8px 999px 999px 8px}
+.seg[data-on="true"]{background:var(--md-primary);color:var(--md-on-primary);border-radius:999px;cursor:default}
+.seg .ms{font-size:18px;width:18px;height:18px}
+/* bottom navigation bar with a sliding pill */
+.navbar{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.nav-ind{position:absolute;top:12px;height:32px;border-radius:999px;background:var(--md-secondary-container);left:calc(12.5% - 28px);right:calc(87.5% - 28px);transition:left 350ms var(--spring-fast),right 350ms var(--spring-fast)}
+[data-dest="guide"] .nav-ind{left:calc(37.5% - 28px);right:calc(62.5% - 28px)}
+[data-dest="tools"] .nav-ind{left:calc(62.5% - 28px);right:calc(37.5% - 28px)}
+[data-dest="settings"] .nav-ind{left:calc(87.5% - 28px);right:calc(12.5% - 28px)}
+[data-dir="right"] .nav-ind{transition:left 350ms var(--spring-fast) 70ms,right 350ms var(--spring-fast)}
+[data-dir="left"] .nav-ind{transition:left 350ms var(--spring-fast),right 350ms var(--spring-fast) 70ms}
+.nav-item{position:relative;z-index:1;height:80px;border:0;background:transparent;padding:12px 0 0;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--md-on-surface-variant);cursor:pointer}
+.nav-item .pill{position:relative;isolation:isolate;width:56px;height:32px;border-radius:999px;display:grid;place-items:center}
+.nav-item .pill::before{content:'';position:absolute;inset:0;border-radius:inherit;background:currentColor;opacity:0;transition:opacity 200ms var(--effects);z-index:-1}
+.nav-item:hover .pill::before{opacity:.08}.nav-item:active .pill::before{opacity:.1}
+.nav-item[data-on="true"]{color:var(--md-on-surface)}
+.nav-item[data-on="true"] .pill{color:var(--md-on-secondary-container)}
+.nav-item .lbl{font-size:12px;line-height:16px;font-weight:500;white-space:nowrap}
+.nav-item[data-on="true"] .lbl{font-weight:600}
+/* extended FAB collapses as the list scrolls */
+.fab{height:56px;padding:0 20px 0 16px;border:0;border-radius:16px;background:var(--md-primary-container);color:var(--md-on-primary-container);font-weight:600;font-size:16px;display:inline-flex;align-items:center;gap:12px;box-shadow:0 3px 8px rgba(0,0,0,.16),0 1px 3px rgba(0,0,0,.12);transition:border-radius 350ms var(--spring-fast),transform 350ms var(--spring-fast)}
+.fab:hover{border-radius:28px;transform:scale(1.07)}
+.fab:active{border-radius:12px;transform:scale(1)}
+.fab .fab-label{display:inline-block;overflow:hidden;white-space:nowrap;max-width:120px}
+@keyframes fabCollapse{to{max-width:0;opacity:0}}
+@keyframes fabPad{to{padding:0 16px;gap:0}}
+.scroller{scroll-timeline:--list y}
+@supports (animation-timeline: scroll()){.fab .fab-label{animation:fabCollapse linear both;animation-timeline:--list;animation-range:24px 160px}.fab{animation:fabPad linear both;animation-timeline:--list;animation-range:24px 160px}}
+.cookie{position:absolute;inset:0;background:var(--md-primary-container);clip-path:polygon(100.0% 50.0%, 99.5% 52.2%, 98.2% 54.2%, 96.3% 56.1%, 94.4% 57.8%, 92.9% 59.5%, 92.0% 61.2%, 91.9% 63.2%, 92.4% 65.4%, 93.2% 67.9%, 93.8% 70.4%, 94.0% 72.9%, 93.3% 75.0%, 91.8% 76.6%, 89.6% 77.7%, 87.1% 78.4%, 84.5% 79.0%, 82.4% 79.7%, 80.7% 80.7%, 79.7% 82.4%, 79.0% 84.5%, 78.4% 87.1%, 77.7% 89.6%, 76.6% 91.8%, 75.0% 93.3%, 72.9% 94.0%, 70.4% 93.8%, 67.9% 93.2%, 65.4% 92.4%, 63.2% 91.9%, 61.2% 92.0%, 59.5% 92.9%, 57.8% 94.4%, 56.1% 96.3%, 54.2% 98.2%, 52.2% 99.5%, 50.0% 100.0%, 47.8% 99.5%, 45.8% 98.2%, 43.9% 96.3%, 42.2% 94.4%, 40.5% 92.9%, 38.8% 92.0%, 36.8% 91.9%, 34.6% 92.4%, 32.1% 93.2%, 29.6% 93.8%, 27.1% 94.0%, 25.0% 93.3%, 23.4% 91.8%, 22.3% 89.6%, 21.6% 87.1%, 21.0% 84.5%, 20.3% 82.4%, 19.3% 80.7%, 17.6% 79.7%, 15.5% 79.0%, 12.9% 78.4%, 10.4% 77.7%, 8.2% 76.6%, 6.7% 75.0%, 6.0% 72.9%, 6.2% 70.4%, 6.8% 67.9%, 7.6% 65.4%, 8.1% 63.2%, 8.0% 61.2%, 7.1% 59.5%, 5.6% 57.8%, 3.7% 56.1%, 1.8% 54.2%, 0.5% 52.2%, 0.0% 50.0%, 0.5% 47.8%, 1.8% 45.8%, 3.7% 43.9%, 5.6% 42.2%, 7.1% 40.5%, 8.0% 38.8%, 8.1% 36.8%, 7.6% 34.6%, 6.8% 32.1%, 6.2% 29.6%, 6.0% 27.1%, 6.7% 25.0%, 8.2% 23.4%, 10.4% 22.3%, 12.9% 21.6%, 15.5% 21.0%, 17.6% 20.3%, 19.3% 19.3%, 20.3% 17.6%, 21.0% 15.5%, 21.6% 12.9%, 22.3% 10.4%, 23.4% 8.2%, 25.0% 6.7%, 27.1% 6.0%, 29.6% 6.2%, 32.1% 6.8%, 34.6% 7.6%, 36.8% 8.1%, 38.8% 8.0%, 40.5% 7.1%, 42.2% 5.6%, 43.9% 3.7%, 45.8% 1.8%, 47.8% 0.5%, 50.0% 0.0%, 52.2% 0.5%, 54.2% 1.8%, 56.1% 3.7%, 57.8% 5.6%, 59.5% 7.1%, 61.2% 8.0%, 63.2% 8.1%, 65.4% 7.6%, 67.9% 6.8%, 70.4% 6.2%, 72.9% 6.0%, 75.0% 6.7%, 76.6% 8.2%, 77.7% 10.4%, 78.4% 12.9%, 79.0% 15.5%, 79.7% 17.6%, 80.7% 19.3%, 82.4% 20.3%, 84.5% 21.0%, 87.1% 21.6%, 89.6% 22.3%, 91.8% 23.4%, 93.3% 25.0%, 94.0% 27.1%, 93.8% 29.6%, 93.2% 32.1%, 92.4% 34.6%, 91.9% 36.8%, 92.0% 38.8%, 92.9% 40.5%, 94.4% 42.2%, 96.3% 43.9%, 98.2% 45.8%, 99.5% 47.8%);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wave{height:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='12' viewBox='0 0 24 12'%3E%3Cpath d='M0 6 Q6 1.5 12 6 T24 6' fill='none' stroke='%232546D6' stroke-width='4'/%3E%3C/svg%3E");background-repeat:repeat-x;background-position:0 50%;animation:wave 1.2s linear infinite;border-radius:6px}
+@keyframes wave{to{background-position:24px 50%}}
+@keyframes snackIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.snack{animation:snackIn 350ms var(--spring-fast) both}
+@media (prefers-reduced-motion: reduce){
+.enter,.h1in,.snack{animation:fadeOnly 120ms linear both!important;animation-delay:0s!important}
+@keyframes fadeOnly{from{opacity:0}to{opacity:1}}
+.cookie,.wave{animation:none!important}
+.fab .fab-label,.fab{animation:none!important}
+*,*::before,*::after{transition-duration:0s!important}
+.fab:hover{transform:none}
+}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; timeline-scope: --list; background: var(--md-surface); color: var(--md-on-surface); font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 14px; line-height: 20px; display: flex; flex-direction: column">
+
+<header class="enter" style="flex: none; height: 64px; padding: 0 4px 0 16px; display: flex; align-items: center; gap: 0; background: var(--md-surface)">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; line-height: 28px; letter-spacing: -0.02em; margin-right: auto">Commonplace</span>
+<button type="button" class="ibtn sl morph" aria-label="Find an action" style="color: var(--md-on-surface)"><span class="ms" aria-hidden="true" style="font-size: 24px; width: 24px; height: 24px">search</span></button>
+<button type="button" class="ibtn sl morph" aria-label="More options" style="color: var(--md-on-surface)"><span class="ms" aria-hidden="true" style="font-size: 24px; width: 24px; height: 24px">more_vert</span></button>
+</header>
+
+<div class="scroller" style="flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden">
+<sc-if value="{{atWorkspace}}" hint-placeholder-val="{{true}}">
+<div style="padding: 4px 16px 96px; display: flex; flex-direction: column; gap: 16px">
+<div>
+<h1 class="h1in" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 32px; line-height: 38px; letter-spacing: -0.03em; animation-delay: 40ms">Make room for your next idea.</h1>
+<p class="enter" style="margin: 8px 0 0; color: var(--md-on-surface-variant); display: flex; align-items: center; gap: 6px; animation-delay: 80ms"><span class="ms fill" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: var(--md-primary)">computer</span>Local workspace, stays in this browser</p>
+</div>
+
+<a href="Setup.dc.html" class="enter sl" style="animation-delay: 120ms; display: flex; align-items: center; gap: 14px; padding: 14px 8px 14px 14px; border-radius: 28px; background: var(--md-surface-container-low); color: var(--md-on-surface); text-decoration: none">
+<span aria-hidden="true" style="position: relative; width: 48px; height: 48px; flex: none; display: grid; place-items: center"><span class="cookie"></span><span style="position: relative; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; color: var(--md-on-primary-container)">2</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<span><strong style="font-weight: 600">Setup, step 2 of 3.</strong> <span style="color: var(--md-on-surface-variant)">Pick up where you left off.</span></span>
+<span role="progressbar" aria-label="Setup progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="2" style="display: flex; align-items: center; gap: 6px"><span class="wave" style="flex: 2 1 0"></span><span style="flex: 1 1 0; height: 4px; border-radius: 2px; background: var(--md-secondary-container)"></span></span>
+</span>
+<span style="width: 44px; height: 44px; display: grid; place-items: center; flex: none; color: var(--md-on-surface-variant)"><span class="ms" aria-hidden="true">chevron_right</span></span>
+</a>
+
+<div class="tabs enter" role="tablist" aria-label="Task lanes" data-lane="{{lane}}" data-ldir="{{ldir}}" style="animation-delay: 160ms">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+<button type="button" role="tab" class="tab sl" data-on="{{t.on}}" aria-selected="{{t.selected}}" onClick="{{t.pick}}">{{t.label}}<span style="min-width: 24px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 999px; background: var(--md-surface-container-high); color: var(--md-on-surface); font-size: 12px; display: inline-grid; place-items: center; font-variant-numeric: tabular-nums"><span class="roll" aria-hidden="true"><span class="roll-col" data-n="{{t.count}}"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></span></span><span class="sr">{{t.count}} tasks</span></span></button>
+</sc-for>
+<span class="tab-ind" aria-hidden="true"></span>
+</div>
+
+<div role="tabpanel" aria-label="{{laneLabel}}" style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{cards}}" as="task" hint-placeholder-count="2">
+<article class="enter" data-flip="{{task.id}}" data-stagger="{{task.i}}" style="background: var(--md-surface-container-lowest); border: 1px solid var(--md-surface-container-highest); border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: flex-start; gap: 8px">
+<h2 style="margin: 0; flex: 1; min-width: 0; font-size: 16px; line-height: 24px; font-weight: 600; padding-top: 2px">{{task.title}}</h2>
+<button type="button" class="ibtn sl morph" aria-label="{{task.editLabel}}" style="width: 44px; height: 44px; margin: -6px -6px 0 0"><span class="ms" aria-hidden="true">edit</span></button>
+</div>
+<p style="margin: 0; color: var(--md-on-surface-variant)">{{task.notes}}</p>
+<div role="group" aria-label="{{task.groupLabel}}" style="display: flex; gap: 2px; padding-top: 12px">
+<sc-for list="{{task.segs}}" as="seg" hint-placeholder-count="3">
+<button type="button" class="seg sl morph" data-pos="{{seg.pos}}" data-on="{{seg.on}}" aria-pressed="{{seg.pressed}}" aria-label="{{seg.aria}}" onClick="{{seg.go}}"><sc-if value="{{seg.on}}" hint-placeholder-val="{{false}}"><span class="ms" aria-hidden="true">check</span></sc-if>{{seg.label}}</button>
+</sc-for>
+</div>
+</article>
+</sc-for>
+<sc-if value="{{empty}}" hint-placeholder-val="{{false}}">
+<p class="enter" style="margin: 0; padding: 24px 16px; border-radius: 20px; border: 1px dashed var(--md-outline-variant); color: var(--md-on-surface-variant); text-align: center">Nothing here yet. Move a task in, or add one.</p>
+</sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{elsewhere}}" hint-placeholder-val="{{false}}">
+<div class="enter" style="padding: 24px 16px 96px; display: flex; flex-direction: column; gap: 12px">
+<span class="ms fill" aria-hidden="true" style="font-size: 40px; width: 40px; height: 40px; color: var(--md-primary)">{{page.icon}}</span>
+<p style="margin: 0; font-size: 12px; font-weight: 600; color: var(--md-on-surface-variant)">{{page.label}}</p>
+<h1 class="h1in" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 32px; line-height: 38px; letter-spacing: -0.03em">{{page.heading}}</h1>
+<p style="margin: 0; color: var(--md-on-surface-variant); font-size: 16px; line-height: 24px">{{page.intro}}</p>
+<sc-if value="{{page.href}}" hint-placeholder-val="{{true}}"><a href="{{page.href}}" class="sl morph" style="align-self: flex-start; min-height: 48px; padding: 0 24px; border-radius: 999px; background: var(--md-primary); color: var(--md-on-primary); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px">{{page.cta}}<span class="ms" aria-hidden="true">arrow_forward</span></a></sc-if>
+</div>
+</sc-if>
+</div>
+
+<sc-if value="{{snack}}" hint-placeholder-val="{{false}}">
+<div class="snack" role="status" style="position: absolute; left: 16px; right: 16px; bottom: 160px; z-index: 6; display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 4px 4px 4px 16px; border-radius: 999px; background: var(--md-inverse-surface); color: var(--md-inverse-on-surface); box-shadow: 0 6px 16px rgba(0,0,0,.24)">
+<span class="ms fill" aria-hidden="true" style="color: var(--md-inverse-primary)">cloud_done</span><span style="flex: 1; min-width: 0">Saved in this browser.</span>
+<button type="button" class="sl morph" onClick="{{undo}}" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: var(--md-inverse-primary); font-weight: 600">Undo</button>
+</div>
+</sc-if>
+
+<div style="position: absolute; right: 16px; bottom: 96px; z-index: 5">
+<button type="button" class="fab sl enter" aria-label="New task" style="animation-delay: 200ms"><span class="ms fill" aria-hidden="true" style="font-size: 24px; width: 24px; height: 24px">add</span><span class="fab-label">New task</span></button>
+</div>
+
+<nav class="navbar" aria-label="Main" data-dest="{{dest}}" data-dir="{{dir}}" style="flex: none; background: var(--md-surface-container); box-shadow: 0 -1px 0 var(--md-surface-container-highest)">
+<span class="nav-ind" aria-hidden="true"></span>
+<sc-for list="{{dests}}" as="d" hint-placeholder-count="4">
+<button type="button" class="nav-item" data-on="{{d.on}}" aria-current="{{d.current}}" onClick="{{d.go}}"><span class="pill"><span class="ms nav" aria-hidden="true">{{d.icon}}</span></span><span class="lbl">{{d.label}}</span></button>
+</sc-for>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dest: 'workspace', dir: 'right', lane: 'doing', ldir: 'right', snack: false, prev: null,
+      tasks: [
+        { id: 'a', title: 'Export a backup before experimenting', notes: 'Tasks and preferences as one JSON file.', status: 'todo' },
+        { id: 'b', title: 'Choose a comfortable text size', notes: 'Settings, then Appearance.', status: 'todo' },
+        { id: 'c', title: 'Write the next useful step', notes: 'A short title. Notes are optional.', status: 'doing' },
+        { id: 'e', title: 'Try the command palette', notes: 'Ctrl Shift F from anywhere.', status: 'doing' },
+        { id: 'd', title: 'Pick a language', notes: 'English, Cantonese, or both.', status: 'done' },
+        { id: 'f', title: 'Read the browser boundaries', notes: 'Field guide, Honest by design.', status: 'done' }
+      ]
+    };
+  }
+  reduced() {
+    try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return true; }
+  }
+  measure() {
+    const m = {};
+    try { document.querySelectorAll('[data-flip]').forEach((el) => { m[el.getAttribute('data-flip')] = el.getBoundingClientRect(); }); } catch (e) {}
+    return m;
+  }
+  play(first) {
+    if (this.reduced()) return;
+    const spring = 'linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1)';
+    const run = () => {
+      try {
+        document.querySelectorAll('[data-flip]').forEach((el) => {
+          const f = first[el.getAttribute('data-flip')];
+          if (!f || !el.animate) return;
+          const dy = f.top - el.getBoundingClientRect().top;
+          if (Math.abs(dy) < 1) return;
+          el.animate([{ transform: 'translateY(' + dy + 'px)' }, { transform: 'none' }], { duration: 500, easing: spring });
+        });
+      } catch (e) {}
+    };
+    if (window.requestAnimationFrame) requestAnimationFrame(() => requestAnimationFrame(run));
+  }
+  move(id, to) {
+    const cur = this.state.tasks;
+    const t = cur.find((x) => x.id === id);
+    if (!t || t.status === to) return;
+    const order = ['todo', 'doing', 'done'];
+    const next = cur.filter((x) => x.id !== id).concat([Object.assign({}, t, { status: to })]);
+    const apply = () => {
+      const first = this.measure();
+      this.setState({ tasks: next, prev: cur, snack: true });
+      this.play(first);
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => this.setState({ snack: false }), 5000);
+    };
+    let el = null;
+    try { el = document.querySelector('[data-flip="' + id + '"]'); } catch (e) {}
+    if (el && el.animate && !this.reduced()) {
+      const dx = order.indexOf(to) > order.indexOf(t.status) ? 48 : -48;
+      const a = el.animate([{ transform: 'none', opacity: 1 }, { transform: 'translateX(' + dx + 'px) scale(0.96)', opacity: 0 }], { duration: 200, easing: 'cubic-bezier(0.34, 0.8, 0.34, 1)', fill: 'forwards' });
+      a.onfinish = apply;
+    } else {
+      apply();
+    }
+  }
+  undo() {
+    if (!this.state.prev) return;
+    const first = this.measure();
+    this.setState({ tasks: this.state.prev, prev: null, snack: false });
+    this.play(first);
+  }
+  renderVals() {
+    const labels = { todo: 'To do', doing: 'In progress', done: 'Done' };
+    const order = ['todo', 'doing', 'done'];
+    const tabs = order.map((s) => ({
+      label: labels[s], on: this.state.lane === s, selected: this.state.lane === s ? 'true' : 'false',
+      count: this.state.tasks.filter((t) => t.status === s).length,
+      pick: () => this.setState({ lane: s, ldir: order.indexOf(s) >= order.indexOf(this.state.lane) ? 'right' : 'left' })
+    }));
+    const cards = this.state.tasks.filter((t) => t.status === this.state.lane).map((t, i) => ({
+      id: t.id, i: i, title: t.title, notes: t.notes,
+      editLabel: 'Edit ' + t.title, groupLabel: 'Status of ' + t.title,
+      segs: order.map((s, j) => ({
+        label: labels[s], pos: j === 0 ? 'first' : (j === 2 ? 'last' : 'mid'),
+        on: t.status === s, pressed: t.status === s ? 'true' : 'false',
+        aria: t.status === s ? labels[s] + ', current status' : 'Move ' + t.title + ' to ' + labels[s],
+        go: () => this.move(t.id, s)
+      }))
+    }));
+    const pages = {
+      guide: { icon: 'explore', label: 'Field guide', heading: 'Learn by doing.', intro: 'Short, practical routes through the working sample. Every guide separates what works here from what still needs an implementation.', href: 'Guide.dc.html', cta: 'Open the field guide' },
+      tools: { icon: 'handyman', label: 'Local tools', heading: 'Make a useful little file.', intro: 'Convert a text table or design an initials logo. These tools run locally, with explicit format and size limits.', href: '', cta: '' },
+      settings: { icon: 'settings', label: 'Settings', heading: 'Make it comfortable.', intro: 'Language, Appearance, Personal wording, Narrator, and Data & recovery. Changes are saved in this browser.', href: 'Settings.dc.html', cta: 'Open settings' }
+    };
+    const dorder = ['workspace', 'guide', 'tools', 'settings'];
+    const dests = [['workspace', 'Workspace', 'dashboard'], ['guide', 'Field guide', 'explore'], ['tools', 'Local tools', 'handyman'], ['settings', 'Settings', 'settings']].map((d) => ({
+      label: d[1], icon: d[2], on: this.state.dest === d[0], current: this.state.dest === d[0] ? 'page' : false,
+      go: () => this.setState({ dest: d[0], dir: dorder.indexOf(d[0]) >= dorder.indexOf(this.state.dest) ? 'right' : 'left' })
+    }));
+    return {
+      tabs: tabs, cards: cards, empty: cards.length === 0, lane: this.state.lane, ldir: this.state.ldir, laneLabel: labels[this.state.lane],
+      dests: dests, dest: this.state.dest, dir: this.state.dir,
+      atWorkspace: this.state.dest === 'workspace', elsewhere: this.state.dest !== 'workspace',
+      page: pages[this.state.dest] || pages.guide,
+      snack: this.state.snack, undo: () => this.undo()
+    };
+  }
+}
+</script>
+</body>
+</html>

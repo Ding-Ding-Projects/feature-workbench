@@ -6,9 +6,14 @@
  },
  "title": "Commonplace Redesign",
  "launch": {
-  "view": "canvas"
+  "view": "canvas",
+  "page": "v2"
  },
  "pages": [
+  {
+   "id": "v2",
+   "name": "v2 Expressive"
+  },
   {
    "id": "screens",
    "name": "Screens"
@@ -204,6 +209,64 @@
    "expand": "fill",
    "page": "faux-ui",
    "is_interactive": true
+  },
+  "V2-Workspace.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 1114,
+   "title": "Workspace (light, interactive)",
+   "page": "v2",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "V2-Workspace-Dark.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1170,
+   "title": "Workspace (dark)",
+   "page": "v2",
+   "expand": "fill"
+  },
+  "V2-Mobile.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 390,
+   "h": 844,
+   "title": "Phone (interactive)",
+   "page": "v2",
+   "is_interactive": true
+  },
+  "V2-Guide.dc.html": {
+   "x": 0,
+   "y": 1414,
+   "w": 1440,
+   "h": 2410,
+   "title": "Field guide + ledger (interactive)",
+   "page": "v2",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "V2-Settings.dc.html": {
+   "x": 1520,
+   "y": 1414,
+   "w": 1440,
+   "h": 2114,
+   "title": "Settings (interactive)",
+   "page": "v2",
+   "expand": "fill",
+   "is_interactive": true
+  },
+  "V2-Setup.dc.html": {
+   "x": 3040,
+   "y": 1414,
+   "w": 1440,
+   "h": 990,
+   "title": "Setup wizard (interactive)",
+   "page": "v2",
+   "expand": "fill",
+   "is_interactive": true
   }
  },
  "order": [
@@ -226,7 +289,13 @@
   "Features-Release.dc.html",
   "Features-Repository.dc.html",
   "Features-Canonical.dc.html",
-  "Stageshow.dc.html"
+  "Stageshow.dc.html",
+  "V2-Workspace.dc.html",
+  "V2-Workspace-Dark.dc.html",
+  "V2-Mobile.dc.html",
+  "V2-Guide.dc.html",
+  "V2-Settings.dc.html",
+  "V2-Setup.dc.html"
  ],
  "notes": {
   "t1": {
@@ -252,6 +321,14 @@
    "kind": "title1",
    "maxW": 21200,
    "page": "features"
+  },
+  "v2t": {
+   "x": 0,
+   "y": -300,
+   "text": "Commonplace v2: Material 3 Expressive",
+   "kind": "title1",
+   "maxW": 3430,
+   "page": "v2"
   }
  },
  "designSystems": []

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commonplace field guide</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,0..1,0&amp;family=Noto+Sans+HK:wght@400;500&amp;display=swap">
+<style>
+:root,[data-theme="light"]{--md-primary:#2546D6;--md-on-primary:#FFFFFF;--md-primary-container:#DDE1FF;--md-on-primary-container:#001257;--md-secondary:#595D72;--md-secondary-container:#DEE1F9;--md-on-secondary-container:#161B2C;--md-tertiary:#8B5000;--md-tertiary-container:#FFDCBE;--md-on-tertiary-container:#2D1600;--md-error:#BA1A1A;--md-error-container:#FFDAD6;--md-on-error-container:#410002;--md-surface:#FBF8FF;--md-scl:#FFFFFF;--md-sc-low:#F5F2FA;--md-sc:#EFEDF4;--md-sc-high:#E9E7EF;--md-sc-highest:#E3E1E9;--md-on-surface:#1B1B21;--md-on-surface-variant:#45464F;--md-outline:#767680;--md-outline-variant:#C6C5D0;--md-inverse-surface:#303036;--md-inverse-on-surface:#F2EFF7;--md-inverse-primary:#B9C3FF;--ok-container:#C8EBC8;--on-ok-container:#002106}
+[data-theme="dark"]{--md-primary:#B9C3FF;--md-on-primary:#00218B;--md-primary-container:#0035C2;--md-on-primary-container:#DDE1FF;--md-secondary:#C2C5DD;--md-secondary-container:#424659;--md-on-secondary-container:#DEE1F9;--md-tertiary:#FFB870;--md-tertiary-container:#6A3C00;--md-on-tertiary-container:#FFDCBE;--md-error:#FFB4AB;--md-error-container:#93000A;--md-on-error-container:#FFDAD6;--md-surface:#121318;--md-scl:#0D0E13;--md-sc-low:#1B1B21;--md-sc:#1F1F25;--md-sc-high:#292A2F;--md-sc-highest:#34343A;--md-on-surface:#E4E1E9;--md-on-surface-variant:#C6C5D0;--md-outline:#90909A;--md-outline-variant:#45464F;--md-inverse-surface:#E4E1E9;--md-inverse-on-surface:#303036;--md-inverse-primary:#2546D6;--ok-container:#1E4D22;--on-ok-container:#C8EBC8}
+:root{--sf:350ms linear(0, 0.013 0.6%, 0.05 1.2%, 0.2 2.6%, 0.468 4.4%, 0.734 6.3%, 0.899 8%, 1.003 9.8%, 1.058 11.6%, 1.074 13.6%, 1.06 15.6%, 1.03 18.1%, 1.002 21.3%, 0.991 25.4%, 1.001 34.4%, 1);--sd:500ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);--ss:650ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);--fx:200ms cubic-bezier(0.34, 0.8, 0.34, 1)}
+@property --p{syntax:'<percentage>';inherits:true;initial-value:0%}
+body{margin:0;background:#FBF8FF}
+*{box-sizing:border-box}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--md-primary)}
+:focus-visible{outline:3px solid var(--md-primary);outline-offset:2px}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block;transition:font-variation-settings var(--fx)}
+.ms.l{font-size:24px;width:24px;height:24px;font-variation-settings:'FILL' 0,'wght' 500,'opsz' 24}
+.ms.f{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.hd{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500}
+/* buttons: pill at rest, 12px corners while pressed, state layers 8/10/10 */
+.btn{position:relative;isolation:isolate;overflow:hidden;min-height:44px;padding:0 20px;border:0;border-radius:22px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:Inter,'Noto Sans HK',sans-serif;font-weight:600;font-size:14px;line-height:20px;cursor:pointer;text-decoration:none;white-space:nowrap;background:transparent;color:var(--md-primary);transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.btn::before{content:'';position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity var(--fx);z-index:-1;pointer-events:none}
+.btn:hover::before{opacity:.08}.btn:focus-visible::before,.btn:active::before{opacity:.10}
+.btn:active{border-radius:12px}
+.btn.lg{min-height:48px;border-radius:24px;padding:0 24px}.btn.lg:active{border-radius:12px}
+.btn.filled{background:var(--md-primary);color:var(--md-on-primary)}
+.btn.tonal{background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.btn.outlined{box-shadow:inset 0 0 0 1px var(--md-outline-variant);color:var(--md-on-surface-variant)}
+.btn.text{padding:0 14px}
+.btn.ib{width:44px;padding:0;flex:none}
+.btn.icon-lead{padding-left:16px}
+.btn[disabled]{color:color-mix(in srgb,var(--md-on-surface) 45%,transparent);cursor:default}.btn[disabled]::before{display:none}
+/* entrance: header first, then content in 40ms steps */
+@keyframes enter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes hx{from{opacity:0;letter-spacing:.02em}to{opacity:1;letter-spacing:-.03em}}
+.en{animation:enter var(--sd) both}
+.hx{animation:hx 600ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1) both}
+/* wavy linear progress */
+.wavy{position:relative;height:12px;display:flex;align-items:center;gap:6px}
+.wact{height:12px;flex:none;transition:width var(--ss)}
+.wline{height:12px;background:var(--md-primary);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M-40 6 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E") repeat-x 0 0/40px 12px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='12'%3E%3Cpath d='M-40 6 q10 -4.5 20 0 t20 0 t20 0 t20 0 t20 0 t20 0' fill='none' stroke='black' stroke-width='4'/%3E%3C/svg%3E") repeat-x 0 0/40px 12px;animation:phase 1.4s linear infinite}
+@keyframes phase{to{-webkit-mask-position:-40px 0;mask-position:-40px 0}}
+.wact .wline{border-radius:6px 0 0 6px}
+.winact{flex:1;height:4px;border-radius:2px;background:var(--md-secondary-container);min-width:8px}
+.wstop{width:4px;height:4px;border-radius:2px;background:var(--md-primary);flex:none}
+/* cookie shape */
+@keyframes spin{to{transform:rotate(360deg)}}
+.cookie{animation:spin 40s linear infinite;clip-path:polygon(100.0% 50.0%, 99.3% 52.2%, 97.3% 54.1%, 94.6% 55.9%, 91.9% 57.4%, 89.7% 58.8%, 88.6% 60.4%, 88.8% 62.2%, 89.9% 64.5%, 91.6% 67.2%, 93.0% 70.1%, 93.8% 72.8%, 93.3% 75.0%, 91.6% 76.5%, 88.9% 77.2%, 85.7% 77.4%, 82.6% 77.3%, 80.0% 77.5%, 78.3% 78.3%, 77.5% 80.0%, 77.3% 82.6%, 77.4% 85.7%, 77.2% 88.9%, 76.5% 91.6%, 75.0% 93.3%, 72.8% 93.8%, 70.1% 93.0%, 67.2% 91.6%, 64.5% 89.9%, 62.2% 88.8%, 60.4% 88.6%, 58.8% 89.7%, 57.4% 91.9%, 55.9% 94.6%, 54.1% 97.3%, 52.2% 99.3%, 50.0% 100.0%, 47.8% 99.3%, 45.9% 97.3%, 44.1% 94.6%, 42.6% 91.9%, 41.2% 89.7%, 39.6% 88.6%, 37.8% 88.8%, 35.5% 89.9%, 32.8% 91.6%, 29.9% 93.0%, 27.2% 93.8%, 25.0% 93.3%, 23.5% 91.6%, 22.8% 88.9%, 22.6% 85.7%, 22.7% 82.6%, 22.5% 80.0%, 21.7% 78.3%, 20.0% 77.5%, 17.4% 77.3%, 14.3% 77.4%, 11.1% 77.2%, 8.4% 76.5%, 6.7% 75.0%, 6.2% 72.8%, 7.0% 70.1%, 8.4% 67.2%, 10.1% 64.5%, 11.2% 62.2%, 11.4% 60.4%, 10.3% 58.8%, 8.1% 57.4%, 5.4% 55.9%, 2.7% 54.1%, 0.7% 52.2%, 0.0% 50.0%, 0.7% 47.8%, 2.7% 45.9%, 5.4% 44.1%, 8.1% 42.6%, 10.3% 41.2%, 11.4% 39.6%, 11.2% 37.8%, 10.1% 35.5%, 8.4% 32.8%, 7.0% 29.9%, 6.2% 27.2%, 6.7% 25.0%, 8.4% 23.5%, 11.1% 22.8%, 14.3% 22.6%, 17.4% 22.7%, 20.0% 22.5%, 21.7% 21.7%, 22.5% 20.0%, 22.7% 17.4%, 22.6% 14.3%, 22.8% 11.1%, 23.5% 8.4%, 25.0% 6.7%, 27.2% 6.2%, 29.9% 7.0%, 32.8% 8.4%, 35.5% 10.1%, 37.8% 11.2%, 39.6% 11.4%, 41.2% 10.3%, 42.6% 8.1%, 44.1% 5.4%, 45.9% 2.7%, 47.8% 0.7%, 50.0% 0.0%, 52.2% 0.7%, 54.1% 2.7%, 55.9% 5.4%, 57.4% 8.1%, 58.8% 10.3%, 60.4% 11.4%, 62.2% 11.2%, 64.5% 10.1%, 67.2% 8.4%, 70.1% 7.0%, 72.8% 6.2%, 75.0% 6.7%, 76.5% 8.4%, 77.2% 11.1%, 77.4% 14.3%, 77.3% 17.4%, 77.5% 20.0%, 78.3% 21.7%, 80.0% 22.5%, 82.6% 22.7%, 85.7% 22.6%, 88.9% 22.8%, 91.6% 23.5%, 93.3% 25.0%, 93.8% 27.2%, 93.0% 29.9%, 91.6% 32.8%, 89.9% 35.5%, 88.8% 37.8%, 88.6% 39.6%, 89.7% 41.2%, 91.9% 42.6%, 94.6% 44.1%, 97.3% 45.9%, 99.3% 47.8%)}
+/* switch with thumb icon */
+.sw{position:relative;flex:none;width:52px;height:32px;border-radius:16px;border:2px solid var(--md-outline);background:var(--md-sc-highest);padding:0;cursor:pointer;transition:background-color var(--fx),border-color var(--fx)}
+.sw::after{content:'';position:absolute;inset:-8px -2px}
+.sw .th{position:absolute;top:50%;left:6px;width:16px;height:16px;margin-top:-8px;border-radius:12px;background:var(--md-outline);display:grid;place-items:center;transition:left var(--sf),width var(--sf),height var(--sf),margin var(--sf),background-color var(--fx)}
+.sw .th .ms{font-size:16px;width:16px;height:16px;opacity:0;transform:scale(.4);color:var(--md-on-primary-container);transition:opacity var(--fx),transform var(--sf)}
+.sw[aria-checked="true"]{background:var(--md-primary);border-color:var(--md-primary)}
+.sw[aria-checked="true"] .th{left:22px;width:24px;height:24px;margin-top:-12px;background:var(--md-on-primary)}
+.sw[aria-checked="true"] .th .ms{opacity:1;transform:none}
+.sw:active .th{width:28px;height:28px;margin-top:-14px;left:2px}
+.sw[aria-checked="true"]:active .th{left:18px}
+.swrow{display:flex;align-items:center;gap:16px;min-height:56px;justify-content:space-between}
+/* connected button group */
+.cbg{display:flex;gap:2px;flex-wrap:nowrap}
+.cbg .btn{flex:1 1 0;min-width:0;border-radius:8px;background:var(--md-sc-high);color:var(--md-on-surface);padding:0 12px;transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.cbg .btn:first-child{border-radius:22px 8px 8px 22px}.cbg .btn:last-child{border-radius:8px 22px 22px 8px}
+.cbg .btn[aria-pressed="true"]{border-radius:22px;background:var(--md-secondary-container);color:var(--md-on-secondary-container)}
+.cbg .btn .ck{width:0;opacity:0;transition:width var(--sf),opacity var(--fx)}
+.cbg .btn[aria-pressed="true"] .ck{width:20px;opacity:1}
+.cbg .btn:active{border-radius:12px}
+/* reduced motion: OS setting and the app's own setting */
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:120ms!important;transition-timing-function:linear!important}.loop,.cookie,.wline,.blob{animation:none!important}}
+[data-rm="true"] *,[data-rm="true"] *::before,[data-rm="true"] *::after{animation-duration:1ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:120ms!important;transition-timing-function:linear!important}
+[data-rm="true"] .loop,[data-rm="true"] .cookie,[data-rm="true"] .wline,[data-rm="true"] .blob{animation:none!important}
+
+.stage{min-height:100vh;background:var(--md-surface);color:var(--md-on-surface);font-family:Inter,'Noto Sans HK',system-ui,sans-serif;font-size:14px;line-height:20px}
+.app{display:flex;min-height:100vh;background:var(--md-surface)}
+.rail{position:sticky;top:0;align-self:flex-start;width:80px;flex:none;display:flex;flex-direction:column;align-items:center;gap:20px;padding:16px 0 24px}
+.wm{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:11px;letter-spacing:-.02em;line-height:16px;color:var(--md-on-surface);text-decoration:none}
+.fab{position:relative;isolation:isolate;overflow:hidden;width:56px;height:56px;border:0;border-radius:16px;background:var(--md-primary-container);color:var(--md-on-primary-container);display:grid;place-items:center;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12),0 4px 8px rgba(0,0,0,.08);transition:border-radius var(--sf),transform var(--sf)}
+.fab::before{content:'';position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity var(--fx);z-index:-1}
+.fab:hover{border-radius:28px;transform:scale(1.07)}.fab:hover::before{opacity:.08}.fab:active{border-radius:12px}.fab:active::before{opacity:.1}
+.rlist{position:relative;display:flex;flex-direction:column;margin:0;padding:0;list-style:none}
+.rind{position:absolute;left:12px;top:4px;width:56px;height:32px;border-radius:16px;background:var(--md-secondary-container);transition:transform var(--sf);pointer-events:none}
+[data-nav="work"] .rind{transform:translateY(0)}
+[data-nav="guide"] .rind{transform:translateY(72px)}
+[data-nav="tools"] .rind{transform:translateY(144px)}
+[data-nav="settings"] .rind{transform:translateY(216px)}
+[data-anim="a"] .rind{animation:stA var(--sf)}[data-anim="b"] .rind{animation:stB var(--sf)}
+[data-anim="a"] .bind::before{animation:sxA var(--sf)}[data-anim="b"] .bind::before{animation:sxB var(--sf)}
+@keyframes stA{40%{scale:1 1.4}}@keyframes stB{40%{scale:1 1.4}}@keyframes sxA{40%{scale:1.3 1}}@keyframes sxB{40%{scale:1.3 1}}
+.ri{position:relative;width:80px;height:72px;border:0;background:transparent;padding:4px 0 0;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;color:var(--md-on-surface-variant);font-size:12px;line-height:16px;font-weight:600}
+.ri .pl{width:56px;height:32px;border-radius:16px;display:grid;place-items:center;position:relative}
+.ri .pl::before{content:'';position:absolute;inset:0;border-radius:16px;background:var(--md-on-surface);opacity:0;transition:opacity var(--fx)}
+.ri:hover .pl::before{opacity:.08}.ri:active .pl::before{opacity:.1}
+.ri:focus-visible{outline:none}.ri:focus-visible .pl{outline:3px solid var(--md-primary);outline-offset:2px}
+.ri[aria-current="page"]{color:var(--md-on-surface)}
+.ri[aria-current="page"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24;color:var(--md-on-secondary-container)}
+.pane{flex:1;min-width:0;margin:8px 8px 8px 0;border-radius:32px;background:var(--md-sc-low)}
+.inner{max-width:1200px;margin:0 auto;padding:40px 40px 56px}
+.topbar,.pbar{display:none}
+@media (max-width:839px){
+.rail{display:none}
+.pane{margin:0;border-radius:0;padding-bottom:72px}
+.pbar{display:block;position:sticky;bottom:0;z-index:6}
+.inner{padding:8px 16px 40px}
+.topbar{display:flex;align-items:center;gap:4px;padding:8px 8px 8px 16px;position:sticky;top:0;z-index:5;background:var(--md-sc-low)}
+.bnav{display:flex;height:80px;background:var(--md-sc);padding:12px 0 16px}
+.xfab{display:inline-flex;position:absolute;right:16px;top:-72px;height:56px;padding:0 20px 0 16px;gap:12px;align-items:center;border:0;border-radius:16px;background:var(--md-primary-container);color:var(--md-on-primary-container);font-weight:600;font-size:14px;box-shadow:0 2px 6px rgba(0,0,0,.14),0 6px 14px rgba(0,0,0,.1);cursor:pointer;transition:border-radius var(--sf)}
+.xfab:active{border-radius:12px}
+}
+.bwrap{position:relative;display:flex;width:100%}
+.bind{position:absolute;left:0;top:0;width:25%;height:32px;display:flex;justify-content:center;transition:transform var(--sf);pointer-events:none}
+.bind::before{content:'';width:64px;height:32px;border-radius:16px;background:var(--md-secondary-container)}
+[data-nav="guide"] .bind{transform:translateX(100%)}[data-nav="tools"] .bind{transform:translateX(200%)}[data-nav="settings"] .bind{transform:translateX(300%)}
+.bi{position:relative;flex:1 1 0;min-width:0;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--md-on-surface-variant);font-size:12px;line-height:16px;font-weight:600;cursor:pointer;padding:0}
+.bi .pl{width:64px;height:32px;display:grid;place-items:center}
+.bi[aria-current="page"]{color:var(--md-on-surface)}
+.bi[aria-current="page"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 24;color:var(--md-on-secondary-container)}
+
+.bento{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:12px}
+.b1{grid-row:span 2}.b4{grid-column:span 2}
+@media (max-width:1100px){.bento{grid-template-columns:1fr 1fr}.b1{grid-row:auto;grid-column:span 2}.b4{grid-column:span 2}}
+@media (max-width:640px){.bento{grid-template-columns:minmax(0,1fr)}.b1,.b4{grid-column:auto}}
+.wc{display:flex;flex-direction:column;gap:12px;padding:28px;border-radius:28px;background:var(--md-scl);min-width:0;transition:border-radius var(--sd),transform var(--sd),box-shadow var(--fx)}
+.wc:hover{border-radius:40px;transform:translateY(-2px);box-shadow:0 2px 6px rgba(27,27,33,.08)}
+.wc .ico{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:var(--md-secondary-container);color:var(--md-on-secondary-container);flex:none;transition:border-radius var(--sd)}
+.wc:hover .ico{border-radius:24px}
+.steps{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.steps li{display:flex;gap:12px;align-items:flex-start;font-size:14px;line-height:20px}
+.steps .n{width:24px;height:24px;flex:none;border-radius:12px;box-shadow:inset 0 0 0 1.5px currentColor;display:grid;place-items:center;font-size:12px;font-weight:600;line-height:1}
+.tag{display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border-radius:8px;font-size:12px;line-height:16px;font-weight:600;flex:none}
+.sbar{display:flex;align-items:center;gap:4px;height:56px;padding:0 6px 0 16px;border-radius:28px;background:var(--md-sc-high);color:var(--md-on-surface-variant);transition:border-radius var(--sf)}
+.sbar:focus-within{outline:3px solid var(--md-primary);outline-offset:2px}
+.sbar input{flex:1;min-width:0;border:0;background:transparent;font-size:16px;line-height:24px;color:var(--md-on-surface);outline:none;padding:0 8px}
+.sbar input::placeholder{color:var(--md-on-surface-variant)}
+.fchips{display:flex;flex-wrap:wrap;gap:8px}
+.fc{position:relative;isolation:isolate;overflow:hidden;min-height:40px;padding:0 14px 0 10px;border:0;border-radius:10px;box-shadow:inset 0 0 0 1px var(--md-outline-variant);background:transparent;color:var(--md-on-surface-variant);display:inline-flex;align-items:center;gap:8px;font-size:14px;line-height:20px;font-weight:600;cursor:pointer;font-variant-numeric:tabular-nums;transition:border-radius var(--sf),background-color var(--fx),color var(--fx)}
+.fc::before{content:'';position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity var(--fx);z-index:-1}
+.fc:hover::before{opacity:.08}.fc:active::before{opacity:.1}.fc:active{border-radius:20px}
+.fc[aria-pressed="true"]{background:var(--md-secondary-container);color:var(--md-on-secondary-container);box-shadow:none;border-radius:20px}
+.fc[aria-pressed="true"] .ms{font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20}
+.fc b{font-weight:600;color:var(--md-on-surface)}
+.ledger{margin:0;padding:0;list-style:none;background:var(--md-scl);border-radius:28px;overflow:hidden}
+.lrow{animation:enter var(--sd) both}
+.lrow + .lrow{border-top:1px solid var(--md-sc-high)}
+.lrow:nth-child(1){animation-delay:440ms}.lrow:nth-child(2){animation-delay:460ms}.lrow:nth-child(3){animation-delay:480ms}.lrow:nth-child(4){animation-delay:500ms}.lrow:nth-child(5){animation-delay:520ms}.lrow:nth-child(6){animation-delay:540ms}.lrow:nth-child(7){animation-delay:560ms}.lrow:nth-child(8){animation-delay:580ms}.lrow:nth-child(9){animation-delay:600ms}.lrow:nth-child(10){animation-delay:620ms}.lrow:nth-child(11){animation-delay:640ms}.lrow:nth-child(n+12){animation-delay:660ms}
+.lhead{position:relative;isolation:isolate;width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;min-height:64px;padding:12px 64px 12px 24px;border:0;background:transparent;text-align:left;cursor:pointer;color:var(--md-on-surface)}
+.lhead::before{content:'';position:absolute;inset:0;background:var(--md-on-surface);opacity:0;transition:opacity var(--fx);z-index:-1}
+.lhead:hover::before{opacity:.05}.lhead:active::before{opacity:.08}
+.lhead:focus-visible{outline-offset:-3px}
+.lhead .tt{flex:1 1 280px;min-width:0;font-size:16px;line-height:24px;font-weight:600}
+.lhead .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.lhead .chev{position:absolute;right:16px;top:50%;margin-top:-20px;width:40px;height:40px;border-radius:20px;display:grid;place-items:center;color:var(--md-on-surface-variant);transition:transform var(--sd),background-color var(--fx)}
+.lhead[aria-expanded="true"] .chev{transform:rotate(180deg);background:var(--md-sc-high)}
+.lbody{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--sd)}
+.lbody[data-open="true"]{grid-template-rows:1fr}
+.lbody > div{overflow:hidden;min-height:0}
+.st-p{background:var(--md-primary-container);color:var(--md-on-primary-container)}
+.st-i{background:var(--md-tertiary-container);color:var(--md-on-tertiary-container)}
+.st-c{background:var(--ok-container);color:var(--on-ok-container)}
+@media (max-width:640px){.lhead{padding:12px 56px 12px 16px}.lhead .chev{right:8px}.wc{padding:24px}}
+</style>
+</helmet>
+<div class="stage" data-theme="light">
+<div class="app">
+<nav class="rail" aria-label="Main" data-nav="{{nav}}" data-anim="{{navAnim}}">
+<a class="wm" href="#top">Commonplace</a>
+<button type="button" class="fab" aria-label="New task" title="New task"><span class="ms l" aria-hidden="true">edit</span></button>
+<ul class="rlist">
+<li aria-hidden="true" class="rind"></li>
+<li><button type="button" class="ri" aria-current="{{navWork}}" onClick="{{goWork}}"><span class="pl"><span class="ms l" aria-hidden="true">dashboard</span></span>Workspace</button></li>
+<li><button type="button" class="ri" aria-current="{{navGuide}}" onClick="{{goGuide}}"><span class="pl"><span class="ms l" aria-hidden="true">explore</span></span>Field guide</button></li>
+<li><button type="button" class="ri" aria-current="{{navTools}}" onClick="{{goTools}}"><span class="pl"><span class="ms l" aria-hidden="true">construction</span></span>Local tools</button></li>
+<li><button type="button" class="ri" aria-current="{{navSettings}}" onClick="{{goSettings}}"><span class="pl"><span class="ms l" aria-hidden="true">settings</span></span>Settings</button></li>
+</ul>
+</nav>
+
+<div class="pane">
+<header class="topbar en" style="animation-delay: 0ms">
+<span class="wm" style="font-size: 18px; line-height: 24px; margin-right: auto">Commonplace</span>
+<button type="button" class="btn ib" aria-label="Find an action" style="color: var(--md-on-surface-variant)"><span class="ms l" aria-hidden="true">search</span></button>
+<button type="button" class="btn ib" aria-label="Menu" style="color: var(--md-on-surface-variant)"><span class="ms l" aria-hidden="true">more_vert</span></button>
+</header>
+<main id="top" class="inner" style="display: flex; flex-direction: column; gap: 40px">
+
+<section style="display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: flex-end; padding-top: 16px">
+<div style="flex: 1 1 460px; min-width: 0">
+<p class="en" style="margin: 0 0 12px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--md-on-surface-variant); animation-delay: 40ms">The field guide <span lang="yue-Hant" style="font-weight: 500">· 實用指南</span></p>
+<h1 class="hd hx" style="margin: 0 0 16px; font-size: 57px; line-height: 64px; letter-spacing: -0.03em; animation-delay: 40ms">Learn by doing.</h1>
+<p class="en" style="margin: 0; color: var(--md-on-surface-variant); font-size: 16px; line-height: 24px; max-width: 600px; animation-delay: 80ms">Short, practical routes through the working sample. Every guide separates what works here from what still needs an implementation.</p>
+</div>
+<div class="en" style="flex: 1 1 360px; max-width: 460px; min-width: 0; padding: 20px 24px 22px; border-radius: 28px; background: var(--md-scl); display: flex; flex-direction: column; gap: 14px; animation-delay: 120ms">
+<div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span class="hd" style="font-size: 32px; line-height: 40px; font-variant-numeric: tabular-nums">0 / 12</span>
+<span style="font-size: 14px; line-height: 20px; color: var(--md-on-surface-variant); font-weight: 500">steps tried in this browser</span>
+</div>
+<progress class="vh" max="12" value="0">0 of 12 steps tried</progress>
+<div class="wavy" aria-hidden="true">
+<div class="wact" style="width: 0px"></div>
+<div class="wline" style="flex: 1; min-width: 0; background: var(--md-outline-variant)"></div>
+<span class="wstop"></span>
+</div>
+<p style="margin: 0; font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant)">Progress records successful actions, not checkboxes. It stays in this browser and is not proof of full feature compliance.</p>
+</div>
+</section>
+
+<section aria-label="Walkthroughs" class="bento">
+<article class="wc b1 en" style="background: var(--md-primary-container); color: var(--md-on-primary-container); animation-delay: 160ms">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span class="ico" style="background: var(--md-primary); color: var(--md-on-primary)"><span class="ms l f" aria-hidden="true">checklist</span></span>
+<span class="tag" style="background: var(--md-scl); color: var(--md-on-surface-variant)"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">radio_button_unchecked</span>Not tried yet</span>
+</div>
+<p style="margin: 8px 0 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .02em">Hands-on walkthrough</p>
+<h2 class="hd" style="margin: 0; font-size: 32px; line-height: 40px; letter-spacing: -0.02em">Plan one useful next step</h2>
+<p style="margin: 0; font-size: 16px; line-height: 24px">Create a task with a title and notes. Move it between To do, In progress, and Done. Edit it without leaving the workspace. Delete asks first; history lets you recover.</p>
+<p style="margin: 12px 0 0; font-size: 12px; line-height: 16px; font-weight: 600">What you will do</p>
+<ol class="steps">
+<li><span class="n">1</span><span><b style="font-weight: 600">Create a task you actually want to do.</b><br>Choose New task, enter a title, and save. Notes are optional.</span></li>
+<li><span class="n">2</span><span><b style="font-weight: 600">Give the task useful detail.</b><br>Add a note, save, then reopen Edit to check it.</span></li>
+<li><span class="n">3</span><span><b style="font-weight: 600">Move the work forward.</b><br>Choose In progress or Done. Undo if you moved the wrong task.</span></li>
+</ol>
+<div style="margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; gap: 8px">
+<a class="btn filled lg" href="#top">Try it in the workspace<span class="ms" aria-hidden="true">arrow_forward</span></a>
+</div>
+</article>
+
+<article class="wc en" style="animation-delay: 200ms">
+<span class="ico"><span class="ms l" aria-hidden="true">translate</span></span>
+<h2 class="hd" style="margin: 4px 0 0; font-size: 22px; line-height: 28px">Make the workspace yours</h2>
+<p style="margin: 0; color: var(--md-on-surface-variant)">Choose English, Cantonese, or both. Adjust each language’s playfulness, then the theme, text size and motion.</p>
+<ol class="steps" style="color: var(--md-on-surface-variant)">
+<li><span class="n">1</span><span>Choose a language you can read comfortably.</span></li>
+<li><span class="n">2</span><span>Adjust the view, not your system.</span></li>
+<li><span class="n">3</span><span>Try a different message style.</span></li>
+</ol>
+<a class="btn tonal" href="V2-Settings.dc.html" style="align-self: flex-start; margin-top: auto">Open settings</a>
+</article>
+
+<article class="wc en" style="animation-delay: 240ms">
+<span class="ico"><span class="ms l" aria-hidden="true">restore</span></span>
+<h2 class="hd" style="margin: 4px 0 0; font-size: 22px; line-height: 28px">Keep a copy. Recover a change.</h2>
+<p style="margin: 0; color: var(--md-on-surface-variant)">Export a JSON backup before experimenting. Undo the latest change or restore one of up to 30 local snapshots.</p>
+<ol class="steps" style="color: var(--md-on-surface-variant)">
+<li><span class="n">1</span><span>Download a backup before experimenting.</span></li>
+<li><span class="n">2</span><span>Recover a real change.</span></li>
+<li><span class="n">3</span><span>Restore a backup deliberately.</span></li>
+</ol>
+<a class="btn tonal" href="V2-Settings.dc.html" style="align-self: flex-start; margin-top: auto">Open local history</a>
+</article>
+
+<article class="wc b4 en" style="animation-delay: 280ms; flex-direction: row; flex-wrap: wrap; gap: 16px 32px; align-items: flex-start">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<span class="ico"><span class="ms l" aria-hidden="true">manage_search</span></span>
+<h2 class="hd" style="margin: 4px 0 0; font-size: 22px; line-height: 28px">Find the thing you need</h2>
+<p style="margin: 0; color: var(--md-on-surface-variant)">Search tasks by title, notes or status. Open the pattern tools for regex. Ctrl+Shift+F opens the command palette anywhere.</p>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding-top: 4px">
+<ol class="steps" style="color: var(--md-on-surface-variant)">
+<li><span class="n">1</span><span>Start with plain-text search.</span></li>
+<li><span class="n">2</span><span>Try an explicit browser pattern.</span></li>
+<li><span class="n">3</span><span>Jump directly to an action.</span></li>
+</ol>
+<a class="btn tonal" href="#top" style="align-self: flex-start">Open command palette</a>
+</div>
+</article>
+</section>
+
+<section class="en" style="display: flex; flex-wrap: wrap; gap: 20px 48px; padding: 32px; border-radius: 32px; background: var(--md-tertiary-container); color: var(--md-on-tertiary-container); animation-delay: 320ms">
+<div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<span style="width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; background: var(--md-scl); color: var(--md-tertiary)"><span class="ms l f" aria-hidden="true">shield</span></span>
+<p style="margin: 4px 0 0; font-size: 14px; line-height: 20px; font-weight: 600">Honest by design</p>
+<h2 class="hd" style="margin: 0; font-size: 32px; line-height: 40px; letter-spacing: -0.02em">Browser boundaries</h2>
+</div>
+<div style="flex: 2 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 24px; padding-top: 4px">
+<p style="margin: 0">This is a browser-local sample, not a native application. It cannot control operating-system credentials, run installers, manage servers, or synchronize a universal lock across unrelated apps. These capabilities remain unimplemented.</p>
+<p style="margin: 0">Built with semantic HTML and custom CSS. Genuine Material 3 components are not installed; this is not a Material 3 compliance claim.</p>
+</div>
+</section>
+
+<section aria-labelledby="ledger-h" style="display: flex; flex-direction: column; gap: 20px">
+<div class="en" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 32px; animation-delay: 360ms">
+<div style="flex: 1 1 420px; min-width: 0">
+<h2 id="ledger-h" class="hd" style="margin: 0 0 8px; font-size: 32px; line-height: 40px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px; flex-wrap: wrap">Capability ledger <span style="font-family: Inter, sans-serif; font-size: 14px; line-height: 20px; font-weight: 600; padding: 4px 12px; border-radius: 999px; background: var(--md-inverse-surface); color: var(--md-inverse-on-surface); font-variant-numeric: tabular-nums">114 tracked</span></h2>
+<p style="margin: 0; color: var(--md-on-surface-variant); font-size: 16px; line-height: 24px; max-width: 640px">An honest inventory, not a completion certificate. Working examples do not prove the full canonical contract.</p>
+</div>
+<label class="sbar" style="flex: 1 1 340px; max-width: 460px; min-width: 0">
+<span class="ms l" aria-hidden="true">search</span>
+<span class="vh">Search requirement inventory</span>
+<input type="search" placeholder="Search requirement inventory">
+<button type="button" class="btn ib" aria-label="Pattern tools" title="Pattern tools" style="color: var(--md-on-surface-variant)"><span class="ms l" aria-hidden="true">regular_expression</span></button>
+</label>
+</div>
+<div class="fchips en" role="group" aria-label="Filter by status" style="animation-delay: 400ms">
+<button type="button" class="fc" aria-pressed="{{fAll}}" onClick="{{showAll}}"><span class="ms" aria-hidden="true">list</span>All <b>114</b></button>
+<button type="button" class="fc" aria-pressed="{{fPartial}}" onClick="{{showPartial}}"><span class="ms" aria-hidden="true" style="color: var(--md-primary)">contrast</span>Partial <b>42</b></button>
+<button type="button" class="fc" aria-pressed="{{fIncomplete}}" onClick="{{showIncomplete}}"><span class="ms" aria-hidden="true" style="color: var(--md-tertiary)">pending</span>Incomplete <b>72</b></button>
+<button type="button" class="fc" aria-pressed="{{fComplete}}" onClick="{{showComplete}}"><span class="ms" aria-hidden="true" style="color: #2E6B30">check_circle</span>Complete <b>0</b></button>
+</div>
+<ul class="ledger">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="10">
+<li class="lrow">
+<button type="button" class="lhead" aria-expanded="{{r.open}}" aria-controls="{{r.bodyId}}" onClick="{{r.toggle}}">
+<span class="tt">{{r.title}}</span>
+<span class="meta">
+<span class="mono" style="font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant)">{{r.id}}</span>
+<sc-if value="{{r.partial}}" hint-placeholder-val="{{true}}"><span class="tag st-p"><span class="ms f" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">contrast</span>Partial</span></sc-if>
+<sc-if value="{{r.incomplete}}" hint-placeholder-val="{{false}}"><span class="tag st-i"><span class="ms f" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">pending</span>Incomplete</span></sc-if>
+</span>
+<span class="chev" aria-hidden="true"><span class="ms l">expand_more</span></span>
+</button>
+<div class="lbody" id="{{r.bodyId}}" data-open="{{r.open}}"><div>
+<div style="padding: 4px 24px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 260px; min-width: 0; padding: 16px 20px; border-radius: 20px; background: var(--md-sc-low)">
+<p style="margin: 0 0 4px; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--md-on-surface-variant)">Why it matters</p>
+<p style="margin: 0; font-size: 14px; line-height: 20px">{{r.benefit}}</p>
+</div>
+<div style="flex: 2 1 340px; min-width: 0; padding: 16px 20px; border-radius: 20px; background: var(--md-sc-low)">
+<p style="margin: 0 0 4px; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--md-on-surface-variant)">Required behavior</p>
+<p style="margin: 0; font-size: 14px; line-height: 20px">{{r.requirement}}</p>
+</div>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--md-on-surface-variant)"><b style="font-weight: 600; color: var(--md-on-surface)">Implementation status.</b> {{r.reason}}</p>
+<p style="margin: 0; font-size: 12px; line-height: 16px; color: var(--md-on-surface-variant); display: flex; gap: 8px; align-items: center"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">info</span>No verification evidence is recorded for this requirement.</p>
+</div>
+</div></div>
+</li>
+</sc-for>
+<sc-if value="{{empty}}" hint-placeholder-val="{{false}}">
+<li style="padding: 28px 24px; display: flex; gap: 12px; align-items: center; color: var(--md-on-surface-variant); font-size: 16px; line-height: 24px"><span class="ms l" aria-hidden="true">search_off</span>No matches. Try another search.</li>
+</sc-if>
+<li style="padding: 12px 16px 12px 24px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; background: var(--md-sc); border-top: 1px solid var(--md-sc-high)">
+<span style="color: var(--md-on-surface-variant); font-variant-numeric: tabular-nums">Showing {{shown}} of {{scope}}</span>
+<button type="button" class="btn outlined">Show all rows</button>
+</li>
+</ul>
+</section>
+
+</main>
+<footer style="max-width: 1200px; margin: 0 auto; padding: 0 40px 32px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: var(--md-on-surface-variant); font-size: 12px; line-height: 16px">
+<span>No accounts. No telemetry. No remote writes.</span>
+<span class="mono">Running version [VERSION] · [COMMIT TIME]</span>
+</footer>
+</div>
+</div>
+<div class="pbar">
+<nav class="bnav" aria-label="Main" data-nav="{{nav}}" data-anim="{{navAnim}}">
+<div class="bwrap">
+<span class="bind" aria-hidden="true"></span>
+<button type="button" class="bi" aria-current="{{navWork}}" onClick="{{goWork}}"><span class="pl"><span class="ms l" aria-hidden="true">dashboard</span></span>Workspace</button>
+<button type="button" class="bi" aria-current="{{navGuide}}" onClick="{{goGuide}}"><span class="pl"><span class="ms l" aria-hidden="true">explore</span></span>Field guide</button>
+<button type="button" class="bi" aria-current="{{navTools}}" onClick="{{goTools}}"><span class="pl"><span class="ms l" aria-hidden="true">construction</span></span>Local tools</button>
+<button type="button" class="bi" aria-current="{{navSettings}}" onClick="{{goSettings}}"><span class="pl"><span class="ms l" aria-hidden="true">settings</span></span>Settings</button>
+</div>
+</nav>
+<button type="button" class="xfab"><span class="ms l" aria-hidden="true">edit</span>New task</button>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2410}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { nav: 'guide', navAnim: 'none', filter: 'all', open: { 'local-history': true } };
+  }
+  renderVals() {
+    const self = this;
+    const all = [
+      { id: 'language', title: 'Language', status: 'partial', benefit: 'Adapt wording, sound and presentation to personal preferences.', requirement: 'Persist English, Cantonese and bilingual modes; verify all surfaces and long bilingual labels at narrow widths.', reason: 'A partial implementation exists. Audit and translate every dialog, tool, article, accessibility name and error; test all three language modes including longest bilingual text.' },
+      { id: 'motion', title: 'Motion', status: 'partial', benefit: 'Read and operate the interface comfortably across layouts and input methods.', requirement: 'Provide motion with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.', reason: 'A partial implementation exists. Unify animation preferences with operating-system reduced motion; remove any motion-only status meaning and test every animated dialog and transition.' },
+      { id: 'onboarding-wizard', title: 'Practical setup wizard', status: 'partial', benefit: 'Find the right task, setting or item without losing context.', requirement: 'Perform real setup actions with progress, Back/Next, optional skipping and saved resume state; finish in the productive workspace.', reason: 'A partial implementation exists. Test the existing setup flow through refresh, Back/Next, restart, storage failure and interruption; add optional skipping and ensure completion opens the working workspace.' },
+      { id: 'command-palette', title: 'Command palette', status: 'partial', benefit: 'Find the right task, setting or item without losing context.', requirement: 'Open with Ctrl+Shift+F and navigate to the exact requested control while respecting locks and focus.', reason: 'A partial implementation exists. Expand the current route command list into an indexed control registry that teleports and focuses the exact element, preserving locks and keyboard shortcut behavior.' },
+      { id: 'regex-search', title: 'Independent full regex search builders', status: 'partial', benefit: 'Find the right task, setting or item without losing context.', requirement: 'Every search owns a full adjacent regex builder with synchronized query, pattern, flags, validation, bounded execution and unsupported-capability disclosure.', reason: 'A partial implementation exists. Replace the current small token helper with a full independent regex builder for every search.' },
+      { id: 'local-history', title: 'Local version history and recovery', status: 'partial', benefit: 'Review outcomes, preserve work and recover visitor-owned state.', requirement: 'Record append-only redacted changes and safe restoration without including credentials or resurrecting unavailable secrets.', reason: 'A partial implementation exists. Extend the current 30-entry snapshot subset into documented versioned append-only history and redacted restore semantics; test malformed snapshots, lock interactions and restart recovery.' },
+      { id: 'exports', title: 'Faithful data exports', status: 'partial', benefit: 'Review outcomes, preserve work and recover visitor-owned state.', requirement: 'Export every faithfully supported format with explicit limitations, validation and no private credential or wording payload.', reason: 'A partial implementation exists. Extend JSON backup with format-specific faithful exports for tasks, settings and tool results; show omissions and validate outputs.' },
+      { id: 'super-confirmation', title: 'Two-key destructive action confirmation', status: 'incomplete', benefit: 'Make consequential actions and recovery explicit without misleading security claims.', requirement: 'Require two independently operated keys and a full confirmation slider before destructive action; cancel or Escape must perform nothing.', reason: 'Not yet accepted. Audit the existing destructive gate and add independent keys, full-range slider, cancellation and focus return, and reduced-motion states.' },
+      { id: 'tabs', title: 'Complete tab navigation', status: 'incomplete', benefit: 'Find the right task, setting or item without losing context.', requirement: 'Support docked tab strips, overflow, ordering, pinning, grouping, discovery searches and persisted state.', reason: 'Not yet accepted. Implement actual browser-style application tabs with docking, overflow, reorder, pinning, groups, four discovery searches and persisted restoration.' },
+      { id: 'context-menus', title: 'Context menus', status: 'incomplete', benefit: 'Find the right task, setting or item without losing context.', requirement: 'Provide accessible contextual actions with filtering, independent regex search and keyboard equivalents.', reason: 'Not yet accepted. Introduce real pointer and keyboard context menus for relevant entities with local search, independent regex builder, focus return and appropriate actions.' }
+    ];
+    const f = this.state.filter;
+    const totals = { all: 114, partial: 42, incomplete: 72, complete: 0 };
+    const rows = all.filter((r) => f === 'all' || r.status === f).map((r) => Object.assign({}, r, {
+      partial: r.status === 'partial', incomplete: r.status === 'incomplete',
+      open: !!self.state.open[r.id], bodyId: 'row-' + r.id,
+      toggle: () => self.setState({ open: Object.assign({}, self.state.open, { [r.id]: !self.state.open[r.id] }) })
+    }));
+    const nav = this.state.nav;
+    const go = (n) => () => self.setState({ nav: n, navAnim: self.state.navAnim === 'a' ? 'b' : 'a' });
+    const setF = (n) => () => self.setState({ filter: n });
+    return {
+      nav: nav, navAnim: this.state.navAnim,
+      navWork: nav === 'work' ? 'page' : false, navGuide: nav === 'guide' ? 'page' : false,
+      navTools: nav === 'tools' ? 'page' : false, navSettings: nav === 'settings' ? 'page' : false,
+      goWork: go('work'), goGuide: go('guide'), goTools: go('tools'), goSettings: go('settings'),
+      rows: rows, empty: rows.length === 0, shown: rows.length, scope: totals[f],
+      fAll: f === 'all', fPartial: f === 'partial', fIncomplete: f === 'incomplete', fComplete: f === 'complete',
+      showAll: setF('all'), showPartial: setF('partial'), showIncomplete: setF('incomplete'), showComplete: setF('complete')
+    };
+  }
+}
+</script>
+</body>
+</html>
