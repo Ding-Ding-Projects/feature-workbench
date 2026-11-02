@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {auditInventory} from '../scripts/acceptance.mjs';
+const ids=['one','two'];
+const rows=()=>ids.map(id=>({id,title:id,status:'incomplete',reason:'Needs runtime proof',evidence:[]}));
+test('honest incomplete inventory validates but never completes',()=>{const audit=auditInventory(ids,rows());assert.equal(audit.valid,true);assert.equal(audit.complete,false);});
+test('each missing canonical row fails closed',()=>{for(const id of ids)assert.equal(auditInventory(ids,rows().filter(r=>r.id!==id)).valid,false);});
+test('duplicate and invented rows fail',()=>{assert.equal(auditInventory(ids,[...rows(),rows()[0]]).valid,false);assert.equal(auditInventory(ids,[...rows(),{...rows()[0],id:'invented'}]).valid,false);});
+test('source-only completion rejected',()=>{const data=rows();data[0].status='verified';assert.equal(auditInventory(ids,data).valid,false);});
+test('negative regression removes every evidence boundary',()=>{const evidence=['implementation','documentation','localization','test','interaction','capture'].map(kind=>({kind,path:`proof/${kind}`,sourceCommit:'a'.repeat(40)}));const data=rows().map(r=>({...r,status:'verified',evidence}));assert.equal(auditInventory(ids,data).complete,true);for(const kind of evidence.map(e=>e.kind)){const broken=structuredClone(data);broken[0].evidence=broken[0].evidence.filter(e=>e.kind!==kind);assert.equal(auditInventory(ids,broken).valid,false);}});
