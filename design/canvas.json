@@ -91,7 +91,7 @@
    "x": 3040,
    "y": 0,
    "w": 1440,
-   "h": 7078,
+   "h": 7850,
    "title": "Appearance and layout",
    "expand": "fill",
    "page": "features"
@@ -127,7 +127,7 @@
    "x": 9120,
    "y": 0,
    "w": 1440,
-   "h": 5443,
+   "h": 6239,
    "title": "Built-in tools and hand-off",
    "expand": "fill",
    "page": "features"
@@ -248,7 +248,7 @@
   "t3": {
    "x": 0,
    "y": -300,
-   "text": "Feature deep dive: all 112 tracked features",
+   "text": "Feature deep dive: all 114 tracked features",
    "kind": "title1",
    "maxW": 21200,
    "page": "features"

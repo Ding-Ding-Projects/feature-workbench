@@ -46,9 +46,9 @@ button{font:inherit}
 <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -0.03em">Appearance and layout</h1>
 <p style="margin: 0; max-width: 720px; color: #475467; font-size: 17px">How Commonplace looks, sizes and arranges itself, with Material Design 3 styling that holds up from a 320px phone to a wide desktop.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 600">12 features</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 600">13 features</span>
 <span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>6 partial</span>
-<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>6 incomplete</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>7 incomplete</span>
 </div>
 <nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px">
 <a href="#accessibility-sizing" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Accessible controls and text sizing</a>
@@ -63,6 +63,7 @@ button{font:inherit}
 <a href="#workflow-navigation" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Task-oriented navigation</a>
 <a href="#mobile-site" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Mobile-friendly documentation</a>
 <a href="#responsive-layout-matrix" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Responsive layout acceptance matrix</a>
+<a href="#live-charts" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Live charts in the Liveline style</a>
 </nav>
 </section>
 
@@ -610,6 +611,72 @@ button{font:inherit}
 </div>
 </article>
 
+
+<!-- 13 live-charts -->
+<article id="live-charts" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">live-charts</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Live charts in the Liveline style</h2>
+<p style="margin: 0; color: #0D1526">Shows numbers that change while you watch as one calm, smoothly moving line, so the latest value and its direction are clear at a glance.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>One smooth line eases toward each new value, led by a pulsing live dot with an up, down or flat arrow; the axis range, grid labels and value badge move together.</li><li>A soft fill below the line comes from the series colour, the grid stays quiet, and time labels follow your language and clock setting.</li><li>Scrub with the pointer or the arrow keys to see a crosshair with time and value; a screen-reader summary gives the latest value and trend.</li><li>Real loading, paused, empty and stale states; the chart never invents points to look alive.</li><li>Under reduced motion or Low stimulation the line snaps instead of easing and the dot stops pulsing, with every value still readable.</li></ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: a timed recording of a live update in both motion states, pointer and keyboard scrubbing, every honest state, and no point the source did not send.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+<section aria-label="Live chart" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 16px">
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<h3 style="margin: 0; font-size: 15px; font-weight: 600">Tasks completed today</h3>
+<span style="font-size: 13px; color: #475467; display: flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #2546D6; box-shadow: 0 0 0 4px #E8EDFF; flex: none"></span>Live · illustrative data</span>
+</div>
+<div role="group" aria-label="Time window" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px"><button type="button" aria-pressed="false" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">1 hour</button><button type="button" aria-pressed="false" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">6 hours</button><button type="button" aria-pressed="true" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Today</button></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; font-variant-numeric: tabular-nums">18 tasks</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">trending_up</span>Rising · +3 since 14:40</span>
+</div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 0">
+<div style="position: relative; flex: 1 1 auto; min-width: 0; height: 220px">
+<img alt="" aria-hidden="true" src="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1000 300%27 preserveAspectRatio=%27none%27%3E%0A%3Cdefs%3E%3ClinearGradient id=%27lc-fill%27 x1=%270%27 y1=%270%27 x2=%270%27 y2=%271%27%3E%3Cstop offset=%270%27 stop-color=%27%232546D6%27 stop-opacity=%270.22%27%3E%3C/stop%3E%3Cstop offset=%271%27 stop-color=%27%232546D6%27 stop-opacity=%270%27%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Cline x1=%270%27 x2=%271000%27 y1=%270%27 y2=%270%27 stroke=%27%23E9EDF4%27 stroke-width=%271%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%3Cline x1=%270%27 x2=%271000%27 y1=%2775%27 y2=%2775%27 stroke=%27%23E9EDF4%27 stroke-width=%271%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%3Cline x1=%270%27 x2=%271000%27 y1=%27150%27 y2=%27150%27 stroke=%27%23E9EDF4%27 stroke-width=%271%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%3Cline x1=%270%27 x2=%271000%27 y1=%27225%27 y2=%27225%27 stroke=%27%23E9EDF4%27 stroke-width=%271%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%3Cline x1=%270%27 x2=%271000%27 y1=%27300%27 y2=%27300%27 stroke=%27%23E9EDF4%27 stroke-width=%271%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%0A%3Cpath d=%27M0.0 300.0 C20.8 295.8 83.3 285.4 125.0 275.0 C166.7 264.6 208.3 247.9 250.0 237.5 C291.7 227.1 333.3 218.8 375.0 212.5 C416.7 206.2 458.3 208.3 500.0 200.0 C541.7 191.7 583.3 177.1 625.0 162.5 C666.7 147.9 708.3 125.0 750.0 112.5 C791.7 100.0 840.3 93.8 875.0 87.5 C909.7 81.2 944.4 77.1 958.3 75.0 L958.3 300 L0 300 Z%27 fill=%27url(%23lc-fill)%27%3E%3C/path%3E%0A%3Cpath d=%27M0.0 300.0 C20.8 295.8 83.3 285.4 125.0 275.0 C166.7 264.6 208.3 247.9 250.0 237.5 C291.7 227.1 333.3 218.8 375.0 212.5 C416.7 206.2 458.3 208.3 500.0 200.0 C541.7 191.7 583.3 177.1 625.0 162.5 C666.7 147.9 708.3 125.0 750.0 112.5 C791.7 100.0 840.3 93.8 875.0 87.5 C909.7 81.2 944.4 77.1 958.3 75.0%27 fill=%27none%27 stroke=%27%232546D6%27 stroke-width=%272.5%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 vector-effect=%27non-scaling-stroke%27%3E%3C/path%3E%0A%3Cline x1=%27958.3%27 x2=%271000%27 y1=%2775%27 y2=%2775%27 stroke=%27%232546D6%27 stroke-width=%271%27 stroke-dasharray=%273 3%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%0A%3Cline x1=%27500%27 x2=%27500%27 y1=%270%27 y2=%27300%27 stroke=%27%23475467%27 stroke-width=%271%27 stroke-dasharray=%274 4%27 vector-effect=%27non-scaling-stroke%27%3E%3C/line%3E%0A%3C/svg%3E" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; overflow: visible">
+<span aria-hidden="true" style="position: absolute; left: 95.83%; top: 25%; width: 30px; height: 30px; transform: translate(-50%,-50%); border-radius: 50%; background: #2546D6; opacity: .16"></span>
+<span aria-hidden="true" style="position: absolute; left: 95.83%; top: 25%; width: 12px; height: 12px; transform: translate(-50%,-50%); border-radius: 50%; background: #2546D6; border: 2px solid #FFFFFF; box-shadow: 0 1px 3px rgba(13,21,38,.25)"></span>
+<span aria-hidden="true" style="position: absolute; left: 95.83%; top: 25%; transform: translate(-50%, -150%); color: #16309F; display: flex"><span class="ms" style="font-size: 18px; width: 18px; height: 18px">north_east</span></span>
+<span aria-hidden="true" style="position: absolute; left: 50%; top: 66.67%; width: 10px; height: 10px; transform: translate(-50%,-50%); border-radius: 50%; background: #FFFFFF; border: 2px solid #2546D6"></span>
+<span style="position: absolute; left: 50%; top: 66.67%; transform: translate(-50%, calc(-100% - 14px)); background: #0D1526; color: #FFFFFF; border-radius: 10px; padding: 6px 10px; display: flex; flex-direction: column; gap: 0; white-space: nowrap; box-shadow: 0 4px 12px rgba(13,21,38,.2)"><span style="font-size: 12px; color: #C9D2E3; font-variant-numeric: tabular-nums">12:00</span><span style="font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums">8 tasks</span></span>
+</div>
+<div style="position: relative; width: 56px; flex: none"><span style="position: absolute; left: 8px; top: 0%; transform: translateY(-50%); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">24</span><span style="position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">12</span><span style="position: absolute; left: 8px; top: 75%; transform: translateY(-50%); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">6</span><span style="position: absolute; left: 8px; top: 100%; transform: translateY(-50%); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">0</span><span style="position: absolute; left: 4px; top: 25%; transform: translateY(-50%); min-height: 26px; padding: 0 6px 0 8px; display: inline-flex; align-items: center; gap: 2px; border-radius: 999px; background: #2546D6; color: #FFFFFF; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums">18<span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">arrow_upward</span></span></div>
+</div>
+<div style="position: relative; height: 18px; margin-right: 56px"><span style="position: absolute; left: 0%; transform: translateX(0); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">08:00</span><span style="position: absolute; left: 50%; transform: translateX(-50%); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">12:00</span><span style="position: absolute; left: 100%; transform: translateX(-100%); font-size: 12px; color: #475467; font-variant-numeric: tabular-nums">16:00</span></div>
+<figcaption style="font-size: 13px; color: #475467; display: flex; align-items: flex-start; gap: 6px; padding-top: 4px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">record_voice_over</span><span>Read aloud: 18 tasks completed today, rising, last value at 15:40.</span></figcaption>
+</figure>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding-top: 10px; border-top: 1px solid #E9EDF4; font-size: 13px; color: #475467">
+<span style="display: inline-flex; align-items: center; gap: 6px"><kbd style="min-width: 28px; min-height: 28px; padding: 0 6px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: #FFFFFF; border: 1px solid #DCE2EC; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D1526">←</kbd><kbd style="min-width: 28px; min-height: 28px; padding: 0 6px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: #FFFFFF; border: 1px solid #DCE2EC; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D1526">→</kbd>Move the crosshair</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><kbd style="min-width: 28px; min-height: 28px; padding: 0 6px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; background: #FFFFFF; border: 1px solid #DCE2EC; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #0D1526">Esc</kbd>Back to live</span>
+</div>
+</section>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px">
+<div style="min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0D1526"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">progress_activity</span>Loading</span>
+<span aria-hidden="true" style="display: flex; flex-direction: column; gap: 6px"><span style="height: 8px; width: 80%; border-radius: 4px; background: #E9EDF4"></span><span style="height: 8px; width: 55%; border-radius: 4px; background: #E9EDF4"></span></span><span style="font-size: 12px; color: #475467">Waiting for the first value</span>
+</div>
+<div style="min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0D1526"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">pause_circle</span>Paused · catching up</span>
+<span aria-hidden="true" style="height: 6px; border-radius: 3px; background: #E9EDF4; display: flex"><span style="width: 40%; border-radius: 3px; background: #2546D6"></span></span><span style="font-size: 12px; color: #475467">6 queued values replaying</span>
+</div>
+<div style="min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #0D1526"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">show_chart</span>Empty</span>
+<span aria-hidden="true" style="height: 14px; border-bottom: 2px dashed #DCE2EC"></span><span style="font-size: 12px; color: #475467">No tasks completed yet today</span>
+</div>
+<div style="min-width: 0; background: #FFEEDD; border: 1px solid #FFEEDD; border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">warning</span>Stale · feed stalled</span>
+<span aria-hidden="true" style="height: 14px; border-bottom: 2px solid #C2570C; opacity: .45"></span><span style="font-size: 12px; color: #7A2F06">Last value 14:52 · nothing new for 4 min</span>
+</div>
+</div>
+<p style="margin: 0; padding: 12px 14px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DCE2EC; font-size: 13px; color: #475467; display: flex; gap: 8px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #16309F">motion_photos_off</span><span><span style="font-weight: 600; color: #0D1526">Reduced motion or Low stimulation:</span> the line snaps to each new value, the dot stops pulsing, and the badge and axis change without animation. Every value and trend stays readable.</span></p>
+</div>
+</article>
+
 </main>
 
 <footer style="border-top: 1px solid #DCE2EC">
@@ -620,7 +687,7 @@ button{font:inherit}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7078}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7850}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }
