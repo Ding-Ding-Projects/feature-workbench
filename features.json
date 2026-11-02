@@ -1342,5 +1342,23 @@
     "deliveryKind": "process",
     "nextAction": "Record explicit nonapplicability for this non-game sample; never treat documentation illustrations as native game visual acceptance.",
     "blocker": null
+  },
+  {
+    "id": "live-charts",
+    "title": "Live charts in the Liveline style",
+    "benefit": "Follow changing numbers at a glance without losing exact values.",
+    "requirement": "Every chart whose data updates while visible eases one smooth line toward each new state with a pulsing live dot and momentum, a fill from the series colour, a quiet grid, animated range and value badge, pointer and keyboard scrubbing with time and value, a screen-reader summary, and honest loading, paused, empty and stale states that never invent points. Reduced motion snaps instead of easing.",
+    "status": "incomplete",
+    "reason": "Not yet implemented. This browser sample has no chart whose data updates while visible.",
+    "evidence": []
+  },
+  {
+    "id": "drawesome-drawing",
+    "title": "Drawing and annotation with Drawesome",
+    "benefit": "Mark up screenshots, previews and images without leaving the app.",
+    "requirement": "Draw on screenshots, frames, previews, images or a blank board with seven pens of distinct width behaviour, a partial eraser, Shift-locked strokes and one shape-changing toolbar; every pen has a working shortcut shown in its tooltip and menu; undo, redo, a guarded clear, SVG export of exactly what is shown and PNG export at 1x to 3x; strokes stay local, persist and join version history.",
+    "status": "incomplete",
+    "reason": "Not yet implemented. No drawing surface exists in this sample.",
+    "evidence": []
   }
 ]
