@@ -3,7 +3,7 @@ export function parseBoundedJSON(text, limit = 262144) {
   if (typeof text !== 'string' || new TextEncoder().encode(text).length > limit) throw Error('File exceeds the allowed size.');
   let i = 0;
   const fail = () => { throw Error('Invalid or unsupported JSON.'); };
-  const space = () => { while (/\s/.test(text[i] || '') && i < text.length) i++; };
+  const space = () => { while (/[ \t\r\n]/.test(text[i] || '') && i < text.length) i++; };
   function string() {
     const start = i++;
     while (i < text.length) {
