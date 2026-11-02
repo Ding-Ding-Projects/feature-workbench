@@ -12,7 +12,8 @@ A fully new visual design for the Commonplace sample workbench (the GitHub Pages
 | `Settings.dc.html` | Settings as a full page with a section rail (a chip row on phones). |
 | `Setup.dc.html` | Setup wizard, step 2 of 3 (Look and comfort). |
 | `Mobile.dc.html` | Workspace on a 390 x 844 phone, dark theme (interactive lane tabs). |
-| `frames/*.jpg` | Rendered stills of every artboard at 1440 and 390 wide, after review fixes (deep-dive 1440 stills are scaled to 1080 wide to keep the repository small). |
+| `frames/*.png` | Rendered stills of the five screen artboards at 1440 and 390 wide (the canonical originals listed in `docs/design-parity-inventory.json`; keep them byte for byte). |
+| `frames/Features-*.jpg` | Rendered stills of the deep-dive pages (1440 stills scaled to 1080 wide to keep the repository small). |
 | `Features-*.dc.html` | Feature deep dive: 14 pages (canvas page "Feature deep dive") covering all 112 tracked features in `src/features.json`, one card per feature with its spec and a drawn mock. |
 | `REHEARSAL.md` | Review record: what was checked, what was found and fixed. |
 
