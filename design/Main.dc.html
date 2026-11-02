@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commonplace workspace</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="#top" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; align-content: center; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="#top" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 32px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; justify-content: space-between">
+<div style="flex: 1 1 480px; min-width: 0">
+<h1 style="margin: 0 0 8px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em">Make room for your next idea.</h1>
+<p style="margin: 0; color: #475467; font-size: 16px; display: flex; align-items: flex-start; gap: 8px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #2546D6; margin-top: 3px">computer</span><span>Local workspace. Plans, notes and the next useful step stay in this browser.</span></p>
+</div>
+<button type="button" style="min-height: 52px; padding: 0 24px 0 20px; border: 0; border-radius: 14px; background: #2546D6; color: #FFFFFF; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">add</span>New task</button>
+</section>
+
+<section aria-label="Setup progress" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 12px 12px 12px 20px; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px">
+<span aria-hidden="true" style="display: flex; gap: 4px"><span style="width: 28px; height: 6px; border-radius: 3px; background: #2546D6"></span><span style="width: 28px; height: 6px; border-radius: 3px; background: #2546D6"></span><span style="width: 28px; height: 6px; border-radius: 3px; background: #DCE2EC"></span></span>
+<span style="flex: 1 1 260px"><strong style="font-weight: 600">Setup, step 2 of 3.</strong> <span style="color: #475467">Progress is saved, so you can leave and resume.</span></span>
+<a href="Setup.dc.html" style="min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; text-decoration: none">Resume setup</a>
+</section>
+
+<section aria-label="Workspace tools" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<h2 style="margin: 0 auto 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px">Workspace <span style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; min-width: 28px; height: 28px; box-sizing: border-box; padding: 0 8px; display: inline-grid; place-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; font-variant-numeric: tabular-nums">{{total}}</span></h2>
+<label style="flex: 1 1 260px; max-width: 360px; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467">
+<span class="ms" aria-hidden="true">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Filter tasks</span>
+<input type="search" placeholder="Filter tasks" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent">
+<button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button>
+</label>
+<button type="button" aria-pressed="{{focus}}" onClick="{{toggleFocus}}" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<sc-if value="{{focus}}" hint-placeholder-val="{{false}}"><span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #2546D6; display: flex; justify-content: flex-end; padding: 3px; box-sizing: border-box"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span></sc-if>
+<sc-if value="{{unfocus}}" hint-placeholder-val="{{true}}"><span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #98A2B3; display: flex; padding: 3px; box-sizing: border-box"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span></sc-if>
+Focus view</button>
+<span style="display: inline-flex; gap: 8px">
+<button type="button" aria-label="Local history" title="Local history" style="width: 44px; height: 44px; padding: 0; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">history</span></button>
+<button type="button" aria-label="Undo last change" title="Undo last change" style="width: 44px; height: 44px; padding: 0; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">undo</span></button>
+</span>
+</section>
+
+<section aria-label="Task board" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start">
+
+<sc-if value="{{showTodo}}" hint-placeholder-val="{{true}}">
+<section style="background: #E9EDF4; border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 4px 8px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #475467">radio_button_unchecked</span>To do <span style="margin-left: auto; color: #475467; font-variant-numeric: tabular-nums">{{todoCount}}</span></h3>
+<sc-for list="{{todo}}" as="task" hint-placeholder-count="2">
+<article style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 1px 2px rgba(13,21,38,.06)">
+<h4 style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.35">{{task.title}}</h4>
+<p style="margin: 0; color: #475467; font-size: 14px">{{task.notes}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px">
+<sc-for list="{{task.moves}}" as="mv" hint-placeholder-count="2"><button type="button" onClick="{{mv.go}}" aria-label="{{mv.aria}}" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">{{mv.label}}</button></sc-for>
+<button type="button" aria-label="Edit task" style="margin-left: auto; min-height: 36px; padding: 0 8px; border: 0; border-radius: 10px; background: transparent; color: #2546D6; font-size: 13px; font-weight: 600; cursor: pointer">Edit</button>
+</div>
+</article>
+</sc-for>
+</section>
+</sc-if>
+
+<section style="background: #FFEEDD; border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 4px 8px; font-size: 15px; font-weight: 600; color: #7A2F06; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true">clock_loader_40</span>In progress <span style="margin-left: auto; font-variant-numeric: tabular-nums">{{doingCount}}</span></h3>
+<sc-for list="{{doing}}" as="task" hint-placeholder-count="1">
+<article style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 6px 18px rgba(122,47,6,.12), 0 1px 2px rgba(13,21,38,.06)">
+<h4 style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.35">{{task.title}}</h4>
+<p style="margin: 0; color: #475467; font-size: 14px">{{task.notes}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px">
+<sc-for list="{{task.moves}}" as="mv" hint-placeholder-count="2"><button type="button" onClick="{{mv.go}}" aria-label="{{mv.aria}}" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">{{mv.label}}</button></sc-for>
+<button type="button" aria-label="Edit task" style="margin-left: auto; min-height: 36px; padding: 0 8px; border: 0; border-radius: 10px; background: transparent; color: #2546D6; font-size: 13px; font-weight: 600; cursor: pointer">Edit</button>
+</div>
+</article>
+</sc-for>
+</section>
+
+<sc-if value="{{showDone}}" hint-placeholder-val="{{true}}">
+<section style="background: #E8EDFF; border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 4px 8px; font-size: 15px; font-weight: 600; color: #16309F; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true">check_circle</span>Done <span style="margin-left: auto; font-variant-numeric: tabular-nums">{{doneCount}}</span></h3>
+<sc-for list="{{done}}" as="task" hint-placeholder-count="1">
+<article style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 1px 2px rgba(13,21,38,.06)">
+<h4 style="margin: 0; font-size: 16px; font-weight: 600; line-height: 1.35; color: #475467">{{task.title}}</h4>
+<p style="margin: 0; color: #475467; font-size: 14px">{{task.notes}}</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px">
+<sc-for list="{{task.moves}}" as="mv" hint-placeholder-count="2"><button type="button" onClick="{{mv.go}}" aria-label="{{mv.aria}}" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">{{mv.label}}</button></sc-for>
+<button type="button" aria-label="Edit task" style="margin-left: auto; min-height: 36px; padding: 0 8px; border: 0; border-radius: 10px; background: transparent; color: #2546D6; font-size: 13px; font-weight: 600; cursor: pointer">Edit</button>
+</div>
+</article>
+</sc-for>
+</section>
+</sc-if>
+
+</section>
+
+<a href="Guide.dc.html" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding: 20px 24px; border-radius: 20px; background: #0D1526; color: #FFFFFF; text-decoration: none">
+<span style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 600; color: #B9C6FF">Field guide</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.01em">Plan one useful next step</span>
+<span style="color: #C9D2E3; font-size: 14px">Create, move and edit a task. Delete asks first; history lets you recover.</span>
+</span>
+<span style="min-height: 44px; padding: 0 16px; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px">Open the guide <span class="ms" aria-hidden="true">arrow_forward</span></span>
+</a>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1360}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      focus: false,
+      tasks: [
+        { id: 'a', title: 'Export a backup before experimenting', notes: 'Tasks and preferences as one JSON file.', status: 'todo' },
+        { id: 'b', title: 'Choose a comfortable text size', notes: 'Settings, then Appearance.', status: 'todo' },
+        { id: 'c', title: 'Write the next useful step', notes: 'A short title. Notes are optional.', status: 'doing' },
+        { id: 'e', title: 'Try the command palette', notes: 'Ctrl Shift F from anywhere.', status: 'doing' },
+        { id: 'd', title: 'Pick a language', notes: 'English, Cantonese, or both.', status: 'done' },
+        { id: 'f', title: 'Read the browser boundaries', notes: 'Field guide, Honest by design.', status: 'done' }
+      ]
+    };
+  }
+  move(id, status) {
+    this.setState({ tasks: this.state.tasks.map((t) => (t.id === id ? Object.assign({}, t, { status: status }) : t)) });
+  }
+  renderVals() {
+    const labels = { todo: 'To do', doing: 'In progress', done: 'Done' };
+    const shape = (t) => Object.assign({}, t, {
+      moves: ['todo', 'doing', 'done'].filter((s) => s !== t.status).map((s) => ({
+        label: labels[s],
+        aria: 'Move ' + t.title + ' to ' + labels[s],
+        go: () => this.move(t.id, s)
+      }))
+    });
+    const of = (s) => this.state.tasks.filter((t) => t.status === s).map(shape);
+    const todo = of('todo'), doing = of('doing'), done = of('done');
+    return {
+      todo: todo, doing: doing, done: done,
+      todoCount: todo.length, doingCount: doing.length, doneCount: done.length,
+      total: this.state.tasks.length,
+      focus: this.state.focus, unfocus: !this.state.focus,
+      showTodo: !this.state.focus, showDone: !this.state.focus,
+      toggleFocus: () => this.setState({ focus: !this.state.focus })
+    };
+  }
+}
+</script>
+</body>
+</html>

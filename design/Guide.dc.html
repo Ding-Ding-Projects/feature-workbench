@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commonplace field guide</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="#top" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 40px; display: flex; flex-direction: column; gap: 40px">
+
+<section style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px; justify-content: space-between">
+<div style="flex: 1 1 520px; min-width: 0">
+<p style="margin: 0 0 16px; font-size: 13px; font-weight: 600; color: #475467">The field guide <span lang="yue-Hant" style="font-weight: 500">· 實用指南</span></p>
+<h1 style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 60px; line-height: 1.02; letter-spacing: -0.035em">Learn by doing.</h1>
+<p style="margin: 0; color: #475467; font-size: 18px; max-width: 620px">Short, practical routes through the working sample. Every guide separates what works here from what still needs an implementation.</p>
+</div>
+<label style="flex: 0 1 360px; display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 6px 0 14px; border: 1px solid #DCE2EC; border-radius: 14px; background: #FFFFFF; color: #475467">
+<span class="ms" aria-hidden="true">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search the guide</span>
+<input type="search" placeholder="Search the guide" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent">
+<button type="button" aria-label="Pattern tools" style="flex: none; min-height: 34px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button>
+</label>
+</section>
+
+<section aria-label="Guides" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px">
+<article style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; background: #0D1526; color: #FFFFFF">
+<span class="ms" aria-hidden="true" style="color: #B9C6FF; font-size: 24px; width: 24px; height: 24px">checklist</span>
+<h2 style="margin: 8px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Plan one useful next step</h2>
+<p style="margin: 0; color: #C9D2E3; font-size: 14px; flex: 1">Create a task with a title and notes. Move it between To do, In progress, and Done. Delete asks first; history lets you recover.</p>
+<a href="Main.dc.html" style="margin-top: 8px; align-self: flex-start; min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; text-decoration: none">Try it in the workspace</a>
+</article>
+<article style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #DCE2EC">
+<span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 24px; width: 24px; height: 24px">translate</span>
+<h2 style="margin: 8px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Make the workspace yours</h2>
+<p style="margin: 0; color: #475467; font-size: 14px; flex: 1">Choose English, Cantonese, or both. Tune each language's playfulness, then the theme, text size and motion.</p>
+<a href="Settings.dc.html" style="margin-top: 8px; align-self: flex-start; min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; text-decoration: none">Open settings</a>
+</article>
+<article style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #DCE2EC">
+<span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 24px; width: 24px; height: 24px">restore</span>
+<h2 style="margin: 8px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Keep a copy. Recover a change.</h2>
+<p style="margin: 0; color: #475467; font-size: 14px; flex: 1">Export a JSON backup before experimenting. Undo the latest change or restore one of up to 30 local snapshots.</p>
+<a href="Settings.dc.html" style="margin-top: 8px; align-self: flex-start; min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; text-decoration: none">Open data &amp; recovery</a>
+</article>
+<article style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; background: #FFFFFF; border: 1px solid #DCE2EC">
+<span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 24px; width: 24px; height: 24px">manage_search</span>
+<h2 style="margin: 8px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; line-height: 1.2">Find the thing you need</h2>
+<p style="margin: 0; color: #475467; font-size: 14px; flex: 1">Search tasks by title, notes or status. Open the pattern tools for regex. Ctrl+Shift+F opens the command palette anywhere.</p>
+<a href="Main.dc.html" style="margin-top: 8px; align-self: flex-start; min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; text-decoration: none">Try it in the workspace</a>
+</article>
+</section>
+
+<section style="display: flex; flex-wrap: wrap; gap: 24px 48px; padding: 32px; border-radius: 24px; background: #FFEEDD">
+<div style="flex: 1 1 300px; min-width: 0">
+<p style="margin: 0 0 8px; font-size: 13px; font-weight: 600; color: #7A2F06">Honest by design</p>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em">Browser boundaries</h2>
+</div>
+<div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px; color: #3B2414">
+<p style="margin: 0">This is a browser-local sample, not a native application. It cannot control operating-system credentials, run installers, manage servers, or synchronize a universal lock across unrelated apps.</p>
+<p style="margin: 0">Built with semantic HTML and custom CSS. This is not a Material 3 compliance claim.</p>
+</div>
+</section>
+
+<section aria-labelledby="ledger-h" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px">
+<div style="flex: 1 1 420px; min-width: 0">
+<h2 id="ledger-h" style="margin: 0 0 6px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; display: flex; align-items: center; gap: 12px">Capability ledger <span style="font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #0D1526; color: #FFFFFF; font-variant-numeric: tabular-nums">112</span></h2>
+<p style="margin: 0; color: #475467; max-width: 640px">An honest inventory, not a completion certificate. Partial rows work in this browser but are not the full contract; incomplete rows are not implemented yet.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 10px; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; font-size: 14px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>27 partial</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 10px; border-radius: 12px; background: #FFEEDD; color: #7A2F06; font-weight: 600; font-size: 14px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>85 incomplete</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; overflow: hidden">
+<sc-for list="{{rows}}" as="row" hint-placeholder-count="6">
+<article style="display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: center; padding: 14px 20px; border-bottom: 1px solid #EEF1F6">
+<h3 style="margin: 0; flex: 1 1 260px; min-width: 0; font-size: 15px; font-weight: 600">{{row.title}}</h3>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">{{row.id}}</span>
+<sc-if value="{{row.partial}}" hint-placeholder-val="{{true}}"><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></sc-if>
+<sc-if value="{{row.incomplete}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Incomplete</span></sc-if>
+</article>
+</sc-for>
+<div style="padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; background: #F8F9FC">
+<span style="color: #475467; font-size: 14px">Showing 6 of 112</span>
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Show all rows</button>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes.</span>
+<span style="font-family: 'JetBrains Mono', monospace">Running version [VERSION] · [COMMIT TIME]</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1640}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      rows: [
+        { id: 'language', title: 'Language', partial: true },
+        { id: 'tone-and-dialog-emoji', title: 'Independent language tone and dialog emoji', partial: true },
+        { id: 'personal-vocabulary', title: 'Local personal wording import', partial: true },
+        { id: 'narration', title: 'Spoken narration and voice selection', partial: true },
+        { id: 'command-palette', title: 'Command palette', partial: true },
+        { id: 'super-confirmation', title: 'Two-key destructive action confirmation', partial: false }
+      ].map(function (r) { return Object.assign({}, r, { incomplete: !r.partial }); })
+    };
+  }
+}
+</script>
+</body>
+</html>

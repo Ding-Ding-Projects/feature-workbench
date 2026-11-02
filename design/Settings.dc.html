@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commonplace settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.snav{flex-direction:row!important;flex-basis:100%!important;max-width:none!important;overflow-x:auto;padding-bottom:4px}.snav a{flex:none;white-space:nowrap}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px">
+<a href="Main.dc.html" style="min-height: 44px; padding: 0 14px 0 8px; display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; color: #0D1526; text-decoration: none; font-weight: 600"><span class="ms" aria-hidden="true">arrow_back</span>Workspace</a>
+<h1 style="margin: 0 auto 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 26px; letter-spacing: -0.02em">Settings</h1>
+<label style="flex: 0 1 320px; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467">
+<span class="ms" aria-hidden="true">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search settings</span>
+<input type="search" placeholder="Search settings" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent">
+</label>
+</div>
+</header>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+
+<nav class="snav" aria-label="Settings sections" style="flex: 1 1 220px; max-width: 260px; display: flex; flex-direction: column; gap: 4px">
+<a href="#language" aria-current="true" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 10px; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; text-decoration: none; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><span class="ms" aria-hidden="true" style="color: #2546D6">translate</span>Language</a>
+<a href="#appearance" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 10px; border-radius: 12px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">palette</span>Appearance</a>
+<a href="#wording" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 10px; border-radius: 12px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">dictionary</span>Personal wording</a>
+<a href="#narrator" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 10px; border-radius: 12px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">record_voice_over</span>Narrator</a>
+<a href="#data" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 10px; border-radius: 12px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">settings_backup_restore</span>Data &amp; recovery</a>
+<a href="#about" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; gap: 10px; border-radius: 12px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">info</span>Browser boundaries</a>
+</nav>
+
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+
+<section id="language" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<div>
+<h2 style="margin: 0 0 4px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700">Language</h2>
+<p style="margin: 0; color: #475467; font-size: 14px">Playfulness styles messages, including errors and warnings, without changing facts. Level 1 is a serious tone.</p>
+</div>
+<div role="group" aria-label="Language" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px; max-width: 520px">
+<button type="button" aria-pressed="false" style="min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; cursor: pointer">English</button>
+<button type="button" aria-pressed="false" lang="yue-Hant" style="min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; cursor: pointer">廣東話</button>
+<button type="button" aria-pressed="true" style="min-height: 44px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Bilingual</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 14px; background: #F8F9FC">
+<span style="display: flex; justify-content: space-between; font-weight: 600">English playfulness <output style="font-variant-numeric: tabular-nums; color: #2546D6">5</output></span>
+<input type="range" min="1" max="5" value="5" style="accent-color: #2546D6; width: 100%">
+</label>
+<label style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 14px; background: #F8F9FC">
+<span style="display: flex; justify-content: space-between; font-weight: 600">Cantonese playfulness <output style="font-variant-numeric: tabular-nums; color: #2546D6">3</output></span>
+<input type="range" min="1" max="5" value="3" style="accent-color: #2546D6; width: 100%">
+</label>
+</div>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px">
+<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
+<span>Show emojis in dialogs and message boxes</span>
+</label>
+</section>
+
+<section id="appearance" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700">Appearance</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; align-items: start">
+<div role="group" aria-label="Theme" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<button type="button" aria-pressed="true" style="padding: 12px; border: 2px solid #2546D6; border-radius: 16px; background: #FFFFFF; color: #0D1526; text-align: left; display: flex; flex-direction: column; gap: 10px; cursor: pointer">
+<span aria-hidden="true" style="height: 64px; border-radius: 10px; background: #F3F5F9; display: flex; gap: 6px; padding: 10px; box-sizing: border-box"><span style="flex: 1; border-radius: 6px; background: #FFFFFF"></span><span style="flex: 1; border-radius: 6px; background: #FFEEDD"></span><span style="flex: 1; border-radius: 6px; background: #E8EDFF"></span></span>
+<span style="font-weight: 600; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span>Light</span>
+</button>
+<button type="button" aria-pressed="false" style="padding: 12px; border: 1px solid #DCE2EC; border-radius: 16px; background: #FFFFFF; color: #0D1526; text-align: left; display: flex; flex-direction: column; gap: 10px; cursor: pointer">
+<span aria-hidden="true" style="height: 64px; border-radius: 10px; background: #0B1220; display: flex; gap: 6px; padding: 10px; box-sizing: border-box"><span style="flex: 1; border-radius: 6px; background: #172238"></span><span style="flex: 1; border-radius: 6px; background: #3A2412"></span><span style="flex: 1; border-radius: 6px; background: #1B2A5C"></span></span>
+<span style="font-weight: 600; padding-left: 2px">Dark</span>
+</button>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 14px; background: #F8F9FC">
+<label style="display: flex; flex-direction: column; gap: 10px">
+<span style="display: flex; justify-content: space-between; font-weight: 600">Text size <output style="font-variant-numeric: tabular-nums; color: #2546D6">110%</output></span>
+<input type="range" min="85" max="150" step="5" value="110" style="accent-color: #2546D6; width: 100%">
+</label>
+<p aria-hidden="true" style="margin: 0; font-size: 16.5px; color: #475467">The quick note reads like this.</p>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; border-top: 1px solid #E4E8EF; padding-top: 8px">
+<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
+<span>Reduce motion</span>
+</label>
+</div>
+</div>
+</section>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start">
+<section id="wording" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 700">Personal wording</h2>
+<p style="margin: 0; color: #475467; font-size: 14px">Local JSON upload, validated before use and never included in exports or history.</p>
+<p style="margin: 0; font-size: 14px; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #475467">info</span>No personal wording loaded.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+<label style="min-height: 44px; padding: 0 16px 0 12px; display: inline-flex; align-items: center; gap: 8px; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; cursor: pointer"><span class="ms" aria-hidden="true">upload_file</span>Choose JSON file<input type="file" accept=".json,application/json" style="position: absolute; width: 1px; height: 1px; opacity: 0"></label>
+<button type="button" disabled style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #667085; font-weight: 600">Clear</button>
+</div>
+</section>
+<section id="narrator" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 20px; font-weight: 700">Narrator</h2>
+<p style="margin: 0; color: #475467; font-size: 14px">Off by default. Uses voices installed in your browser; unavailable voices are not substituted.</p>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px">
+<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
+<span>Speak app events</span>
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Cantonese voice
+<span style="position: relative; display: block">
+<select style="appearance: none; -webkit-appearance: none; width: 100%; min-height: 44px; padding: 0 40px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font: inherit; font-weight: 400"><option>Choose automatically</option></select>
+<span class="ms" aria-hidden="true" style="position: absolute; right: 12px; top: 12px; color: #475467; pointer-events: none">expand_more</span>
+</span>
+</label>
+</section>
+</div>
+
+<section id="data" style="background: #0D1526; color: #FFFFFF; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center">
+<div style="flex: 1 1 320px; min-width: 0">
+<h2 style="margin: 0 0 6px; font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700">Data &amp; recovery</h2>
+<p style="margin: 0; color: #C9D2E3; font-size: 14px">Backups contain tasks and preferences. Personal wording and file metadata are always omitted.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 0; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">download</span>Export workspace</button>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #3A4A66; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">upload</span>Import workspace</button>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #3A4A66; border-radius: 12px; background: transparent; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">history</span>Local history</button>
+<span aria-hidden="true" style="width: 1px; align-self: stretch; background: #3A4A66; margin: 0 8px"></span>
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #FFB4A8; border-radius: 12px; background: transparent; color: #FFC9BF; font-weight: 600; cursor: pointer">Reset preferences</button>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

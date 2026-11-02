@@ -1,0 +1,20 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-11-02T05:58:00Z"},
+  "title": "Commonplace Redesign",
+  "launch": {"view": "canvas"},
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 950, "title": "Workspace (desktop)", "expand": "fill", "is_interactive": true},
+    "Guide.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 1448, "title": "Field guide + capability ledger", "expand": "fill"},
+    "Settings.dc.html": {"x": 0, "y": 1868, "w": 1440, "h": 1278, "title": "Settings", "expand": "fill"},
+    "Setup.dc.html": {"x": 1520, "y": 1868, "w": 1440, "h": 900, "title": "Setup wizard, step 2 of 3", "expand": "fill"},
+    "Mobile.dc.html": {"x": 3040, "y": 1868, "w": 390, "h": 844, "title": "Phone workspace (dark)", "is_interactive": true}
+  },
+  "order": ["Main.dc.html", "Guide.dc.html", "Settings.dc.html", "Setup.dc.html", "Mobile.dc.html"],
+  "notes": {
+    "t1": {"x": 0, "y": -300, "text": "Commonplace, redesigned: the two routes", "kind": "title1", "maxW": 2960},
+    "t2": {"x": 0, "y": 1568, "text": "Settings, setup and phone", "kind": "title1", "maxW": 3430}
+  },
+  "designSystems": []
+}
