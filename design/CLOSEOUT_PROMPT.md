@@ -1,10 +1,11 @@
-# Closeout: design pass, 2026-11-02
+# Closeout: v2 redesign, 2026-11-02
 
 ```
-Closeout: feature-workbench design pass (2026-11-02)
-- New redesign for Commonplace (cobalt and amber on cool paper, Bricolage Grotesque and Inter, Material Symbols Rounded): 5 screen artboards plus 14 feature deep-dive pages covering all 112 features tracked in src/features.json.
-- Design source: design/ on main (canvas.json, 19 artboards, frames, HANDOFF.md, REHEARSAL.md). Tests 191/191 green at the time of this closeout.
-- Stageshow skill commit 8020574 guided the pass; two fresh-eye reviews, all fixable findings fixed.
-- design/frames/*.png (the nine screen frames) are pinned by SHA-256 in tests/design-reference.test.mjs: never re-encode or regenerate them in place.
-- Open: dark versions of the desktop screens, Cantonese-only string lengths, text at 150 %, focus and hover states.
+Closeout: Commonplace v2 redesign (2026-11-02)
+- Full redesign in Material 3 Expressive: tonal colour roles (light and dark), Expressive shapes with press morphs, spring motion (staggered entrances, sliding navigation indicator, FLIP task moves with rolling counts, collapsing FAB, dialogs from their trigger, wavy progress on a rotating scalloped shape, staggered lists, circular theme reveal), full reduced-motion path. Navigation rail on desktop, bottom bar and FAB on phones.
+- Live site built from source d73f1e9; design source and v2 artboards in design/ (V2-*.dc.html, HANDOFF.md "v2" section).
+- 114 tracked features (live charts and Drawesome drawing added); every feature has a deep-dive card.
+- Fifteen Stageshow product shots re-skinned to v2 and animated, recorded per scene in design/stageshow/frames/*.mp4; each passed the Stageshow gate at both widths and two fresh-eye reviews.
+- Open: slider value bubble that follows the handle (live site and Appearance scene use a stepped value), phone toolbar wraps to two rows, dark theme and reduced motion not reviewed on the product shots.
+- design/frames/*.png (nine v1 screen frames) are pinned by SHA-256 in tests: never re-encode them.
 ```
