@@ -1,9 +1,10 @@
-/* Commonplace, Completeness and evidence. Every rule is scoped to the scene. */
+/* Commonplace v2 (Material 3 Expressive), Completeness and evidence.
+   Every rule is scoped to the scene. */
 .cpe {
   & .ss-stage {
     overflow: hidden;
-    border-radius: 16px;
-    background: var(--ss-well);
+    border-radius: 28px;
+    background: var(--ss-canvas);
   }
 
   /* Material Symbols Rounded, filled, one size for the scene */
@@ -31,9 +32,10 @@
     width: 600px;
   }
 
+  /* A card at the xl corner, on the surface-container ground */
   .cpe-card {
-    padding: 18px 18px 10px;
-    border-radius: 14px;
+    padding: 18px 20px 10px;
+    border-radius: 28px;
     background: var(--ss-surface);
     box-shadow: var(--ss-shadow-card);
   }
@@ -46,7 +48,7 @@
   }
 
   .cpe-title {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.3;
     color: var(--ss-text-strong);
   }
@@ -54,7 +56,7 @@
   /* One grid for the header and every row: fixed tracks, so columns line up */
   .cpe-grid {
     display: grid;
-    grid-template-columns: 124px 44px 52px 80px 44px 76px 1fr;
+    grid-template-columns: 124px 44px 52px 92px 44px 76px 1fr;
     column-gap: 8px;
     align-items: center;
   }
@@ -83,7 +85,7 @@
     color: var(--ss-text-strong);
   }
 
-  /* A check per cell: the accent's soft fill, the tick in its text shade */
+  /* A check per cell: primary-container, the tick in on-primary-container */
   .cpe-chip {
     display: inline-flex;
     align-items: center;
@@ -96,11 +98,34 @@
     color: var(--ss-accent-text);
   }
 
-  .cpe-chip[data-missing] {
-    gap: 4px;
-    padding: 0 10px 0 7px;
+  /* The chip the story is about: tertiary-container while missing, the
+     primary of a selected M3 chip once restored (an effects fade) */
+  .cpe-chip--live {
+    padding: 0 10px 0 8px;
+    transition:
+      background-color 200ms var(--cp-effects),
+      color 200ms var(--cp-effects);
+  }
+
+  /* Restored, it is the one chip in primary: what changed, said once */
+  .cpe-chip--live[data-state='fixed'] {
+    background: var(--ss-accent);
+    color: #FFFFFF;
+  }
+
+  .cpe-chip--live[data-state='missing'] {
     background: var(--ss-warning-soft);
     color: var(--ss-warning-text);
+  }
+
+  /* One pulse per change, 1 -> 1.06 -> 1 on the default spring; two names so
+     a second change restarts it */
+  .cpe-chip--live[data-pulse='1'] {
+    animation: cpe-pulse-a 500ms var(--cp-spring-default);
+  }
+
+  .cpe-chip--live[data-pulse='2'] {
+    animation: cpe-pulse-b 500ms var(--cp-spring-default);
   }
 
   .cpe-chip__label {
@@ -109,27 +134,78 @@
     line-height: 14px;
   }
 
-  /* The check's output: the product's dark log block, at the card's width */
+  /* The check's output: the product's dark block (dark-theme surface roles),
+     at the card's width */
   .cpe-log {
     height: 220px;
-    border-radius: 14px;
-    background: #0B1220;
+    border-radius: 28px;
+    background: #121318;
     box-shadow: var(--ss-shadow-card);
   }
 
   .cpe-term {
-    --ss-term-path: #A9B4C8;
-    --ss-term-sigil: #8EA2FF;
-    --ss-term-ok: #B9C6FF;
-    --ss-term-err: #FFEEDD;
-    padding: 14px 20px;
-    color: #A9B4C8;
-    font-size: 11px;
+    --ss-term-path: #90909A;
+    --ss-term-sigil: #B9C3FF;
+    --ss-term-ok: #B9C3FF;
+    --ss-term-err: #FFB4AB;
+    padding: 16px 24px;
+    color: #C6C5D0;
+    font-size: 12px;
     line-height: 1.6;
   }
 
   .cpe-term .ss-term__cmd {
-    color: #F2F5FA;
+    color: #E4E1E9;
+  }
+
+  /* Output and the second prompt arrive in their own reserved rows: a 4px
+     rise on the fast spring, the fade on effects */
+  .cpe-out,
+  .cpe-line {
+    opacity: 0;
+    transform: translateY(4px);
+    will-change: transform;
+    transition:
+      opacity 200ms var(--cp-effects),
+      transform 350ms var(--cp-spring-fast);
+  }
+
+  .cpe-out[data-show],
+  .cpe-line[data-show] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cpe-chip--live {
+    gap: 4px;
+  }
+
+  .cpe-chip__glyphs {
+    display: inline-grid;
+  }
+
+  .cpe-chip__glyph {
+    display: inline-flex;
+    grid-area: 1 / 1;
+    opacity: 0;
+    transform: scale(0.6);
+    will-change: transform;
+    transition:
+      opacity 200ms var(--cp-effects),
+      transform 350ms var(--cp-spring-fast);
+  }
+
+  .cpe-chip__glyph[data-on] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cpe-caret {
+    transition: opacity 200ms var(--cp-effects);
+  }
+
+  .cpe-caret[data-off] {
+    opacity: 0;
   }
 
   .cpe-term .ok,
@@ -137,7 +213,7 @@
     font-weight: 700;
   }
 
-  /* Narrow: the same pin at a 16px gutter, the title goes, two columns stay */
+  /* Narrow: the same pin at a 16px gutter, the title goes, three columns stay */
   & .ss-stage[data-layout='compact'] .cpe-stack {
     --gutter: 16px;
     width: 400px;
@@ -145,14 +221,37 @@
 
   & .ss-stage[data-layout='compact'] .cpe-card {
     padding: 14px 16px 6px;
+    border-radius: 24px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpe-log {
+    border-radius: 24px;
   }
 
   & .ss-stage[data-layout='compact'] .cpe-grid {
-    grid-template-columns: 112px 52px 80px 44px 1fr;
+    grid-template-columns: 112px 52px 92px 44px 1fr;
   }
 
   & .ss-stage[data-layout='compact'] .cpe-term {
     padding: 12px 16px;
     font-size: 10.5px;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cpe-chip--live,
+    .cpe-chip--live[data-pulse] { animation: none; transition: none; }
+    .cpe-out,
+    .cpe-line,
+    .cpe-chip__glyph { transform: none; transition: opacity 120ms linear; }
+  }
+}
+
+@keyframes cpe-pulse-a {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.06); }
+}
+
+@keyframes cpe-pulse-b {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.06); }
 }

@@ -1,10 +1,11 @@
-/* Commonplace converter card. Pinned, bottom bleed: the browser window keeps
-   one gutter on the left, right and top and runs off the bottom. */
+/* Commonplace converter card (v2, Material 3 Expressive). Pinned, bottom
+   bleed: the browser window keeps one gutter on the left and top and runs off
+   the right and the bottom. Every rule is scoped to this scene. */
 
 .cpt .ss-stage {
   overflow: hidden;
   border-radius: 14px;
-  background: var(--ss-well);
+  background: var(--ss-canvas);
 }
 
 .cpt .cpt-window {
@@ -15,7 +16,8 @@
 .cpt .cpt-body {
   overflow: hidden;
   padding: 16px;
-  background: var(--ss-canvas);
+  /* The app's page: surface-container-low */
+  background: #F5F2FA;
 }
 
 .cpt .ss-stage[data-layout='compact'] .cpt-body {
@@ -37,25 +39,24 @@
   flex: none;
   letter-spacing: normal;
   white-space: nowrap;
-  color: var(--ss-icon);
+  color: #1B1B21;
 }
 
-.cpt .cpt-accent { color: var(--ss-accent); }
-.cpt .cpt-amber { color: var(--ss-warning); }
-.cpt .cpt-faint { color: var(--ss-icon-faint); }
+.cpt .cpt-accent { color: #2546D6; }
+.cpt .cpt-amber { color: #8B5000; }
+.cpt .cpt-faint { color: #767680; }
 
-/* ---- The panel: a white card on the app's gray page ---- */
+/* ---- The card: surface-container-lowest, xl corners, on the page ---- */
 
 .cpt .cpt-panel {
-  padding: 16px;
-  border: 1px solid var(--ss-line);
-  border-radius: var(--ss-radius-lg);
-  background: var(--ss-surface);
+  padding: 18px 16px 16px;
+  border-radius: 28px;
+  background: #FFFFFF;
   min-height: 420px;
 }
 
 .cpt .cpt-panel[data-compact] {
-  padding: 12px;
+  padding: 14px 12px 12px;
 }
 
 .cpt .cpt-panel[data-compact] .cpt-head {
@@ -63,7 +64,7 @@
 }
 
 .cpt .cpt-panel[data-compact] .cpt-queue {
-  padding: 10px 10px 10px 12px;
+  padding: 10px 10px 10px 14px;
 }
 
 .cpt .cpt-head {
@@ -71,13 +72,16 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 14px;
+  padding-left: 4px;
 }
 
 .cpt .cpt-title {
-  font-size: 15px;
-  font-weight: 600;
+  font-family: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   line-height: 1.3;
-  color: var(--ss-text-strong);
+  color: #1B1B21;
 }
 
 /* The queue: the whole batch's progress and its Pause */
@@ -85,9 +89,9 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 12px 12px 12px 14px;
-  border-radius: var(--ss-radius-md);
-  background: var(--ss-well);
+  padding: 12px 12px 12px 18px;
+  border-radius: 20px;
+  background: #EFEDF4;
 }
 
 .cpt .cpt-queue__text {
@@ -97,36 +101,88 @@
   min-width: 0;
 }
 
+.cpt .cpt-queue__line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cpt .cpt-queue__done {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #45464F;
+  font-variant-numeric: tabular-nums;
+}
+
 .cpt .cpt-queue__label {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--ss-text-strong);
+  color: #1B1B21;
+}
+
+/* M3 linear progress: active indicator, a gap, the track, a stop dot */
+.cpt .cpt-queue__bar {
+  position: relative;
+  display: block;
+  height: 4px;
 }
 
 .cpt .cpt-queue__meter {
-  background: var(--ss-line);
+  position: absolute;
+  inset: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: transparent;
 }
 
-.cpt .cpt-queue__meter .ss-meter__fill,
-.cpt .cpt-row__meter .ss-meter__fill {
-  background: var(--ss-accent);
+.cpt .cpt-queue__meter .ss-meter__fill {
+  border-radius: 2px;
+  background: #2546D6;
 }
 
+.cpt .cpt-queue__track {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: calc(var(--q) * 100% + 4px);
+  transition: left 0.8s cubic-bezier(0.45, 0, 0.2, 1);
+  height: 4px;
+  border-radius: 2px;
+  background: #DEE1F9;
+}
+
+.cpt .cpt-queue__track::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: #2546D6;
+}
+
+/* Pause: a tonal button, full pill */
 .cpt .cpt-pause {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   flex: none;
   height: 36px;
-  padding: 0 14px 0 10px;
-  border: 1px solid var(--ss-line);
-  border-radius: 10px;
-  background: var(--ss-surface);
+  padding: 0 14px;
+  border-radius: 999px;
+  background: #DEE1F9;
   font-size: 13px;
   font-weight: 600;
-  color: var(--ss-text-strong);
+  color: #161B2C;
 }
+
+.cpt .cpt-pause .cpt-ic { color: #161B2C; }
 
 /* ---- Rows: icon, file, then its result ---- */
 
@@ -134,46 +190,60 @@
   margin-top: 8px;
 }
 
+/* Each row carries its own gap, so a folding row takes its gap with it */
 .cpt .cpt-row {
   display: flex;
   align-items: center;
   gap: 12px;
   min-height: 44px;
+  margin-bottom: 2px;
   padding: 0 12px;
-  border-radius: 10px;
+  border-radius: 999px;
+  will-change: transform;
+  transition: background-color 200ms var(--cp-effects);
 }
 
-.cpt .cpt-row + .cpt-row {
-  margin-top: 2px;
+/* The file converting now: the In progress tone */
+.cpt .cpt-row[data-status='live'] {
+  background: #FFDCBE;
+}
+
+/* The finished row folds away on the default spatial spring */
+.cpt .cpt-fold.ss-collapse {
+  /* Closing: the words fade first, then the height folds, so no edge slices text */
+  transition: grid-template-rows 500ms var(--cp-spring-default) 160ms, opacity 160ms var(--cp-effects);
+}
+
+.cpt .cpt-fold.ss-collapse[data-open] {
+  transition: grid-template-rows 500ms var(--cp-spring-default), opacity 260ms var(--cp-effects) 200ms;
 }
 
 .cpt .cpt-cell {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
   flex: 1;
   min-width: 0;
 }
 
 .cpt .cpt-file {
   font-family: var(--ss-mono);
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.3;
-  color: var(--ss-text-strong);
+  color: #1B1B21;
   white-space: nowrap;
+}
+
+.cpt .cpt-row[data-status='live'] .cpt-file {
+  color: #2D1600;
 }
 
 .cpt .cpt-status {
-  font-size: 12.5px;
+  font-size: 12px;
   line-height: 1.3;
-  color: var(--ss-text-faint);
+  color: #45464F;
   white-space: nowrap;
-}
-
-/* The file converting now: tinted, with its own bar and percent */
-.cpt .cpt-row--live {
-  background: var(--ss-accent-soft);
 }
 
 .cpt .cpt-progress {
@@ -183,19 +253,85 @@
   flex: none;
 }
 
-.cpt .cpt-row__meter {
+/* The wavy indicator: the done part travels as a wave */
+.cpt .cpt-wavy {
+  position: relative;
+  display: block;
+  flex: none;
   width: 96px;
-  background: color-mix(in srgb, var(--ss-accent) 18%, #fff);
+  height: 10px;
+}
+
+.cpt .cpt-wavy__on {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 10px;
+  width: calc(var(--p) * 100%);
+  overflow: hidden;
+  /* The leading end of the wave softens instead of being cut */
+  mask-image: linear-gradient(to right, #000 calc(100% - 5px), transparent);
+  transition: width 300ms linear;
+}
+
+.cpt .cpt-wavy__wave {
+  display: block;
+  animation: cpt-wave 1.2s linear infinite;
+}
+
+.cpt .cpt-wavy__wave path {
+  fill: none;
+  stroke: #8B5000;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.cpt .cpt-wavy__off {
+  position: absolute;
+  top: 3.5px;
+  right: 0;
+  left: min(calc(var(--p) * 100% + 6px), 100%);
+  height: 3px;
+  border-radius: 2px;
+  background: rgb(139 80 0 / 0.24);
+  transition: left 300ms linear;
+}
+
+.cpt .cpt-wavy__stop {
+  position: absolute;
+  top: 3.5px;
+  right: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+  background: #8B5000;
+}
+
+@keyframes cpt-wave {
+  from { transform: translateX(-36px); }
+  to { transform: translateX(-12px); }
 }
 
 .cpt .cpt-pct {
-  min-width: 30px;
-  text-align: right;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  /* A fixed cell: the digits roll inside it and never print over the unit */
+  width: 40px;
+  overflow: hidden;
   font-size: 12.5px;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--ss-accent-text);
+  color: #2D1600;
   font-variant-numeric: tabular-nums;
+}
+
+.cpt .cpt-pct .ss-count {
+  overflow: hidden;
+}
+
+.cpt .cpt-pct__unit {
+  margin-left: 1px;
 }
 
 /* Compact: name over result, so both read whole in a narrow column */
@@ -206,15 +342,18 @@
   gap: 5px;
 }
 
-.cpt .cpt-panel[data-compact] .cpt-cell--filler {
-  gap: 8px;
-}
-
 .cpt .cpt-panel[data-compact] .cpt-row {
-  align-items: center;
   min-height: 48px;
+  border-radius: 24px;
 }
 
-.cpt .cpt-panel[data-compact] .cpt-row__meter {
+.cpt .cpt-panel[data-compact] .cpt-wavy {
   width: 120px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cpt .cpt-wavy__wave { animation: none; }
+  .cpt .cpt-wavy__on,
+  .cpt .cpt-wavy__off,
+  .cpt .cpt-fold.ss-collapse { transition: opacity 120ms linear; }
 }

@@ -14,3 +14,21 @@ Not checked: dark theme, reduced motion (still scene), a fresh-eye reviewer pass
 - Polish: the lower cards keep two filler lines each, so their turned boxes clear the top card's button (tight-control and near-tangent lines).
 - Systemic board finding: not applicable. There is no task board in this scene.
 - Final: `--gate --still` and `--gate --still --width 390` both say rehearsal passed. Stills are in ss/final/.
+
+## v2 redesign
+- Re-skin: Material 3 Expressive roles through the look tokens (no v1 colours were hard-coded). Cards at xl 28px corners, the file tile at 12px, Download as an M3 outlined button: a full pill, 44px tall. Root class renamed `cpcan` (it shared `cpc` across scenes).
+- Animated: a pointer story, `play="once"` in view, poster = the downloaded edition.
+  1. The pointer travels from the empty well to Download and presses it: the pill morphs to 12px corners on the fast spring, with a 10% primary state layer.
+  2. Downloading: a spinner takes the icon's fixed 18px slot (`States`), the label fades to Downloading (`Roll variant="fade"`) and the pill eases to the new width; the pointer returns to rest on the well.
+  3. Done: a check and Downloaded, the button turns tonal (primary container, 200ms effects).
+- Data never rewinds: plays once and holds. Reduced motion shows the poster with no morph.
+- Films: final/cp-canonical.png and -390.png (poster), final/cp-canonical-loop.png and shots/cp-canonical-390-loop.png, shots/cp-canonical-slow.png (4x), press frames shots/cp-canonical-press.png (`--at press`, 4x, 60ms).
+- Fixes from film: the pointer's return used a missing target (now a point per layout); `uneven padding` on the idle button while `States` held the longest label's width, so the label now resizes with `Roll` and the icon keeps a fixed slot; `will-change: transform` on the button face, which moves by layout as the pill resizes.
+- Gates: `--gate` wide and `--gate --width 390` both "rehearsal passed" (re-run after the last edits). Typecheck: no errors in this scene (the playground has two unrelated errors in other scenes).
+- Not checked: dark theme, real-device frame rate, touch, a fresh-eye reviewer; heavy host load gave inconclusive sampling coverage.
+
+## v2 fresh-eye review
+- A tilted pile with no Commonplace UI could have been any product, and its front card was empty below the button: the scene is now the product's own Portable editions panel in a quiet browser window (`commonplace.example`), bleeding off the right and bottom with one 36px gutter top and left. The three editions are M3 list cards (Prompt edition / Copy prompt, Full edition / Download, Complete edition / Download); the story is the Full edition's Download. Compact: two editions whole, Copy prompt as an outlined icon button, and a quiet row under the crop.
+- The pointer sat at the left edge while Downloading started: it now rests on the panel beside the heading, near the buttons, and the opening holds 1.4s so the press is seen before the change; the press frames are filmed with `--at press`.
+- Plate: `var(--ss-canvas)`. Placeholder row bars keep a name-over-file pitch and a quiet action so the row's insets match.
+- Re-filmed after these fixes (poster, 390, loop sheets, `--at` close-ups) and `--gate` wide and `--gate --width 390` both "rehearsal passed". Left as candidates, not gate lines: rolling `Count` entrance/handoff notes, and `lopsided`/`steps in its box` on the Download pill while its label resizes mid-transition (even 16px padding at rest).

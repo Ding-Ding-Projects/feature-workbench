@@ -1,52 +1,62 @@
 /* Commonplace look for Stageshow stages. Use className="look-commonplace" on every Stage.
-   Tokens mapped from the Commonplace redesign (design/HANDOFF.md). */
+   Tokens: Material 3 Expressive roles of the Commonplace v2 redesign. The v1 look is kept in look.v1.css. */
 @import './fonts.css';
 
 .look-commonplace .ss-stage {
-  --ss-canvas: #F3F5F9;
+  --ss-canvas: #F1F1F4;
   --ss-surface: #FFFFFF;
-  --ss-chrome: #FFFFFF;
-  --ss-well: #E9EDF4;
+  --ss-chrome: #FBF8FF;
+  --ss-well: #EFEDF4;
   --ss-raised: #FFFFFF;
-  --ss-line: #DCE2EC;
-  --ss-line-faint: #EEF1F6;
-  --ss-text-strong: #0D1526;
-  --ss-text: #0D1526;
-  --ss-text-faint: #475467;
-  --ss-icon: #0D1526;
-  --ss-icon-faint: #667085;
+  --ss-line: #C6C5D0;
+  --ss-line-faint: #E9E7EF;
+  --ss-text-strong: #1B1B21;
+  --ss-text: #1B1B21;
+  --ss-text-faint: #45464F;
+  --ss-icon: #1B1B21;
+  --ss-icon-faint: #767680;
   --ss-accent: #2546D6;
-  --ss-accent-2: #16309F;
-  --ss-accent-soft: #E8EDFF;
-  --ss-accent-text: #16309F;
-  --ss-warning: #C2570C;
-  --ss-warning-soft: #FFEEDD;
-  --ss-warning-text: #7A2F06;
+  --ss-accent-2: #0035C2;
+  --ss-accent-soft: #DDE1FF;
+  --ss-accent-text: #001257;
+  --ss-warning: #8B5000;
+  --ss-warning-soft: #FFDCBE;
+  --ss-warning-text: #2D1600;
   --ss-font: "Inter", "Noto Sans HK", system-ui, sans-serif;
   --ss-mono: "JetBrains Mono", ui-monospace, monospace;
-  --ss-radius-sm: 8px;
-  --ss-radius-md: 12px;
-  --ss-radius-lg: 14px;
-  --ss-radius-window: 16px;
+  --ss-radius-sm: 12px;
+  --ss-radius-md: 999px;
+  --ss-radius-lg: 20px;
+  --ss-radius-window: 28px;
   --ss-control: 36px;
   --ss-row: 30px;
 }
 .look-commonplace .ss-stage[data-theme="dark"] {
-  --ss-canvas: #0B1220;
-  --ss-surface: #172238;
-  --ss-chrome: #0B1220;
-  --ss-well: #0B1220;
-  --ss-raised: #26334F;
-  --ss-line: #26334F;
-  --ss-line-faint: #1B2740;
-  --ss-text-strong: #F2F5FA;
-  --ss-text: #F2F5FA;
-  --ss-text-faint: #A9B4C8;
-  --ss-icon: #F2F5FA;
-  --ss-icon-faint: #A9B4C8;
-  --ss-accent: #8EA2FF;
-  --ss-accent-soft: #1B2A5C;
-  --ss-accent-text: #B9C6FF;
+  --ss-canvas: #121318;
+  --ss-surface: #1F1F25;
+  --ss-chrome: #1B1B21;
+  --ss-well: #0D0E13;
+  --ss-raised: #292A2F;
+  --ss-line: #45464F;
+  --ss-line-faint: #292A2F;
+  --ss-text-strong: #E4E1E9;
+  --ss-text: #E4E1E9;
+  --ss-text-faint: #C6C5D0;
+  --ss-icon: #E4E1E9;
+  --ss-icon-faint: #90909A;
+  --ss-accent: #B9C3FF;
+  --ss-accent-soft: #0035C2;
+  --ss-accent-text: #DDE1FF;
+  --ss-warning: #FFB870;
+  --ss-warning-soft: #6A3C00;
+  --ss-warning-text: #FFDCBE;
 }
 /* Display type for titles inside the product: Bricolage Grotesque. */
 .look-commonplace .cp-display { font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+
+/* v2 motion tokens (Material 3 Expressive springs as CSS linear()). */
+.look-commonplace .ss-stage {
+  --cp-spring-fast: linear(0, 0.013 0.6%, 0.05 1.2%, 0.2 2.6%, 0.468 4.4%, 0.734 6.3%, 0.899 8%, 1.003 9.8%, 1.058 11.6%, 1.074 13.6%, 1.06 15.6%, 1.03 18.1%, 1.002 21.3%, 0.991 25.4%, 1.001 34.4%, 1);
+  --cp-spring-default: linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1);
+  --cp-effects: cubic-bezier(0.34, 0.8, 0.34, 1);
+}

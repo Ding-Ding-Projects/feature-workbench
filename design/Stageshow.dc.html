@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Commonplace faux UI</title>
+<title>Commonplace in motion</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -10,82 +10,86 @@
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
 <style>
-body{margin:0;background:#FFFFFF}
-a{color:#2546D6}a:hover{color:#16309F}
+body{margin:0;background:#FBF8FF}
+a{color:#2546D6}a:hover{color:#0035C2}
+@keyframes cp-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.cp-tile{animation:cp-rise 500ms linear(0, 0.006, 0.025 2.8%, 0.101 6.1%, 0.539 18.9%, 0.721 25.3%, 0.849 31.5%, 0.937 38.1%, 0.968 41.8%, 0.991 45.7%, 1.006 50.1%, 1.015 55%, 1.017 63.9%, 1.001 85.9%, 1) both}
+.cp-tile:nth-child(2){animation-delay:40ms}.cp-tile:nth-child(3){animation-delay:80ms}.cp-tile:nth-child(4){animation-delay:120ms}.cp-tile:nth-child(5){animation-delay:160ms}.cp-tile:nth-child(6){animation-delay:200ms}.cp-tile:nth-child(n+7){animation-delay:240ms}
+@media (prefers-reduced-motion: reduce){.cp-tile{animation:none}}
 </style>
 </helmet>
-<div style="min-height: 100vh; background: #FFFFFF; color: #0D1526; font-family: Inter, system-ui, sans-serif; line-height: 1.5">
+<div style="min-height: 100vh; background: #FBF8FF; color: #1B1B21; font-family: Inter, system-ui, sans-serif; line-height: 1.5">
 <main style="max-width: 1240px; margin: 0 auto; padding: 64px 24px 80px; display: flex; flex-direction: column; gap: 64px">
 <section style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px 56px">
 <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Product shots, built with Stageshow</p>
-<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 52px; line-height: 1.04; letter-spacing: -0.03em">Make room for your next idea.</h1>
-<p style="margin: 0; font-size: 18px; color: #475467; max-width: 460px">A task goes from a title to In progress in four clicks, and it is saved in this browser the moment it lands.</p>
-<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">cp-hero · 720 × 380 · about 15 s loop · poster is the payoff</p>
+<p style="margin: 0; display: inline-flex; align-self: flex-start; padding: 6px 14px; border-radius: 999px; background: #DDE1FF; color: #001257; font-size: 13px; font-weight: 600">v2 · Material 3 Expressive · built with Stageshow</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 56px; line-height: 1.04; letter-spacing: -0.03em">Make room for your next idea.</h1>
+<p style="margin: 0; font-size: 18px; color: #45464F; max-width: 460px">Tasks spring between lanes, counts roll, and every save is confirmed in this browser.</p>
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #45464F">cp-hero · 720 × 380 · about 15 s loop · poster is the payoff</p>
 </div>
-<video src="/_blob/ecd562270c72dc3849223eb37ce0b02f" poster="/_blob/0dade9183c12fb1981bd6516be5c5531" autoplay="" loop="" muted="" playsinline="" aria-label="Commonplace workspace: a new task is typed, saved in To do, then moved to In progress, and a card confirms it is saved in this browser." style="flex: 999 1 560px; min-width: 0; width: 100%; max-width: 720px; height: auto; aspect-ratio: 720 / 380; border-radius: 18px; display: block; background: #E9EDF4"></video>
+<div style="flex: 999 1 560px; min-width: 0; max-width: 720px"><video src="/_blob/ac432c5761cb28ab93873340d5d9bc27" poster="/_blob/d6c8abdc6716c4004fc59224ac4e421f" autoplay="" loop="" muted="" playsinline="" aria-label="Commonplace workspace: a task is marked Done, a new task is saved to To do and moved to In progress on a spring, and a snackbar confirms it." style="width: 100%; height: auto; aspect-ratio: 720 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video></div>
 </section>
 <section aria-labelledby="cards-h" style="display: flex; flex-direction: column; gap: 24px">
 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px">
-<h2 id="cards-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: -0.02em">Fourteen feature families, one card each</h2>
-<p style="margin: 0; font-size: 14px; color: #475467">560 × 380 stills, each with its own 358-wide phone design</p>
+<h2 id="cards-h" style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 32px; letter-spacing: -0.02em">Fourteen feature families, each in motion</h2>
+<p style="margin: 0; font-size: 14px; color: #45464F">560 × 380 loops, each with its own 358-wide phone design</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 40px 24px">
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/0b2efd51a80ddb645fbd0523ae4dcb2d" alt="Language, voice and personalization: Bilingual mode with a compact Cantonese label." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Language, voice and personalization</span><span style="font-size: 14px; color: #475467">Bilingual mode with a compact Cantonese label.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/0f85f6baa41186cd7a6ceffdfea7e235" poster="/_blob/0ca8b041c697fb03fca240b2cbcd01f4" autoplay="" loop="" muted="" playsinline="" aria-label="Language, voice and personalization: Bilingual mode brings every label in both languages." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Language, voice and personalization</span><span style="font-size: 14px; color: #45464F">Bilingual mode brings every label in both languages.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/31038d7f165a4c36acc5d02ca9326be7" alt="Games: Every shared model placed, used and evidenced." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Games</span><span style="font-size: 14px; color: #475467">Every shared model placed, used and evidenced.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/ab9249d484cd8c9045014ff0ce4d8a53" poster="/_blob/3183c1db5545be00e4f7fb0bbf23c1de" autoplay="" loop="" muted="" playsinline="" aria-label="Games: A model lands in the world and its ledger row verifies." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Games</span><span style="font-size: 14px; color: #45464F">A model lands in the world and its ledger row verifies.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/10296172adaa4bde1dc8378056e36f5a" alt="Appearance and layout: Theme tiles and text size, seen on the board." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Appearance and layout</span><span style="font-size: 14px; color: #475467">Theme tiles and text size, seen on the board.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/c8d0d48e31cbc513c1b908f8f4727017" poster="/_blob/e58a01422fb8060f65324a3e39129a66" autoplay="" loop="" muted="" playsinline="" aria-label="Appearance and layout: Drag text size and the board grows on a spring." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Appearance and layout</span><span style="font-size: 14px; color: #45464F">Drag text size and the board grows on a spring.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/011a1591090c022a7a3c001c22f0f6bd" alt="Navigation, search and commands: Ctrl Shift F jumps straight to a setting." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Navigation, search and commands</span><span style="font-size: 14px; color: #475467">Ctrl Shift F jumps straight to a setting.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/552db97057b42affb34b9c9cec90dee5" poster="/_blob/47b388ddc301bf3fcf8304c024b3085c" autoplay="" loop="" muted="" playsinline="" aria-label="Navigation, search and commands: Ctrl Shift F grows the palette straight to a setting." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Navigation, search and commands</span><span style="font-size: 14px; color: #45464F">Ctrl Shift F grows the palette straight to a setting.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/0fa0ce8c1ce0040271c7b9ad490c2850" alt="Safety, locks and authentication: Deleting takes two deliberate keys." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Safety, locks and authentication</span><span style="font-size: 14px; color: #475467">Deleting takes two deliberate keys.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/fcc4b2800721b04e9a20d601af7f97ff" poster="/_blob/ab921aceb77c69bd4786cdc606291db4" autoplay="" loop="" muted="" playsinline="" aria-label="Safety, locks and authentication: Two keys, then the slider: deleting is deliberate." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Safety, locks and authentication</span><span style="font-size: 14px; color: #45464F">Two keys, then the slider: deleting is deliberate.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/af8a47d5f70fca9f9c169f454871de4f" alt="Records, history and messages: Restore a snapshot from local history." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Records, history and messages</span><span style="font-size: 14px; color: #475467">Restore a snapshot from local history.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/a2abe502b327a938d7faf315afb29a38" poster="/_blob/d65937fc4b36b91ef024fa2e9f5dfa3e" autoplay="" loop="" muted="" playsinline="" aria-label="Records, history and messages: Undo, then restore from local history." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Records, history and messages</span><span style="font-size: 14px; color: #45464F">Undo, then restore from local history.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/64342cbdd639918bb5522b6a48fda56c" alt="Built-in tools and hand-off: Files converted locally, checked when done." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Built-in tools and hand-off</span><span style="font-size: 14px; color: #475467">Files converted locally, checked when done.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/71cb2111eba5c2c0cb8407c7c0daeec2" poster="/_blob/2abaca1f1393bdc3dd765623eba3493d" autoplay="" loop="" muted="" playsinline="" aria-label="Built-in tools and hand-off: Files convert locally and the queue advances." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Built-in tools and hand-off</span><span style="font-size: 14px; color: #45464F">Files convert locally and the queue advances.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/c5c6b8397d72d79cdcb0f74c12d5c76a" alt="Status Hub: A live session with a searchable record." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Status Hub</span><span style="font-size: 14px; color: #475467">A live session with a searchable record.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/9532a8a157bf1f9b5427cc693fbab085" poster="/_blob/f67126a263fcf6ed260572268cfac1eb" autoplay="" loop="" muted="" playsinline="" aria-label="Status Hub: An answer arrives and the session moves on." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Status Hub</span><span style="font-size: 14px; color: #45464F">An answer arrives and the session moves on.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/ea60499b9c66049824b81b3f10d7c331" alt="Completeness and evidence: A missing translation fails the check." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Completeness and evidence</span><span style="font-size: 14px; color: #475467">A missing translation fails the check.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/e20a171400ab41c36879a810902137fd" poster="/_blob/3434a0e904bd2c2459e2640008673dc9" autoplay="" loop="" muted="" playsinline="" aria-label="Completeness and evidence: A missing translation fails, is restored, then passes." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Completeness and evidence</span><span style="font-size: 14px; color: #45464F">A missing translation fails, is restored, then passes.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/b5a36798a6b96da3cc8a99a4493c4e47" alt="Landing site and shared links: A shared link unfurls with its preview." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Landing site and shared links</span><span style="font-size: 14px; color: #475467">A shared link unfurls with its preview.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/99b5a9a84463c1d896c7c0b6af736fca" poster="/_blob/1ab424155c4ed5977266f14aaa703724" autoplay="" loop="" muted="" playsinline="" aria-label="Landing site and shared links: A shared link unfurls into its preview." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Landing site and shared links</span><span style="font-size: 14px; color: #45464F">A shared link unfurls into its preview.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/48054bdae5f0bee2081f3f3fa29dc0b5" alt="Build and install: The build records exactly where it came from." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Build and install</span><span style="font-size: 14px; color: #475467">The build records exactly where it came from.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/c9186e2c45ff3d3198053802d6236a16" poster="/_blob/391ce00305da8bcb8a335a282909f564" autoplay="" loop="" muted="" playsinline="" aria-label="Build and install: The build lands and the app shows its new version." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Build and install</span><span style="font-size: 14px; color: #45464F">The build lands and the app shows its new version.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/15f12dc3f892772d4e27a7ce0a0103a1" alt="Release pipeline: Each release gets a dish as its code name." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Release pipeline</span><span style="font-size: 14px; color: #475467">Each release gets a dish as its code name.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/1da5dc9eaa2b1c3542b107a472d9d084" poster="/_blob/9c64547013d0653a0074858ada1e1b3d" autoplay="" loop="" muted="" playsinline="" aria-label="Release pipeline: The wavy publish bar settles into Latest." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Release pipeline</span><span style="font-size: 14px; color: #45464F">The wavy publish bar settles into Latest.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/0e37566c7258aa5a6f4efc4064f4a485" alt="Repository records and README: Line counts and an honest effort estimate." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Repository records and README</span><span style="font-size: 14px; color: #475467">Line counts and an honest effort estimate.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/6d3e025955d139685a58b1781697a87b" poster="/_blob/0cbb5131c67e12af73e91071cdf65f9f" autoplay="" loop="" muted="" playsinline="" aria-label="Repository records and README: Line counts roll into an honest estimate." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Repository records and README</span><span style="font-size: 14px; color: #45464F">Line counts roll into an honest estimate.</span></figcaption>
 </figure>
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
-<img src="/_blob/a0774692409a6e23ff3edbf5f0b2c476" alt="Canonical instruction deliverables: Portable editions, one file each." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 16px; display: block; background: #E9EDF4">
-<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #0D1526">Canonical instruction deliverables</span><span style="font-size: 14px; color: #475467">Portable editions, one file each.</span></figcaption>
+<figure class="cp-tile" style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+<video src="/_blob/e054d2fb0bb106a7a346c01adb224358" poster="/_blob/85d2ae033c0b5426e9dd0cb8bf0d8e56" autoplay="" loop="" muted="" playsinline="" aria-label="Canonical instruction deliverables: Portable editions, downloaded from the product." style="width: 100%; height: auto; aspect-ratio: 560 / 380; border-radius: 20px; display: block; background: #EFEDF4"></video>
+<figcaption style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; color: #1B1B21">Canonical instruction deliverables</span><span style="font-size: 14px; color: #45464F">Portable editions, downloaded from the product.</span></figcaption>
 </figure>
 </div>
 </section>

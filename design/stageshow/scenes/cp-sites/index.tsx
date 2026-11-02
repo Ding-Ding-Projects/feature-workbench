@@ -1,10 +1,16 @@
-import { Avatar, Bar, Stage, Text, Window } from '../../kit'
+import { Avatar, Bar, Collapse, Stage, States, Text, Window, type Act } from '../../kit'
 import '../../commonplace/look.css'
 import './sites.css'
 
 // Commonplace, Landing site and shared links: someone pastes the landing
 // site's link into a chat and it unfolds into a large picture of the real
-// product. A feature card still.
+// product. A feature card that plays once in view.
+//
+// Beats (a system story, no cursor): the link has just been sent; the chat
+// opens room for its preview, which arrives as a skeleton at its own
+// geometry; the share picture resolves lane by lane (To do, In progress,
+// Done); then its site and title replace their placeholder lines. The
+// poster is the finished preview.
 //
 // Gold: share (satellite focus). The hero context is the landing site in a
 // quiet browser, pinned top-left and off the bottom; the satellite that
@@ -21,6 +27,30 @@ import './sites.css'
 
 const LINK = 'commonplace.example'
 
+type S = { open: boolean; lanes: number; words: boolean }
+const initial: S = { open: false, lanes: 0, words: false }
+const POSTER: S = { open: true, lanes: 3, words: true }
+
+async function script(a: Act<S>) {
+  await a.wait(1200)
+  // 1. The chat makes room and the preview arrives whole, still loading
+  a.mark('open')
+  await a.set({ open: true })
+  await a.wait(700)
+  // 2. The share picture resolves lane by lane, in reading order
+  a.mark('picture')
+  for (const n of [1, 2, 3]) {
+    await a.set({ lanes: n })
+    await a.wait(120)
+  }
+  await a.wait(420)
+  // 3. Its site and title arrive in place of their lines; the result holds
+  a.mark('words')
+  await a.set({ words: true })
+  // Plays once: the payoff holds 2s and the scene stops on it
+  await a.wait(2000)
+}
+
 function Glyph({ name }: { name: string }) {
   return (
     <span className="material-symbols-rounded cps-icon" aria-hidden="true">
@@ -30,16 +60,16 @@ function Glyph({ name }: { name: string }) {
 }
 
 /** The share image: the board as it really looks, at 1200 x 630 proportions */
-function Shot() {
+function Shot({ lanes }: { lanes: number }) {
   return (
-    <div className="cps-shot" role="img" aria-label="The Commonplace board">
+    <div className="cps-shot" role="img" aria-label="The Commonplace board" data-ready={lanes > 0 || undefined}>
       <div className="cps-shot__bar">
         <Bar w={34} h={4} tone={4} />
         <span className="cps-shot__new" />
       </div>
       <div className="cps-shot__lanes">
         {[0, 1, 2].map((lane) => (
-          <div key={lane} className="cps-lane" data-lane={lane}>
+          <div key={lane} className="cps-lane" data-lane={lane} data-show={lanes > lane || undefined}>
             <Bar w={lane === 1 ? 26 : 18} h={3} tone={3} className="cps-lane__head" />
             <span className="cps-task" />
             {lane !== 2 && <span className="cps-task" />}
@@ -52,26 +82,26 @@ function Shot() {
 
 export default function CpSites() {
   return (
-    <Stage width={560} height={380} compact={{ below: 560, width: 358, height: 300 }} className="look-commonplace cps">
-      {(_s, _rect, layout) => (
+    <Stage
+      width={560}
+      height={380}
+      compact={{ below: 560, width: 358, height: 300 }}
+      initial={initial}
+      poster={POSTER}
+      script={script}
+      play="once"
+      className="look-commonplace cps"
+    >
+      {(s, _rect, layout) => (
         <>
           {layout === 'wide' && (
           <Window url={LINK} urlShape="pill" className="cps-window">
             <div className="cps-site">
               <div className="cps-nav">
                 <Text className="cps-wordmark cp-display">Commonplace</Text>
-                <span className="cps-nav__links">
-                  <Bar w={28} h={6} tone={3} />
-                  <Bar w={34} h={6} tone={2} />
-                  <Bar w={40} h={6} tone={2} />
-                </span>
               </div>
               <div className="cps-hero">
-                <Text className="cps-heading cp-display">
-                  Plan one useful
-                  <br />
-                  next step.
-                </Text>
+                <Text className="cps-heading cp-display">{'Plan one useful\nnext step.'}</Text>
                 <Bar w={150} h={7} tone={2} />
                 <Bar w={112} h={7} tone={2} />
               </div>
@@ -103,13 +133,29 @@ export default function CpSites() {
                   <Bar w={34} h={5} tone={2} />
                 </div>
                 <Text className="cps-link">{`https://${LINK}`}</Text>
-                <div className="cps-preview" data-target="preview">
-                  <Shot />
-                  <div className="cps-preview__text">
-                    <Text className="cps-preview__site">Commonplace</Text>
-                    <Text className="cps-preview__title">A calm local task workspace</Text>
+                <Collapse open={s.open} reveal="drop">
+                  <div className="cps-preview" data-target="preview">
+                    <Shot lanes={s.lanes} />
+                    <div className="cps-preview__text">
+                      <States
+                        align="start"
+                        value={s.words ? 'words' : 'lines'}
+                        states={{
+                          lines: <Bar w={64} h={6} tone={2} />,
+                          words: <Text className="cps-preview__site">Commonplace</Text>,
+                        }}
+                      />
+                      <States
+                        align="start"
+                        value={s.words ? 'words' : 'lines'}
+                        states={{
+                          lines: <Bar w={150} h={8} tone={3} />,
+                          words: <Text className="cps-preview__title">A calm local task workspace</Text>,
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
+                </Collapse>
               </div>
             </div>
           </section>

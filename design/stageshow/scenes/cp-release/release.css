@@ -1,15 +1,17 @@
-/* All rules belong to this scene, including its compact design. */
-.cpr {
+/* All rules belong to this scene, including its compact design. v2:
+   Material 3 Expressive roles from the look tokens, xl card corners, pill
+   chips, the wavy progress indicator and the v2 springs. */
+.cprel {
   & .ss-stage {
     overflow: hidden;
-    border-radius: 16px;
-    background: var(--ss-well);
+    border-radius: 28px;
+    background: var(--ss-canvas);
     color: var(--ss-text-strong);
     font: 12px/1.4 var(--ss-font);
   }
 
   /* Material Symbols Rounded, filled, one size for the scene */
-  .cpr-glyph {
+  .cprel-glyph {
     display: inline-block;
     flex: none;
     width: 18px;
@@ -22,186 +24,359 @@
     color: var(--ss-icon-faint);
   }
 
-  /* One column, centered, the assets card off the bottom */
-  .cpr-stack {
+  /* One column, pinned a gutter from the left, the assets card off the bottom */
+  .cprel-stack {
     position: absolute;
-    top: 24px;
+    top: 20px;
     left: 40px;
     display: grid;
     gap: 12px;
     width: 600px;
   }
 
-  .cpr-card {
+  .cprel-card {
     display: grid;
-    gap: 14px;
-    padding: 18px 20px;
-    border-radius: 14px;
+    gap: 12px;
+    padding: 18px 24px;
+    border-radius: 28px;
     background: var(--ss-surface);
-    box-shadow: var(--ss-shadow-card);
   }
 
-  .cpr-head {
+  .cprel-head {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--ss-line);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ss-line-faint);
   }
 
-  .cpr-mark {
+  /* The code name's tile: tertiary container, a large rounded square */
+  .cprel-mark {
+    will-change: transform;
     display: grid;
     flex: none;
     place-items: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 16px;
     background: var(--ss-warning-soft);
   }
 
-  .cpr-mark .cpr-glyph { color: var(--ss-warning); }
+  .cprel-mark .cprel-glyph { color: var(--ss-warning); }
 
-  .cpr-name {
+  .cprel-name {
     display: grid;
     gap: 2px;
     min-width: 0;
   }
 
-  .cpr-version {
+  .cprel-version {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-family: var(--ss-mono);
     font-size: 11px;
     line-height: 14px;
     color: var(--ss-text-faint);
   }
 
-  .cpr-food {
+  .cprel-food {
     font-size: 17px;
     line-height: 22px;
     color: var(--ss-text-strong);
   }
 
-  .cpr-food span { font-family: "Noto Sans HK", sans-serif; font-weight: 700; letter-spacing: 0; }
+  .cprel-food span { font-family: "Noto Sans HK", sans-serif; font-weight: 700; letter-spacing: 0; }
 
-  .cpr-version {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .cpr-latest {
-    padding: 4px 8px;
+  /* The status chip: Publishing on tertiary container, then Latest on
+     primary container; colour moves on the effects curve, and the chip
+     pulses once when the release lands */
+  .cprel-chip {
+    display: inline-flex;
+    padding: 5px 10px;
     border-radius: 999px;
-    background: var(--ss-accent-soft);
-    color: var(--ss-accent-text);
+    background: var(--ss-warning-soft);
+    color: var(--ss-warning-text);
     font-family: var(--ss-font);
     font-size: 10.5px;
     font-weight: 600;
     line-height: 14px;
     text-box: trim-both cap alphabetic;
-    padding-block: 5px;
+    will-change: transform;
+    transition: background-color 200ms var(--cp-effects), color 200ms var(--cp-effects);
+  }
+
+  .cprel-chip[data-done] {
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent-text);
+    animation: cprel-pulse 350ms var(--cp-spring-fast);
   }
 
   /* The timing rows share one grid: a fixed label track, a value track */
-  .cpr-timing {
+  .cprel-timing {
     display: grid;
-    margin-top: -10px;
+    margin-top: -8px;
   }
 
-  .cpr-row {
+  .cprel-row {
     display: grid;
     grid-template-columns: 136px 232px;
     align-items: center;
-    height: 28px;
+    height: 27px;
     border-bottom: 1px solid var(--ss-line-faint);
   }
 
-  .cpr-row:last-child { border-bottom: 0; }
+  .cprel-row:last-child { border-bottom: 0; }
 
-  .cpr-label {
+  .cprel-label {
     font-size: 12px;
     color: var(--ss-text-faint);
   }
 
-  .cpr-value {
+  .cprel-value {
     font-family: var(--ss-mono);
     font-size: 12px;
     color: var(--ss-text-strong);
     font-variant-numeric: tabular-nums;
   }
 
-  /* Build, package, publish: the measured span as one band of three */
-  .cpr-band {
+  .cprel-pending {
+    font-family: var(--ss-font);
+    color: var(--ss-icon-faint);
+  }
+
+  /* Build, package, publish: one band of three on a 12px line; the done
+     phases are flat 4px bars, Publish is the wavy indicator */
+  .cprel-band {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     width: 368px;
   }
 
-  .cpr-phase {
+  .cprel-phase {
     display: grid;
     gap: 6px;
     min-width: 0;
   }
 
-  .cpr-phase__bar {
-    height: 6px;
-    border-radius: 3px;
+  .cprel-phase__bar {
+    height: 4px;
+    margin: 4px 0;
+    border-radius: 2px;
     background: var(--ss-accent);
   }
 
-  .cpr-phase + .cpr-phase .cpr-phase__bar { opacity: 0.7; }
-  .cpr-phase + .cpr-phase + .cpr-phase .cpr-phase__bar { opacity: 0.45; }
-
-  .cpr-phase__name {
+  .cprel-phase__name {
     font-size: 10.5px;
     line-height: 14px;
     color: var(--ss-text-faint);
   }
 
-  /* The assets card runs on past the stage's bottom edge */
-  .cpr-assets {
-    gap: 0;
-    padding: 2px 20px 80px;
+  .cprel-wavy {
+    position: relative;
+    height: 12px;
   }
 
-  .cpr-asset {
+  .cprel-wavy__track {
+    position: absolute;
+    inset: 4px 0;
+    border-radius: 2px;
+    background: var(--ss-accent-soft);
+  }
+
+  .cprel-wavy__stop {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--ss-accent);
+  }
+
+  .cprel-wavy__fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    overflow: hidden;
+    border-radius: 2px;
+    /* The leading edge is soft while the wave travels, never a hard cut */
+    mask-image: linear-gradient(to right, #000 calc(100% - 8px), transparent);
+    transition: width 2200ms cubic-bezier(0.3, 0, 0.25, 1);
+  }
+
+  .cprel-wavy[data-done] .cprel-wavy__fill { mask-image: none; }
+
+  /* The finished indicator: a flat bar that takes over as the wave flattens */
+  .cprel-wavy__fill::before {
+    content: '';
+    position: absolute;
+    inset: 4px 0;
+    border-radius: 2px;
+    background: var(--ss-accent);
+    opacity: 0;
+    transition: opacity 200ms var(--cp-effects) 120ms;
+  }
+
+  .cprel-wavy[data-done] .cprel-wavy__fill::before { opacity: 1; }
+
+  .cprel-wavy__svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow: visible;
+    animation: cprel-phase 900ms linear infinite;
+    transition: scale 350ms var(--cp-spring-fast), opacity 200ms var(--cp-effects) 150ms;
+  }
+
+  .cprel-wavy__svg path {
+    fill: none;
+    stroke: var(--ss-accent);
+    stroke-width: 4px;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* Done: the wave flattens into the bar and stops travelling */
+  .cprel-wavy[data-done] .cprel-wavy__svg {
+    scale: 1 0.2;
+    opacity: 0;
+    animation-play-state: paused;
+  }
+
+  /* The assets card: its heading and count, a waiting line until Publish
+     ends, then the files open in a short stagger */
+  .cprel-assets {
+    gap: 0;
+    padding: 0 24px 140px;
+  }
+
+  .cprel-assets__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 30px;
+    border-bottom: 1px solid var(--ss-line-faint);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ss-text-strong);
+  }
+
+  /* The count chip clips its roll: a figure is only ever seen inside it */
+  .cprel-count {
+    display: inline-grid;
+    place-items: center;
+    height: 20px;
+    padding: 0 8px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: var(--ss-well);
+    color: var(--ss-text-faint);
+    font-size: 10.5px;
+    line-height: 12px;
+  }
+
+  .cprel-count .ss-count__digit { mask-image: none; -webkit-mask-image: none; }
+
+  /* The files: one reserved 30px row each, laid out from the first frame */
+  .cprel-list {
+    position: relative;
+    display: grid;
+  }
+
+  .cprel-asset {
+    height: 30px;
+    overflow: hidden;
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms var(--cp-effects);
+  }
+
+  .cprel-asset[data-shown] { border-bottom-color: var(--ss-line-faint); }
+
+  .cprel-asset__in {
+    display: grid;
+    grid-template-columns: 18px 254px 80px;
+    align-items: center;
+    gap: 10px;
+    height: 30px;
+    opacity: 0;
+    translate: 0 8px;
+    transition: opacity 200ms var(--cp-effects), translate 350ms var(--cp-spring-fast);
+    will-change: transform;
+  }
+
+  .cprel-asset[data-shown] .cprel-asset__in {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  /* Waiting for Publish sits over the first row and leaves as it fills */
+  .cprel-wait {
+    position: absolute;
+    inset: 0 0 auto;
     display: flex;
     align-items: center;
     gap: 10px;
     height: 30px;
-    border-bottom: 1px solid var(--ss-line-faint);
+    transition: opacity 160ms var(--cp-effects);
   }
 
-  .cpr-file {
+  .cprel-wait[data-gone] { opacity: 0; }
+
+  .cprel-file {
     font-family: var(--ss-mono);
     font-size: 12px;
     color: var(--ss-text-strong);
     white-space: nowrap;
   }
 
-  /* Files on one grid: the name track, then the size, both inside the crop */
-  .cpr-asset { display: grid; grid-template-columns: 18px 254px 80px; }
-
-  .cpr-size {
+  .cprel-size {
     font-family: var(--ss-mono);
     font-size: 11px;
     color: var(--ss-text-faint);
     text-align: right;
   }
 
-  /* Compact: the column fills the stage less a 16px gutter each side */
-  & .ss-stage[data-layout='compact'] .cpr-stack {
+  @keyframes cprel-phase {
+    to { translate: -16px 0; }
+  }
+
+  @keyframes cprel-pulse {
+    50% { scale: 1.06; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cprel-chip[data-done] { animation: none; }
+    /* The finished indicator: a flat bar that takes over as the wave flattens */
+  .cprel-wavy__fill::before {
+    content: '';
+    position: absolute;
+    inset: 4px 0;
+    border-radius: 2px;
+    background: var(--ss-accent);
+    opacity: 0;
+    transition: opacity 200ms var(--cp-effects) 120ms;
+  }
+
+  .cprel-wavy[data-done] .cprel-wavy__fill::before { opacity: 1; }
+
+  .cprel-wavy__svg { animation: none; }
+  }
+
+  /* Compact: the column fills the stage less a 16px gutter on the left, and
+     the files join the release card, which runs off the bottom */
+  & .ss-stage[data-layout='compact'] .cprel-stack {
     top: 16px;
     left: 16px;
     width: 400px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-asset { grid-template-columns: 18px auto; }
+  & .ss-stage[data-layout='compact'] .cprel-asset__in { grid-template-columns: 18px auto; }
 
-  & .ss-stage[data-layout='compact'] .cpr-card { padding: 16px; gap: 12px; }
-  & .ss-stage[data-layout='compact'] .cpr-card { padding-bottom: 120px; }
-  & .ss-stage[data-layout='compact'] .cpr-assets-inline { margin-top: -4px; }
-  & .ss-stage[data-layout='compact'] .cpr-assets-inline .cpr-asset:first-child { border-top: 1px solid var(--ss-line); }
-  & .ss-stage[data-layout='compact'] .cpr-row { grid-template-columns: 136px 1fr; height: 26px; }
-  & .ss-stage[data-layout='compact'] .cpr-value { font-size: 11px; }
-  & .ss-stage[data-layout='compact'] .cpr-label { font-size: 11.5px; }
+  & .ss-stage[data-layout='compact'] .cprel-card { padding: 16px 20px 0; gap: 12px; }
+  & .ss-stage[data-layout='compact'] .cprel-assets-inline { padding-bottom: 120px; margin-top: -2px; border-top: 1px solid var(--ss-line-faint); }
+  & .ss-stage[data-layout='compact'] .cprel-row { grid-template-columns: 136px 1fr; height: 26px; }
+  & .ss-stage[data-layout='compact'] .cprel-value { font-size: 11px; }
+  & .ss-stage[data-layout='compact'] .cprel-label { font-size: 11.5px; }
+  & .ss-stage[data-layout='compact'] .cprel-band { width: 300px; }
 }

@@ -1,27 +1,27 @@
-.cpr {
+.cprepo {
   & .ss-stage {
     --gutter: 32px;
     overflow: hidden;
-    background: var(--ss-well);
+    background: var(--ss-canvas);
   }
 
   /* A ruled page with real margins: the document, not a window. It runs off
      the top, right and bottom; its left edge is the one the satellite
      straddles. */
-  .cpr-page {
+  .cprepo-page {
     position: absolute;
     top: -40px;
-    left: 136px;
+    left: 216px;
     width: 520px;
     height: 480px;
     padding: 64px 32px 0;
     box-sizing: border-box;
-    border-radius: 12px;
+    border-radius: 28px;
     background: var(--ss-surface);
     box-shadow: var(--ss-shadow-hero);
   }
 
-  .cpr-ms {
+  .cprepo-ms {
     display: inline-block;
     flex: none;
     width: 18px;
@@ -34,14 +34,14 @@
     line-height: 1;
   }
 
-  .cpr-file {
+  .cprepo-file {
     display: flex;
     align-items: center;
     gap: 6px;
     margin-bottom: 16px;
   }
 
-  .cpr-filename {
+  .cprepo-filename {
     color: var(--ss-text-faint);
     font-family: var(--ss-mono);
     font-size: 12px;
@@ -49,8 +49,8 @@
   }
 
   /* A Markdown second-level heading: its rule runs the text column */
-  .cpr-h2 {
-    width: 360px;
+  .cprepo-h2 {
+    width: 280px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--ss-line);
     color: var(--ss-text-strong);
@@ -60,13 +60,13 @@
   }
 
   /* The table runs the text column; every row shares one template */
-  .cpr-table {
+  .cprepo-table {
     display: grid;
-    width: 360px;
+    width: 280px;
     margin-top: 4px;
   }
 
-  .cpr-tr {
+  .cprepo-tr {
     display: grid;
     grid-template-columns: 1fr 64px;
     column-gap: 24px;
@@ -75,75 +75,132 @@
     border-bottom: 1px solid var(--ss-line-faint);
   }
 
-  .cpr-tr > :last-child {
+  .cprepo-tr > :last-child {
     justify-self: end;
   }
 
-  .cpr-lang,
-  .cpr-num {
+  .cprepo-lang,
+  .cprepo-num {
     color: var(--ss-text);
     font-size: 13px;
     line-height: 18px;
   }
 
-  .cpr-num {
+  .cprepo-num {
     font-variant-numeric: tabular-nums;
   }
 
-  .cpr-total {
+  /* The new row: tinted primary container as it opens, then back to the
+     page on the effects curve */
+  .cprepo-new {
+    margin: 0 -12px;
+    padding: 0 12px;
+    border-radius: 12px;
+    border-bottom-color: transparent;
+    transition: background-color 600ms var(--cp-effects) 900ms;
+  }
+
+  .cprepo-new[data-new] {
+    animation: cprepo-tint 1500ms var(--cp-effects);
+  }
+
+  @keyframes cprepo-tint {
+    0%, 55% { background-color: var(--ss-accent-soft); }
+    100% { background-color: transparent; }
+  }
+
+  .cprepo-total {
+    will-change: transform;
     border-top: 1px solid var(--ss-line);
     border-bottom: 0;
   }
 
-  .cpr-total > * {
+  .cprepo-total > * {
     font-weight: 600;
   }
 
-  /* The next section: filler, under the satellite and off the bottom */
-  .cpr-after {
+  /* The README's method under the table: rate, multiplier and the two
+     lines of arithmetic that give the range */
+  .cprepo-method {
     display: grid;
     justify-items: start;
-    gap: 9px;
-    margin-top: 28px;
+    gap: 4px;
+    width: 280px;
+    margin-top: 20px;
   }
 
-  .cpr-after > :first-child {
-    margin-bottom: 4px;
+  .cprepo-line {
+    color: var(--ss-text-faint);
+    font-size: 12.5px;
+    line-height: 20px;
   }
+
+  .cprepo-math {
+    color: var(--ss-text);
+    font-family: var(--ss-mono);
+    font-size: 12px;
+    line-height: 20px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .cprepo-method .cprepo-line + .cprepo-math { margin-top: 6px; }
 
   /* The satellite: the estimate beside the counts, straddling the page's
      left edge below the table */
-  .cpr-estimate {
+  .cprepo-estimate {
     position: absolute;
     bottom: var(--gutter);
-    left: var(--gutter);
+    left: 16px;
     display: grid;
     justify-items: start;
     gap: 2px;
     width: 216px;
     padding: 14px 16px;
     box-sizing: border-box;
-    border-radius: 12px;
+    isolation: isolate;
+  }
+
+  /* The satellite's surface, a large rounded card; it alone pulses
+     (1 to 1.06 to 1, fast spring) so the words never scale */
+  .cprepo-estimate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 20px;
     background: var(--ss-surface);
     box-shadow: var(--ss-shadow-satellite);
   }
 
-  .cpr-est-label {
+  .cprepo-estimate[data-pulse]::before {
+    animation: cprepo-pulse 350ms var(--cp-spring-fast) 250ms;
+  }
+
+  @keyframes cprepo-pulse {
+    50% { scale: 1.06; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cprepo-estimate[data-pulse]::before,
+    .cprepo-new[data-new] { animation: none; }
+  }
+
+  .cprepo-est-label {
     color: var(--ss-text-faint);
     font-size: 12px;
     line-height: 16px;
   }
 
-  .cpr-est-value {
+  .cprepo-est-value {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
     color: var(--ss-accent-text);
     font-size: 15px;
     font-weight: 600;
     line-height: 20px;
   }
 
-  .cpr-est-value + * {
-    margin-top: 8px;
-  }
 
   /* Narrow: the page fills the stage less a gutter on the left and runs off
      the other three edges; the estimate sits over the filler under the table */
@@ -151,32 +208,32 @@
     --gutter: 16px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-page {
+  & .ss-stage[data-layout='compact'] .cprepo-page {
     left: 16px;
     width: 380px;
     padding: 56px 24px 0;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-file {
+  & .ss-stage[data-layout='compact'] .cprepo-file {
     margin-bottom: 10px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-h2,
-  & .ss-stage[data-layout='compact'] .cpr-table {
+  & .ss-stage[data-layout='compact'] .cprepo-h2,
+  & .ss-stage[data-layout='compact'] .cprepo-table {
     width: 294px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-tr {
+  & .ss-stage[data-layout='compact'] .cprepo-tr {
     height: 28px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-estimate {
+  & .ss-stage[data-layout='compact'] .cprepo-estimate {
     left: 40px;
     width: 232px;
     padding: 12px 16px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpr-estimate > .ss-bar {
+  & .ss-stage[data-layout='compact'] .cprepo-estimate > .ss-bar {
     display: none;
   }
 }

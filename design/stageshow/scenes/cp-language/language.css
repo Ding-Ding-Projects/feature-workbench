@@ -1,21 +1,22 @@
 .cpl .ss-stage {
   overflow: hidden;
-  background: var(--ss-well);
+  background: var(--ss-canvas);
 }
 
-/* The product: pinned top-left on the 28px gutter, off the bottom */
+/* The product: on the 28px gutter at the top and left, off the right and
+   the bottom. The leader runs through its empty canvas right of the lanes. */
 .cpl .cpl-win {
   position: absolute;
   top: 28px;
   left: 28px;
-  width: 376px;
+  width: 600px;
   height: 420px;
 }
 
 .cpl .cpl-app {
   height: 100%;
   padding: 18px 16px;
-  background: var(--ss-canvas);
+  background: #F5F2FA;
 }
 
 .cpl .cpl-head {
@@ -32,31 +33,99 @@
   line-height: 1.2;
 }
 
+/* The compact Cantonese label: arrives from just below on the default spring, leaves as a fade */
 .cpl .cpl-yue {
   color: var(--ss-text-faint);
   font-family: "Noto Sans HK", var(--ss-font);
   font-size: 13px;
   font-weight: 500;
   line-height: 1.3;
+  opacity: 0;
+  transform: translate3d(0, 6px, 0);
+  will-change: transform;
+  transition: opacity 200ms var(--cp-effects), transform 500ms var(--cp-spring-default);
+}
+
+/* Lane names: the Cantonese name sits beside the English one and arrives the same way, a beat later */
+.cpl .cpl-lane-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.cpl .cpl-lane--done .cpl-lane-name { color: #001257; }
+.cpl .cpl-lane--ip .cpl-lane-name { color: #2D1600; }
+
+.cpl .cpl-lane-yue {
+  font-family: "Noto Sans HK", var(--ss-font);
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translate3d(0, 6px, 0);
+  will-change: transform;
+  transition: opacity 200ms var(--cp-effects), transform 500ms var(--cp-spring-default);
+}
+
+.cpl .cpl-lane-yue[data-show] {
+  opacity: 1;
+  transform: none;
+  transition: opacity 320ms var(--cp-effects), transform 500ms var(--cp-spring-default);
+}
+
+/* The card's second line: one slot, the notes bar gives way to the Cantonese title */
+.cpl .cpl-swap {
+  display: grid;
+  align-items: center;
+  height: 16px;
+  margin: -3px 0 -3px;
+}
+
+.cpl .cpl-swap > * {
+  grid-area: 1 / 1;
+  transition: opacity 240ms var(--cp-effects);
+}
+
+.cpl .cpl-card-yue {
+  font-family: "Noto Sans HK", var(--ss-font);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--ss-text-faint);
+  opacity: 0;
+}
+
+.cpl .cpl-swap[data-bi] .cpl-card-yue { opacity: 1; transition-delay: 200ms; }
+.cpl .cpl-swap[data-bi] .cpl-swap__bar { opacity: 0; }
+
+.cpl .cpl-yue[data-show] {
+  opacity: 1;
+  transform: none;
+  transition: opacity 320ms var(--cp-effects), transform 500ms var(--cp-spring-default);
 }
 
 .cpl .cpl-lanes {
   display: grid;
+  width: 344px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
+/* Lanes: tonal containers (Done = primary container, In progress = tertiary container) */
 .cpl .cpl-lane {
   display: grid;
   align-content: start;
   gap: 8px;
   padding: 10px 8px 8px;
-  border-radius: 14px;
-  background: var(--ss-well);
+  border-radius: 28px;
+  background: #DDE1FF;
 }
 
-.cpl .cpl-lane--done {
-  background: var(--ss-accent-soft);
+.cpl .cpl-lane--ip {
+  background: #FFDCBE;
 }
 
 .cpl .cpl-card-title {
@@ -67,31 +136,39 @@
   margin: -2px 0 -3px;
 }
 
-.cpl .cpl-lane--amber {
-  background: var(--ss-warning-soft);
-}
-
 .cpl .cpl-lane-head {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 2px 4px 4px;
+  gap: 6px;
+  padding: 2px 6px 4px;
 }
 
 .cpl .cpl-card {
   display: grid;
   gap: 7px;
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 20px;
   background: var(--ss-surface);
-  box-shadow: 0 1px 2px rgba(13, 21, 38, 0.06);
 }
 
+/* A quiet connected button group: outer ends pill, inner corners small, the selected one a soft pill */
 .cpl .cpl-card-actions {
   display: flex;
-  gap: 6px;
+  gap: 2px;
   margin-top: 4px;
 }
+
+.cpl .cpl-fseg {
+  display: block;
+  flex: none;
+  height: 18px;
+  border-radius: 3px;
+  background: var(--ss-ink-1);
+}
+
+.cpl .cpl-fseg:first-child { border-radius: 999px 3px 3px 999px; }
+.cpl .cpl-fseg:last-child { border-radius: 3px 999px 999px 3px; }
+.cpl .cpl-fseg[data-sel] { border-radius: 999px; background: #DDE1FF; }
 
 .cpl .cpl-icon {
   font-family: 'Material Symbols Rounded';
@@ -108,59 +185,64 @@
   color: var(--ss-icon);
 }
 
-.cpl .cpl-icon--faint { color: var(--ss-icon-faint); }
-.cpl .cpl-icon--accent { color: var(--ss-accent); }
-.cpl .cpl-icon--amber { color: var(--ss-warning); }
+.cpl .cpl-icon--done { color: #001257; }
+.cpl .cpl-icon--ip { color: #2D1600; }
 
-/* The tool: smaller, in front, straddling the window's right edge over the
-   second lane (filler), a level above, and running off the bottom like the
-   window, so the only edge it keeps is the 28px gutter on the right; its
-   controls end just above the crop, so no empty band shows */
+/* The settings card: smaller, in front, straddling the window's right edge
+   over the second lane (filler), a level above, and running off the bottom
+   like the window, so the only edge it keeps is the 28px gutter on the right */
 .cpl .cpl-panel {
   position: absolute;
   top: 236px;
-  left: 292px;
-  width: 240px;
+  left: 276px;
+  width: 256px;
   min-height: 180px;
   align-content: start;
   display: grid;
-  gap: 16px;
-  padding: 18px 16px 16px;
-  border-radius: 16px;
+  gap: 18px;
+  padding: 20px 16px 16px;
+  box-sizing: border-box;
+  border-radius: 28px;
   background: var(--ss-surface);
   box-shadow: var(--ss-shadow-satellite);
 }
 
+/* The connected button group: the selected segment a filled full pill, its
+   neighbours small inner corners; a press tightens the corners on the fast spring */
+.cpl .cpl-group {
+  display: flex;
+  gap: 2px;
+}
+
 .cpl .cpl-seg {
-  padding: 0;
-  border-radius: 12px;
-  background: #EEF1F6;
-}
-
-.cpl .cpl-seg .ss-seg__thumb {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: calc(100% / 3);
-  box-sizing: border-box;
-  border: 3px solid transparent;
-  border-radius: 12px;
-  background: var(--ss-surface);
-  background-clip: padding-box;
-  box-shadow: none;
-}
-
-.cpl .cpl-seg .ss-seg__option {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
   height: 36px;
-  padding: 0 4px;
-  color: var(--ss-text-faint);
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background: #E9E7EF;
+  color: var(--ss-text-strong);
   font-size: 12px;
   font-weight: 600;
+  white-space: nowrap;
+  will-change: transform;
+  transition: border-radius 350ms var(--cp-spring-fast), background 200ms var(--cp-effects), color 200ms var(--cp-effects);
 }
 
-.cpl .cpl-seg .ss-seg__option[data-on] {
-  color: var(--ss-text-strong);
+.cpl .cpl-seg:first-child { border-radius: 999px 6px 6px 999px; }
+.cpl .cpl-seg:last-child { border-radius: 6px 999px 999px 6px; }
+.cpl .cpl-seg[data-hover] { background: #E3E1E9; }
+
+.cpl .cpl-seg[data-sel] {
+  border-radius: 999px;
+  background: var(--ss-accent);
+  color: #FFFFFF;
 }
+
+.cpl .cpl-seg[data-pressed] { border-radius: 12px; }
 
 .cpl .cpl-slider {
   display: grid;
@@ -178,43 +260,57 @@
   line-height: 1.3;
 }
 
+/* The v2 slider: a thick 16px track, the handle a 4px bar with a gap on each side */
 .cpl .cpl-track {
-  position: relative;
-  height: 4px;
-  margin: 6px 0;
-  border-radius: 2px;
-  background: var(--ss-line);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
 }
 
 .cpl .cpl-track-fill {
-  position: absolute;
-  inset: 0 50% 0 0;
-  border-radius: 2px;
+  flex: 1;
+  height: 16px;
+  border-radius: 8px 3px 3px 8px;
   background: var(--ss-accent);
 }
 
 .cpl .cpl-thumb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 16px;
-  height: 16px;
-  margin: -8px 0 0 -8px;
-  border-radius: 50%;
+  flex: none;
+  width: 4px;
+  height: 32px;
+  border-radius: 2px;
   background: var(--ss-accent);
-  box-shadow: 0 0 0 3px var(--ss-surface), 0 1px 3px 3px rgba(13, 21, 38, 0.12);
+}
+
+.cpl .cpl-track-rest {
+  flex: 1;
+  height: 16px;
+  border-radius: 3px 8px 8px 3px;
+  background: #DEE1F9;
 }
 
 /* The leader is annotation, not product: neutral ink */
 .cpl .ss-connector { --ss-accent: var(--ss-text-faint); }
 
 /* Narrow: no path for a leader. The window's header stays whole at the top
-   and the panel sits over its lanes (filler) on the 16px gutter */
+   and the card sits over its lanes (filler) on the 16px gutter */
 .cpl .ss-stage[data-layout='compact'] .cpl-win {
   top: 16px;
   left: 16px;
-  width: 326px;
+  width: 400px;
 }
+
+.cpl .ss-stage[data-layout='compact'] .cpl-lanes {
+  width: 310px;
+  gap: 10px;
+}
+
+.cpl .ss-stage[data-layout='compact'] .cpl-lane-name { font-size: 12px; gap: 4px; }
+.cpl .ss-stage[data-layout='compact'] .cpl-lane-yue { font-size: 11px; }
+
+/* Narrow, the card carries only the language group: the slider is not the story */
+.cpl .ss-stage[data-layout='compact'] .cpl-slider { display: none; }
 
 .cpl .ss-stage[data-layout='compact'] .cpl-panel {
   top: auto;
@@ -223,6 +319,11 @@
   width: 326px;
   min-height: 0;
   align-content: start;
-  gap: 20px;
-  padding: 20px 16px;
+  gap: 18px;
+  padding: 16px;
+}
+
+/* Narrow: the header and the lane names with the first card stay in view above the settings card */
+.cpl .ss-stage[data-layout='compact'] .cpl-head {
+  margin-bottom: 14px;
 }

@@ -1,6 +1,6 @@
 .cpg .ss-stage {
   overflow: hidden;
-  background: var(--ss-well);
+  background: var(--ss-canvas);
 }
 
 /* The back window: a quiet game editor, pinned top on the 28px gutter, off
@@ -60,7 +60,7 @@
 
 .cpg .cpg-road {
   position: absolute;
-  background: var(--ss-canvas);
+  background: #F5F2FA;
 }
 
 .cpg .cpg-road--h {
@@ -82,24 +82,41 @@
   place-items: center;
   width: 40px;
   height: 40px;
-  border-radius: 12px;
+  border-radius: 16px;
   background: var(--ss-surface);
-  box-shadow: 0 1px 2px rgba(13, 21, 38, 0.08);
+  box-shadow: 0 1px 2px rgba(27, 27, 33, 0.08);
 }
 
+/* The Ferris wheel tile: lands from just above into its slot on the default spring */
 .cpg .cpg-tile--on {
+  z-index: 2;
   background: var(--ss-accent);
+  opacity: 0;
+  transform: translate3d(0, -14px, 0) scale(0.9);
+  will-change: transform;
+  transition: opacity 200ms var(--cp-effects), transform 500ms var(--cp-spring-default);
+}
+
+.cpg .cpg-tile--on[data-placed] {
+  opacity: 1;
+  transform: none;
 }
 
 .cpg .cpg-tile--on .cpg-icon {
   color: #FFFFFF;
 }
 
-.cpg .cpg-tile--pending {
+.cpg .cpg-tile--slot {
   background: var(--ss-warning-soft);
   box-shadow: none;
   outline: 1.5px dashed var(--ss-warning);
   outline-offset: -1.5px;
+  transition: opacity 200ms var(--cp-effects);
+}
+
+.cpg .cpg-tile--slot[data-gone] {
+  opacity: 0;
+  transition-delay: 160ms;
 }
 
 /* Where each model sits on the map */
@@ -121,7 +138,7 @@
   width: 210px;
   display: grid;
   padding: 16px 0 0;
-  border-radius: 16px;
+  border-radius: 28px;
   background: var(--ss-surface);
   box-shadow: var(--ss-shadow-satellite);
   overflow: hidden;
@@ -142,6 +159,10 @@
   line-height: 1.3;
 }
 
+.cpg .cpg-count__rest {
+  margin-left: 0.28em;
+}
+
 .cpg .cpg-count {
   color: var(--ss-text-faint);
   font-size: 11px;
@@ -155,10 +176,38 @@
 }
 
 .cpg .cpg-row--pending {
-  padding: 16px;
+  padding: 16px 16px 18px;
   border-bottom: 0;
   background: var(--ss-warning-soft);
 }
+
+/* The story's row: pending (tertiary container) until verified, then the plain surface */
+.cpg .cpg-row--story {
+  padding: 14px 16px;
+  background: var(--ss-warning-soft);
+  transition: background 200ms var(--cp-effects);
+}
+
+.cpg .cpg-row--story:has(.cpg-status[data-verified]) {
+  background: var(--ss-surface);
+}
+
+/* The status icon: one slot, pending fades out as verified grows in on the fast spring (a small overshoot) */
+.cpg .cpg-status {
+  display: grid;
+  width: 18px;
+  height: 18px;
+}
+
+.cpg .cpg-status > * {
+  grid-area: 1 / 1;
+  will-change: transform;
+  transition: opacity 200ms var(--cp-effects), transform 350ms var(--cp-spring-fast);
+}
+
+.cpg .cpg-status__verified { opacity: 0; transform: scale(0.6); }
+.cpg .cpg-status[data-verified] .cpg-status__verified { opacity: 1; transform: none; }
+.cpg .cpg-status[data-verified] .cpg-status__pending { opacity: 0; transform: scale(0.6); }
 
 .cpg .cpg-name {
   color: var(--ss-text-strong);
@@ -167,13 +216,14 @@
 }
 
 .cpg .cpg-evidence {
-  color: var(--ss-accent-text);
+  color: var(--ss-warning-text);
   font-size: 11px;
   font-weight: 600;
+  transition: color 200ms var(--cp-effects);
 }
 
-.cpg .cpg-evidence--pending {
-  color: var(--ss-warning-text);
+.cpg .cpg-evidence[data-verified] {
+  color: var(--ss-accent);
 }
 
 /* Narrow: the editor pinned on the 16px gutter, off the bottom and right; the card
@@ -198,7 +248,7 @@
 }
 
 .cpg .ss-stage[data-layout='compact'] .cpg-t1 { left: 112px; top: 20px; }
-.cpg .ss-stage[data-layout='compact'] .cpg-t2 { left: 20px; top: 20px; }
+.cpg .ss-stage[data-layout='compact'] .cpg-t2 { left: 196px; top: 16px; }
 .cpg .ss-stage[data-layout='compact'] .cpg-t3 { left: 176px; top: 96px; }
 .cpg .ss-stage[data-layout='compact'] .cpg-t4 { left: 30px; top: 120px; }
 .cpg .ss-stage[data-layout='compact'] .cpg-t5 { left: 120px; top: 176px; }

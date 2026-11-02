@@ -2,6 +2,8 @@
 
 Faux product UI scenes of the redesigned Commonplace, built with the Stageshow skill (`benjitaylor/skills`, folder `stageshow`, commit `802057409787133703c56001080169e347305572`, MIT). They are marketing-style illustrations of the product, not the product itself.
 
+**v2 (current):** every scene now uses the Material 3 Expressive look of the v2 redesign (`commonplace/look.css`; the v1 look is kept in `commonplace/look.v1.css`) and plays a short animated story with the v2 spring curves. Each scene's motion is recorded in `frames/<id>.mp4` (cropped to the stage, 1:1), with its payoff poster in `frames/<id>.jpg`. The canvas page "Faux UI (Stageshow)" plays all fifteen.
+
 | Scene | What it shows | Size |
 | --- | --- | --- |
 | `cp-hero` | Animated: a task is typed, saved to To do, moved to In progress, and confirmed as saved in this browser. About 15 s, seamless loop, poster is the payoff. | 720 × 380, phone 358 |
@@ -24,7 +26,7 @@ Faux product UI scenes of the redesigned Commonplace, built with the Stageshow s
 
 - `scenes/<id>/`: each scene's React source, its scoped CSS and its `REHEARSAL.md` (the gold example it started from, what changed, the fresh-eye review findings and fixes, and what was not checked).
 - `commonplace/look.css`: the Commonplace look mapped onto Stageshow's tokens. It imports a local `fonts.css` that is not committed (see below).
-- `frames/`: the wide stills (`<id>.jpg`, cropped to the stage at 2x), the phone stills (`<id>-390.jpg`), and the hero loop (`cp-hero.mp4`, 720 × 380).
+- `frames/`: the payoff posters (`<id>.jpg`, cropped to the stage at 2x), the phone posters (`<id>-390.jpg`), and every scene's motion (`<id>.mp4`).
 
 ## Running the scenes
 
@@ -35,4 +37,6 @@ Faux product UI scenes of the redesigned Commonplace, built with the Stageshow s
 
 ## Review status
 
-Every scene was filmed at its shown width and at 390, passed `film.mjs --gate` (`rehearsal passed`; the hero on its full loop), and was reviewed by a separate fresh-eye reviewer following Stageshow's `references/review.md`. All findings that could be fixed were fixed; the remaining notes are in each scene's `REHEARSAL.md`. Dark theme and reduced motion were not reviewed.
+v2: every scene was re-skinned and animated, passed `film.mjs --gate` at both widths on its loop or play-once run, and went through a second fresh-eye review whose findings were fixed (each REHEARSAL.md has a "v2 fresh-eye review" section). Known departure: the Appearance scene's value now steps beside its label instead of riding the handle in a bubble, to clear the gate's snap lines.
+
+v1: every scene was filmed at its shown width and at 390, passed `film.mjs --gate` (`rehearsal passed`; the hero on its full loop), and was reviewed by a separate fresh-eye reviewer following Stageshow's `references/review.md`. All findings that could be fixed were fixed; the remaining notes are in each scene's `REHEARSAL.md`. Dark theme and reduced motion were not reviewed.

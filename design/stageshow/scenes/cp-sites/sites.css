@@ -1,10 +1,11 @@
-/* Commonplace, Landing site and shared links. Every rule is scoped to the scene. */
+/* Commonplace v2 (Material 3 Expressive), Landing site and shared links.
+   Every rule is scoped to the scene. */
 .cps {
   & .ss-stage {
     --gutter: 24px;
     overflow: hidden;
-    border-radius: 16px;
-    background: var(--ss-well);
+    border-radius: 28px;
+    background: var(--ss-canvas);
   }
 
   /* Material Symbols Rounded, filled, one size for the scene */
@@ -20,14 +21,16 @@
     line-height: 1;
   }
 
-  /* The landing site: pinned top-left, off the bottom */
+  /* The landing site: pinned a gutter from the top and left, run well past
+     the right edge and off the bottom; the chat sits in front of its right
+     side (overlapping windows) */
   .cps-window {
     position: absolute;
     top: var(--gutter);
     left: var(--gutter);
-    width: 440px;
+    width: 600px;
     height: 420px;
-    border-radius: 14px;
+    border-radius: 28px;
     box-shadow: var(--ss-shadow-hero);
   }
 
@@ -52,11 +55,6 @@
     color: var(--ss-text-strong);
   }
 
-  .cps-nav__links {
-    display: flex;
-    gap: 14px;
-  }
-
   .cps-hero {
     display: grid;
     justify-items: start;
@@ -66,6 +64,7 @@
 
   .cps-heading {
     margin-bottom: 6px;
+    white-space: pre-line;
     font-size: 24px;
     line-height: 1.15;
     color: var(--ss-text-strong);
@@ -73,7 +72,7 @@
 
   .cps-tiles {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 124px);
     gap: 10px;
   }
 
@@ -82,7 +81,7 @@
     justify-items: start;
     gap: 8px;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 20px;
     background: var(--ss-canvas);
   }
 
@@ -92,19 +91,19 @@
     width: 30px;
     height: 30px;
     margin-bottom: 4px;
-    border-radius: 9px;
+    border-radius: 12px;
     background: var(--ss-accent-soft);
-    color: var(--ss-accent);
+    color: var(--ss-accent-text);
   }
 
   /* The chat: a chromeless panel a level above the site, straddling its
      right edge over the page's empty right side */
   .cps-chat {
     position: absolute;
-    top: 80px;
+    top: 77px;
     right: var(--gutter);
     width: 272px;
-    border-radius: 14px;
+    border-radius: 28px;
     background: var(--ss-surface);
     box-shadow: var(--ss-shadow-satellite);
   }
@@ -113,8 +112,8 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    height: 42px;
-    padding: 0 14px;
+    height: 46px;
+    padding: 0 18px;
     border-bottom: 1px solid var(--ss-line);
     color: var(--ss-icon-faint);
   }
@@ -123,7 +122,7 @@
     display: grid;
     grid-template-columns: 26px 1fr;
     gap: 10px;
-    padding: 12px 14px 13px;
+    padding: 12px 18px 16px;
   }
 
   .cps-avatar {
@@ -162,8 +161,8 @@
   .cps-preview {
     margin-top: 6px;
     overflow: hidden;
-    border: 1px solid var(--ss-line);
-    border-radius: 12px;
+    border: 1px solid var(--ss-line-faint);
+    border-radius: 16px;
     background: var(--ss-surface);
   }
 
@@ -171,7 +170,7 @@
     display: grid;
     gap: 4px;
     padding: 8px 12px 10px;
-    border-top: 1px solid var(--ss-line);
+    border-top: 1px solid var(--ss-line-faint);
   }
 
   .cps-preview__site {
@@ -187,12 +186,18 @@
     color: var(--ss-text-strong);
   }
 
-  /* The share image, at 1200 x 630 */
+  /* The share image, at 1200 x 630: a skeleton ground while it loads (the
+     container-high tone), the page's own ground once its lanes arrive */
   .cps-shot {
     aspect-ratio: 1200 / 630;
     padding: 10px 12px 0;
-    background: var(--ss-canvas);
+    background: #E9E7EF;
     overflow: hidden;
+    transition: background-color 200ms var(--cp-effects);
+  }
+
+  .cps-shot[data-ready] {
+    background: var(--ss-canvas);
   }
 
   .cps-shot__bar {
@@ -221,12 +226,29 @@
     gap: 5px;
     height: 110px;
     padding: 6px;
-    border-radius: 6px;
-    background: var(--ss-surface);
+    border-radius: 8px;
+    background: #DEE1F9;
+    opacity: 0;
+    transform: translateY(6px);
+    will-change: transform;
+    transition:
+      opacity 200ms var(--cp-effects),
+      transform 500ms var(--cp-spring-default);
   }
 
+  .cps-lane[data-show] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* The board's tonal lanes: To do secondary-container, In progress
+     tertiary-container, Done primary-container */
   .cps-lane[data-lane='1'] {
     background: var(--ss-warning-soft);
+  }
+
+  .cps-lane[data-lane='2'] {
+    background: var(--ss-accent-soft);
   }
 
   .cps-lane[data-lane='1'] .cps-lane__head {
@@ -236,9 +258,8 @@
 
   .cps-task {
     height: 14px;
-    border-radius: 4px;
+    border-radius: 5px;
     background: var(--ss-surface);
-    box-shadow: 0 0 0 1px var(--ss-line);
   }
 
   /* Narrow: the chat alone, pinned top, off the bottom, the preview whole */
@@ -250,11 +271,15 @@
     top: var(--gutter);
     right: var(--gutter);
     width: 326px;
-    height: 320px;
+    min-height: 320px;
     box-shadow: var(--ss-shadow-hero);
   }
 
   & .ss-stage[data-layout='compact'] .cps-preview {
     width: 216px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cps-lane { transform: none; transition: opacity 120ms linear; }
   }
 }

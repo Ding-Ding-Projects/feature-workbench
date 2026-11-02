@@ -1,13 +1,11 @@
-/* Commonplace Status Hub card, dark. The window is inset top and left, off
-   the right and the bottom; its content column ends a full gutter inside the
-   stage, so only the window's empty margin is cut. */
+/* Commonplace Status Hub card (v2, Material 3 Expressive), light. The window
+   is inset top and left, off the right and the bottom; its content column
+   ends a full gutter inside the stage. Every rule is scoped to this scene. */
 
 .cph .ss-stage {
   overflow: hidden;
   border-radius: 14px;
-  /* The page is light: the plate is the look's light canvas; only the
-     window inside is in the dark theme */
-  background: #F3F5F9;
+  background: var(--ss-canvas);
 }
 
 .cph .cph-win {
@@ -16,8 +14,7 @@
   left: 40px;
   width: 580px;
   height: 420px;
-  --ss-chrome: var(--ss-surface);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06), 0 0 0 1px var(--ss-line), 0 24px 48px -16px rgb(13 21 38 / 0.35), 0 4px 12px -4px rgb(13 21 38 / 0.2);
+  box-shadow: var(--ss-shadow-hero);
 }
 
 .cph .ss-stage[data-layout='compact'] .cph-win {
@@ -28,7 +25,7 @@
 }
 
 .cph .cph-win .ss-window__bar {
-  border-bottom: 1px solid var(--ss-line-faint);
+  border-bottom: 1px solid #E9E7EF;
 }
 
 /* Material Symbols Rounded, filled, one size for the scene */
@@ -46,16 +43,17 @@
   flex: none;
   letter-spacing: normal;
   white-space: nowrap;
-  color: var(--ss-icon);
+  color: #1B1B21;
 }
 
-.cph .cph-accent { color: var(--ss-accent); }
-.cph .cph-amber { color: #C2570C; }
-.cph .cph-faint { color: var(--ss-icon-faint); }
+.cph .cph-accent { color: #2546D6; }
+.cph .cph-amber { color: #8B5000; }
+.cph .cph-faint { color: #767680; }
 
 .cph .cph-body {
   min-height: 100%;
-  background: var(--ss-surface);
+  /* The app's page: surface-container-low */
+  background: #F5F2FA;
 }
 
 /* ---- The app's header: wordmark left, quiet controls right ---- */
@@ -65,15 +63,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  height: 44px;
+  height: 50px;
   padding: 0 100px 0 20px;
-  border-bottom: 1px solid var(--ss-line-faint);
+  border-bottom: 1px solid #E9E7EF;
 }
 
 .cph .cph-mark {
   font-size: 17px;
   line-height: 1.3;
-  color: var(--ss-text-strong);
+  color: #1B1B21;
 }
 
 .cph .cph-top__end {
@@ -84,23 +82,31 @@
 
 .cph .cph-main {
   display: grid;
-  gap: 12px;
-  padding: 16px 100px 0 20px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px 100px 0 20px;
+}
+
+.cph .ss-stage[data-layout='compact'] .cph-name {
+  font-size: 12px;
+}
+
+.cph .ss-stage[data-layout='compact'] .cph-card {
+  padding-left: 14px;
 }
 
 .cph .ss-stage[data-layout='compact'] .cph-main {
-  gap: 12px;
   padding: 16px 74px 0 16px;
 }
 
-/* ---- The session card: one step lighter than the page ---- */
+/* ---- The session card: surface-container-high, xl corners ---- */
 
 .cph .cph-card {
   display: grid;
-  gap: 10px;
+  gap: 8px;
   padding: 14px;
-  border-radius: var(--ss-radius-lg);
-  background: var(--ss-raised);
+  border-radius: 24px;
+  background: #FFFFFF;
 }
 
 .cph .cph-card__head {
@@ -116,70 +122,140 @@
   font-size: 13px;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--ss-text-strong);
+  color: #1B1B21;
   white-space: nowrap;
 }
 
-/* The status pill: amber for In progress, the app's own status colors */
+/* The status pill: secondary-container while a question waits, the In
+   progress tone (tertiary-container) once work runs again. Its label rolls,
+   its colour crossfades on the effects curve, and it pulses once. */
 .cph .cph-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   flex: none;
-  height: 26px;
-  padding: 0 11px 0 8px;
-  border-radius: var(--ss-radius-pill);
-  background: #7A2F06;
-  color: #FFEEDD;
+  height: 28px;
+  padding: 0 11px 0 9px;
+  border-radius: 999px;
+  background: #DEE1F9;
+  color: #161B2C;
   font-size: 12px;
   font-weight: 600;
+  transition: background-color 200ms var(--cp-effects), color 200ms var(--cp-effects);
 }
 
 .cph .cph-pill .cph-ic {
-  color: #FFEEDD;
+  color: inherit;
+}
+
+.cph .cph-pill[data-status='running'] {
+  background: #FFDCBE;
+  color: #2D1600;
+  animation: cph-pulse 500ms var(--cp-spring-default) 120ms;
+}
+
+@keyframes cph-pulse {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
 .cph .cph-pill__label {
   display: block;
-  text-box: trim-both cap alphabetic;
+  line-height: 16px;
 }
 
 .cph .cph-card__meta {
   display: flex;
   align-items: center;
-  gap: 12px;
-  height: 16px;
+  gap: 6px;
   padding-left: 28px;
+}
+
+/* The session's facts as quiet assist chips */
+.cph .cph-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #EFEDF4;
+  color: #45464F;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.cph .cph-chip:has(.cph-chip__ic) {
+  padding-left: 8px;
+}
+
+.cph .cph-chip__ic {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  color: #2546D6;
+}
+
+/* Header: the command search and settings, as the deep-dive draws them */
+.cph .cph-find {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #E9E7EF;
+  color: #45464F;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cph .cph-iconbtn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: #E9E7EF;
 }
 
 /* ---- The record: searchable, newest first ---- */
 
+/* M3 search bar: full pill, surface-container-high, leading icon */
 .cph .cph-search .ss-field__box {
-  height: 34px;
-  background: var(--ss-canvas);
-  box-shadow: inset 0 0 0 1px var(--ss-line);
+  height: 36px;
+  padding-inline: 14px;
+  border-radius: 999px;
+  background: #E9E7EF;
+  box-shadow: none;
 }
 
 .cph .cph-record {
   display: grid;
-  margin-top: -4px;
+  margin-top: -2px;
 }
 
 .cph .cph-row {
   display: grid;
   grid-template-columns: 18px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 12px;
-  height: 42px;
+  column-gap: 12px;
+  min-height: 42px;
   padding: 0 4px;
   font-size: 13px;
-  border-bottom: 1px solid var(--ss-line-faint);
+  border-bottom: 1px solid #E9E7EF;
+}
+
+.cph .cph-row--answer {
+  padding-block: 11px;
 }
 
 .cph .cph-row__text {
   font-size: 13px;
   line-height: 1.3;
-  color: var(--ss-text-strong);
+  color: #1B1B21;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -187,10 +263,59 @@
 .cph .cph-row__when {
   font-size: 12px;
   line-height: 1.3;
-  color: var(--ss-text-faint);
+  color: #45464F;
   font-variant-numeric: tabular-nums;
+}
+
+/* "Confirmed by polling": a second line under the answer's text */
+.cph .cph-sub {
+  display: grid;
+  grid-column: 2 / -1;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 500ms var(--cp-spring-default), opacity 200ms var(--cp-effects);
+}
+
+.cph .cph-sub[data-open] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transition: grid-template-rows 500ms var(--cp-spring-default), opacity 240ms var(--cp-effects) 280ms;
+}
+
+.cph .cph-sub__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.cph .cph-row__sub {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 5px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #45464F;
+}
+
+.cph .cph-sub__ic {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  color: #2546D6;
 }
 
 .cph .cph-row--filler > .ss-bar:last-child {
   justify-self: end;
+}
+
+/* Arrivals ride the default spatial spring */
+.cph .cph-arrive.ss-collapse[data-open] {
+  /* The drop's content waits for most of its space, as the kit's does */
+  transition: grid-template-rows 500ms var(--cp-spring-default), opacity 300ms var(--cp-effects) 200ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cph .cph-pill[data-status='running'] { animation: none; }
+  .cph .cph-arrive.ss-collapse,
+  .cph .cph-sub { transition: opacity 120ms linear; }
 }

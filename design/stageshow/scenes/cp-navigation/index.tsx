@@ -1,21 +1,58 @@
-import { Bar, Field, Popover, Stage, Text, Window } from '../../kit'
+import { Bar, Collapse, Field, Popover, Stage, Text, Window, type Act } from '../../kit'
 import '../../commonplace/look.css'
 import './cp-navigation.css'
 
-// Commonplace, Navigation: a still for the "Navigation, search and commands"
-// feature card. The workspace sits in a quiet browser window, pinned with a
-// gutter on three sides and running off the bottom (gold: static-card's
-// framing). The header's "Find an action" trigger, with its Ctrl Shift F
-// keycap, is pressed, and the command palette hangs from it (the interaction
-// borrowed from the linear study's command menu): "text size" is typed, and
-// the first result is the Text size setting itself, a live slider in its row,
-// highlighted. The board under the palette is quiet filler.
+// Commonplace, Navigation: a short loop for the "Navigation, search and
+// commands" feature card (v2, Material 3 Expressive). The workspace sits in a
+// quiet browser window, pinned with a gutter on three sides and running off
+// the bottom (gold: static-card's framing; the command menu borrowed from the
+// linear study).
 //
-// Narrow: the same window, closer, still off the right; the palette keeps its
-// two matching results.
+// The story, told by the keyboard (no cursor): Ctrl Shift F presses the
+// "Find an action" pill (its corners morph on the fast spring) and the
+// command palette grows out of it on the default spring while the page dims.
+// "text size" is typed; the recent actions that no longer match close up and
+// the Text size setting stays first, with its live slider in its row. After
+// the hold, Esc closes the palette where it opened and the page comes back
+// (the reset, with its cause); the query clears while it is closed.
 //
 // Real strings: Find an action, Ctrl Shift F, the typed "text size", Text
 // size with its 110%, Appearance settings and Try the command palette.
+
+type S = { open: boolean; pressed: boolean; typed: string }
+
+const QUERY = 'text size'
+const initial: S = { open: false, pressed: false, typed: '' }
+const POSTER: S = { open: true, pressed: false, typed: QUERY }
+
+async function script(a: Act<S>) {
+  await a.wait(1000)
+
+  // 1. The shortcut: the trigger presses, the palette grows out of it
+  a.mark('open')
+  const keys = a.key('ctrl+shift+f')
+  await a.wait(120)
+  await a.set({ pressed: true })
+  await keys
+  await a.set({ pressed: false, open: true })
+  await a.wait(650)
+
+  // 2. Typing: what no longer matches closes up under the first match
+  a.mark('type')
+  await a.type('typed', QUERY, { interval: 75 })
+
+  // 3. The payoff holds: the setting itself, live, in the palette
+  a.mark('payoff')
+  await a.wait(2300)
+
+  // 4. Esc: the palette closes where it opened, the page comes back
+  a.mark('close')
+  await a.key('escape')
+  await a.set({ open: false })
+  await a.wait(450)
+  await a.snap({ typed: '' }, 'palette')
+  await a.wait(700)
+}
 
 function Icon({ name, className }: { name: string; className?: string }) {
   return (
@@ -26,9 +63,9 @@ function Icon({ name, className }: { name: string; className?: string }) {
 }
 
 const LANES = [
-  { tone: 'todo', icon: 'radio_button_unchecked', cards: [[96, 120], [80, 104], [90, 112]] },
-  { tone: 'progress', icon: 'clock_loader_40', cards: [[88, 112], [72, 100], [84, 108]] },
-  { tone: 'done', icon: 'check_circle', cards: [[84, 108], [94, 116], [76, 98]] },
+  { tone: 'todo', name: 'To do', icon: 'radio_button_unchecked', cards: [[96, 120], [80, 104], [90, 112]] },
+  { tone: 'progress', name: 'In progress', icon: 'clock_loader_40', cards: [[88, 112], [72, 100], [84, 108]] },
+  { tone: 'done', name: 'Done', icon: 'check_circle', cards: [[84, 108], [94, 116], [76, 98]] },
 ] as const
 
 function Card({ title, sub, text }: { title: number; sub: number; text?: string }) {
@@ -40,11 +77,35 @@ function Card({ title, sub, text }: { title: number; sub: number; text?: string 
   )
 }
 
+/** A recent action shown before the query narrows the list: wordless filler */
+function Recent({ open, icon, w }: { open: boolean; icon: string; w: number }) {
+  return (
+    <Collapse open={open}>
+      <div className="cpn-item cpn-item--recent">
+        <Icon name={icon} />
+        <Bar w={w} h={7} r={3.5} tone={3} />
+      </div>
+    </Collapse>
+  )
+}
+
 export default function CommonplaceNavigation() {
   return (
-    <Stage width={560} height={380} compact={{ below: 560, width: 358, height: 300 }} className="look-commonplace cpn">
-      {(_s, _rect, layout) => {
+    <Stage<S>
+      width={560}
+      height={380}
+      compact={{ below: 560, width: 358, height: 300 }}
+      initial={initial}
+      poster={POSTER}
+      script={script}
+      play="loop"
+      keys={{ wide: 'bottom-left', compact: 'top' }}
+      className="look-commonplace cpn"
+    >
+      {(s, _rect, layout) => {
         const compact = layout === 'compact'
+        // The recent actions match nothing past the first letter
+        const recent = s.typed.length < 2
         return (
           <>
             <Window url="commonplace.example" urlShape="pill" className="cpn-win">
@@ -52,13 +113,7 @@ export default function CommonplaceNavigation() {
                 <header className="cpn-header">
                   <div className="cpn-header__in">
                     <Bar w={compact ? 64 : 92} h={10} r={5} tone={4} />
-                    {!compact && (
-                      <span className="cpn-switch" aria-hidden="true">
-                        <Bar w={44} h={6} r={3} tone={3} />
-                        <Bar w={44} h={6} r={3} tone={2} />
-                      </span>
-                    )}
-                    <span className="cpn-find" data-open>
+                    <span className="cpn-find" data-open={s.open || undefined} data-pressed={s.pressed || undefined}>
                       <Icon name="search" />
                       <Text className="cpn-find__label">Find an action</Text>
                       <kbd className="cpn-kbd">Ctrl Shift F</kbd>
@@ -75,23 +130,25 @@ export default function CommonplaceNavigation() {
                       <div key={lane.tone} className="cpn-lane" data-tone={lane.tone}>
                         <div className="cpn-lane__head">
                           <Icon name={lane.icon} className="cpn-lane__icon" />
-                          <Bar w={44} h={6} r={3} tone={3} />
+                          {/* Only the lane clear of the palette is named; the ones it covers keep a quiet bar */}
+                          {lane.tone === 'todo' ? <span className="cpn-lane__name">{lane.name}</span> : <Bar w={44} h={6} r={3} tone={3} />}
                         </div>
-                        {lane.cards.map(([t, s], i) => (
-                          <Card key={i} title={t} sub={s} text={!compact && lane.tone === 'progress' && i === 1 ? 'Try the command palette' : undefined} />
+                        {lane.cards.map(([t, sub], i) => (
+                          <Card key={i} title={t} sub={sub} text={!compact && lane.tone === 'progress' && i === 1 ? 'Try the command palette' : undefined} />
                         ))}
                       </div>
                     ))}
                   </div>
-                  <div className="cpn-scrim" />
+                  <div className="cpn-scrim" data-show={s.open || undefined} />
                 </div>
               </div>
             </Window>
 
-            <Popover show origin="top right" className="cpn-palette">
+            <Popover show={s.open} origin="top right" className="cpn-palette" data-target="palette">
               <Field
-                value="text size"
-                focused
+                value={s.typed}
+                placeholder="Find an action"
+                focused={s.open}
                 className="cpn-field"
                 leading={<Icon name="search" />}
                 trailing={<span className="cpn-regex" aria-hidden="true">.*</span>}
@@ -102,7 +159,8 @@ export default function CommonplaceNavigation() {
                   <Text className="cpn-item__label">Text size</Text>
                   <span className="cpn-slider" aria-hidden="true">
                     <span className="cpn-slider__fill" />
-                    <span className="cpn-slider__thumb" />
+                    <span className="cpn-slider__handle" />
+                    <span className="cpn-slider__rest" />
                   </span>
                   <Text className="cpn-item__value">110%</Text>
                 </div>
@@ -111,6 +169,7 @@ export default function CommonplaceNavigation() {
                   <Text className="cpn-item__label">Appearance settings</Text>
                   <Icon name="arrow_forward" className="cpn-item__end" />
                 </div>
+                {!compact && <Recent open={recent} icon="add_task" w={92} />}
               </div>
             </Popover>
           </>

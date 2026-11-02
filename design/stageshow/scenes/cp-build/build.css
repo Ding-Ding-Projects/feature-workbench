@@ -1,40 +1,46 @@
-/* All rules belong to this scene, including its compact design. */
+/* Commonplace v2 (Material 3 Expressive), Build and install. All rules
+   belong to this scene, including its compact design. */
 .cpb {
   & .ss-stage {
     --gutter: 24px;
     overflow: hidden;
-    border-radius: 16px;
-    background: var(--ss-well);
+    border-radius: 28px;
+    background: var(--ss-canvas);
   }
 
-  /* The hero: the product's ink as the terminal surface, its dark-theme
-     accent for the path and the tick. Pinned top-left with room on the left
-     for the app to straddle; runs off the right and the bottom. */
-  .cpb-term {
+  /* Stacked: one left edge, a 12px gap, both windows off the right edge,
+     the terminal whole in height, the app off the bottom */
+  .cpb-stack {
     position: absolute;
     top: var(--gutter);
-    left: 136px;
-    width: 480px;
-    height: 420px;
-    border-radius: 12px;
-    --ss-term-bg: #0D1526;
-    --ss-term-path: #8EA2FF;
-    --ss-term-sigil: #A9B4C8;
-    --ss-term-ok: #8EA2FF;
-    --ss-term-dim: #7C879B;
+    left: var(--gutter);
+    display: grid;
+    gap: 12px;
+    width: 576px;
+  }
+
+  /* The terminal: the product's dark-theme surface roles, the dark-theme
+     primary for the path and the tick; its height is its log */
+  .cpb-term {
+    border-radius: 28px;
+    --ss-term-bg: #121318;
+    --ss-term-path: #B9C3FF;
+    --ss-term-sigil: #90909A;
+    --ss-term-ok: #B9C3FF;
+    --ss-term-dim: #90909A;
     box-shadow:
       inset 0 0 0 1px rgba(255, 255, 255, 0.07),
-      var(--ss-shadow-hero);
+      var(--ss-shadow-card);
   }
 
   .cpb-term .ss-term {
-    gap: 3px;
-    padding: 10px 20px 20px;
-    font-size: 12.5px;
-    color: #A9B4C8;
+    gap: 2px;
+    padding: 6px 24px 18px;
+    font-size: 12px;
+    color: #C6C5D0;
   }
 
-  .cpb-bright { color: #F2F5FA; }
+  .cpb-bright { color: #E4E1E9; }
 
   /* Path and size on one grid, sizes right-aligned in their own track */
   .cpb-dist {
@@ -45,93 +51,184 @@
 
   .cpb-dist span:last-child { text-align: right; }
 
-  /* The satellite: the built app, straddling the terminal's left edge over
-     the empty lower part of the terminal, never over the log. */
+  /* Output arrives in its reserved row: a 4px rise on the fast spring, the
+     fade on effects */
+  .cpb-out {
+    opacity: 0;
+    transform: translateY(4px);
+    will-change: transform;
+    transition:
+      opacity 200ms var(--cp-effects),
+      transform 350ms var(--cp-spring-fast);
+  }
+
+  .cpb-out[data-show] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cpb-caret {
+    transition: opacity 200ms var(--cp-effects);
+  }
+
+  .cpb-caret[data-off] {
+    opacity: 0;
+  }
+
+  /* The app the build produced: off the right and the bottom */
   .cpb-app {
-    position: absolute;
-    left: var(--gutter);
-    bottom: var(--gutter);
-    width: 268px;
-    border-radius: 12px;
-    box-shadow: var(--ss-shadow-satellite);
+    height: 260px;
+    border-radius: 28px;
+    box-shadow: var(--ss-shadow-card);
   }
 
   .cpb-app .ss-window__body { background: var(--ss-canvas); }
 
+  /* Content keeps a 24px inset inside the visible part (the window runs
+     40px past the stage) */
   .cpb-app__body {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 12px 0;
+    display: grid;
+    gap: 12px;
+    padding: 14px 64px 0 20px;
   }
 
   .cpb-app__head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 16px;
   }
 
   .cpb-word {
-    font-size: 13px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 18px;
     color: var(--ss-text-strong);
   }
 
-  /* To do, In progress, Done: the board's three tinted columns as filler */
-  .cpb-cols {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
+  .cpb-search {
+    background: var(--ss-line-faint);
   }
 
-  .cpb-col {
+  /* The provenance, where the v2 site prints it: top right */
+  .cpb-prov {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 22px;
-    padding: 0 8px;
-    border-radius: 8px;
-    background: var(--ss-well);
-  }
-
-  .cpb-col[data-kind="doing"] { background: var(--ss-warning-soft); }
-  .cpb-col[data-kind="done"] { background: var(--ss-accent-soft); }
-
-  .cpb-foot {
-    padding: 8px 0 10px;
-    border-top: 1px solid var(--ss-line);
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
     font-size: 10.5px;
     line-height: 14px;
     color: var(--ss-text-faint);
     white-space: nowrap;
   }
 
+  /* The version: one pulse (1 -> 1.06 -> 1, default spring) when the new
+     build's provenance rolls in */
   .cpb-mono {
+    display: inline-block;
     font-family: var(--ss-mono);
     font-size: 10px;
+    color: var(--ss-text-strong);
+    transform-origin: right center;
   }
 
-  /* Compact: the terminal pinned top and off the right, the app straddling
-     its bottom edge instead, whole, a gutter from the stage's foot. */
+  .cpb-mono[data-pulse] {
+    animation: cpb-pulse 500ms var(--cp-spring-default) 250ms;
+  }
+
+  /* To do, In progress, Done: the board's tonal lanes, named, off the bottom */
+  .cpb-cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .cpb-col {
+    display: grid;
+    align-content: start;
+    gap: 8px;
+    height: 160px;
+    padding: 10px 10px 0;
+    border-radius: 20px;
+    background: #DEE1F9;
+  }
+
+  .cpb-col[data-kind="doing"] { background: var(--ss-warning-soft); }
+  .cpb-col[data-kind="done"] { background: var(--ss-accent-soft); }
+
+  .cpb-col__label {
+    padding-left: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 14px;
+    color: var(--ss-text-strong);
+  }
+
+  .cpb-col[data-kind="doing"] .cpb-col__label { color: var(--ss-warning-text); }
+  .cpb-col[data-kind="done"] .cpb-col__label { color: var(--ss-accent-text); }
+
+  .cpb-col > * {
+    min-width: 0;
+  }
+
+  .cpb-card {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 14px;
+    background: var(--ss-surface);
+  }
+
+  /* Compact: the same stack at the full 24px gutter; the file list goes, and the
+     provenance takes its own line under the wordmark */
   & .ss-stage[data-layout="compact"] {
-    --gutter: 16px;
+    --gutter: 24px;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-stack {
+    width: 372px;
+    gap: 10px;
   }
 
   & .ss-stage[data-layout="compact"] .cpb-term {
-    left: var(--gutter);
-    width: 400px;
-    height: 180px;
+    border-radius: 24px;
   }
 
   & .ss-stage[data-layout="compact"] .cpb-term .ss-term {
-    gap: 4px;
-    padding: 6px 16px 16px;
+    padding: 4px 16px 16px;
     font-size: 12px;
   }
 
   & .ss-stage[data-layout="compact"] .cpb-app {
-    left: var(--gutter);
-    width: 326px;
+    border-radius: 24px;
   }
+
+  & .ss-stage[data-layout="compact"] .cpb-app__body {
+    padding: 12px 62px 0 16px;
+    gap: 10px;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-app__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-prov {
+    margin-left: 0;
+  }
+
+  & .ss-stage[data-layout="compact"] .cpb-mono {
+    transform-origin: left center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cpb-out { transform: none; transition: opacity 120ms linear; }
+    .cpb-mono[data-pulse] { animation: none; }
+  }
+}
+
+@keyframes cpb-pulse {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.06); }
 }

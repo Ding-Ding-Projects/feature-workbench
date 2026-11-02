@@ -1,160 +1,191 @@
-.cpc {
+/* All rules belong to this scene, including its compact design. v2:
+   Material 3 Expressive roles from the look tokens, a 28px window, 20px
+   list cards, pill buttons that morph to 12px when pressed. */
+.cpcan {
   & .ss-stage {
     overflow: hidden;
-    background: var(--ss-well);
+    background: var(--ss-canvas);
   }
 
-  /* The pile, every card the same size in one cell, drawn large: the top
-     card's words sit whole on the stage while the pile runs off the right
-     and bottom edges */
-  .cpc-pile {
+  /* The browser runs off the right and bottom edges */
+  .cpcan-browser {
     position: absolute;
-    top: 96px;
-    left: 140px;
-    display: grid;
-    scale: 1.4;
-    transform-origin: 0 0;
+    top: 36px;
+    left: 36px;
+    width: 640px;
+    height: 440px;
+    box-shadow: var(--ss-shadow-hero);
   }
 
-  .cpc-card {
-    grid-area: 1 / 1;
-    display: grid;
-    align-content: start;
-    justify-items: start;
-    gap: 12px;
-    width: 360px;
-    height: 236px;
-    padding: 20px;
+  /* The page: surface container, the editions as lowest-surface cards */
+  .cpcan-body {
+    height: 100%;
+    padding: 20px 24px;
     box-sizing: border-box;
-    border-radius: 14px;
-    background: var(--ss-surface);
-    box-shadow: var(--ss-shadow-card);
+    background: var(--ss-well);
+    color: var(--ss-text);
+    font-family: var(--ss-font);
   }
 
-  /* Small, alternating angles, each about its own center, offset unevenly */
-  .cpc-card--back { translate: -30px 16px; rotate: -6deg; }
-  .cpc-card--mid { translate: 24px -22px; rotate: 4deg; }
-  .cpc-card--top { translate: 0 4px; rotate: -2deg; gap: 0; box-shadow: var(--ss-shadow-satellite); }
-
-  .cpc-card--back .cpc-tile,
-  .cpc-card--mid .cpc-tile {
-    margin-bottom: 6px;
+  .cpcan-title {
+    display: block;
+    color: var(--ss-text-strong);
+    font-size: 19px;
+    line-height: 24px;
   }
 
-  /* The file tile: one size on every card, the accent only on the top one */
-  .cpc-tile {
+  .cpcan-list {
     display: grid;
-    place-items: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: var(--ss-accent-soft);
+    gap: 8px;
+    width: 452px;
+    margin-top: 14px;
   }
 
-  .cpc-tile--quiet {
-    background: var(--ss-line-faint);
+  .cpcan-row {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 12px;
+    height: 64px;
+    padding: 0 12px 0 12px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: var(--ss-surface);
   }
 
-  .cpc-ms {
+  /* Material Symbols Rounded, filled, one size for the scene */
+  .cpcan-ms {
     display: inline-block;
     flex: none;
     width: 18px;
     height: 18px;
     overflow: hidden;
-    color: var(--ss-accent);
+    color: currentColor;
     font-family: 'Material Symbols Rounded';
     font-size: 18px;
     font-variation-settings: 'FILL' 1, 'wght' 500, 'opsz' 20;
     line-height: 1;
   }
 
-  /* The top card's file tile is a column of its own, like an avatar: the
-     name, version and action share the text column beside it */
-  .cpc-card--top {
-    grid-template-columns: 36px auto;
-    column-gap: 14px;
-  }
-
-  .cpc-card--top > :not(.cpc-tile) {
-    grid-column: 2;
-  }
-
-  .cpc-card--top > .cpc-tile {
-    grid-row: 1;
-  }
-
-  .cpc-who {
+  .cpcan-tile {
     display: grid;
-    gap: 2px;
-    grid-row: 1;
-    margin-top: 0;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--ss-line-faint);
+    color: var(--ss-icon-faint);
   }
 
-  .cpc-name {
+  .cpcan-tile[data-accent] {
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent);
+  }
+
+  .cpcan-who {
+    display: grid;
+    justify-items: start;
+    gap: 4px;
+  }
+
+  /* The quiet row's bars keep the air of a name over its file */
+  .cpcan-who:has(> .ss-bar) {
+    gap: 11px;
+    min-width: 0;
+  }
+
+  .cpcan-name {
     color: var(--ss-text-strong);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 20px;
-  }
-
-  .cpc-desc {
-    color: var(--ss-text-faint);
-    font-size: 12px;
-    line-height: 16px;
-  }
-
-  .cpc-version {
-    margin-top: 10px;
-    color: var(--ss-text-faint);
-    font-family: var(--ss-mono);
-    font-size: 11px;
-    line-height: 16px;
-  }
-
-  /* The edition's own action, an outlined button as on the feature page */
-  .cpc-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    height: 36px;
-    margin-top: 16px;
-    padding: 0 14px 0 12px;
-    box-sizing: border-box;
-    border: 1px solid var(--ss-line);
-    border-radius: 10px;
-    background: var(--ss-surface);
-  }
-
-  .cpc-button .cpc-ms {
-    color: var(--ss-text-strong);
-  }
-
-  .cpc-button-label {
-    color: var(--ss-text-strong);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 18px;
   }
 
-  /* Narrow: the same pile at 1.15, off the right and bottom */
-  & .ss-stage[data-layout='compact'] .cpc-pile {
-    top: 72px;
-    left: 56px;
-    scale: 1;
+  .cpcan-path {
+    color: var(--ss-text-faint);
+    font-family: var(--ss-mono);
+    font-size: 11px;
+    line-height: 14px;
   }
 
-  & .ss-stage[data-layout='compact'] .cpc-card {
-    height: 264px;
+  /* An M3 outlined button, a full pill at rest. Pressed, its corners morph
+     to 12px on the fast spring; done, it turns tonal (primary container)
+     on the effects curve. */
+  .cpcan-button {
+    display: inline-grid;
+    align-items: center;
+    height: 40px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    border: 1px solid var(--ss-line);
+    border-radius: 999px;
+    background: var(--ss-surface);
+    color: var(--ss-accent);
+    transition: border-radius 350ms var(--cp-spring-fast), background-color 200ms var(--cp-effects), border-color 200ms var(--cp-effects), color 200ms var(--cp-effects);
   }
 
-  & .ss-stage[data-layout='compact'] .cpc-card--top .cpc-button {
-    margin-top: 12px;
+  .cpcan-button[data-pressed] {
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--ss-accent) 10%, var(--ss-surface));
   }
 
-  /* The lower cards keep two filler lines at this size, clear of the top
-     card's button */
-  & .ss-stage[data-layout='compact'] .cpc-card--back > .ss-bar:last-child,
-  & .ss-stage[data-layout='compact'] .cpc-card--mid > .ss-bar:last-child {
-    display: none;
+  .cpcan-button[data-state='done'] {
+    border-color: transparent;
+    background: var(--ss-accent-soft);
+    color: var(--ss-accent-text);
   }
+
+  .cpcan-face {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    will-change: transform;
+  }
+
+  .cpcan-slot {
+    display: inline-grid;
+    flex: none;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+  }
+
+  .cpcan-spin {
+    display: block;
+  }
+
+  .cpcan-button-label {
+    color: currentColor;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cpcan-button { transition: none; }
+  }
+
+  /* Compact: the window fills the stage less a 16px gutter on the left and
+     top; two editions whole, the list going on under the crop */
+  & .ss-stage[data-layout='compact'] .cpcan-browser {
+    top: 16px;
+    left: 16px;
+    width: 420px;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpcan-body { padding: 16px; }
+  & .ss-stage[data-layout='compact'] .cpcan-title { font-size: 17px; line-height: 22px; }
+  & .ss-stage[data-layout='compact'] .cpcan-list { width: 310px; margin-top: 12px; }
+  & .ss-stage[data-layout='compact'] .cpcan-row { column-gap: 10px; }
+
+  /* At this width Copy prompt is an outlined icon button, as the phone
+     layout draws secondary actions */
+  & .ss-stage[data-layout='compact'] .cpcan-button--copy {
+    width: 40px;
+    padding: 0;
+    justify-items: center;
+  }
+
+  & .ss-stage[data-layout='compact'] .cpcan-button--copy .cpcan-button-label { display: none; }
 }

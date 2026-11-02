@@ -1,10 +1,11 @@
-/* Commonplace, two-key confirmation. Every rule is scoped to this scene. */
+/* Commonplace v2 (Material 3 Expressive), two-key confirmation. Every rule is
+   scoped to this scene; colours are the v2 tonal roles (DESIGN_V2 section 1). */
 .cps {
   & .ss-stage {
     --gutter: 24px;
     overflow: hidden;
     border-radius: 16px;
-    background: var(--ss-well);
+    background: var(--ss-canvas);
   }
 
   & .ss-stage[data-layout="compact"] {
@@ -35,10 +36,11 @@
     box-shadow: var(--ss-shadow-hero);
   }
 
+  /* surface-container-low page */
   .cps-body {
     display: flex;
     flex-direction: column;
-    background: var(--ss-canvas);
+    background: #F5F2FA;
   }
 
   /* The workspace's own toolbar row: a title and the selection's Delete */
@@ -60,7 +62,7 @@
     font-size: 12.5px;
     font-weight: 600;
     line-height: 16px;
-    color: var(--ss-text-strong);
+    color: #1B1B21;
     white-space: normal;
   }
 
@@ -74,52 +76,53 @@
     gap: 8px;
   }
 
+  /* The floating toolbar's filter field: a full pill, surface-container-high */
   .cps-filter {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    width: 132px;
-    height: 32px;
-    padding: 0 10px;
-    border-radius: 10px;
-    background: var(--ss-surface);
-    box-shadow: inset 0 0 0 1px var(--ss-line);
-    color: #667085;
+    height: 36px;
+    padding: 0 14px 0 12px;
+    border-radius: 999px;
+    background: #E9E7EF;
+    color: #45464F;
   }
 
+  /* Delete: a tonal pill. Pressed it morphs to 12px corners on the fast
+     spring; while its confirmation is open it holds the error-container tone */
   .cps-delete {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    height: 32px;
-    padding: 0 12px 0 10px;
-    border-radius: 10px;
-    background: var(--ss-surface);
-    box-shadow: inset 0 0 0 1px var(--ss-line);
-    color: var(--ss-text-strong);
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: #E9E7EF;
+    color: #1B1B21;
     font-size: 12.5px;
     font-weight: 600;
+    transition: border-radius 350ms var(--cp-spring-fast), background-color 200ms var(--cp-effects), color 200ms var(--cp-effects);
   }
 
-  /* Pressed while its confirmation is open */
+  .cps-delete[data-pressed] { border-radius: 12px; }
+
   .cps-delete[data-on] {
-    background: var(--ss-text-strong);
-    box-shadow: none;
-    color: #fff;
+    background: #FFDAD6;
+    color: #410002;
   }
 
-  /* ---- The board behind: three lanes of filler cards ---- */
+  /* ---- The board behind: three tonal lanes of filler cards ---- */
 
   .cps-board {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 180px);
     gap: 10px;
     padding: 0 16px;
     align-items: start;
   }
 
   .ss-stage[data-layout="compact"] .cps-board {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 302px;
     padding: 0 12px;
   }
 
@@ -132,42 +135,43 @@
     flex-direction: column;
     gap: 8px;
     padding: 0 8px 8px;
-    border-radius: 14px;
-    margin-bottom: 0;
-    background: #E9EDF4;
+    border-radius: 24px;
+    background: #DEE1F9;
   }
 
-  .cps-col[data-kind="doing"] {
-    background: #FFEEDD;
-  }
-
-  .cps-col[data-kind="done"] {
-    background: #E8EDFF;
-  }
+  .cps-col[data-kind="doing"] { background: #FFDCBE; }
+  .cps-col[data-kind="done"] { background: #DDE1FF; }
 
   .cps-col__head {
     display: flex;
     align-items: center;
     gap: 8px;
     height: 42px;
-    padding: 0 4px;
-    color: #475467;
+    padding: 0 6px;
+    color: #161B2C;
   }
 
-  .cps-col[data-kind="doing"] .cps-col__head { color: #C2570C; }
-  .cps-col[data-kind="done"] .cps-col__head { color: #2546D6; }
+  .cps-col__name {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  .cps-col[data-kind="doing"] .cps-col__head { color: #2D1600; }
+  .cps-col[data-kind="done"] .cps-col__head { color: #001257; }
 
   .cps-card {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 12px;
-    border-radius: 10px;
-    background: var(--ss-surface);
+    border-radius: 18px;
+    background: #FFFFFF;
   }
 
+  /* The selected task: a primary outline, inside the card */
   .cps-card[data-selected] {
-    background: var(--ss-accent-soft);
+    box-shadow: inset 0 0 0 2px #2546D6;
   }
 
   .cps-card__chips {
@@ -178,41 +182,34 @@
 
   /* ---- The confirmation, anchored under Delete ---- */
 
+  /* A dialog: xl corners; it grows from 0.92 at the trigger's corner on the
+     default spatial spring and fades on the effects curve */
   .cps-dialog {
     position: absolute;
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    border-radius: 16px;
-    background: var(--ss-surface);
-    box-shadow: var(--ss-shadow-float), 0 0 0 1px var(--ss-line);
+    padding: 18px;
+    border-radius: 28px;
+    background: #FFFFFF;
+    box-shadow: var(--ss-shadow-float), 0 0 0 1px #E3E1E9;
+    opacity: 0;
+    transform: scale(0.92);
+    transform-origin: 92% 0%;
+    will-change: transform;
+    transition: opacity 200ms var(--cp-effects), transform 500ms var(--cp-spring-default);
+    pointer-events: none;
+  }
+
+  .cps-dialog[data-show] {
+    opacity: 1;
+    transform: none;
   }
 
   .cps-dialog__title {
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
-    color: var(--ss-text-strong);
-  }
-
-  /* The data it affects, named once */
-  .cps-task {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    align-self: flex-start;
-    height: 36px;
-    margin-top: 12px;
-    padding: 0 12px 0 10px;
-    border-radius: 10px;
-    background: #EEF1F6;
-    color: #475467;
-  }
-
-  .cps-task__name {
-    font-size: 12.5px;
-    font-weight: 500;
-    color: var(--ss-text-strong);
+    color: #1B1B21;
   }
 
   .cps-keys {
@@ -222,60 +219,87 @@
     margin-top: 12px;
   }
 
+  /* A key: an outlined pill until it is turned, then a filled primary pill.
+     The surface changes on the effects curve; the key itself turns a quarter
+     on the fast spring */
   .cps-key {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    height: 36px;
-    border-radius: 10px;
-    border: 1.5px dashed #98A2B3;
-    color: var(--ss-text-strong);
+    display: grid;
+    height: 38px;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px #767680;
+    color: #1B1B21;
     font-size: 12.5px;
     font-weight: 600;
     white-space: nowrap;
+    transition: background-color 200ms var(--cp-effects), color 200ms var(--cp-effects), box-shadow 200ms var(--cp-effects), border-radius 350ms var(--cp-spring-fast);
   }
+
+  .cps-key > * { align-self: center; }
+
+  .cps-key[data-pressed] { border-radius: 12px; }
 
   .cps-key[data-turned] {
-    border: 0;
-    background: var(--ss-accent);
-    color: #fff;
+    background: #2546D6;
+    box-shadow: inset 0 0 0 1px #2546D6;
+    color: #FFFFFF;
   }
 
-  /* Asleep until both keys are turned: a full-range track, knob at the start */
+  .cps-key__in {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cps-key__icon {
+    transition: transform 350ms var(--cp-spring-fast);
+  }
+
+  .cps-key[data-turned] .cps-key__icon { transform: rotate(90deg); }
+
+  /* Asleep until both keys are turned; armed, it takes the error roles */
   .cps-slide {
     position: relative;
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 44px;
     margin-top: 10px;
-    padding: 4px;
-    border-radius: 12px;
-    background: #EEF1F6;
+    padding: 4px 13px 4px 4px;
+    border-radius: 999px;
+    background: #E9E7EF;
+    transition: background-color 200ms var(--cp-effects);
   }
 
   .cps-slide__knob {
     display: grid;
     place-items: center;
     flex: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
-    background: var(--ss-surface);
-    box-shadow: 0 0 0 1px var(--ss-line);
-    color: #98A2B3;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #767680;
+    transition: background-color 200ms var(--cp-effects), color 200ms var(--cp-effects), transform 350ms var(--cp-spring-fast);
   }
 
   .cps-slide__label {
-    position: absolute;
-    left: 0;
-    right: 0;
+    flex: 1;
+    padding-right: 27px;
     text-align: center;
     font-size: 12.5px;
     font-weight: 600;
-    color: #667085;
+    color: #45464F;
     pointer-events: none;
+    transition: color 200ms var(--cp-effects);
   }
+
+  .cps-slide[data-armed] { background: #FFDAD6; }
+
+  .cps-slide[data-armed] .cps-slide__knob {
+    background: #BA1A1A;
+    color: #FFFFFF;
+  }
+
+  .cps-slide[data-armed] .cps-slide__label { color: #410002; }
 
   .cps-foot {
     display: flex;
@@ -284,21 +308,26 @@
     margin-top: 12px;
   }
 
+  /* Emergency exit: an outlined pill, always there */
   .cps-exit {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    height: 32px;
-    padding: 0 12px 0 10px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 0 1px var(--ss-line);
-    color: var(--ss-text-strong);
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px #767680;
+    color: #1B1B21;
     font-size: 12.5px;
     font-weight: 600;
+    transition: border-radius 350ms var(--cp-spring-fast);
   }
 
+  .cps-exit[data-pressed] { border-radius: 12px; }
+
   .ss-stage[data-layout="compact"] .cps-dialog {
-    padding: 14px;
+    padding: 12px 14px;
+    border-radius: 24px;
   }
 
   .ss-stage[data-layout="compact"] .cps-dialog__title {
@@ -306,17 +335,33 @@
     letter-spacing: -0.005em;
   }
 
-
-
   .ss-stage[data-layout="compact"] .cps-keys {
-    margin-top: 12px;
+    margin-top: 10px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-key {
+    height: 34px;
   }
 
   .ss-stage[data-layout="compact"] .cps-slide {
+    height: 38px;
     margin-top: 8px;
   }
 
+  .ss-stage[data-layout="compact"] .cps-slide__knob {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-slide {
+    padding-right: 10px;
+  }
+
+  .ss-stage[data-layout="compact"] .cps-slide__label {
+    padding-right: 24px;
+  }
+
   .ss-stage[data-layout="compact"] .cps-foot {
-    margin-top: 10px;
+    margin-top: 8px;
   }
 }

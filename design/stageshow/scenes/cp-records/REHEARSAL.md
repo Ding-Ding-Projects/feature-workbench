@@ -26,3 +26,19 @@ Not checked: dark theme, reduced motion (a still), a fresh-eye review by a secon
 - Phone frame used the hairline bar (gray lights, centred address), unlike every other scene: back to the standard browser chrome (colour lights, left URL pill). To fit, the compact toolbar row is tighter (8px over, 6px under the controls); history rows use a 5px pad so the panel and toast keep a gap.
 - Board was only gray bars: real Commonplace task titles where the board shows. "Try the command palette" joins the restored "Pick a language" in To do (wide); the toast covers only that card's filler, never its title.
 - Re-filmed to final/cp-records.png and final/cp-records-390.png; `--gate --still` passes at both widths; banned-word scan clean.
+
+## v2 redesign (Material 3 Expressive)
+Changed: every v1 colour replaced by v2 roles (page #F5F2FA, lanes secondary/tertiary/primary-container, cards #FFFFFF at 20px, window 28px, panel 28px, rows and buttons full pill). The toolbar is the v2 floating toolbar (surface-container-high pill, filter field, history as a selected filled icon button, undo). Cards carry the v2 connected button group (quiet segments, the lane's own segment filled with a check). The title's black disc is now the real count badge (rolls with the board). Snackbar is inverse-surface #303036, full pill, action #B9C3FF, arriving whole from just above. Selected snapshot row is primary-container with a Restore filled pill.
+Beats (loop, about 9s, poster = the opening payoff): 1 Undo in the snackbar (pill to 8px press morph): snackbar leaves, the task folds out of To do on the default spring, counts roll 3 to 2 and 7 to 6, the row lets go. 2 The deleted snapshot is picked again: it fills, Restore takes the time's place (States). 3 Restore: the task drops back, counts roll back, the snackbar arrives. Springs: rows/Restore/Undo radius on --cp-spring-fast, fold on --cp-spring-default, colour on --cp-effects; reduced motion falls to 120ms fades.
+Compact: the panel shows the two newest snapshots so the snackbar never covers a word.
+Gate: `--gate` rehearsal passed at 1280 and 390. Fixed on the way: squeezed group segments, lopsided filter, uneven Restore and snackbar insets, snackbar opening inside the bottom gutter (now drops from above), compact panel top padding, compact snackbar over a snapshot.
+Remaining candidates (not gate lines): "appears with no entrance" on a lane Count (the kit's digit strip; same as cp-hero), "appears, then moves" on the dropped card (the kit's drop reveal, delayed like the kit's).
+Finals: final/cp-records.png, cp-records-390.png (posters, reduced motion), cp-records-loop.png, cp-records-390-loop.png; press frames shots/cp-records-{undo,pick,restore}.png.
+Not checked: dark theme, live rAF pacing in a real browser, host page, a second-reviewer fresh eye.
+
+## v2 fresh-eye review
+- Poster contradicted itself ("Task restored." while the row still offered Restore): the row's trailing slot now has three states (time, Restore, Restored with a check); pressing Restore settles it to "Restored" in the same slot, and the poster shows Restored with the snackbar. Undo returns the row to its time in one step.
+- Window floated with even margins: it now sits 28px from the top and left and runs off the right and the bottom (wide 600px, compact 380px); its content column ends one gutter inside the stage, so only the window's empty margin is cut. Gutter is 28px everywhere (snackbar included).
+- Plate: the stage uses var(--ss-canvas) (now neutral); the app page inside keeps surface-container-low #F5F2FA.
+- Bars beside real counts: the heading is "Workspace" (Bricolage) beside its 7, lanes read "To do", "In progress", "Done" beside their counts.
+- Gate: rehearsal passed at 1280 and 390 after the fixes.

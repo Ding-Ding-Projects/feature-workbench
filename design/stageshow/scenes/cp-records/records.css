@@ -1,10 +1,10 @@
-/* Commonplace, local history. Every rule is scoped to this scene. */
+/* Commonplace, local history (v2, Material 3 Expressive). Every rule is scoped to this scene. */
 .cpr {
   & .ss-stage {
-    --gutter: 24px;
+    --gutter: 28px;
     overflow: hidden;
     border-radius: 16px;
-    background: var(--ss-well);
+    background: var(--ss-canvas);
   }
 
   & .ss-stage[data-layout="compact"] {
@@ -38,16 +38,30 @@
   .cpr-body {
     display: flex;
     flex-direction: column;
-    background: var(--ss-canvas);
+    /* The app's page: surface-container-low */
+    background: #F5F2FA;
   }
 
-  /* The workspace toolbar: title, filter, history (open) and undo */
+  .cpr-heading {
+    font-size: 17px;
+    line-height: 1.2;
+    color: #1B1B21;
+  }
+
+  .cpr-col__label {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 16px;
+    white-space: nowrap;
+  }
+
+  /* The workspace header: the title with its count, the floating toolbar */
   .cpr-toolbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-    padding: 14px 16px 12px;
+    padding: 12px 16px 12px;
   }
 
   .cpr-title {
@@ -56,27 +70,40 @@
     gap: 8px;
   }
 
-  .cpr-card:has(.cpr-card__title) {
-    gap: 6px;
+  .cpr-badge {
+    display: grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: #303036;
+    color: #F2EFF7;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 20px;
+    font-variant-numeric: tabular-nums;
   }
 
+  /* Floating toolbar: a surface-container-high pill */
   .cpr-tools {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 999px;
+    background: #E9E7EF;
   }
 
   .cpr-filter {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    width: 124px;
     height: 32px;
-    padding: 0 10px;
-    border-radius: 10px;
-    background: var(--ss-surface);
-    box-shadow: inset 0 0 0 1px var(--ss-line);
-    color: #667085;
+    padding: 0 12px 0 9px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #45464F;
   }
 
   .cpr-icon {
@@ -85,20 +112,17 @@
     flex: none;
     width: 32px;
     height: 32px;
-    border-radius: 10px;
-    background: var(--ss-surface);
-    box-shadow: inset 0 0 0 1px var(--ss-line);
-    color: var(--ss-text-strong);
+    border-radius: 999px;
+    color: #45464F;
   }
 
-  /* Pressed while its panel is open */
+  /* Selected while its panel is open: the filled toggle state */
   .cpr-icon[data-on] {
-    background: var(--ss-text-strong);
-    box-shadow: none;
-    color: #fff;
+    background: #2546D6;
+    color: #FFFFFF;
   }
 
-  /* ---- The board: three lanes ---- */
+  /* ---- The board: three tonal lanes ---- */
 
   .cpr-board {
     display: grid;
@@ -120,54 +144,106 @@
   .cpr-col {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 0 8px 8px;
-    border-radius: 14px;
-    background: #E9EDF4;
+    padding: 0 6px 6px;
+    border-radius: 28px;
+    background: #DEE1F9;
+    color: #161B2C;
   }
 
-  .cpr-col[data-kind="doing"] { background: #FFEEDD; }
-  .cpr-col[data-kind="done"] { background: #E8EDFF; }
+  .cpr-col[data-kind="doing"] { background: #FFDCBE; color: #2D1600; }
+  .cpr-col[data-kind="done"] { background: #DDE1FF; color: #001257; }
+
+  /* Cards keep an 6px rhythm; the slot carries its own gap so the cards
+     below move up and down with it */
+  .cpr-col > .cpr-card + .cpr-card { margin-top: 6px; }
+  .cpr-col > .cpr-slot > .ss-collapse__inner > .cpr-card { margin-bottom: 6px; }
 
   .cpr-col__head {
     display: flex;
     align-items: center;
     gap: 8px;
     height: 42px;
-    padding: 0 4px;
-    color: #475467;
+    padding: 0 6px 0 10px;
   }
 
-  .cpr-col[data-kind="doing"] .cpr-col__head { color: #C2570C; }
-  .cpr-col[data-kind="done"] .cpr-col__head { color: #2546D6; }
+  .cpr-col__count {
+    display: grid;
+    place-items: center;
+    min-width: 20px;
+    height: 20px;
+    margin-left: auto;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 20px;
+    font-variant-numeric: tabular-nums;
+  }
 
   .cpr-card {
     display: flex;
     flex-direction: column;
     gap: 8px;
     padding: 12px;
-    border-radius: 10px;
-    background: var(--ss-surface);
+    border-radius: 20px;
+    background: #FFFFFF;
+    will-change: transform;
   }
 
-  /* The restored task: on its own raised surface, nothing outlined */
   .cpr-card[data-restored] {
     gap: 6px;
-    box-shadow: var(--ss-shadow-card);
+    box-shadow: 0 1px 2px rgb(27 27 33 / 0.08), 0 4px 12px -4px rgb(27 27 33 / 0.12);
   }
 
   .cpr-card__title {
     font-size: 12.5px;
     font-weight: 600;
     line-height: 16px;
-    color: var(--ss-text-strong);
-    white-space: normal;
+    color: #1B1B21;
+    white-space: nowrap;
   }
 
-  .cpr-card__chips {
+  /* Connected button group: pill ends, small inner corners, the lane's own
+     segment filled */
+  .cpr-group {
     display: flex;
-    gap: 6px;
+    gap: 2px;
     margin-top: 2px;
+  }
+
+  .cpr-seg {
+    flex: none;
+    display: grid;
+    place-items: center;
+    height: 20px;
+    border-radius: 4px;
+    background: #EFEDF4;
+  }
+
+  .cpr-seg:first-child { border-radius: 999px 4px 4px 999px; }
+  .cpr-seg:last-child { border-radius: 4px 999px 999px 4px; }
+
+  .cpr-seg[data-on] {
+    border-radius: 999px;
+    background: #2546D6;
+    color: #FFFFFF;
+  }
+
+  .cpr-seg .cpr-sym {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+  }
+
+  /* The restored task travels on the default spatial spring */
+  .cpr-slot.ss-collapse {
+    transition: grid-template-rows 500ms var(--cp-spring-default) 40ms, opacity 260ms var(--cp-effects);
+  }
+
+  /* The drop's card waits for most of its space, as the kit's does */
+  .cpr-slot.ss-collapse[data-open] {
+    transition: grid-template-rows 500ms var(--cp-spring-default), opacity 300ms var(--cp-effects) 200ms;
   }
 
   /* ---- Local history, anchored under its toolbar button ---- */
@@ -177,24 +253,22 @@
     display: flex;
     flex-direction: column;
     padding: 6px 8px 8px;
-    border-radius: 16px;
-    background: var(--ss-surface);
-    box-shadow: var(--ss-shadow-float), 0 0 0 1px var(--ss-line);
+    border-radius: 28px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 6px rgb(27 27 33 / 0.1), 0 12px 32px -8px rgb(27 27 33 / 0.22);
   }
 
   .cpr-panel__head {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
     height: 40px;
-    padding: 0 8px;
+    padding: 0 12px;
   }
 
   .cpr-panel__title {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: var(--ss-text-strong);
+    font-size: 14px;
+    font-weight: 600;
+    color: #1B1B21;
   }
 
   .cpr-list {
@@ -204,82 +278,162 @@
   }
 
   .cpr-row {
-    border-radius: 10px;
-    color: #475467;
+    padding-inline: 10px;
+    border-radius: 999px;
+    color: #45464F;
+    transition: background 200ms var(--cp-effects), border-radius 350ms var(--cp-spring-fast);
+  }
+
+  /* State layer at 8% on hover; the selected row is primary-container */
+  .cpr-row[data-hover] {
+    background: rgb(27 27 33 / 0.08);
+  }
+
+  .cpr-row[data-pressed] {
+    border-radius: 12px;
+    background: rgb(27 27 33 / 0.1);
   }
 
   .cpr-row[data-selected] {
-    background: var(--ss-accent-soft);
-    color: var(--ss-accent);
+    background: #DDE1FF;
+    color: #2546D6;
+  }
+
+  .cpr-row[data-selected] .cpr-row__label {
+    color: #001257;
   }
 
   .cpr-row__label {
     font-size: 12.5px;
     font-weight: 500;
-    color: var(--ss-text-strong);
+    color: #1B1B21;
+    transition: color 200ms var(--cp-effects);
   }
 
   .cpr-row__time {
     font-size: 11.5px;
-    color: #475467;
+    color: #45464F;
     font-variant-numeric: tabular-nums;
   }
 
-  /* ---- The toast: bottom corner, one gutter up ---- */
+  /* Restore: a small filled button, pill at rest, 12px corners pressed */
+  .cpr-restore {
+    display: inline-flex;
+    align-items: center;
+    height: 24px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #2546D6;
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-weight: 600;
+    transition: border-radius 350ms var(--cp-spring-fast), box-shadow 200ms var(--cp-effects);
+  }
+
+  /* Restored: the press settled into a quiet confirmation in the same slot */
+  .cpr-restored {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 24px;
+    padding: 0 0 0 8px;
+    border-radius: 999px;
+    color: #2546D6;
+    font-size: 11.5px;
+    font-weight: 600;
+  }
+
+  .cpr-restored .cpr-sym {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+  }
+
+  .cpr-restore[data-hover] {
+    box-shadow: inset 0 0 0 99px rgb(255 255 255 / 0.08);
+  }
+
+  .cpr-restore[data-pressed] {
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 99px rgb(255 255 255 / 0.1);
+  }
+
+  /* ---- The snackbar: inverse surface, full pill, bottom corner ---- */
 
   .ss-toast.cpr-toast {
+    /* Arrives whole from just above, as a toast does */
+    --ss-toast-rise: -10px;
     position: absolute;
     left: 40px;
     bottom: var(--gutter);
     z-index: 5;
     gap: 10px;
     height: 44px;
-    padding: 0 8px 0 14px;
-    border-radius: 12px;
-    background: #0D1526;
-    color: #fff;
+    padding: 0 14px 0 16px;
+    border-radius: 999px;
+    background: #303036;
+    color: #F2EFF7;
     font-size: 12.5px;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgb(27 27 33 / 0.18), 0 12px 28px -10px rgb(27 27 33 / 0.3);
+    transition: opacity 200ms var(--cp-effects), margin 200ms var(--cp-effects);
+  }
+
+  .ss-toast.cpr-toast[data-show] {
+    transition: opacity 200ms var(--cp-effects), margin 500ms var(--cp-spring-default);
   }
 
   .cpr-toast .ss-toast__icon {
     opacity: 1;
-    color: #B9C6FF;
+    color: #B9C3FF;
   }
 
   .cpr-toast .ss-toast__action {
-    margin-left: 6px;
-    color: #B9C6FF;
+    margin-left: 4px;
+    color: #B9C3FF;
   }
 
   .cpr-toast__actions {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
   }
 
   .cpr-toast__undo {
-    padding: 6px 8px;
-    border-radius: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
     font-weight: 700;
+    transition: border-radius 350ms var(--cp-spring-fast), background 200ms var(--cp-effects);
   }
 
+  .cpr-toast__undo[data-hover] { background: rgb(185 195 255 / 0.08); }
+  .cpr-toast__undo[data-pressed] { border-radius: 8px; background: rgb(185 195 255 / 0.12); }
+
   .cpr-toast__x {
-    margin: 0 4px;
-    color: #C9D2E3;
+    margin: 0;
+    color: #C6C5D0;
   }
 
   .ss-stage[data-layout="compact"] .ss-toast.cpr-toast {
     left: 28px;
+    height: 40px;
   }
 
   .ss-stage[data-layout="compact"] .cpr-panel__head {
     height: 30px;
   }
 
-  .ss-stage[data-layout="compact"] .ss-toast.cpr-toast {
-    height: 40px;
+  .ss-stage[data-layout="compact"] .cpr-panel {
+    padding-top: 11px;
   }
 
-
+  @media (prefers-reduced-motion: reduce) {
+    .cpr-row,
+    .cpr-restore,
+    .cpr-toast__undo,
+    .ss-toast.cpr-toast,
+    .cpr-slot.ss-collapse {
+      transition: opacity 120ms linear;
+    }
+  }
 }
