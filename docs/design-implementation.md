@@ -79,3 +79,55 @@ push, remote mutation, or edit to original designer files was performed.
   theme tiles. Settings is still the accessible modal, not a separate route.
 - Verified by rendering the built site at 1440 and 390 wide (no horizontal
   overflow); this is not a full parity or accessibility certification.
+
+## Version 2: Material 3 Expressive redesign
+
+The v2 design source replaces the earlier cobalt and navy palette with Material
+3 tonal colour roles (seed cobalt, tertiary amber) for light and dark, the
+Expressive shape scale, spring motion tokens and a new layout: a navigation
+rail with a New task FAB on wide screens, and a top app bar, bottom navigation
+bar and floating extended FAB below 840px. Settings remains the accessible
+modal but is styled and animated as a full-page sheet with a section rail
+(chips row on phones). Icons are a vendored Material Symbols subset.
+
+No feature, control, route, localization or provenance display was removed.
+Task cards now show their status as a connected button group; the selected
+segment is the current status and the other two segments keep their move
+actions and accessible names. The workspace page head New task button moved
+to the FAB (same action and name). Toolbar actions (notifications, history,
+undo) are icon buttons with visually hidden labels and tooltips. The snackbar
+offers Undo after undoable changes.
+
+Motion choreographies and where they live:
+
+1. Page enter: `.page-enter` on `main` after a route change; children rise in
+   a 40ms stagger and the headline tightens its letter spacing.
+2. Navigation indicator: `playNavIndicator` in `app.js` moves a temporary pill
+   from the old item to the new one, stretching between them; the icon fills.
+3. Task move: `captureLayout` and `playLayout` in `app.js` (FLIP); lane counts
+   roll the old number out and the new one in.
+4. Button press: pill corners morph to 12px while pressed; state layers at
+   8, 10 and 10 percent; no ripple.
+5. FAB: on phones the extended FAB collapses to its icon when scrolling down.
+6. Dialogs scale from the triggering control; the Settings sheet slides up;
+   the scrim fades.
+7. Setup and guide progress use a wavy linear indicator; the setup step
+   number sits on a slowly rotating cookie shape.
+8. The "Saved in this browser" chip pulses after every successful save.
+9. Ledger rows, history and notifications enter with a 20ms stagger capped at
+   12 rows; ledger and walkthrough rows grow open and rotate their chevron.
+10. Theme switch: a circular reveal from the theme tile through View
+    Transitions where available, otherwise a short fade.
+
+Reduced motion is honoured for both the operating-system preference and the
+app's Reduce motion setting (`html.reduce-motion`): CSS removes every
+animation and keeps only a 120ms opacity fade, and the JavaScript helpers skip
+FLIP, the navigation pill and the theme reveal entirely. All animation is
+decoration; without the Web Animations or View Transitions APIs the final
+state is applied directly.
+
+Verified by rendering the built site at 1440 and 390 wide (light, dark,
+workspace with and without tasks, guide, settings) with no horizontal
+overflow, and by checking that the guide shows all four walkthroughs and all
+ledger rows on load. This is not a full accessibility certification or
+genuine Material component compliance.

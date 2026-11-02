@@ -75,5 +75,70 @@
       "bytes": 1184,
       "sha256": "6ad2918fef54415ffd60f73cee16d6eeaa5b15faa64a3f087ce1d767db0644db"
     }
-  ]
+  ],
+  "iconFont": {
+    "family": "Material Symbols Rounded",
+    "license": "Apache-2.0",
+    "reviewed": "2026-11-02",
+    "subsetRequest": "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL@24,500,0..1&icon_names=add,arrow_back,arrow_forward,backup,check,check_circle,close,contrast,dark_mode,edit,edit_note,expand_more,filter_center_focus,filter_list,handyman,history,info,library_books,light_mode,menu_book,north_east,notifications,palette,pending,person,radio_button_unchecked,record_voice_over,search,settings,shield,space_dashboard,timelapse,translate,tune,undo,volume_up&display=block",
+    "axes": {
+      "FILL": "0..1",
+      "wght": 500,
+      "opsz": 24
+    },
+    "glyphs": [
+      "add",
+      "arrow_back",
+      "arrow_forward",
+      "backup",
+      "check",
+      "check_circle",
+      "close",
+      "contrast",
+      "dark_mode",
+      "edit",
+      "edit_note",
+      "expand_more",
+      "filter_center_focus",
+      "filter_list",
+      "handyman",
+      "history",
+      "info",
+      "library_books",
+      "light_mode",
+      "menu_book",
+      "north_east",
+      "notifications",
+      "palette",
+      "pending",
+      "person",
+      "radio_button_unchecked",
+      "record_voice_over",
+      "search",
+      "settings",
+      "shield",
+      "space_dashboard",
+      "timelapse",
+      "translate",
+      "tune",
+      "undo",
+      "volume_up"
+    ],
+    "licenseRepository": "https://github.com/google/material-design-icons",
+    "licenseCommit": "10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7",
+    "files": [
+      {
+        "path": "materialsymbolsrounded/MaterialSymbolsRounded-subset.woff2",
+        "source": "https://fonts.gstatic.com/l/font?kit=syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuF_Zs-obHph2-jOcVzKPq96nVPKyperTyiiOFnnPQfYNadx5_SMcVjxRGQELTXdRjn_suhS1KFoF9Vq5xmfVwmyxnOfFdVJdNn3GE5MB-VfHkm6ijuWd-3X4oDPgZHyMWw&skey=70ddea8fe54d532e&v=v383",
+        "bytes": 7524,
+        "sha256": "012f078b66dd7cb0ea23849abc959e85ea8a3091f6ffcf100d3c1226730c1042"
+      },
+      {
+        "path": "materialsymbolsrounded/LICENSE",
+        "source": "https://raw.githubusercontent.com/google/material-design-icons/10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7/LICENSE",
+        "bytes": 11357,
+        "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+      }
+    ]
+  }
 }
