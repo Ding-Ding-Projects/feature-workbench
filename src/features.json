@@ -5,8 +5,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "In job-related workflows default to Job Experience Document, with a persisted toggle restoring Resume without changing user files or data.",
     "status": "incomplete",
-    "reason": "Required when a job-related workflow is present; this generic sample has none.",
-    "evidence": []
+    "reason": "Not yet accepted. Record explicit nonapplicability while no job workflow exists; if one is added, implement default wording and a persisted restoration toggle without altering user documents.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record explicit nonapplicability while no job workflow exists; if one is added, implement default wording and a persisted restoration toggle without altering user documents.",
+    "blocker": null
   },
   {
     "id": "language",
@@ -14,8 +17,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Persist English, Cantonese and bilingual modes; verify all surfaces and long bilingual labels at narrow widths.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Audit and translate every dialog, tool, article, accessibility name and error; test all three language modes including longest bilingual text.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Audit and translate every dialog, tool, article, accessibility name and error; test all three language modes including longest bilingual text.",
+    "blocker": null
   },
   {
     "id": "tone-and-dialog-emoji",
@@ -23,8 +29,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Provide separate persisted English and Cantonese tone levels 1–5 and a dialog-only emoji switch; keep factual meaning unchanged.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Expand both tone sliders from selected notices to every message category; independently reset each and prove that all five levels change voice without changing facts.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Expand both tone sliders from selected notices to every message category; independently reset each and prove that all five levels change voice without changing facts.",
+    "blocker": null
   },
   {
     "id": "personal-vocabulary",
@@ -32,8 +41,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Validate bounded versioned local JSON atomically; provide empty, invalid, replace and clear states; never transmit or export imported wording.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Verify current strict byte/schema validator and extension-equivalent phrase matcher across every owned text and accessibility boundary, corrupted cache and no-network/private-data exclusions.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify current strict byte/schema validator and extension-equivalent phrase matcher across every owned text and accessibility boundary, corrupted cache and no-network/private-data exclusions.",
+    "blocker": null
   },
   {
     "id": "vocabulary-drop-apply",
@@ -41,8 +53,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Accept window-wide file drops through the same validator as Settings, persist valid imports and preserve previous data on failure.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Verify the existing full-window JSON drop, invalid refusal, isolated cache and documentation-route suppression across reduced-motion and language modes. Native system sound parity is not established.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify the existing full-window JSON drop, invalid refusal, isolated cache and documentation-route suppression across reduced-motion and language modes. Native system sound parity is not established.",
+    "blocker": null
   },
   {
     "id": "school-mode",
@@ -50,8 +65,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Synchronize a renamed distraction-reduction setting across supported installed surfaces; clearly explain browser-local storage limitations.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement the browser-local suppression/rename/recovery behavior now; add a separate authenticated shared-record host adapter before claiming live cross-application propagation. Platform boundary: Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Implement the browser-local suppression/rename/recovery behavior now; add a separate authenticated shared-record host adapter before claiming live cross-application propagation.",
+    "blocker": "Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation."
   },
   {
     "id": "narration",
@@ -59,17 +77,23 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Offer actual installed voices, separate language selectors, rate and pitch, serialized speech and truthful missing-voice states.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Verify integrated runtime voice discovery, retained fallback, independent language, rate/pitch and event queue on a host with actual English and Cantonese voices; the cloud browser currently exposes none.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify integrated runtime voice discovery, retained fallback, independent language, rate/pitch and event queue on a host with actual English and Cantonese voices; the cloud browser currently exposes none.",
+    "blocker": null
   },
   {
     "id": "action-sound-effects",
     "title": "Action sound effects",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Play short cues only for real outcomes; provide immediate persisted mute settings and equivalent visible feedback.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Finish integrating the tested opt-in synthesized cue module, then verify mute/volume/quiet settings and actual outcomes without claiming exact native sound parity.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Finish integrating the tested opt-in synthesized cue module, then verify mute/volume/quiet settings and actual outcomes without claiming exact native sound parity.",
+    "blocker": null
   },
   {
     "id": "scheduled-settings",
@@ -77,17 +101,23 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Schedule customization with timezone-aware deterministic precedence, bounded external refresh and safe fallback to the last valid base setting.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement local timezone-aware schedules and deterministic precedence now; route authenticated external sources through a protected host adapter with stale/offline fallback. Platform boundary: Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Implement local timezone-aware schedules and deterministic precedence now; route authenticated external sources through a protected host adapter with stale/offline fallback.",
+    "blocker": "Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation."
   },
   {
     "id": "display-name",
     "title": "Custom display name",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Persist a display-only rename and reset without changing package identity, data paths or update feeds.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Verify the integrated persisted bounded display-name preference, greeting consumer, reset and export migration in the built application.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify the integrated persisted bounded display-name preference, greeting consumer, reset and export migration in the built application.",
+    "blocker": null
   },
   {
     "id": "adhd-modes",
@@ -95,8 +125,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Provide five independent opt-in attention preferences with persistence, clear interactions and no medical or scoring claims.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Extend the current Focus switch into five independent modes with visible explanations, combinations, persistence and explicit reduced-motion composition.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend the current Focus switch into five independent modes with visible explanations, combinations, persistence and explicit reduced-motion composition.",
+    "blocker": null
   },
   {
     "id": "food-discovery",
@@ -104,8 +137,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Offer the specified bounded startup discovery behavior with keyboard access, factual content and suppression under restricted presentation mode.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement the bounded discovery interface and suppression rules using approved catalog metadata; obtain verified catalog access before displaying source-controlled media. Platform boundary: Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Implement the bounded discovery interface and suppression rules using approved catalog metadata; obtain verified catalog access before displaying source-controlled media.",
+    "blocker": "Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete."
   },
   {
     "id": "food-photo-provenance",
@@ -113,8 +149,11 @@
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Resolve approved photographs through the authorized catalog; retain attribution and do not copy images into consumer source.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Validate catalog identities, attribution and image URLs from the approved publication source; keep consumer source free of copied photograph payloads. Platform boundary: Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Validate catalog identities, attribution and image URLs from the approved publication source; keep consumer source free of copied photograph payloads.",
+    "blocker": "Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete."
   },
   {
     "id": "material-design",
@@ -122,8 +161,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Use a coherent Material visual system with complete light/dark states and accessible contrast.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Review existing visual tokens and components against the design system; finish contrast, focus, disabled, error and both-theme variants with actual layout evidence.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Review existing visual tokens and components against the design system; finish contrast, focus, disabled, error and both-theme variants with actual layout evidence.",
+    "blocker": null
   },
   {
     "id": "workflow-navigation",
@@ -131,8 +173,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide task-oriented navigation with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Extend the existing task-led guide with task completion routes, contextual next steps and deep links to the exact workspace/settings control.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend the existing task-led guide with task completion routes, contextual next steps and deep links to the exact workspace/settings control.",
+    "blocker": null
   },
   {
     "id": "motion",
@@ -140,8 +185,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide motion with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Unify animation preferences with operating-system reduced motion; remove any motion-only status meaning and test every animated dialog and transition.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Unify animation preferences with operating-system reduced motion; remove any motion-only status meaning and test every animated dialog and transition.",
+    "blocker": null
   },
   {
     "id": "appearance-editor",
@@ -149,8 +197,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Edit every supported element property using rich controls, full typography, named presets, import/export, independent reset and real rendering.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Build per-element appearance editing with full typography, shape, spacing, density, motion, named presets, import/export and independent resets; apply values to actual elements.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Build per-element appearance editing with full typography, shape, spacing, density, motion, named presets, import/export and independent resets; apply values to actual elements.",
+    "blocker": null
   },
   {
     "id": "color-picker",
@@ -158,17 +209,23 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide continuous color selection, precise numeric alternatives, format translation and keyboard access.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Replace color-input-only behavior with a keyboard-accessible continuous picker, numeric alternatives, color format translation and contrast feedback.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Replace color-input-only behavior with a keyboard-accessible continuous picker, numeric alternatives, color format translation and contrast feedback.",
+    "blocker": null
   },
   {
     "id": "logo-customization",
     "title": "Local logo customization",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Validate image bytes locally, bound decoding, provide crop/fit/background controls, verify derived sizes and preserve immutable application identity.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Extend the current SVG initials tool into real local image upload, bounded decoding, crop/fit/background controls, validated derivative sizes, persistence and restore on conversion failure.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend the current SVG initials tool into real local image upload, bounded decoding, crop/fit/background controls, validated derivative sizes, persistence and restore on conversion failure.",
+    "blocker": null
   },
   {
     "id": "overlay-panels",
@@ -176,8 +233,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide readable anchored overlays with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Replace or augment generic modal-only flows with anchored panels where appropriate; verify opaque surface, viewport bounds, focus return and keyboard dismissal.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Replace or augment generic modal-only flows with anchored panels where appropriate; verify opaque surface, viewport bounds, focus return and keyboard dismissal.",
+    "blocker": null
   },
   {
     "id": "collapse-filters",
@@ -185,8 +245,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide collapsible filters and statistics with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Apply existing collapsible-filter behavior consistently to every list and statistics area; persist the user choice without hiding active-filter state.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Apply existing collapsible-filter behavior consistently to every list and statistics area; persist the user choice without hiding active-filter state.",
+    "blocker": null
   },
   {
     "id": "accessibility-sizing",
@@ -194,8 +257,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide accessible controls and text sizing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Complete target-size and focus audits, scalable text and screen-reader naming across all controls; add automated geometry checks and actual keyboard/screen-reader drives.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Complete target-size and focus audits, scalable text and screen-reader naming across all controls; add automated geometry checks and actual keyboard/screen-reader drives.",
+    "blocker": null
   },
   {
     "id": "functional-ui",
@@ -203,8 +269,11 @@
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide controls with real outcomes with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Enumerate visible controls and prove each has a real consumer and truthful outcome; remove dead actions and keep unsupported actions visibly explained.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Enumerate visible controls and prove each has a real consumer and truthful outcome; remove dead actions and keep unsupported actions visibly explained.",
+    "blocker": null
   },
   {
     "id": "onboarding-wizard",
@@ -212,8 +281,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Perform real setup actions with progress, Back/Next, optional skipping and saved resume state; finish in the productive workspace.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Test the existing setup flow through refresh, Back/Next, restart, storage failure and interruption; add optional skipping and ensure completion opens the working workspace.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Test the existing setup flow through refresh, Back/Next, restart, storage failure and interruption; add optional skipping and ensure completion opens the working workspace.",
+    "blocker": null
   },
   {
     "id": "tabs",
@@ -221,8 +293,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Support docked tab strips, overflow, ordering, pinning, grouping, discovery searches and persisted state.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement actual browser-style application tabs with docking, overflow, reorder, pinning, groups, four discovery searches and persisted restoration; route navigation alone is insufficient.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Implement actual browser-style application tabs with docking, overflow, reorder, pinning, groups, four discovery searches and persisted restoration; route navigation alone is insufficient.",
+    "blocker": null
   },
   {
     "id": "regex-search",
@@ -230,8 +305,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Every search owns a full adjacent regex builder with synchronized query, pattern, flags, validation, bounded execution and unsupported-capability disclosure.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Replace the current small token helper with a full independent regex builder for every search; synchronize flags/mode/validation, add bounded worker execution and unsupported-feature states.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Replace the current small token helper with a full independent regex builder for every search; synchronize flags/mode/validation, add bounded worker execution and unsupported-feature states.",
+    "blocker": null
   },
   {
     "id": "command-palette",
@@ -239,8 +317,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Open with Ctrl+Shift+F and navigate to the exact requested control while respecting locks and focus.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Expand the current route command list into an indexed control registry that teleports and focuses the exact element, preserving locks and keyboard shortcut behavior.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Expand the current route command list into an indexed control registry that teleports and focuses the exact element, preserving locks and keyboard shortcut behavior.",
+    "blocker": null
   },
   {
     "id": "context-menus",
@@ -248,8 +329,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide accessible contextual actions with filtering, independent regex search and keyboard equivalents.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Introduce real pointer and keyboard context menus for relevant entities with local search, independent regex builder, focus return and appropriate actions.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Introduce real pointer and keyboard context menus for relevant entities with local search, independent regex builder, focus return and appropriate actions.",
+    "blocker": null
   },
   {
     "id": "menu-shortcuts",
@@ -257,8 +341,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide visible menu keyboard shortcuts with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Add visible shortcut labels and equivalent keyboard actions to each applicable menu action; detect conflicts and test the displayed binding.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Add visible shortcut labels and equivalent keyboard actions to each applicable menu action; detect conflicts and test the displayed binding.",
+    "blocker": null
   },
   {
     "id": "rich-controls",
@@ -266,8 +353,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide rich controls with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Replace raw or generic inputs where values are structured with typed selectors, steppers, sliders, pickers and list editors that share validation with direct actions.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Replace raw or generic inputs where values are structured with typed selectors, steppers, sliders, pickers and list editors that share validation with direct actions.",
+    "blocker": null
   },
   {
     "id": "guided-forms",
@@ -275,8 +365,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide guided forms with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Add contextual guided modes above complex controls with Back/Next, progress, shared validation and real submit/cancel behavior.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Add contextual guided modes above complex controls with Back/Next, progress, shared validation and real submit/cancel behavior.",
+    "blocker": null
   },
   {
     "id": "info-icon-guidance",
@@ -284,8 +377,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide contextual help for every control with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Add distinct contextual help for every setting and non-obvious control, including default, effect, bounds and recovery, with keyboard-accessible disclosure.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Add distinct contextual help for every setting and non-obvious control, including default, effect, bounds and recovery, with keyboard-accessible disclosure.",
+    "blocker": null
   },
   {
     "id": "settings-explanations",
@@ -293,8 +389,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Give every applicable setting a real consumer, default, contextual help, search, persistence, reset and recovery.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Create a typed settings registry linking every applicable feature to its live consumer, persistence, defaults, help, reset and recovery; drive searchable settings from it.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Create a typed settings registry linking every applicable feature to its live consumer, persistence, defaults, help, reset and recovery; drive searchable settings from it.",
+    "blocker": null
   },
   {
     "id": "blank-editors",
@@ -302,8 +401,11 @@
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide useful presets for empty editors with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Add previewable starter presets to empty task, conversion and other editor surfaces; selecting one must create editable content and remain reversible.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Add previewable starter presets to empty task, conversion and other editor surfaces; selecting one must create editable content and remain reversible.",
+    "blocker": null
   },
   {
     "id": "super-confirmation",
@@ -311,8 +413,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "Require two independently operated keys and a full confirmation slider before destructive action; cancel or Escape must perform nothing.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Audit the existing destructive gate and add independent keys, full-range slider, cancellation/focus-return and reduced-motion states; assert no deletion on partial authorization.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Audit the existing destructive gate and add independent keys, full-range slider, cancellation/focus-return and reduced-motion states; assert no deletion on partial authorization.",
+    "blocker": null
   },
   {
     "id": "element-locks",
@@ -320,8 +425,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "Support all six credential combinations per element with isolated credentials, consistent input interception, expiry and explicit non-security disclosure.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Build six-policy independent toy locks for browser-owned elements with hashed passwords, per-element credentials, duration and all input-route interception; clearly state browser-storage reset and non-security limitations.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Build six-policy independent toy locks for browser-owned elements with hashed passwords, per-element credentials, duration and all input-route interception; clearly state browser-storage reset and non-security limitations.",
+    "blocker": null
   },
   {
     "id": "support-tickets",
@@ -329,8 +437,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "Keep the fictional recovery desk local; state that nobody receives a ticket and never delete data behind a recovery joke.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement a clearly fictional local recovery desk linked from lock help; create local ticket progress and explicit browser-storage reset instructions without sending data or silently deleting it.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Implement a clearly fictional local recovery desk linked from lock help; create local ticket progress and explicit browser-storage reset instructions without sending data or silently deleting it.",
+    "blocker": null
   },
   {
     "id": "unlock-ladder",
@@ -338,8 +449,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "End only a lockout wait, never authentication; enforce rate budgets, single-use nonces, timing and unchanged credential attempts.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement the accessible browser challenge interface, but grade real authentication challenges in a trusted nonce-consuming service with replay, timing and rate-budget tests. Platform boundary: A static client cannot provide trusted server-side grading for an authentication lockout. Browser-only activity must remain explicitly non-authenticating.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Implement the accessible browser challenge interface, but grade real authentication challenges in a trusted nonce-consuming service with replay, timing and rate-budget tests.",
+    "blocker": "A static client cannot provide trusted server-side grading for an authentication lockout. Browser-only activity must remain explicitly non-authenticating."
   },
   {
     "id": "authenticator",
@@ -347,8 +461,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "Implement standard local TOTP with protected secret handling, enrollment, verification and explicit recovery.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement a bounded local TOTP store and RFC-compatible calculation with enrollment verification and protected display; disclose browser storage limitations and exclude secrets from exports/history.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Implement a bounded local TOTP store and RFC-compatible calculation with enrollment verification and protected display; disclose browser storage limitations and exclude secrets from exports/history.",
+    "blocker": null
   },
   {
     "id": "qr-pairing",
@@ -356,8 +473,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "Provide actual QR and manual enrollment paths with consistent validated authenticator data.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Add bundled offline QR generation/reading and manual enrollment; validate supported authenticator parameters and test round-trip without logging secret values.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Add bundled offline QR generation/reading and manual enrollment; validate supported authenticator parameters and test round-trip without logging secret values.",
+    "blocker": null
   },
   {
     "id": "honest-monetization",
@@ -365,8 +485,11 @@
     "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
     "requirement": "Provide clear pricing and no promotional nagging with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Audit all copy for unsupported security, pricing, sponsorship or outcome claims; keep any voluntary support route user-initiated and correctly attributed.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Audit all copy for unsupported security, pricing, sponsorship or outcome claims; keep any voluntary support route user-initiated and correctly attributed.",
+    "blocker": null
   },
   {
     "id": "local-history",
@@ -374,8 +497,11 @@
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Record append-only redacted changes and safe restoration without including credentials or resurrecting unavailable secrets.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Extend the current 30-entry snapshot subset into documented versioned append-only history and redacted restore semantics; test malformed snapshots, lock interactions and restart recovery.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend the current 30-entry snapshot subset into documented versioned append-only history and redacted restore semantics; test malformed snapshots, lock interactions and restart recovery.",
+    "blocker": null
   },
   {
     "id": "exports",
@@ -383,26 +509,35 @@
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Export every faithfully supported format with explicit limitations, validation and no private credential or wording payload.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Extend JSON backup with format-specific faithful exports for tasks, settings and tool results; show omissions and validate outputs while continuing to exclude private wording and secrets.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend JSON backup with format-specific faithful exports for tasks, settings and tool results; show omissions and validate outputs while continuing to exclude private wording and secrets.",
+    "blocker": null
   },
   {
     "id": "bulk-actions",
     "title": "Previewable batch actions",
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Apply previewable batch operations to lists with item-level outcomes, cancellation and protected-item handling.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Verify integrated visible-only selection, exact preview, two-step deletion gate and atomic undo with repeated/filtered/keyboard flows.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify integrated visible-only selection, exact preview, two-step deletion gate and atomic undo with repeated/filtered/keyboard flows.",
+    "blocker": null
   },
   {
     "id": "changelog",
     "title": "Searchable changelog",
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Provide searchable changelog with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Turn static changelog content into a local viewer with date picker, search/regex, version filters and exact revision links.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Turn static changelog content into a local viewer with date picker, search/regex, version filters and exact revision links.",
+    "blocker": null
   },
   {
     "id": "offline-docs",
@@ -410,8 +545,11 @@
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Provide offline documentation reader with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Bundle full categorized articles and wiki content into an offline reader with task navigation, search/regex and working internal links; a feature grid is not a complete article.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Bundle full categorized articles and wiki content into an offline reader with task navigation, search/regex and working internal links; a feature grid is not a complete article.",
+    "blocker": null
   },
   {
     "id": "rendered-provider-text",
@@ -419,8 +557,11 @@
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Provide formatted provider responses with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Add a sanitized renderer for provider Markdown and structured text, including safe links, tables and code; test raw HTML and script injection rejection.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Add a sanitized renderer for provider Markdown and structured text, including safe links, tables and code; test raw HTML and script injection rejection.",
+    "blocker": null
   },
   {
     "id": "notifications",
@@ -428,17 +569,23 @@
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Provide accessible non-blocking notices and a reviewable notification centre.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Verify the integrated fixed-key outcome history, persistence, error dismissal and private-data exclusions across language/tone modes.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify the integrated fixed-key outcome history, persistence, error dismissal and private-data exclusions across language/tone modes.",
+    "blocker": null
   },
   {
     "id": "file-converter",
     "title": "Offline file conversion and PDF tools",
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Ship verified offline adapters across eight categories, complete supported PDF tools, validated atomic outputs and persistent bounded processing of unlimited-length queues.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Extend existing JSON/CSV tools into eight explicit adapter categories with supported/disabled formats and real worker-bounded browser adapters; add bundled native codecs/PDF tools and durable constant-memory queues for full parity. Platform boundary: Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Extend existing JSON/CSV tools into eight explicit adapter categories with supported/disabled formats and real worker-bounded browser adapters; add bundled native codecs/PDF tools and durable constant-memory queues for full parity.",
+    "blocker": "Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation."
   },
   {
     "id": "minecraft-server-manager",
@@ -446,8 +593,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Provide real Java/Bedrock version discovery, rich configuration, flavours and extensions across local process, local container, SSH process and SSH container targets.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement typed version/capability descriptors and four target adapters, then drive real creation, lifecycle, worlds, extensions, backup and rollback against task-owned servers. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Implement typed version/capability descriptors and four target adapters, then drive real creation, lifecycle, worlds, extensions, backup and rollback against task-owned servers.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "minecraft-world-generator",
@@ -455,8 +605,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Generate worlds through the exact selected version engine and save validated folder or ZIP outputs through native destination selection.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Provision the exact selected version engine through the server adapter, generate an actual world and validate folder/ZIP output via native destination selection. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Provision the exact selected version engine through the server adapter, generate an actual world and validate folder/ZIP output via native destination selection.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "ollama-suite",
@@ -464,8 +617,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Provide official model/tag discovery, hardware-fit evidence, batch pulls, streaming chat, managed installation, configuration snapshots and rollback.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Build official model/tag discovery and rich controls around a real authenticated local runtime adapter; verify installation/recovery, model pulls, streaming chat, snapshots and rollback. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Build official model/tag discovery and rich controls around a real authenticated local runtime adapter; verify installation/recovery, model pulls, streaming chat, snapshots and rollback.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "external-editor",
@@ -473,8 +629,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Open a selected file in a verified editor with explicit error and recovery states rather than a simulated launch.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Add a scoped native editor launcher with destination checks and process/error readback; verify real editor handoff rather than treating browser download as an editor launch. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Add a scoped native editor launcher with destination checks and process/error readback; verify real editor handoff rather than treating browser download as an editor launch.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "download-handoff",
@@ -482,8 +641,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Implement separate Start, Downloading and completion states; distinguish browser demonstrations from verified installed-extension transfers.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Keep three distinct demonstrable browser states, then build/install the extension and native bridge and verify actual transfer, active progress and completion surfaces. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Keep three distinct demonstrable browser states, then build/install the extension and native bridge and verify actual transfer, active progress and completion surfaces.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "forge-publishing",
@@ -491,8 +653,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Publish only to a verified authorized target; report authentication, progress, failure and remote readback honestly.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Resolve the authorized repository and authenticated publishing route, implement scoped publication and verify exact remote refs and failures. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Resolve the authorized repository and authenticated publishing route, implement scoped publication and verify exact remote refs and failures.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "progress-recovery",
@@ -500,8 +665,11 @@
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Report progress at the initiating control with cancellation, durable recovery and distinct partial or failed outcomes.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Give long actions owned progress, cancellation and durable resumable states; test cancellation during work, repeated clicks and restart recovery instead of instant simulated success.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Give long actions owned progress, cancellation and durable resumable states; test cancellation during work, repeated clicks and restart recovery instead of instant simulated success.",
+    "blocker": null
   },
   {
     "id": "completeness-parity",
@@ -509,8 +677,11 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Keep a fixed required inventory per surface; removing implementation, article, localization, tests or runtime evidence must fail acceptance.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Extend the fixed 112-ID check into per-surface evidence validation and negative mutations removing implementation, articles, localized strings, focused tests and interaction/capture receipts.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend the fixed 112-ID check into per-surface evidence validation and negative mutations removing implementation, articles, localized strings, focused tests and interaction/capture receipts.",
+    "blocker": null
   },
   {
     "id": "front-provenance",
@@ -518,17 +689,23 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Display source/build identity tied to the actual running artifact, not a guessed current revision.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Extend current build-info presentation to exact source revision and artifact identity; verify displayed values against the built output rather than build-time guesses.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Extend current build-info presentation to exact source revision and artifact identity; verify displayed values against the built output rather than build-time guesses.",
+    "blocker": null
   },
   {
     "id": "product-evidence",
     "title": "Verified product screenshots",
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Capture and inspect genuine built-product workflows with source binding; source previews and filenames are not runtime evidence.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Run the built sample through complete workflows, inspect actual screenshots and bind each evidence item to source, artifact and route; update partial rows only for proven scope.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Run the built sample through complete workflows, inspect actual screenshots and bind each evidence item to source, artifact and route; update partial rows only for proven scope.",
+    "blocker": null
   },
   {
     "id": "screen-recording",
@@ -536,8 +713,11 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Record real working interactions and preserve a source-bound recording with the project.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Record actual built-workflow interaction, inspect the full video for sensitive data and preserve provenance; a scripted scenario without a recording is not proof.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record actual built-workflow interaction, inspect the full video for sensitive data and preserve provenance; a scripted scenario without a recording is not proof.",
+    "blocker": null
   },
   {
     "id": "design-reference-parity",
@@ -545,8 +725,11 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Provide verified design-reference parity with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Create a reviewed reference-to-component checklist and compare built screens at matching viewport/theme; record actual mismatches instead of accepting a source-image link.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Create a reviewed reference-to-component checklist and compare built screens at matching viewport/theme; record actual mismatches instead of accepting a source-image link.",
+    "blocker": null
   },
   {
     "id": "design-folder",
@@ -554,8 +737,11 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Provide preserved design source with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Preserve reviewed design inputs and revisions with provenance and safe filenames, then keep implementation and reference changes aligned.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Preserve reviewed design inputs and revisions with provenance and safe filenames, then keep implementation and reference changes aligned.",
+    "blocker": null
   },
   {
     "id": "responsive-layout-matrix",
@@ -563,8 +749,11 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Verify narrow layouts, high scale, languages, themes, keyboard, screen readers and reduced motion without clipping.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Expand acceptance into a fixed language/theme/viewport/high-scale/input/reduced-motion matrix and retain current inspected evidence for each required case.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Expand acceptance into a fixed language/theme/viewport/high-scale/input/reduced-motion matrix and retain current inspected evidence for each required case.",
+    "blocker": null
   },
   {
     "id": "public-evidence-gallery",
@@ -572,8 +761,11 @@
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Publish only reviewed genuine images with safe metadata and separate verification of live images and source publication.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Review genuine captured images and metadata for safe publication, then publish to the authorized gallery and verify every live image independently. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Review genuine captured images and metadata for safe publication, then publish to the authorized gallery and verify every live image independently.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "landing-site",
@@ -581,8 +773,11 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Provide task-led guided explanations and complete articles; clearly state that the website is not the installed application.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Separate documentation presentation from the sample workspace runtime; keep visible boundaries, full task-led articles, interactive explanations and visitor-owned progress.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Separate documentation presentation from the sample workspace runtime; keep visible boundaries, full task-led articles, interactive explanations and visitor-owned progress.",
+    "blocker": null
   },
   {
     "id": "mobile-site",
@@ -590,8 +785,11 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Support approximately 320px upward with touch-sized targets, contained overflow and phone/tablet interaction checks.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Exercise actual phone/tablet portrait/landscape behavior, soft-keyboard search and touch-only menus; fix clipping and target sizes beyond resized-desktop checks.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Exercise actual phone/tablet portrait/landscape behavior, soft-keyboard search and touch-only menus; fix clipping and target sizes beyond resized-desktop checks.",
+    "blocker": null
   },
   {
     "id": "installer-download-button",
@@ -599,8 +797,11 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Link to an actually verified package and accurately distinguish supported operating systems and release state.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Do not invent a download: first produce and verify a supported package, then link the exact released asset and test the real download.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Do not invent a download: first produce and verify a supported package, then link the exact released asset and test the real download.",
+    "blocker": null
   },
   {
     "id": "feature-articles",
@@ -608,8 +809,11 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Publish complete organized articles including localized counterparts, real workflows, failure modes and evidence boundaries.",
     "status": "partial",
-    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
-    "evidence": []
+    "reason": "A partial implementation exists. Write full behavior, configuration, failure, privacy and acceptance articles per feature with Cantonese counterparts and contextual task links, not repeated inventory summaries.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Write full behavior, configuration, failure, privacy and acceptance articles per feature with Cantonese counterparts and contextual task links, not repeated inventory summaries.",
+    "blocker": null
   },
   {
     "id": "vendored-fonts",
@@ -617,26 +821,35 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Bundle complete locally served font assets using a recorded reproducible acquisition process, not runtime CDN imports.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Use documented bundled font files with complete required glyph coverage; verify offline rendering and remove any runtime CDN request.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Use documented bundled font files with complete required glyph coverage; verify offline rendering and remove any runtime CDN request.",
+    "blocker": null
   },
   {
     "id": "shared-link-embed",
     "title": "Share-link image previews",
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Provide a genuine reviewed preview image and working metadata for shared links.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Verify current share-card pixels and social metadata against the actual deployed URL, including absolute image address, image response and readable dimensions.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Verify current share-card pixels and social metadata against the actual deployed URL, including absolute image address, image response and readable dimensions.",
+    "blocker": null
   },
   {
     "id": "homepage-link",
     "title": "Verified repository homepage",
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Deploy the public documentation to GitHub Pages and verify the exact repository homepage URL and live assets.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Inspect the authorized repository Pages deployment and set/read back its exact homepage URL; fetch the live page and required assets for the current revision. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Inspect the authorized repository Pages deployment and set/read back its exact homepage URL; fetch the live page and required assets for the current revision.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "vocabulary-unlock-boundary",
@@ -644,8 +857,11 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Provide private wording and unlock boundaries with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Audit browser wording, locks and documentation for accidental private imports in logs, exported data, history or evidence; test reset and suppression boundaries.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Audit browser wording, locks and documentation for accidental private imports in logs, exported data, history or evidence; test reset and suppression boundaries.",
+    "blocker": null
   },
   {
     "id": "private-documentation-companion",
@@ -653,8 +869,11 @@
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "For private projects provide the approved offline or authenticated companion; public projects retain their separate hosting obligations.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Finish the tracked container companion route with actual build/run/offline-navigation proof; separately package a portable native companion if that delivery target is selected. Platform boundary: Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Finish the tracked container companion route with actual build/run/offline-navigation proof; separately package a portable native companion if that delivery target is selected.",
+    "blocker": "Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation."
   },
   {
     "id": "status-hub",
@@ -662,8 +881,11 @@
     "benefit": "Follow task state through a deliberately configured integration.",
     "requirement": "Provide status dashboard service with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
-    "evidence": []
+    "reason": "Not yet accepted. Select an explicitly authorized status service endpoint and implement a bounded adapter with authenticated update/readback, ownership and offline-state tests. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Select an explicitly authorized status service endpoint and implement a bounded adapter with authenticated update/readback, ownership and offline-state tests.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "discord-status-bridge",
@@ -671,8 +893,11 @@
     "benefit": "Follow task state through a deliberately configured integration.",
     "requirement": "Provide discord status integration with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
-    "evidence": []
+    "reason": "Not yet accepted. Configure an authorized bot/application and channel, then verify real message delivery, edits, deduplication and inaccessible-channel behavior. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Configure an authorized bot/application and channel, then verify real message delivery, edits, deduplication and inaccessible-channel behavior.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "panic-webhooks",
@@ -680,8 +905,11 @@
     "benefit": "Follow task state through a deliberately configured integration.",
     "requirement": "Provide emergency status webhooks with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
-    "evidence": []
+    "reason": "Not yet accepted. Configure a verified authorized receiver and protected webhook credentials; test bounded real delivery, retry and refusal without exposing payload secrets. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Configure a verified authorized receiver and protected webhook credentials; test bounded real delivery, retry and refusal without exposing payload secrets.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "tidbyt-displays",
@@ -689,44 +917,59 @@
     "benefit": "Follow task state through a deliberately configured integration.",
     "requirement": "Provide status display integration with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
-    "evidence": []
+    "reason": "Not yet accepted. Confirm whether product display integration is in scope, configure an owned device/service and test actual frames and offline recovery; do not activate unrelated event reporting. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Confirm whether product display integration is in scope, configure an owned device/service and test actual frames and offline recovery; do not activate unrelated event reporting.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "build-entrypoints",
     "title": "One-click build entrypoints",
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide working build and package entrypoints with truthful dependency and privilege handling.",
-    "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Finish the existing PowerShell/bootstrap entrypoints and test offline staging; independently execute the resulting Windows build/package flows on the authorized native host. Platform boundary: Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Finish the existing PowerShell/bootstrap entrypoints and test offline staging; independently execute the resulting Windows build/package flows on the authorized native host.",
+    "blocker": "Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation."
   },
   {
     "id": "fresh-build-run-command",
     "title": "Fresh build and run command",
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide fresh build and run command with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Execute the documented fresh build/run route on the supported physical Windows host and record dependency, cancellation and launch outcomes. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Execute the documented fresh build/run route on the supported physical Windows host and record dependency, cancellation and launch outcomes.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "dependency-fetcher",
     "title": "Verified dependency acquisition",
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide verified dependency acquisition with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Finish and verify bounded checksum-pinned dependency acquisition, cache reuse, offline failure and architecture selection; preserve existing installations.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Finish and verify bounded checksum-pinned dependency acquisition, cache reuse, offline failure and architecture selection; preserve existing installations.",
+    "blocker": null
   },
   {
     "id": "bundled-dependencies",
     "title": "Bundled runtime dependencies",
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Bundle every enabled runtime dependency and prove offline operation without relying on developer PATH tools.",
-    "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Package every enabled converter/runtime dependency and test with developer PATH tools unavailable and network disconnected; leave unbundled formats disabled. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Package every enabled converter/runtime dependency and test with developer PATH tools unavailable and network disconnected; leave unbundled formats disabled.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "squirrel-installer",
@@ -734,8 +977,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide windows installer lifecycle with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Build and install genuine Windows packages, then verify upgrade, cancel, uninstall and existing-state preservation on the authorized host. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Build and install genuine Windows packages, then verify upgrade, cancel, uninstall and existing-state preservation on the authorized host.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "self-signing",
@@ -743,8 +989,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide required-format signing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Determine format-specific signing requirements, provision protected project-owned keys only where required and verify actual signatures without claiming public trust. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Determine format-specific signing requirements, provision protected project-owned keys only where required and verify actual signatures without claiming public trust.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "auto-updates",
@@ -752,17 +1001,23 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Verify exact update source, staged installation, failure recovery, existing-data preservation and rollback in the installed runtime.",
     "status": "incomplete",
-    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement a real versioned feed and installed update transaction with download validation, cancellation, failure recovery and rollback; verify exact source and installed version. Platform boundary: The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required.",
+    "evidence": [],
+    "deliveryKind": "native-host",
+    "nextAction": "Implement a real versioned feed and installed update transaction with download validation, cancellation, failure recovery and rollback; verify exact source and installed version.",
+    "blocker": "The current browser source cannot execute or prove this native capability. A supported physical host or explicitly owned runtime target and native acceptance run are required."
   },
   {
     "id": "app-icon",
     "title": "Consistent application icon",
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide consistent application icon with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Provide coherent icon assets for every actual browser/native packaging target, verify format and sizes and inspect their rendered use.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Provide coherent icon assets for every actual browser/native packaging target, verify format and sizes and inspect their rendered use.",
+    "blocker": null
   },
   {
     "id": "release-workflow",
@@ -770,8 +1025,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Publish a normal release with immutable version, exact source binding and every verified expected asset.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Inspect the real authorized CI/release route, publish only normal releases with immutable version/source identity and verify every expected asset and remote state.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Inspect the real authorized CI/release route, publish only normal releases with immutable version/source identity and verify every expected asset and remote state.",
+    "blocker": null
   },
   {
     "id": "release-timing",
@@ -779,8 +1037,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide source-bound release timing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Tie release ordering to the exact intended source revision and required build results; prevent stale or recursive publication.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Tie release ordering to the exact intended source revision and required build results; prevent stale or recursive publication.",
+    "blocker": null
   },
   {
     "id": "release-line-counts",
@@ -788,8 +1049,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide automated source line counts with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement a reproducible tracked source counter with generated/vendor exclusions and run it from the release pipeline.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Implement a reproducible tracked source counter with generated/vendor exclusions and run it from the release pipeline.",
+    "blocker": null
   },
   {
     "id": "release-food-photo",
@@ -797,8 +1061,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide release food photograph with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Resolve and verify an approved release photograph through the authorized catalog and include only the permitted reference in release metadata. Platform boundary: Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Resolve and verify an approved release photograph through the authorized catalog and include only the permitted reference in release metadata.",
+    "blocker": "Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete."
   },
   {
     "id": "release-food-codenames",
@@ -806,17 +1073,23 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide release food code names with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Implement deterministic unique release code-name selection from the approved catalog with recorded provenance and collision checks. Platform boundary: Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete.",
+    "evidence": [],
+    "deliveryKind": "mixed",
+    "nextAction": "Implement deterministic unique release code-name selection from the approved catalog with recorded provenance and collision checks.",
+    "blocker": "Requires verified approved catalog data and permitted media delivery; do not invent images, copy protected catalog content or count missing media as complete."
   },
   {
     "id": "ci-bootstrap",
     "title": "Clean build environment bootstrap",
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide clean build environment bootstrap with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "status": "partial",
+    "reason": "A partial implementation exists. Verify a clean runner installs only declared pinned toolchains and can build/test/package without inherited developer state.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Verify a clean runner installs only declared pinned toolchains and can build/test/package without inherited developer state.",
+    "blocker": null
   },
   {
     "id": "runner-selection",
@@ -824,8 +1097,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Provide verified build runner selection with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Check actual runner availability and supported fallback, dispatch on an authorized target and report unavailable platform proof separately.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Check actual runner availability and supported fallback, dispatch on an authorized target and report unavailable platform proof separately.",
+    "blocker": null
   },
   {
     "id": "encrypted-public-builder",
@@ -833,8 +1109,11 @@
     "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
     "requirement": "Build private source only through an opaque encrypted payload without exposing source identity in public build records.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Use only if private-source building applies; verify the configured opaque encrypted build route, protected inputs and private release destination before dispatch. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Use only if private-source building applies; verify the configured opaque encrypted build route, protected inputs and private release destination before dispatch.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "tabbed-readme",
@@ -842,8 +1121,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide concise tabbed readme with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Update the README with visible first-reader essentials and collapsible long references; keep contribution, license, security and conduct files accurate.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Update the README with visible first-reader essentials and collapsible long references; keep contribution, license, security and conduct files accurate.",
+    "blocker": null
   },
   {
     "id": "human-time-estimate",
@@ -851,8 +1133,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide transparent implementation effort estimate with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Generate a clearly labeled estimate from the same automated line-count run, recording exclusions, assumed rate and transparent arithmetic.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Generate a clearly labeled estimate from the same automated line-count run, recording exclusions, assumed rate and transparent arithmetic.",
+    "blocker": null
   },
   {
     "id": "sanitized-instruction-copy",
@@ -860,8 +1145,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide sanitized instruction mirror with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Create a reviewed neutral instruction mirror without private host/account details; validate all tracked content before transmission.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Create a reviewed neutral instruction mirror without private host/account details; validate all tracked content before transmission.",
+    "blocker": null
   },
   {
     "id": "agents-md-vocabulary-block",
@@ -869,8 +1157,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide agent communication discipline block with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Add the approved term-free communication-discipline block exactly, then verify it without importing the private dictionary.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Add the approved term-free communication-discipline block exactly, then verify it without importing the private dictionary.",
+    "blocker": null
   },
   {
     "id": "vocabulary-hash-lock",
@@ -878,8 +1169,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide private vocabulary currency check with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Wire the private-source currency check into build/push gates without publishing terms or digest; distinguish an unavailable private source from a stale present source.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Wire the private-source currency check into build/push gates without publishing terms or digest; distinguish an unavailable private source from a stale present source.",
+    "blocker": null
   },
   {
     "id": "roadmap-checklist",
@@ -887,8 +1181,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Tick only implemented and verified work; preserve explicit unfinished and deliberately excluded items.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Replace broad completion language with evidence-backed milestones and explicit unresolved items; do not tick items merely because registry rows exist.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Replace broad completion language with evidence-backed milestones and explicit unresolved items; do not tick items merely because registry rows exist.",
+    "blocker": null
   },
   {
     "id": "feature-docs",
@@ -896,8 +1193,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide categorized feature documentation with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Maintain one focused article per feature plus complete category indexes; update behavior and verification documentation with each implementation change.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Maintain one focused article per feature plus complete category indexes; update behavior and verification documentation with each implementation change.",
+    "blocker": null
   },
   {
     "id": "postman-collections",
@@ -905,8 +1205,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide complete category and master API collections when HTTP interfaces exist; otherwise document nonapplicability.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Record no HTTP API if the sample remains static; when host/service APIs are introduced, create category and master collections covering every exposed endpoint.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record no HTTP API if the sample remains static; when host/service APIs are introduced, create category and master collections covering every exposed endpoint.",
+    "blocker": null
   },
   {
     "id": "wiki-documentation-sync",
@@ -914,8 +1217,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Keep full wiki and documentation content synchronized with product changes and avoid recursive publication loops.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Update tracked wiki and full documentation source together, verify internal links and publish authorized remote wiki changes without recursive commits.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Update tracked wiki and full documentation source together, verify internal links and publish authorized remote wiki changes without recursive commits.",
+    "blocker": null
   },
   {
     "id": "handoff-record",
@@ -923,8 +1229,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide factual project handoff with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Record exact implemented scope, current source, checks, evidence and blockers; update the authorized remote task handoff and verify stored state.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record exact implemented scope, current source, checks, evidence and blockers; update the authorized remote task handoff and verify stored state.",
+    "blocker": null
   },
   {
     "id": "closeout-prompt",
@@ -932,8 +1241,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide versioned continuation handoff with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Save a current continuation record with real source state, unfinished work and next owner, then verify its authorized remote revision.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Save a current continuation record with real source state, unfinished work and next owner, then verify its authorized remote revision.",
+    "blocker": null
   },
   {
     "id": "discussion-records",
@@ -941,8 +1253,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide deduplicated progress discussions with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Inspect existing Discussions, enable only where authorized, update one deduplicated task record and verify stored links and exact revision references. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Inspect existing Discussions, enable only where authorized, update one deduplicated task record and verify stored links and exact revision references.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "project-board",
@@ -950,8 +1265,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Link an authorized project board when supported and mark completion only after implementation and remote evidence.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Inspect accessible Projects, select or create the authorized project item, link the repository and verify truthful workflow state. Platform boundary: Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access.",
+    "evidence": [],
+    "deliveryKind": "external-service",
+    "nextAction": "Inspect accessible Projects, select or create the authorized project item, link the repository and verify truthful workflow state.",
+    "blocker": "Requires verified external service access/configuration and actual readback. This source review does not establish whether the owning task already has that access."
   },
   {
     "id": "operational-skill",
@@ -959,8 +1277,11 @@
     "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
     "requirement": "Provide reproducible operating guide with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
-    "evidence": []
+    "reason": "Not yet accepted. Write a reproducible operating guide from routes actually exercised, including build, full interaction, evidence, release and recovery; validate it through the supported skill workflow.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Write a reproducible operating guide from routes actually exercised, including build, full interaction, evidence, release and recovery; validate it through the supported skill workflow.",
+    "blocker": null
   },
   {
     "id": "readme-prompt-banner",
@@ -968,8 +1289,11 @@
     "benefit": "Understand how the canonical instruction repository distributes its own content.",
     "requirement": "Provide canonical prompt banner with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
-    "evidence": []
+    "reason": "Not yet accepted. Record this as a canonical-instruction-repository-only requirement; explain it without copying private prompt material into the sample.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record this as a canonical-instruction-repository-only requirement; explain it without copying private prompt material into the sample.",
+    "blocker": null
   },
   {
     "id": "canonical-portable-editions",
@@ -977,8 +1301,11 @@
     "benefit": "Understand how the canonical instruction repository distributes its own content.",
     "requirement": "Provide canonical portable instruction editions with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
-    "evidence": []
+    "reason": "Not yet accepted. Record canonical-only applicability and link only approved public explanatory content; do not generate or publish private instruction editions from this consumer sample.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record canonical-only applicability and link only approved public explanatory content; do not generate or publish private instruction editions from this consumer sample.",
+    "blocker": null
   },
   {
     "id": "project-profile",
@@ -986,8 +1313,11 @@
     "benefit": "Understand how the canonical instruction repository distributes its own content.",
     "requirement": "Provide canonical scoped project profile with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
-    "evidence": []
+    "reason": "Not yet accepted. Record canonical-only project-memory applicability; keep any consumer documentation scoped and free of private canonical memory.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record canonical-only project-memory applicability; keep any consumer documentation scoped and free of private canonical memory.",
+    "blocker": null
   },
   {
     "id": "roblox-model-catalogue",
@@ -995,8 +1325,11 @@
     "benefit": "Understand the native acceptance requirements for game projects.",
     "requirement": "Provide shared roblox model integration with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Game-specific requirement; this sample is not a Roblox game.",
-    "evidence": []
+    "reason": "Not yet accepted. Record explicit nonapplicability for this non-game sample; a future game requires its own model integration ledger and real native interaction evidence.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record explicit nonapplicability for this non-game sample; a future game requires its own model integration ledger and real native interaction evidence.",
+    "blocker": null
   },
   {
     "id": "roblox-visual-realism",
@@ -1004,7 +1337,10 @@
     "benefit": "Understand the native acceptance requirements for game projects.",
     "requirement": "Provide native roblox visual realism with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
-    "reason": "Game-specific requirement; this sample is not a Roblox game.",
-    "evidence": []
+    "reason": "Not yet accepted. Record explicit nonapplicability for this non-game sample; never treat documentation illustrations as native game visual acceptance.",
+    "evidence": [],
+    "deliveryKind": "process",
+    "nextAction": "Record explicit nonapplicability for this non-game sample; never treat documentation illustrations as native game visual acceptance.",
+    "blocker": null
   }
 ]
