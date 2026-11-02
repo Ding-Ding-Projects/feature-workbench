@@ -36,11 +36,28 @@ export function parseBoundedJSON(text, limit = 262144) {
   const result=value(0);space();if(i!==text.length)fail();return result;
 }
 export function validateVocabulary(text) {
-  const data = parseBoundedJSON(text);
+  return validateVocabularyObject(parseBoundedJSON(text));
+}
+function validateVocabularyObject(data) {
   const plain = v => v !== null && typeof v === 'object' && !Array.isArray(v);
   if (!plain(data) || Object.keys(data).sort().join(',') !== 'entries,schemaVersion' || data.schemaVersion !== 1 || !plain(data.entries)) throw Error('Unsupported personal wording format.');
   for (const [key,value] of Object.entries(data.entries)) {
-    if (!key.length || typeof value !== 'string' || [...value].length > 1000) throw Error('Unsupported personal wording entry.');
+    if (!key.length || [...key].length > 160 || ['__proto__','prototype','constructor'].includes(key) || typeof value !== 'string' || [...value].length > 1000 || /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/u.test(value)) throw Error('Unsupported personal wording entry.');
   }
+  if (new TextEncoder().encode(JSON.stringify(data)).byteLength > 262144) throw Error('File exceeds the allowed size.');
   return data;
+}
+
+/** Decode original bytes strictly; invalid UTF-8 must never become replacement text. */
+export function parseVocabularyBytes(bytes) {
+  if (!(bytes instanceof Uint8Array) || bytes.byteLength > 262144) throw Error('File exceeds the allowed size.');
+  let text;
+  try { text = new TextDecoder('utf-8', { fatal: true }).decode(bytes); }
+  catch { throw Error('Invalid file encoding.'); }
+  return validateVocabulary(text);
+}
+
+/** Portable serialization, independent of session exports (which exclude wording). */
+export function serialiseVocabulary(value) {
+  return JSON.stringify(validateVocabularyObject(value));
 }
