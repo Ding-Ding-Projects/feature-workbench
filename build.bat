@@ -1,5 +1,7 @@
 @echo off
 setlocal
+rem Opt out before PowerShell starts; inherited by build child processes.
+set "POWERSHELL_TELEMETRY_OPTOUT=1"
 set "BUILD_SILENT="
 for %%A in (%*) do (
   if /i "%%~A"=="/s" set "BUILD_SILENT=-Silent"

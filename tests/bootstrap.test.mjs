@@ -1,3 +1,4 @@
+import {powershellEnvironment} from '../scripts/powershell-environment.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -32,11 +33,12 @@ test('installer no-target route cannot pretend to package or launch',()=>{
  assert.doesNotMatch(script,/^\s*(call|powershell|node|start)\b/im);
 });
 const shell=process.env.POWERSHELL_EXE || (process.platform==='win32'?'powershell.exe':'pwsh');
-const probe=spawnSync(shell,['-NoProfile','-Command','$PSVersionTable.PSVersion.ToString()'],{encoding:'utf8'});
+const shellEnv=powershellEnvironment();
+const probe=spawnSync(shell,['-NoProfile','-Command','$PSVersionTable.PSVersion.ToString()'],{encoding:'utf8',env:shellEnv});
 test('PowerShell parser and offline hash, extraction, version and phase regressions',{skip:probe.error?'PowerShell unavailable; Windows runtime remains unverified':false},()=>{
- const parser=spawnSync(shell,['-NoProfile','-Command',`$bad=$false; Get-ChildItem scripts/*.ps1,tests/bootstrap-offline.ps1 | ForEach-Object { $t=$null; $e=$null; [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$t,[ref]$e); if($e.Count){$e | Out-String | Write-Host; $bad=$true} }; if($bad){exit 1}`],{encoding:'utf8'});
+ const parser=spawnSync(shell,['-NoProfile','-Command',`$bad=$false; Get-ChildItem scripts/*.ps1,tests/bootstrap-offline.ps1 | ForEach-Object { $t=$null; $e=$null; [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$t,[ref]$e); if($e.Count){$e | Out-String | Write-Host; $bad=$true} }; if($bad){exit 1}`],{encoding:'utf8',env:shellEnv});
  assert.equal(parser.status,0,parser.stdout+parser.stderr);
- const env={...process.env}; delete env.NODE_TEST_CONTEXT;
+ const env={...shellEnv}; delete env.NODE_TEST_CONTEXT;
  const run=spawnSync(shell,['-NoProfile','-File','tests/bootstrap-offline.ps1','-Node',process.execPath],{encoding:'utf8',env});
  assert.equal(run.status,0,run.stdout+run.stderr);
 });
