@@ -45,3 +45,20 @@ headers, license presence and four resolvable local font URLs. These are source
 and asset-integrity checks, not a font-security audit or rendered parity proof.
 Browser font loading, Cantonese glyph selection, layout after swap and visual
 parity still require the parent's managed-preview/CUA review after integration.
+
+## Material Symbols Rounded icon subset
+
+Icons come from Material Symbols Rounded (Apache-2.0), vendored as a single
+subset `src/fonts/materialsymbolsrounded/MaterialSymbolsRounded-subset.woff2`.
+It was fetched once on 2026-11-02 from the Google Fonts css2 API with
+`icon_names=` listing only the glyphs the app uses, axes `FILL` 0..1, `wght`
+500 and `opsz` 24. The exact request URL, the resolved `fonts.gstatic.com`
+file URL, the glyph list, byte size and SHA-256 are recorded under `iconFont`
+in `src/fonts/provenance.json`. The Apache-2.0 `LICENSE` beside it is the
+unmodified file from the official `google/material-design-icons` repository,
+pinned to commit `10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7`.
+
+The face uses `font-display:block` so ligature names never flash as text while
+it loads. Adding an icon means requesting a new subset with the extended
+sorted `icon_names` list and updating the manifest; `tests/font-provenance.test.mjs`
+fails when the app or stylesheet names a glyph that is not in the subset.

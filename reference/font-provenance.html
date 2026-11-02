@@ -36,4 +36,18 @@
 <p>headers, license presence and four resolvable local font URLs. These are source</p>
 <p>and asset-integrity checks, not a font-security audit or rendered parity proof.</p>
 <p>Browser font loading, Cantonese glyph selection, layout after swap and visual</p>
-<p>parity still require the parent&#39;s managed-preview/CUA review after integration.</p></body></html>
+<p>parity still require the parent&#39;s managed-preview/CUA review after integration.</p>
+<h2>Material Symbols Rounded icon subset</h2>
+<p>Icons come from Material Symbols Rounded (Apache-2.0), vendored as a single</p>
+<p>subset <code>src/fonts/materialsymbolsrounded/MaterialSymbolsRounded-subset.woff2</code>.</p>
+<p>It was fetched once on 2026-11-02 from the Google Fonts css2 API with</p>
+<p><code>icon_names=</code> listing only the glyphs the app uses, axes <code>FILL</code> 0..1, <code>wght</code></p>
+<p>500 and <code>opsz</code> 24. The exact request URL, the resolved <code>fonts.gstatic.com</code></p>
+<p>file URL, the glyph list, byte size and SHA-256 are recorded under <code>iconFont</code></p>
+<p>in <code>src/fonts/provenance.json</code>. The Apache-2.0 <code>LICENSE</code> beside it is the</p>
+<p>unmodified file from the official <code>google/material-design-icons</code> repository,</p>
+<p>pinned to commit <code>10ecc14790612ca8fd164e3f4ffe9c16fc50d5b7</code>.</p>
+<p>The face uses <code>font-display:block</code> so ligature names never flash as text while</p>
+<p>it loads. Adding an icon means requesting a new subset with the extended</p>
+<p>sorted <code>icon_names</code> list and updating the manifest; <code>tests/font-provenance.test.mjs</code></p>
+<p>fails when the app or stylesheet names a glyph that is not in the subset.</p></body></html>

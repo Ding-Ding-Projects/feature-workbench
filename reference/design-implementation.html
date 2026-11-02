@@ -92,4 +92,49 @@
 <ul>
 <li>Verified by rendering the built site at 1440 and 390 wide (no horizontal</li>
 </ul>
-<p>  overflow); this is not a full parity or accessibility certification.</p></body></html>
+<p>  overflow); this is not a full parity or accessibility certification.</p>
+<h2>Version 2: Material 3 Expressive redesign</h2>
+<p>The v2 design source replaces the earlier cobalt and navy palette with Material</p>
+<p>3 tonal colour roles (seed cobalt, tertiary amber) for light and dark, the</p>
+<p>Expressive shape scale, spring motion tokens and a new layout: a navigation</p>
+<p>rail with a New task FAB on wide screens, and a top app bar, bottom navigation</p>
+<p>bar and floating extended FAB below 840px. Settings remains the accessible</p>
+<p>modal but is styled and animated as a full-page sheet with a section rail</p>
+<p>(chips row on phones). Icons are a vendored Material Symbols subset.</p>
+<p>No feature, control, route, localization or provenance display was removed.</p>
+<p>Task cards now show their status as a connected button group; the selected</p>
+<p>segment is the current status and the other two segments keep their move</p>
+<p>actions and accessible names. The workspace page head New task button moved</p>
+<p>to the FAB (same action and name). Toolbar actions (notifications, history,</p>
+<p>undo) are icon buttons with visually hidden labels and tooltips. The snackbar</p>
+<p>offers Undo after undoable changes.</p>
+<p>Motion choreographies and where they live:</p>
+<p>1. Page enter: <code>.page-enter</code> on <code>main</code> after a route change; children rise in</p>
+<p>   a 40ms stagger and the headline tightens its letter spacing.</p>
+<p>2. Navigation indicator: <code>playNavIndicator</code> in <code>app.js</code> moves a temporary pill</p>
+<p>   from the old item to the new one, stretching between them; the icon fills.</p>
+<p>3. Task move: <code>captureLayout</code> and <code>playLayout</code> in <code>app.js</code> (FLIP); lane counts</p>
+<p>   roll the old number out and the new one in.</p>
+<p>4. Button press: pill corners morph to 12px while pressed; state layers at</p>
+<p>   8, 10 and 10 percent; no ripple.</p>
+<p>5. FAB: on phones the extended FAB collapses to its icon when scrolling down.</p>
+<p>6. Dialogs scale from the triggering control; the Settings sheet slides up;</p>
+<p>   the scrim fades.</p>
+<p>7. Setup and guide progress use a wavy linear indicator; the setup step</p>
+<p>   number sits on a slowly rotating cookie shape.</p>
+<p>8. The &quot;Saved in this browser&quot; chip pulses after every successful save.</p>
+<p>9. Ledger rows, history and notifications enter with a 20ms stagger capped at</p>
+<p>   12 rows; ledger and walkthrough rows grow open and rotate their chevron.</p>
+<p>10. Theme switch: a circular reveal from the theme tile through View</p>
+<p>    Transitions where available, otherwise a short fade.</p>
+<p>Reduced motion is honoured for both the operating-system preference and the</p>
+<p>app&#39;s Reduce motion setting (<code>html.reduce-motion</code>): CSS removes every</p>
+<p>animation and keeps only a 120ms opacity fade, and the JavaScript helpers skip</p>
+<p>FLIP, the navigation pill and the theme reveal entirely. All animation is</p>
+<p>decoration; without the Web Animations or View Transitions APIs the final</p>
+<p>state is applied directly.</p>
+<p>Verified by rendering the built site at 1440 and 390 wide (light, dark,</p>
+<p>workspace with and without tasks, guide, settings) with no horizontal</p>
+<p>overflow, and by checking that the guide shows all four walkthroughs and all</p>
+<p>ledger rows on load. This is not a full accessibility certification or</p>
+<p>genuine Material component compliance.</p></body></html>
