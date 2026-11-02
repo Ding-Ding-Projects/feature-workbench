@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Container companion source | Reference</title><style>body{font:1rem/1.65 system-ui,sans-serif;color:#183337;background:#faf9f5;max-width:55rem;margin:auto;padding:2rem}a{color:#146d62}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e7efeb;padding:1rem}code{font-family:monospace}h1,h2{line-height:1.2}nav{display:flex;gap:1rem;flex-wrap:wrap}</style></head><body><nav><a href="../#guide">Interactive guide</a><a href="index.html">Reference index</a></nav><h1>Container companion source</h1>
+<p>The repository includes a runtime Dockerfile and tracked Compose configuration. This is prepared source, <strong>not a delivered or verified container companion</strong>: this execution environment has neither Docker nor Podman, no container image has been published, and no native hosting wizard has been built or exercised.</p>
+<h2>Intended build</h2>
+<p>Build and verify the static artifact first. The container copies only that artifact and the repository-owned server, not Git metadata, credentials or browser storage. Its official Node base is pinned to a registry-confirmed immutable image index digest. It runs as the unprivileged <code>node</code> user.</p>
+<pre><code>
+npm test
+
+npm run check
+
+npm run build
+
+docker build --tag feature-workbench:local .
+
+</code></pre>
+<p>A production registry tag or digest must be verified before setting <code>WORKBENCH_IMAGE</code>. Compose deliberately refuses to start with an unset image instead of claiming a nonexistent published package exists. No credential belongs in Compose or this repository.</p>
+<h2>Networking and data</h2>
+<p>The server binds inside the container. Compose defaults to host loopback, so it does not silently expose the user&#39;s data or machine to a LAN. An authorized LAN deployment sets <code>WORKBENCH_BIND</code> to the intended host interface and <code>WORKBENCH_PORT</code> to the selected host port. Do not change firewall rules or enable public-Internet exposure to make a check pass.</p>
+<p>Visitor data still belongs to each visitor&#39;s browser profile. The container has a read-only filesystem, no host mounts, and no server-side task database. Stopping it does not delete browser state.</p>
+<h2>Pending proof</h2>
+<p>Before describing this companion as delivered, verify image build, immutable registry publication, Compose pull/start, health, exact source provenance, both native hosting modes, the tailored portable setup wizard and the complete URL from an intended LAN client. A container-internal probe alone does not establish LAN reachability. The hosted public documentation remains available independently.</p></body></html>
