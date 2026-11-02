@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "captures": [{
+    "path": "docs/captures/workspace-first-run.png",
+    "sourceCommit": "49fe4d86673e4e060f4c27cc52a79ca9a15e371c",
+    "deploymentCommit": "f8ea272f43c96b0f0868e311f047c66c9629ad7b",
+    "url": "https://ding-ding-projects.github.io/feature-workbench/",
+    "state": "first-run language step, clean visitor profile",
+    "route": "managed-cloud-browser",
+    "inspected": true,
+    "limits": "Desktop viewport only. This capture is not native or full accessibility proof."
+  }]
+}
