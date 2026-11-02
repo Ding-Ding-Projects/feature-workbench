@@ -2,6 +2,8 @@
   {
     "id": "job-experience-document-label",
     "title": "Job Experience Document wording",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "In job-related workflows default to Job Experience Document, with a persisted toggle restoring Resume without changing user files or data.",
     "status": "incomplete",
     "reason": "Required when a job-related workflow is present; this generic sample has none.",
     "evidence": []
@@ -9,6 +11,8 @@
   {
     "id": "language",
     "title": "Language",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Persist English, Cantonese and bilingual modes; verify all surfaces and long bilingual labels at narrow widths.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -16,6 +20,8 @@
   {
     "id": "tone-and-dialog-emoji",
     "title": "Independent language tone and dialog emoji",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Provide separate persisted English and Cantonese tone levels 1–5 and a dialog-only emoji switch; keep factual meaning unchanged.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -23,6 +29,8 @@
   {
     "id": "personal-vocabulary",
     "title": "Local personal wording import",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Validate bounded versioned local JSON atomically; provide empty, invalid, replace and clear states; never transmit or export imported wording.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -30,6 +38,8 @@
   {
     "id": "vocabulary-drop-apply",
     "title": "Drag-and-drop personal wording",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Accept window-wide file drops through the same validator as Settings, persist valid imports and preserve previous data on failure.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -37,6 +47,8 @@
   {
     "id": "school-mode",
     "title": "Shared distraction-reduction mode",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Synchronize a renamed distraction-reduction setting across supported installed surfaces; clearly explain browser-local storage limitations.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -44,6 +56,8 @@
   {
     "id": "narration",
     "title": "Spoken narration and voice selection",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Offer actual installed voices, separate language selectors, rate and pitch, serialized speech and truthful missing-voice states.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -51,6 +65,8 @@
   {
     "id": "action-sound-effects",
     "title": "Action sound effects",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Play short cues only for real outcomes; provide immediate persisted mute settings and equivalent visible feedback.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -58,6 +74,8 @@
   {
     "id": "scheduled-settings",
     "title": "Scheduled appearance and settings",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Schedule customization with timezone-aware deterministic precedence, bounded external refresh and safe fallback to the last valid base setting.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -65,6 +83,8 @@
   {
     "id": "display-name",
     "title": "Custom display name",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Persist a display-only rename and reset without changing package identity, data paths or update feeds.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -72,6 +92,8 @@
   {
     "id": "adhd-modes",
     "title": "Independent focus and attention preferences",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Provide five independent opt-in attention preferences with persistence, clear interactions and no medical or scoring claims.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -79,6 +101,8 @@
   {
     "id": "food-discovery",
     "title": "Food discovery at startup",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Offer the specified bounded startup discovery behavior with keyboard access, factual content and suppression under restricted presentation mode.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -86,6 +110,8 @@
   {
     "id": "food-photo-provenance",
     "title": "Verified food photograph source",
+    "benefit": "Adapt wording, sound and presentation to personal preferences.",
+    "requirement": "Resolve approved photographs through the authorized catalog; retain attribution and do not copy images into consumer source.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -93,6 +119,8 @@
   {
     "id": "material-design",
     "title": "Material appearance system",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Use a coherent Material visual system with complete light/dark states and accessible contrast.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -100,6 +128,8 @@
   {
     "id": "workflow-navigation",
     "title": "Task-oriented navigation",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide task-oriented navigation with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -107,6 +137,8 @@
   {
     "id": "motion",
     "title": "Motion",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide motion with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -114,6 +146,8 @@
   {
     "id": "appearance-editor",
     "title": "Per-element appearance editing",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Edit every supported element property using rich controls, full typography, named presets, import/export, independent reset and real rendering.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -121,6 +155,8 @@
   {
     "id": "color-picker",
     "title": "Full color picker and format conversion",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide continuous color selection, precise numeric alternatives, format translation and keyboard access.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -128,6 +164,8 @@
   {
     "id": "logo-customization",
     "title": "Local logo customization",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Validate image bytes locally, bound decoding, provide crop/fit/background controls, verify derived sizes and preserve immutable application identity.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -135,6 +173,8 @@
   {
     "id": "overlay-panels",
     "title": "Readable anchored overlays",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide readable anchored overlays with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -142,6 +182,8 @@
   {
     "id": "collapse-filters",
     "title": "Collapsible filters and statistics",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide collapsible filters and statistics with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -149,6 +191,8 @@
   {
     "id": "accessibility-sizing",
     "title": "Accessible controls and text sizing",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide accessible controls and text sizing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -156,6 +200,8 @@
   {
     "id": "functional-ui",
     "title": "Controls with real outcomes",
+    "benefit": "Read and operate the interface comfortably across layouts and input methods.",
+    "requirement": "Provide controls with real outcomes with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -163,6 +209,8 @@
   {
     "id": "onboarding-wizard",
     "title": "Practical setup wizard",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Perform real setup actions with progress, Back/Next, optional skipping and saved resume state; finish in the productive workspace.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -170,6 +218,8 @@
   {
     "id": "tabs",
     "title": "Complete tab navigation",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Support docked tab strips, overflow, ordering, pinning, grouping, discovery searches and persisted state.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -177,6 +227,8 @@
   {
     "id": "regex-search",
     "title": "Independent full regex search builders",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Every search owns a full adjacent regex builder with synchronized query, pattern, flags, validation, bounded execution and unsupported-capability disclosure.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -184,6 +236,8 @@
   {
     "id": "command-palette",
     "title": "Command palette",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Open with Ctrl+Shift+F and navigate to the exact requested control while respecting locks and focus.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -191,6 +245,8 @@
   {
     "id": "context-menus",
     "title": "Context menus",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Provide accessible contextual actions with filtering, independent regex search and keyboard equivalents.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -198,6 +254,8 @@
   {
     "id": "menu-shortcuts",
     "title": "Visible menu keyboard shortcuts",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Provide visible menu keyboard shortcuts with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -205,6 +263,8 @@
   {
     "id": "rich-controls",
     "title": "Rich controls",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Provide rich controls with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -212,6 +272,8 @@
   {
     "id": "guided-forms",
     "title": "Guided forms",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Provide guided forms with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -219,6 +281,8 @@
   {
     "id": "info-icon-guidance",
     "title": "Contextual help for every control",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Provide contextual help for every control with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -226,6 +290,8 @@
   {
     "id": "settings-explanations",
     "title": "Settings, defaults and real consumers",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Give every applicable setting a real consumer, default, contextual help, search, persistence, reset and recovery.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -233,6 +299,8 @@
   {
     "id": "blank-editors",
     "title": "Useful presets for empty editors",
+    "benefit": "Find the right task, setting or item without losing context.",
+    "requirement": "Provide useful presets for empty editors with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -240,6 +308,8 @@
   {
     "id": "super-confirmation",
     "title": "Two-key destructive action confirmation",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "Require two independently operated keys and a full confirmation slider before destructive action; cancel or Escape must perform nothing.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -247,6 +317,8 @@
   {
     "id": "element-locks",
     "title": "Independent per-element experience locks",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "Support all six credential combinations per element with isolated credentials, consistent input interception, expiry and explicit non-security disclosure.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -254,6 +326,8 @@
   {
     "id": "support-tickets",
     "title": "Local fictional recovery desk",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "Keep the fictional recovery desk local; state that nobody receives a ticket and never delete data behind a recovery joke.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -261,6 +335,8 @@
   {
     "id": "unlock-ladder",
     "title": "Lockout wait recovery activities",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "End only a lockout wait, never authentication; enforce rate budgets, single-use nonces, timing and unchanged credential attempts.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -268,6 +344,8 @@
   {
     "id": "authenticator",
     "title": "Built-in authenticator",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "Implement standard local TOTP with protected secret handling, enrollment, verification and explicit recovery.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -275,6 +353,8 @@
   {
     "id": "qr-pairing",
     "title": "QR authenticator pairing",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "Provide actual QR and manual enrollment paths with consistent validated authenticator data.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -282,6 +362,8 @@
   {
     "id": "honest-monetization",
     "title": "Clear pricing and no promotional nagging",
+    "benefit": "Make consequential actions and recovery explicit without misleading security claims.",
+    "requirement": "Provide clear pricing and no promotional nagging with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -289,6 +371,8 @@
   {
     "id": "local-history",
     "title": "Local version history and recovery",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Record append-only redacted changes and safe restoration without including credentials or resurrecting unavailable secrets.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -296,6 +380,8 @@
   {
     "id": "exports",
     "title": "Faithful data exports",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Export every faithfully supported format with explicit limitations, validation and no private credential or wording payload.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -303,6 +389,8 @@
   {
     "id": "bulk-actions",
     "title": "Previewable batch actions",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Apply previewable batch operations to lists with item-level outcomes, cancellation and protected-item handling.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -310,6 +398,8 @@
   {
     "id": "changelog",
     "title": "Searchable changelog",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Provide searchable changelog with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -317,6 +407,8 @@
   {
     "id": "offline-docs",
     "title": "Offline documentation reader",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Provide offline documentation reader with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -324,6 +416,8 @@
   {
     "id": "rendered-provider-text",
     "title": "Formatted provider responses",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Provide formatted provider responses with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -331,6 +425,8 @@
   {
     "id": "notifications",
     "title": "Non-blocking notification history",
+    "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
+    "requirement": "Provide accessible non-blocking notices and a reviewable notification centre.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -338,6 +434,8 @@
   {
     "id": "file-converter",
     "title": "Offline file conversion and PDF tools",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Ship verified offline adapters across eight categories, complete supported PDF tools, validated atomic outputs and persistent bounded processing of unlimited-length queues.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -345,6 +443,8 @@
   {
     "id": "minecraft-server-manager",
     "title": "Minecraft server creator and manager",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Provide real Java/Bedrock version discovery, rich configuration, flavours and extensions across local process, local container, SSH process and SSH container targets.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -352,6 +452,8 @@
   {
     "id": "minecraft-world-generator",
     "title": "Version-specific Minecraft world generator",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Generate worlds through the exact selected version engine and save validated folder or ZIP outputs through native destination selection.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -359,6 +461,8 @@
   {
     "id": "ollama-suite",
     "title": "Local Ollama model and runtime manager",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Provide official model/tag discovery, hardware-fit evidence, batch pulls, streaming chat, managed installation, configuration snapshots and rollback.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -366,6 +470,8 @@
   {
     "id": "external-editor",
     "title": "External editor handoff",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Open a selected file in a verified editor with explicit error and recovery states rather than a simulated launch.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -373,6 +479,8 @@
   {
     "id": "download-handoff",
     "title": "Extension download lifecycle",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Implement separate Start, Downloading and completion states; distinguish browser demonstrations from verified installed-extension transfers.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -380,6 +488,8 @@
   {
     "id": "forge-publishing",
     "title": "Repository publishing workflow",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Publish only to a verified authorized target; report authentication, progress, failure and remote readback honestly.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -387,6 +497,8 @@
   {
     "id": "progress-recovery",
     "title": "Progress, cancellation and recovery",
+    "benefit": "Complete a practical workflow through a verified local or host capability.",
+    "requirement": "Report progress at the initiating control with cancellation, durable recovery and distinct partial or failed outcomes.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -394,6 +506,8 @@
   {
     "id": "completeness-parity",
     "title": "Per-surface completeness gates",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Keep a fixed required inventory per surface; removing implementation, article, localization, tests or runtime evidence must fail acceptance.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -401,6 +515,8 @@
   {
     "id": "front-provenance",
     "title": "Visible build and source provenance",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Display source/build identity tied to the actual running artifact, not a guessed current revision.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -408,6 +524,8 @@
   {
     "id": "product-evidence",
     "title": "Verified product screenshots",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Capture and inspect genuine built-product workflows with source binding; source previews and filenames are not runtime evidence.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -415,6 +533,8 @@
   {
     "id": "screen-recording",
     "title": "Real workflow recording",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Record real working interactions and preserve a source-bound recording with the project.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -422,6 +542,8 @@
   {
     "id": "design-reference-parity",
     "title": "Verified design-reference parity",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Provide verified design-reference parity with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -429,6 +551,8 @@
   {
     "id": "design-folder",
     "title": "Preserved design source",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Provide preserved design source with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -436,6 +560,8 @@
   {
     "id": "responsive-layout-matrix",
     "title": "Responsive layout acceptance matrix",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Verify narrow layouts, high scale, languages, themes, keyboard, screen readers and reduced motion without clipping.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -443,6 +569,8 @@
   {
     "id": "public-evidence-gallery",
     "title": "Reviewed public evidence gallery",
+    "benefit": "Distinguish real delivery from a listed or simulated capability.",
+    "requirement": "Publish only reviewed genuine images with safe metadata and separate verification of live images and source publication.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -450,6 +578,8 @@
   {
     "id": "landing-site",
     "title": "Task-led product documentation",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Provide task-led guided explanations and complete articles; clearly state that the website is not the installed application.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -457,6 +587,8 @@
   {
     "id": "mobile-site",
     "title": "Mobile-friendly documentation",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Support approximately 320px upward with touch-sized targets, contained overflow and phone/tablet interaction checks.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -464,6 +596,8 @@
   {
     "id": "installer-download-button",
     "title": "Verified installer downloads",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Link to an actually verified package and accurately distinguish supported operating systems and release state.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -471,6 +605,8 @@
   {
     "id": "feature-articles",
     "title": "Complete articles per feature",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Publish complete organized articles including localized counterparts, real workflows, failure modes and evidence boundaries.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -478,6 +614,8 @@
   {
     "id": "vendored-fonts",
     "title": "Bundled offline fonts",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Bundle complete locally served font assets using a recorded reproducible acquisition process, not runtime CDN imports.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -485,6 +623,8 @@
   {
     "id": "shared-link-embed",
     "title": "Share-link image previews",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Provide a genuine reviewed preview image and working metadata for shared links.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -492,6 +632,8 @@
   {
     "id": "homepage-link",
     "title": "Verified repository homepage",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Deploy the public documentation to GitHub Pages and verify the exact repository homepage URL and live assets.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -499,6 +641,8 @@
   {
     "id": "vocabulary-unlock-boundary",
     "title": "Private wording and unlock boundaries",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "Provide private wording and unlock boundaries with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -506,6 +650,8 @@
   {
     "id": "private-documentation-companion",
     "title": "Private offline documentation companion",
+    "benefit": "Understand the product through complete, accessible task-led explanations.",
+    "requirement": "For private projects provide the approved offline or authenticated companion; public projects retain their separate hosting obligations.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -513,6 +659,8 @@
   {
     "id": "status-hub",
     "title": "Status dashboard service",
+    "benefit": "Follow task state through a deliberately configured integration.",
+    "requirement": "Provide status dashboard service with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
     "evidence": []
@@ -520,6 +668,8 @@
   {
     "id": "discord-status-bridge",
     "title": "Discord status integration",
+    "benefit": "Follow task state through a deliberately configured integration.",
+    "requirement": "Provide discord status integration with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
     "evidence": []
@@ -527,6 +677,8 @@
   {
     "id": "panic-webhooks",
     "title": "Emergency status webhooks",
+    "benefit": "Follow task state through a deliberately configured integration.",
+    "requirement": "Provide emergency status webhooks with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
     "evidence": []
@@ -534,6 +686,8 @@
   {
     "id": "tidbyt-displays",
     "title": "Status display integration",
+    "benefit": "Follow task state through a deliberately configured integration.",
+    "requirement": "Provide status display integration with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
     "evidence": []
@@ -541,6 +695,8 @@
   {
     "id": "build-entrypoints",
     "title": "One-click build entrypoints",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide working build and package entrypoints with truthful dependency and privilege handling.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -548,6 +704,8 @@
   {
     "id": "fresh-build-run-command",
     "title": "Fresh build and run command",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide fresh build and run command with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -555,6 +713,8 @@
   {
     "id": "dependency-fetcher",
     "title": "Verified dependency acquisition",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide verified dependency acquisition with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -562,6 +722,8 @@
   {
     "id": "bundled-dependencies",
     "title": "Bundled runtime dependencies",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Bundle every enabled runtime dependency and prove offline operation without relying on developer PATH tools.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -569,6 +731,8 @@
   {
     "id": "squirrel-installer",
     "title": "Windows installer lifecycle",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide windows installer lifecycle with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -576,6 +740,8 @@
   {
     "id": "self-signing",
     "title": "Required-format signing",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide required-format signing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -583,6 +749,8 @@
   {
     "id": "auto-updates",
     "title": "Verified update and rollback",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Verify exact update source, staged installation, failure recovery, existing-data preservation and rollback in the installed runtime.",
     "status": "incomplete",
     "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
     "evidence": []
@@ -590,6 +758,8 @@
   {
     "id": "app-icon",
     "title": "Consistent application icon",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide consistent application icon with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -597,6 +767,8 @@
   {
     "id": "release-workflow",
     "title": "Normal release automation",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Publish a normal release with immutable version, exact source binding and every verified expected asset.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -604,6 +776,8 @@
   {
     "id": "release-timing",
     "title": "Source-bound release timing",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide source-bound release timing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -611,6 +785,8 @@
   {
     "id": "release-line-counts",
     "title": "Automated source line counts",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide automated source line counts with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -618,6 +794,8 @@
   {
     "id": "release-food-photo",
     "title": "Release food photograph",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide release food photograph with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -625,6 +803,8 @@
   {
     "id": "release-food-codenames",
     "title": "Release food code names",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide release food code names with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -632,6 +812,8 @@
   {
     "id": "ci-bootstrap",
     "title": "Clean build environment bootstrap",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide clean build environment bootstrap with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -639,6 +821,8 @@
   {
     "id": "runner-selection",
     "title": "Verified build runner selection",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Provide verified build runner selection with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -646,6 +830,8 @@
   {
     "id": "encrypted-public-builder",
     "title": "Encrypted private-source build pipeline",
+    "benefit": "Obtain reproducible packages with truthful installation and update outcomes.",
+    "requirement": "Build private source only through an opaque encrypted payload without exposing source identity in public build records.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -653,6 +839,8 @@
   {
     "id": "tabbed-readme",
     "title": "Concise tabbed README",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide concise tabbed readme with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -660,6 +848,8 @@
   {
     "id": "human-time-estimate",
     "title": "Transparent implementation effort estimate",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide transparent implementation effort estimate with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -667,6 +857,8 @@
   {
     "id": "sanitized-instruction-copy",
     "title": "Sanitized instruction mirror",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide sanitized instruction mirror with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -674,6 +866,8 @@
   {
     "id": "agents-md-vocabulary-block",
     "title": "Agent communication discipline block",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide agent communication discipline block with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -681,6 +875,8 @@
   {
     "id": "vocabulary-hash-lock",
     "title": "Private vocabulary currency check",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide private vocabulary currency check with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -688,6 +884,8 @@
   {
     "id": "roadmap-checklist",
     "title": "Evidence-backed roadmap",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Tick only implemented and verified work; preserve explicit unfinished and deliberately excluded items.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -695,6 +893,8 @@
   {
     "id": "feature-docs",
     "title": "Categorized feature documentation",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide categorized feature documentation with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -702,6 +902,8 @@
   {
     "id": "postman-collections",
     "title": "API collections and examples",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide complete category and master API collections when HTTP interfaces exist; otherwise document nonapplicability.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -709,6 +911,8 @@
   {
     "id": "wiki-documentation-sync",
     "title": "Synchronized wiki and documentation",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Keep full wiki and documentation content synchronized with product changes and avoid recursive publication loops.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -716,6 +920,8 @@
   {
     "id": "handoff-record",
     "title": "Factual project handoff",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide factual project handoff with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -723,6 +929,8 @@
   {
     "id": "closeout-prompt",
     "title": "Versioned continuation handoff",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide versioned continuation handoff with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -730,6 +938,8 @@
   {
     "id": "discussion-records",
     "title": "Deduplicated progress discussions",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide deduplicated progress discussions with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -737,6 +947,8 @@
   {
     "id": "project-board",
     "title": "Linked project tracking",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Link an authorized project board when supported and mark completion only after implementation and remote evidence.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -744,6 +956,8 @@
   {
     "id": "operational-skill",
     "title": "Reproducible operating guide",
+    "benefit": "Keep project instructions, decisions and evidence discoverable and current.",
+    "requirement": "Provide reproducible operating guide with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
     "evidence": []
@@ -751,6 +965,8 @@
   {
     "id": "readme-prompt-banner",
     "title": "Canonical prompt banner",
+    "benefit": "Understand how the canonical instruction repository distributes its own content.",
+    "requirement": "Provide canonical prompt banner with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
     "evidence": []
@@ -758,6 +974,8 @@
   {
     "id": "canonical-portable-editions",
     "title": "Canonical portable instruction editions",
+    "benefit": "Understand how the canonical instruction repository distributes its own content.",
+    "requirement": "Provide canonical portable instruction editions with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
     "evidence": []
@@ -765,6 +983,8 @@
   {
     "id": "project-profile",
     "title": "Canonical scoped project profile",
+    "benefit": "Understand how the canonical instruction repository distributes its own content.",
+    "requirement": "Provide canonical scoped project profile with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
     "evidence": []
@@ -772,6 +992,8 @@
   {
     "id": "roblox-model-catalogue",
     "title": "Shared Roblox model integration",
+    "benefit": "Understand the native acceptance requirements for game projects.",
+    "requirement": "Provide shared roblox model integration with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Game-specific requirement; this sample is not a Roblox game.",
     "evidence": []
@@ -779,6 +1001,8 @@
   {
     "id": "roblox-visual-realism",
     "title": "Native Roblox visual realism",
+    "benefit": "Understand the native acceptance requirements for game projects.",
+    "requirement": "Provide native roblox visual realism with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
     "status": "incomplete",
     "reason": "Game-specific requirement; this sample is not a Roblox game.",
     "evidence": []
