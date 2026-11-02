@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commonplace setup</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#0D1526}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+.steps-mini{display:none}
+@media (max-width:640px){.steps-full{display:none!important}.steps-mini{display:flex}.setup-side{padding:20px 16px!important;gap:16px!important}.setup-main{border-radius:24px 24px 0 0!important;padding:32px 16px!important}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #0D1526; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5; display: flex; flex-wrap: wrap">
+
+<aside class="setup-side" style="flex: 1 1 360px; min-width: 0; padding: 48px 40px; display: flex; flex-direction: column; gap: 40px; color: #FFFFFF; box-sizing: border-box">
+<div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em">Commonplace</span>
+<span style="font-size: 13px; color: #C9D2E3">Set up your workspace</span>
+</div>
+<div class="steps-mini" aria-hidden="true" style="align-items: center; gap: 10px; color: #C9D2E3; font-size: 14px"><span style="display: flex; gap: 4px"><span style="width: 28px; height: 6px; border-radius: 3px; background: #8EA2FF"></span><span style="width: 28px; height: 6px; border-radius: 3px; background: #FFFFFF"></span><span style="width: 28px; height: 6px; border-radius: 3px; background: #3A4A66"></span></span>Look and comfort</div>
+<ol class="steps-full" style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px">
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 14px">
+<span class="ms" aria-hidden="true" style="color: #8EA2FF; font-size: 24px; width: 24px; height: 24px">check_circle</span>
+<span style="display: flex; flex-direction: column"><span style="font-weight: 600">Language</span><span style="color: #C9D2E3; font-size: 14px">Bilingual</span></span>
+</li>
+<li aria-current="step" style="display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 14px; background: #1B2740">
+<span aria-hidden="true" style="width: 24px; height: 24px; flex: none; border-radius: 50%; background: #FFFFFF; color: #0D1526; display: grid; place-items: center; font-size: 13px; font-weight: 700">2</span>
+<span style="display: flex; flex-direction: column"><span style="font-weight: 600">Look and comfort</span><span style="color: #C9D2E3; font-size: 14px">Theme, text size, motion</span></span>
+</li>
+<li style="display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 14px">
+<span aria-hidden="true" style="width: 24px; height: 24px; flex: none; box-sizing: border-box; border-radius: 50%; border: 2px solid #5D6B86; color: #C9D2E3; display: grid; place-items: center; font-size: 13px; font-weight: 700">3</span>
+<span style="display: flex; flex-direction: column"><span style="font-weight: 600">First task</span><span style="color: #C9D2E3; font-size: 14px">Optional</span></span>
+</li>
+</ol>
+<p class="steps-full" style="margin: auto 0 0; color: #C9D2E3; font-size: 14px; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">cloud_off</span>Progress is saved in this browser, so you can leave and resume.</p>
+</aside>
+
+<main class="setup-main" style="flex: 999 1 560px; min-width: 0; background: #F3F5F9; border-radius: 28px 0 0 28px; padding: 72px 48px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center">
+<div style="width: 100%; max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<div>
+<p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #475467">Step 2 of 3</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -0.03em">Make it comfortable.</h1>
+<p lang="yue-Hant" style="margin: 8px 0 0; color: #475467; font-size: 18px">調整到用得舒服。</p>
+</div>
+
+<div role="group" aria-label="Theme" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; max-width: 640px">
+<button type="button" aria-pressed="true" style="padding: 14px; border: 2px solid #2546D6; border-radius: 18px; background: #FFFFFF; color: #0D1526; text-align: left; display: flex; flex-direction: column; gap: 12px; cursor: pointer">
+<span aria-hidden="true" style="height: 96px; border-radius: 12px; background: #F3F5F9; display: flex; gap: 8px; padding: 12px; box-sizing: border-box"><span style="flex: 1; border-radius: 8px; background: #FFFFFF"></span><span style="flex: 1; border-radius: 8px; background: #FFEEDD"></span><span style="flex: 1; border-radius: 8px; background: #E8EDFF"></span></span>
+<span style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span>Light</span>
+</button>
+<button type="button" aria-pressed="false" style="padding: 14px; border: 1px solid #DCE2EC; border-radius: 18px; background: #FFFFFF; color: #0D1526; text-align: left; display: flex; flex-direction: column; gap: 12px; cursor: pointer">
+<span aria-hidden="true" style="height: 96px; border-radius: 12px; background: #0B1220; display: flex; gap: 8px; padding: 12px; box-sizing: border-box"><span style="flex: 1; border-radius: 8px; background: #172238"></span><span style="flex: 1; border-radius: 8px; background: #3A2412"></span><span style="flex: 1; border-radius: 8px; background: #1B2A5C"></span></span>
+<span style="font-weight: 600; padding-left: 2px">Dark</span>
+</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px; padding: 20px; border-radius: 18px; background: #FFFFFF; border: 1px solid #DCE2EC">
+<label style="display: flex; flex-direction: column; gap: 10px">
+<span style="display: flex; justify-content: space-between; font-weight: 600">Text size <output style="font-variant-numeric: tabular-nums; color: #2546D6">110%</output></span>
+<input type="range" min="85" max="150" step="5" value="110" style="accent-color: #2546D6; width: 100%">
+</label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; border-top: 1px solid #EEF1F6; padding-top: 12px">
+<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
+<span>Reduce motion</span>
+</label>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: space-between">
+<button type="button" style="min-height: 48px; padding: 0 20px 0 14px; border: 1px solid #DCE2EC; border-radius: 14px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">arrow_back</span>Back</button>
+<a href="Main.dc.html" style="min-height: 48px; padding: 0 16px 0 22px; border-radius: 14px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; text-decoration: none">Continue<span class="ms" aria-hidden="true">arrow_forward</span></a>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
