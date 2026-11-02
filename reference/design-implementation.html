@@ -70,4 +70,26 @@
 <p>entrypoint check passed; static build passed (pre-commit dirty-source provenance,</p>
 <p>not release evidence). <code>git fetch origin main</code> immediately before finalization</p>
 <p>reported no incoming commits relative to baseline <code>0522716</code>; no merge, force</p>
-<p>push, remote mutation, or edit to original designer files was performed.</p></body></html>
+<p>push, remote mutation, or edit to original designer files was performed.</p>
+<h2>Second pass (redesign follow-up)</h2>
+<ul>
+<li>Empty search queries now select every item directly instead of waiting for a</li>
+</ul>
+<p>  regex worker. Before this, a slow cold worker start could hit the 150 ms limit</p>
+<p>  and hide every guide walkthrough and every ledger row until the visitor typed.</p>
+<ul>
+<li>Ledger rows colour their status (partial in cobalt, incomplete in amber), and</li>
+</ul>
+<p>  the ledger heading shows live counts per status next to the total.</p>
+<ul>
+<li>Search fields have a visible placeholder and a search glyph; their status</li>
+</ul>
+<p>  line is smaller and muted.</p>
+<ul>
+<li>The Light and Dark theme choices preview their palettes, like the reference</li>
+</ul>
+<p>  theme tiles. Settings is still the accessible modal, not a separate route.</p>
+<ul>
+<li>Verified by rendering the built site at 1440 and 390 wide (no horizontal</li>
+</ul>
+<p>  overflow); this is not a full parity or accessibility certification.</p></body></html>

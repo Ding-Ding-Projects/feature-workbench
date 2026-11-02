@@ -65,3 +65,17 @@ entrypoint check passed; static build passed (pre-commit dirty-source provenance
 not release evidence). `git fetch origin main` immediately before finalization
 reported no incoming commits relative to baseline `0522716`; no merge, force
 push, remote mutation, or edit to original designer files was performed.
+
+## Second pass (redesign follow-up)
+
+- Empty search queries now select every item directly instead of waiting for a
+  regex worker. Before this, a slow cold worker start could hit the 150 ms limit
+  and hide every guide walkthrough and every ledger row until the visitor typed.
+- Ledger rows colour their status (partial in cobalt, incomplete in amber), and
+  the ledger heading shows live counts per status next to the total.
+- Search fields have a visible placeholder and a search glyph; their status
+  line is smaller and muted.
+- The Light and Dark theme choices preview their palettes, like the reference
+  theme tiles. Settings is still the accessible modal, not a separate route.
+- Verified by rendering the built site at 1440 and 390 wide (no horizontal
+  overflow); this is not a full parity or accessibility certification.

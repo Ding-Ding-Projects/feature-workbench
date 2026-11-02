@@ -114,3 +114,21 @@ dialog:has(.preferences){width:min(960px,calc(100vw - 28px));background:var(--bg
 @media(pointer:coarse){button,.button,.text-button,.card-bottom button,.task-select{min-height:44px}}
 
 :root{--on-surface:var(--ink);--primary:var(--accent)}
+
+/* Redesign pass 2: ledger status colours, search field, theme preview tiles (design/HANDOFF.md). */
+.ledger-counts{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.badge[data-status]{border:0;font-weight:600}
+.badge[data-status=partial]{background:#e8edff;color:#16309f}
+.badge[data-status=incomplete]{background:#ffeedd;color:#7a2f06}
+.badge[data-status=complete]{background:#e3f4ea;color:#14532d}
+:root[data-theme=dark] .badge[data-status=partial]{background:#1b2a5c;color:#b9c6ff}
+:root[data-theme=dark] .badge[data-status=incomplete]{background:#3a2412;color:#ffd2ad}
+:root[data-theme=dark] .badge[data-status=complete]{background:#163a28;color:#bfe9cf}
+.sb-root .sb-row input.sb-query[type=search]{min-height:44px;border:1px solid var(--line);border-radius:12px;background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E") no-repeat 12px 50%;padding:0 12px 0 38px;font-size:.95rem;color:var(--ink)}
+.sb-root .sb-row input.sb-query::placeholder{color:var(--muted)}
+.sb-root .sb-row>button{min-height:44px;border-radius:12px;font-size:.87rem;font-weight:600}
+.sb-root .sb-status{margin-top:6px;font-size:.8rem;color:var(--muted)}
+button[data-choice=theme]{flex-direction:column;align-items:stretch;gap:8px;min-width:120px;padding:10px 12px 12px;border-radius:14px}
+button[data-choice=theme]::before{content:"";display:block;height:44px;border-radius:10px;background:linear-gradient(90deg,#ffffff 0 30%,transparent 30% 35%,#ffeedd 35% 65%,transparent 65% 70%,#e8edff 70%) padding-box,#f3f5f9;border:6px solid #f3f5f9}
+button[data-choice=theme][data-value=dark]::before{background:linear-gradient(90deg,#172238 0 30%,transparent 30% 35%,#3a2412 35% 65%,transparent 65% 70%,#1b2a5c 70%) padding-box,#0b1220;border-color:#0b1220}
+button[data-choice=theme][aria-pressed=true]{outline:2px solid var(--accent);outline-offset:-2px}
