@@ -69,7 +69,7 @@
    "x": 0,
    "y": 0,
    "w": 1440,
-   "h": 7690,
+   "h": 8343,
    "title": "Language, voice and personalization",
    "expand": "fill",
    "page": "features"
@@ -87,7 +87,7 @@
    "x": 3040,
    "y": 0,
    "w": 1440,
-   "h": 6775,
+   "h": 7078,
    "title": "Appearance and layout",
    "expand": "fill",
    "page": "features"
@@ -150,7 +150,7 @@
    "x": 13680,
    "y": 0,
    "w": 1440,
-   "h": 5666,
+   "h": 6107,
    "title": "Landing site and shared links",
    "expand": "fill",
    "page": "features"
@@ -168,7 +168,7 @@
    "x": 16720,
    "y": 0,
    "w": 1440,
-   "h": 4681,
+   "h": 5014,
    "title": "Release pipeline",
    "expand": "fill",
    "page": "features"
@@ -186,7 +186,7 @@
    "x": 19760,
    "y": 0,
    "w": 1440,
-   "h": 2048,
+   "h": 2095,
    "title": "Canonical instruction deliverables",
    "expand": "fill",
    "page": "features"

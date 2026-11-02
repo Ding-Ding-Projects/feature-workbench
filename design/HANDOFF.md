@@ -59,7 +59,7 @@ Every one of the 112 features tracked in `src/features.json` (statuses as of `81
 
 Each card shows the feature id and status, a one-line summary, what it must do, the proof it needs, and a drawn mock of the feature working in the Commonplace look. Each page has a jump list. Sample values in mocks (versions, counts, commits, codes like `000 000`) are illustrative only. Mocks never claim a feature has shipped; status pills follow the ledger.
 
-Eleven features had no detailed specification under their id (food discovery and its photo source, release food code names and photo, mobile site, responsive layout matrix, private documentation companion, wiki sync, public evidence gallery, dialog tone and emoji, portable editions); their cards are drawn from the public requirement text and are thinner.
+Eleven features are filed in the source catalogue under a different internal id than the public id used here (food discovery and its photo source, release food code names and photo, mobile site, responsive layout matrix, private documentation companion, wiki sync, public evidence gallery, dialog tone and emoji, portable editions). Their cards were first drawn from the short public requirement and have since been rewritten from the full specifications.
 
 ## Source version
 

@@ -457,78 +457,92 @@ button{font:inherit}
 <!-- 11 tone-and-dialog-emoji -->
 <article id="tone-and-dialog-emoji" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
 <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow-wrap: anywhere">tone-and-dialog-emoji</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow-wrap: anywhere">tone-and-dialog-emoji</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="color: currentColor; font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
 <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em">Independent language tone and dialog emoji</h2>
-<p style="margin: 0; color: #0D1526">Sets how playful messages sound in each language separately, without changing what they say.</p>
+<p style="margin: 0; color: #0D1526">Sets how playful messages sound in English and in Cantonese separately, from fully serious to most playful, without changing any fact.</p>
 <p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px">
-<li>Separate tone levels from 1 (serious) to 5 for English and for Cantonese, each saved on its own.</li>
-<li>Tone restyles messages, errors and warnings, but the facts they state never change.</li>
-<li>A separate switch adds emoji to dialogs and message boxes only, nowhere else.</li>
+<li>Two separate sliders, English and Cantonese, from 1 (fully serious) to 5 (most playful). Both start at 5, are saved, and reset on their own.</li>
+<li>Every kind of message follows them, including errors and destructive, security, payment and accessibility messages. The voice changes but the facts stay the same.</li>
+<li>The setting says so itself, and first-run setup says it too.</li>
+<li>A separate saved switch adds one relevant, decorative emoji to each dialog message. Buttons, labels and accessible names never get one.</li>
 </ul>
-<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Each level in both languages, same facts at every level, emoji limited to dialogs.</span></p>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Copy changes at every level in both languages, facts identical at levels 1 and 5, emoji switch saved and fitting narrow layouts.</span></p>
 </div>
-<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
-<div style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 16px; display: flex; flex-direction: column; gap: 16px">
-<label style="display: flex; flex-direction: column; gap: 8px">
-<span style="display: flex; justify-content: space-between; font-weight: 600">English tone <output style="font-variant-numeric: tabular-nums; color: #2546D6">1</output></span>
-<input type="range" min="1" max="5" value="1" style="accent-color: #2546D6; width: 100%">
-</label>
-<label style="display: flex; flex-direction: column; gap: 8px">
-<span style="display: flex; justify-content: space-between; font-weight: 600">Cantonese tone <output style="font-variant-numeric: tabular-nums; color: #2546D6">4</output></span>
-<input type="range" min="1" max="5" value="4" style="accent-color: #2546D6; width: 100%">
-</label>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 16px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-weight: 600">Message tone</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px"><label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px"><span style="display: flex; justify-content: space-between; font-weight: 600">English <output style="font-variant-numeric: tabular-nums; color: #2546D6">1</output></span><input type="range" min="1" max="5" value="1" style="accent-color: #2546D6; width: 100%"></label>
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; padding-left: 12px"><span class="ms" aria-hidden="true" style="color: #0D1526; font-size: 20px; width: 20px; height: 20px">restart_alt</span>Reset</button></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #475467; padding-right: 0"><span>1 Fully serious</span><span>5 Most playful</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px"><label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px"><span style="display: flex; justify-content: space-between; font-weight: 600">Cantonese <output style="font-variant-numeric: tabular-nums; color: #2546D6">5</output></span><input type="range" min="1" max="5" value="5" style="accent-color: #2546D6; width: 100%"></label>
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; padding-left: 12px"><span class="ms" aria-hidden="true" style="color: #0D1526; font-size: 20px; width: 20px; height: 20px">restart_alt</span>Reset</button></div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #475467; padding-right: 0"><span>1 Fully serious</span><span>5 Most playful</span></div>
+</div>
+<p style="margin: 0; display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 18px; width: 18px; height: 18px">info</span><span>Tone changes how messages sound, never what they say. Errors and warnings follow it too.</span></p>
 <label style="display: flex; align-items: center; gap: 12px; min-height: 44px; border-top: 1px solid #DCE2EC; padding-top: 8px">
-<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
+<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
 <span>Show emojis in dialogs and message boxes</span>
 </label>
 </div>
-<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 12px 16px; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 12px; font-weight: 600; color: #475467">English, level 1</span>
-<span>Could not save. Storage is full.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; flex: 1 1 220px; min-width: 0"><span style="font-size: 12px; font-weight: 600; color: #475467">English, level 1</span><span>Could not save. Storage is full.</span></div>
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; flex: 1 1 220px; min-width: 0"><span style="font-size: 12px; font-weight: 600; color: #475467">Cantonese, level 5</span><span lang="yue-Hant">哎呀，儲存空間爆咗，存唔到呀！</span></div>
 </div>
-<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 12px 16px; display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 12px; font-weight: 600; color: #475467">Cantonese, level 4</span>
-<span lang="yue-Hant">哎呀，儲存空間爆咗，存唔到呀！</span>
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 16px 20px; display: flex; flex-direction: column; gap: 8px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px">Delete this task?</div>
+<p style="margin: 0; color: #475467; font-size: 14px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 2px 6px; border-radius: 6px; background: #EEF1F6; color: #475467">[EMOJI]</span> You can bring it back from local history.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; padding-top: 4px"><button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; white-space: nowrap">Cancel</button><button type="button" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Delete</button></div>
+<p style="margin: 0; font-size: 12px; color: #475467">One emoji in the message only. Never in the title, buttons or accessible names.</p>
 </div>
-<p style="margin: 0; font-size: 13px; color: #475467">Same fact, different tone.</p>
-</div>
-<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 16px; display: flex; flex-direction: column; gap: 4px"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; padding-top: 4px">Delete this task?</div><p style="margin: 0; color: #475467; font-size: 14px">You can bring it back from local history.</p><div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; padding-top: 8px"><button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; white-space: nowrap">Cancel</button><button type="button" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Delete</button></div></div>
 </div>
 </article>
 
 <!-- 12 food-discovery -->
 <article id="food-discovery" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
 <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow-wrap: anywhere">food-discovery</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow-wrap: anywhere">food-discovery</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="color: currentColor; font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
 <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em">Food discovery at startup</h2>
-<p style="margin: 0; color: #0D1526">Greets you at startup with one short, factual food card that is easy to dismiss or turn off.</p>
+<p style="margin: 0; color: #0D1526">Now and then at startup, briefly shows one dim sum dish with its English and Cantonese names and a photo, then gets out of the way.</p>
 <p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px">
-<li>Show one short, bounded discovery card at startup that never blocks the workspace.</li>
-<li>Content is factual; every control is reachable and dismissible by keyboard.</li>
-<li>A persisted option stops it appearing at startup.</li>
-<li>It is suppressed entirely while the restricted presentation mode is on.</li>
+<li>Draw once per launch with a 10% chance; if it hits, show one randomly chosen dish, never more than once.</li>
+<li>Show the English and Cantonese names and the photo, with alt text naming the dish. It dismisses itself, never delays startup and never takes focus.</li>
+<li>Never show during first-run setup, an error, an update or a task in progress. Respect reduced motion and quiet settings.</li>
+<li>There is no off switch: any old one is removed and stored preferences carry forward. The shared distraction-reduction mode hides it completely.</li>
+<li>Photos come only from the public photo catalog described in the next card.</li>
 </ul>
-<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Startup timing bound, keyboard dismissal, opt-out persistence and suppression.</span></p>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Draw rate and one show per launch, absence in every excluded flow, no third-party CDN or tracking, hidden in distraction-reduction mode.</span></p>
 </div>
-<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; justify-content: center">
-<div style="flex: 0 1 420px; min-width: 0; background: #FFFFFF; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.14), 0 1px 2px rgba(13,21,38,.06); overflow: hidden; display: flex; flex-direction: column">
-<div style="height: 140px; background: #FFEEDD; display: grid; place-items: center; color: #C2570C"><span class="ms" aria-hidden="true" style="font-size: 40px; width: 40px; height: 40px">bakery_dining</span></div>
-<div style="padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 12px; font-weight: 600; color: #475467">Something to try</span>
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px">Pineapple bun <span lang="yue-Hant" style="font-family: 'Noto Sans HK', sans-serif; font-weight: 500; font-size: 15px; color: #475467">菠蘿包</span></div>
-<p style="margin: 0; color: #475467; font-size: 14px">A sweet Hong Kong bun named for its crackly top. It contains no pineapple.</p>
-<label style="display: flex; align-items: center; gap: 12px; min-height: 44px">
-<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none">
-<span style="font-size: 14px">Don't show at startup</span>
-</label>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end">
-<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Close</button>
-<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 0; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">arrow_forward</span>Another</button>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); overflow: hidden">
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #DCE2EC"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; flex: 1 1 auto">Workspace</span><span aria-hidden="true" style="height: 8px; width: 80px; border-radius: 4px; background: #DCE2EC"></span></div>
+<div style="padding: 16px; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end">
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div style="border-radius: 12px; background: #E9EDF4; padding: 12px; display: flex; flex-direction: column; gap: 8px"><span aria-hidden="true" style="height: 8px; width: 60%; border-radius: 4px; background: #DCE2EC"></span><span aria-hidden="true" style="height: 8px; width: 45%; border-radius: 4px; background: #DCE2EC"></span></div>
+<div style="border-radius: 12px; background: #E9EDF4; padding: 12px; display: flex; flex-direction: column; gap: 8px"><span aria-hidden="true" style="height: 8px; width: 52%; border-radius: 4px; background: #DCE2EC"></span><span aria-hidden="true" style="height: 8px; width: 70%; border-radius: 4px; background: #DCE2EC"></span></div>
+</div>
+<div style="flex: 0 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.14); overflow: hidden">
+<div style="display: flex; gap: 12px; padding: 12px; align-items: center">
+<div title="Photo of har gow, translucent shrimp dumplings" style="width: 64px; height: 64px; flex: none; border-radius: 10px; background: #FFEEDD; display: grid; place-items: center; color: #C2570C"><span class="ms" aria-hidden="true" style="color: #C2570C; font-size: 24px; width: 24px; height: 24px">image</span></div>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 600; color: #475467">Dim sum surprise</span><span style="font-weight: 600">Har gow <span lang="yue-Hant" style="font-weight: 500; color: #475467">蝦餃</span></span><span style="font-size: 13px; color: #475467">Shrimp dumplings</span></div>
+<button type="button" aria-label="Dismiss" style="width: 44px; height: 44px; flex: none; padding: 0; border: 0; border-radius: 12px; background: transparent; color: #475467; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">close</span></button>
+</div>
+<div aria-hidden="true" style="height: 4px; background: #E9EDF4"><div style="height: 4px; width: 60%; background: #2546D6"></div></div>
 </div>
 </div>
+</div>
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 8px 16px">
+<div style="font-weight: 600; padding: 8px 0 4px">When it may appear</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid #E9EDF4;"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 20px; width: 20px; height: 20px">casino</span><span style="flex: 1 1 160px; min-width: 0">Normal launch</span><span style="font-size: 13px; font-weight: 600; color: #16309F">1 in 10, once</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid #E9EDF4;"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">rocket_launch</span><span style="flex: 1 1 160px; min-width: 0">First-run setup</span><span style="font-size: 13px; font-weight: 600; color: #475467">Never</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid #E9EDF4;"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">error</span><span style="flex: 1 1 160px; min-width: 0">An error on screen</span><span style="font-size: 13px; font-weight: 600; color: #475467">Never</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid #E9EDF4;"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">system_update</span><span style="flex: 1 1 160px; min-width: 0">Update in progress</span><span style="font-size: 13px; font-weight: 600; color: #475467">Never</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0; border-bottom: 1px solid #E9EDF4;"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">pending_actions</span><span style="flex: 1 1 160px; min-width: 0">A task in progress</span><span style="font-size: 13px; font-weight: 600; color: #475467">Never</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0;"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">do_not_disturb_on</span><span style="flex: 1 1 160px; min-width: 0">Distraction-reduction mode</span><span style="font-size: 13px; font-weight: 600; color: #475467">Never</span></div>
 </div>
 </div>
 </article>
@@ -536,37 +550,42 @@ button{font:inherit}
 <!-- 13 food-photo-provenance -->
 <article id="food-photo-provenance" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
 <div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow-wrap: anywhere">food-photo-provenance</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow-wrap: anywhere">food-photo-provenance</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="color: currentColor; font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
 <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.01em">Verified food photograph source</h2>
-<p style="margin: 0; color: #0D1526">Shows food photographs only from an approved catalog, always with their credit.</p>
+<p style="margin: 0; color: #0D1526">Shows dish photos only from the one public photo catalog, and says plainly when a photo is missing instead of filling the gap.</p>
 <p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 14px">
-<li>Load approved photographs only through the authorized catalog, by id.</li>
-<li>Show the credit and licence with every photograph.</li>
-<li>Never copy image files into this app's source.</li>
+<li>The only source is the public dim sum photo catalog: its <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px">catalog/index.json</code> names are authoritative and its published <code style="font-family: 'JetBrains Mono', monospace; font-size: 13px">catalog-v1</code> release assets are the only photos.</li>
+<li>Load photos by their public asset URL or from an application-data cache that records the source URL and revision.</li>
+<li>Never generate, download, scrape or copy photos into this repository; any old copies are moved out.</li>
+<li>A missing photo is left out with a visible unavailable state and reported, never filled in locally.</li>
+<li>The archive repository is for recovery and audit only, never a live source.</li>
 </ul>
-<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Each photo traced to its catalog entry, credit visible, no image files in source.</span></p>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>No tracked dish image or catalog copy in the repository, cache source and revision recorded, a screenshot of the unavailable-image state.</span></p>
 </div>
 <div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
-<div style="flex: 1 1 140px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px"><span class="ms" aria-hidden="true" style="color: #2546D6">photo_library</span><span style="font-weight: 600; font-size: 14px">Approved catalog</span></div>
-<span class="ms" aria-hidden="true" style="color: #475467">arrow_forward</span>
-<div style="flex: 1 1 140px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px"><span class="ms" aria-hidden="true" style="color: #2546D6">verified</span><span style="font-weight: 600; font-size: 14px">Resolve by id</span></div>
-<span class="ms" aria-hidden="true" style="color: #475467">arrow_forward</span>
-<div style="flex: 1 1 140px; min-width: 0; background: #E8EDFF; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px; color: #16309F"><span class="ms" aria-hidden="true">image</span><span style="font-weight: 600; font-size: 14px">Show with credit</span></div>
+<div style="flex: 1 1 150px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 20px; width: 20px; height: 20px">photo_library</span><span style="font-weight: 600; font-size: 14px">Public photo catalog</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #475467; overflow-wrap: anywhere">catalog/index.json</span></div><span aria-hidden="true" style="flex: none; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">arrow_forward</span></span><div style="flex: 1 1 150px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 20px; width: 20px; height: 20px">inventory_2</span><span style="font-weight: 600; font-size: 14px">Release assets</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #475467; overflow-wrap: anywhere">catalog-v1</span></div><span aria-hidden="true" style="flex: none; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 20px; width: 20px; height: 20px">arrow_forward</span></span><div style="flex: 1 1 150px; min-width: 0; background: #E8EDFF; color: #16309F; border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 4px"><span class="ms" aria-hidden="true" style="color: #16309F; font-size: 20px; width: 20px; height: 20px">image</span><span style="font-weight: 600; font-size: 14px">Shown in the app</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #16309F; overflow-wrap: anywhere">by URL or cache</span></div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
-<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); overflow: hidden">
-<div style="height: 110px; background: #FFEEDD; display: grid; place-items: center; color: #C2570C"><span class="ms" aria-hidden="true" style="font-size: 32px; width: 32px; height: 32px">image</span></div>
-<div style="padding: 12px 16px; font-size: 13px; color: #475467">Photo: [PHOTOGRAPHER] · CC BY 4.0</div>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); overflow: hidden">
+<div style="height: 110px; background: #FFEEDD; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="color: #C2570C; font-size: 32px; width: 32px; height: 32px">image</span></div>
+<div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Har gow <span lang="yue-Hant" style="font-weight: 500; color: #475467">蝦餃</span></span><span style="font-size: 13px; color: #475467">From the public photo catalog, catalog-v1</span></div>
 </div>
-<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 12px 16px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 13px; font-weight: 600; color: #475467">Source check</span>
-<span style="display: flex; align-items: center; gap: 8px; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 18px; width: 18px; height: 18px">check_circle</span>Catalog id <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">photo-0142</span></span>
-<span style="display: flex; align-items: center; gap: 8px; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 18px; width: 18px; height: 18px">check_circle</span>No image files in source</span>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); overflow: hidden">
+<div style="height: 110px; background: #FFFFFF; border-bottom: 1px dashed #DCE2EC; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #475467; padding: 8px; text-align: center"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 32px; width: 32px; height: 32px">hide_image</span><span style="font-size: 13px; font-weight: 600">Photo unavailable</span></div>
+<div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Siu mai <span lang="yue-Hant" style="font-weight: 500; color: #475467">燒賣</span></span><span style="font-size: 13px; color: #475467">Shown without a photo and reported. Nothing filled in locally.</span></div>
 </div>
 </div>
-<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 12px 16px; display: flex; flex-direction: column; gap: 4px"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0;"><span class="ms" aria-hidden="true" style="color: #C2570C; font-size: 20px; width: 20px; height: 20px">block</span><span style="flex: 1 1 140px; min-width: 0">Unlisted image from a web search</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Blocked: not in the catalog</span></div></div>
+<div style="background: #0D1526; color: #C9D2E3; border-radius: 14px; padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6; overflow-x: auto; white-space: nowrap">
+<div style="color: #B9C6FF">cache record, har-gow</div>
+<div>source&nbsp;&nbsp;&nbsp;&nbsp;catalog-v1/har-gow.jpg</div>
+<div>revision&nbsp;&nbsp;catalog-v1.2</div>
+<div>stored&nbsp;&nbsp;&nbsp;&nbsp;app data only</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.06); padding: 4px 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 6px 0"><span class="ms" aria-hidden="true" style="color: #C2570C; font-size: 20px; width: 20px; height: 20px">block</span><span style="flex: 1 1 200px; min-width: 0">Copy a photo into this repository</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Not allowed</span></div>
+</div>
 </div>
 </article>
 
@@ -580,7 +599,7 @@ button{font:inherit}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7690}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8343}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }
