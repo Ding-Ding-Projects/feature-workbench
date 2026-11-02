@@ -18,9 +18,10 @@ wraps instead. Top version and source timestamp remain visible by contract.
 
 ## Deliberate deviations and unresolved parity
 
-- Typography uses OS/system sans-serif, not Bricolage Grotesque, Inter or Noto
-  Sans HK. Provenance uses local monospace fallbacks, not JetBrains Mono. No font
-  was fetched or vendored; there are no new remote/CDN loads or licensing claims.
+- Bricolage Grotesque, Inter, Noto Sans HK and JetBrains Mono are now vendored
+  from reviewed pinned official sources with their original OFL licenses. See
+  font-provenance.md. Runtime loading and visual comparison still need proof;
+  system fallbacks remain available without remote/CDN loads.
 - Existing text/native controls remain. Material Symbols were not acquired. This
   is **not genuine Material 3 component compliance**; the app's disclaimer stays.
 - Settings remains the working accessible modal with all current settings. It is

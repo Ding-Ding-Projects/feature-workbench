@@ -52,8 +52,8 @@ const copy = {
 };
 /** onChange must synchronously accept/persist the complete config; getConfig supplies its latest value.
  * Returned section.refresh(date?) updates only the live clock preview, without destroying edits. */
-export function createSchedulePanel({language = 'en', getConfig, onChange}) {
-  const pair = p => language === 'yue' ? p[1] : language === 'both' ? p.join(' · ') : p[0];
+export function createSchedulePanel({language = 'en', getConfig, onChange, transformText = value => value}) {
+  const pair = p => transformText(language === 'yue' ? p[1] : language === 'both' ? p.join(' · ') : p[0]);
   const t = key => pair(copy[key]);
   const el = (tag, text) => { const node = document.createElement(tag); if (text) node.textContent = text; return node; };
   const root = el('section'); root.id = 'theme-schedules';
@@ -94,7 +94,7 @@ export function createSchedulePanel({language = 'en', getConfig, onChange}) {
     const save = el('button',t('saveZone')); save.type = 'submit'; form.append(save);
     form.addEventListener('submit',event => { event.preventDefault(); if (commit({...getConfig(),enabled:enabled.checked,timeZone:zone.value.trim()})) root.refresh(); });
     if (!config.rules.length) list.append(el('p',t('empty')));
-    for (const rule of config.rules) { const item = el('div'); item.append(el('p',`${rule.label} — ${t(rule.enabled ? 'active' : 'inactive')} — ${rule.start}–${rule.end} — ${t(rule.theme)} — ${t('priority')}: ${rule.priority}`)); button(item,'edit',() => editRule(rule)).setAttribute('aria-label',`${t('edit')}: ${rule.label}`); button(item,'remove',() => { if (commit({...getConfig(),rules:getConfig().rules.filter(r => r.id !== rule.id)})) { editor.replaceChildren(); render(); add.focus(); } }).setAttribute('aria-label',`${t('remove')}: ${rule.label}`); list.append(item); }
+    for (const rule of config.rules) { const item = el('div'); item.append(el('p',`${rule.label} · ${t(rule.enabled ? 'active' : 'inactive')} · ${rule.start}–${rule.end} · ${t(rule.theme)} · ${t('priority')}: ${rule.priority}`)); button(item,'edit',() => editRule(rule)).setAttribute('aria-label',`${t('edit')}: ${rule.label}`); button(item,'remove',() => { if (commit({...getConfig(),rules:getConfig().rules.filter(r => r.id !== rule.id)})) { editor.replaceChildren(); render(); add.focus(); } }).setAttribute('aria-label',`${t('remove')}: ${rule.label}`); list.append(item); }
     add = button(list,'add',() => editRule()); add.disabled = config.rules.length >= 32; root.refresh();
   }
   render(); return root;

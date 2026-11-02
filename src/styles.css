@@ -112,3 +112,5 @@ dialog:has(.preferences){width:min(960px,calc(100vw - 28px));background:var(--bg
   .bottom-note a{max-width:100%;overflow-wrap:anywhere}footer{padding:22px 16px}.search-line{min-width:0}
 }
 @media(pointer:coarse){button,.button,.text-button,.card-bottom button,.task-select{min-height:44px}}
+
+:root{--on-surface:var(--ink);--primary:var(--accent)}
