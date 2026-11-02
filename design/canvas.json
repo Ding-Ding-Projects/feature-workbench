@@ -1,20 +1,243 @@
 {
-  "v": 3,
-  "createdOnFiles": {"v": 1, "at": "2026-11-02T05:58:00Z"},
-  "title": "Commonplace Redesign",
-  "launch": {"view": "canvas"},
-  "pages": [],
-  "boards": {
-    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 950, "title": "Workspace (desktop)", "expand": "fill", "is_interactive": true},
-    "Guide.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 1448, "title": "Field guide + capability ledger", "expand": "fill"},
-    "Settings.dc.html": {"x": 0, "y": 1868, "w": 1440, "h": 1278, "title": "Settings", "expand": "fill"},
-    "Setup.dc.html": {"x": 1520, "y": 1868, "w": 1440, "h": 900, "title": "Setup wizard, step 2 of 3", "expand": "fill"},
-    "Mobile.dc.html": {"x": 3040, "y": 1868, "w": 390, "h": 844, "title": "Phone workspace (dark)", "is_interactive": true}
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-02T05:58:00Z"
+ },
+ "title": "Commonplace Redesign",
+ "launch": {
+  "view": "canvas"
+ },
+ "pages": [
+  {
+   "id": "screens",
+   "name": "Screens"
   },
-  "order": ["Main.dc.html", "Guide.dc.html", "Settings.dc.html", "Setup.dc.html", "Mobile.dc.html"],
-  "notes": {
-    "t1": {"x": 0, "y": -300, "text": "Commonplace, redesigned: the two routes", "kind": "title1", "maxW": 2960},
-    "t2": {"x": 0, "y": 1568, "text": "Settings, setup and phone", "kind": "title1", "maxW": 3430}
+  {
+   "id": "features",
+   "name": "Feature deep dive"
+  }
+ ],
+ "boards": {
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 950,
+   "title": "Workspace (desktop)",
+   "expand": "fill",
+   "is_interactive": true,
+   "page": "screens"
   },
-  "designSystems": []
+  "Guide.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1448,
+   "title": "Field guide + capability ledger",
+   "expand": "fill",
+   "page": "screens"
+  },
+  "Settings.dc.html": {
+   "x": 0,
+   "y": 1868,
+   "w": 1440,
+   "h": 1278,
+   "title": "Settings",
+   "expand": "fill",
+   "page": "screens"
+  },
+  "Setup.dc.html": {
+   "x": 1520,
+   "y": 1868,
+   "w": 1440,
+   "h": 900,
+   "title": "Setup wizard, step 2 of 3",
+   "expand": "fill",
+   "page": "screens"
+  },
+  "Mobile.dc.html": {
+   "x": 3040,
+   "y": 1868,
+   "w": 390,
+   "h": 844,
+   "title": "Phone workspace (dark)",
+   "is_interactive": true,
+   "page": "screens"
+  },
+  "Features-Language.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 7690,
+   "title": "Language, voice and personalization",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Games.dc.html": {
+   "x": 1520,
+   "y": 0,
+   "w": 1440,
+   "h": 1838,
+   "title": "Games",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Appearance.dc.html": {
+   "x": 3040,
+   "y": 0,
+   "w": 1440,
+   "h": 6775,
+   "title": "Appearance and layout",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Navigation.dc.html": {
+   "x": 4560,
+   "y": 0,
+   "w": 1440,
+   "h": 6267,
+   "title": "Navigation, search and commands",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Safety.dc.html": {
+   "x": 6080,
+   "y": 0,
+   "w": 1440,
+   "h": 4418,
+   "title": "Safety, locks and authentication",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Records.dc.html": {
+   "x": 7600,
+   "y": 0,
+   "w": 1440,
+   "h": 4116,
+   "title": "Records, history and messages",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Tools.dc.html": {
+   "x": 9120,
+   "y": 0,
+   "w": 1440,
+   "h": 5443,
+   "title": "Built-in tools and hand-off",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-StatusHub.dc.html": {
+   "x": 10640,
+   "y": 0,
+   "w": 1440,
+   "h": 2789,
+   "title": "Status Hub",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Evidence.dc.html": {
+   "x": 12160,
+   "y": 0,
+   "w": 1440,
+   "h": 3724,
+   "title": "Completeness and evidence",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Sites.dc.html": {
+   "x": 13680,
+   "y": 0,
+   "w": 1440,
+   "h": 5666,
+   "title": "Landing site and shared links",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Build.dc.html": {
+   "x": 15200,
+   "y": 0,
+   "w": 1440,
+   "h": 5060,
+   "title": "Build and install",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Release.dc.html": {
+   "x": 16720,
+   "y": 0,
+   "w": 1440,
+   "h": 4681,
+   "title": "Release pipeline",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Repository.dc.html": {
+   "x": 18240,
+   "y": 0,
+   "w": 1440,
+   "h": 7788,
+   "title": "Repository records and README",
+   "expand": "fill",
+   "page": "features"
+  },
+  "Features-Canonical.dc.html": {
+   "x": 19760,
+   "y": 0,
+   "w": 1440,
+   "h": 2048,
+   "title": "Canonical instruction deliverables",
+   "expand": "fill",
+   "page": "features"
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "Guide.dc.html",
+  "Settings.dc.html",
+  "Setup.dc.html",
+  "Mobile.dc.html",
+  "Features-Language.dc.html",
+  "Features-Games.dc.html",
+  "Features-Appearance.dc.html",
+  "Features-Navigation.dc.html",
+  "Features-Safety.dc.html",
+  "Features-Records.dc.html",
+  "Features-Tools.dc.html",
+  "Features-StatusHub.dc.html",
+  "Features-Evidence.dc.html",
+  "Features-Sites.dc.html",
+  "Features-Build.dc.html",
+  "Features-Release.dc.html",
+  "Features-Repository.dc.html",
+  "Features-Canonical.dc.html"
+ ],
+ "notes": {
+  "t1": {
+   "x": 0,
+   "y": -300,
+   "text": "Commonplace, redesigned: the two routes",
+   "kind": "title1",
+   "maxW": 2960,
+   "page": "screens"
+  },
+  "t2": {
+   "x": 0,
+   "y": 1568,
+   "text": "Settings, setup and phone",
+   "kind": "title1",
+   "maxW": 3430,
+   "page": "screens"
+  },
+  "t3": {
+   "x": 0,
+   "y": -300,
+   "text": "Feature deep dive: all 112 tracked features",
+   "kind": "title1",
+   "maxW": 21200,
+   "page": "features"
+  }
+ },
+ "designSystems": []
 }

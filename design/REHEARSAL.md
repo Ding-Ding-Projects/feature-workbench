@@ -28,6 +28,14 @@ A separate reviewer, given only the Stageshow `review.md` and `verify.md`, the g
 | 14 | Native select chevron | Fixed: styled select with the set's chevron. |
 | 15 | Reset close to the safe actions | Fixed: divider before Reset. |
 
+## Feature deep dive review
+
+The 14 deep-dive pages were rendered at 1440 and 390 and reviewed by a separate reviewer (58 desktop tiles, 42 phone tiles). Findings and results:
+
+- Systemic: gray mock wells taller than their mocks; four different card styles across pages; the same subtitle on every card; phone mocks clipping (Games, Tools, Evidence, Build); no index on long pages; no active header tab. Fixed on all 14 pages with one shared card template, wells that hug their mocks (short mocks given more real product), a per-feature summary line, a phone rule for wells, and a jump list. Field guide is the active tab.
+- One-offs fixed: wireframe-like mocks on Evidence and Appearance redrawn with real content; Sites link preview shows a real card; Build icon inspection draws the icon at 16, 32, 48 and 256; Release timing on one grid with sample numbers; Repository estimate and Canonical link no longer outweigh card titles; Safety metadata collision and code label; Records empty strip; Language dialog inset.
+- After fixes: all 112 feature ids present as card anchors, no horizontal overflow at 1440 or 390, public-language scan clean.
+
 ## Not checked
 
 Live interaction in the canvas player, focus and hover states, dark versions of the desktop screens, Cantonese-only layouts, text at 150 %, and real touch-device input.

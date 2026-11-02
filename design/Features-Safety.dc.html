@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Safety, locks and authentication</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.well{padding:10px!important;margin:0 -12px!important;width:calc(100% + 24px)!important;border-radius:12px!important}.well *{max-width:100%}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; align-content: center; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 40px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Feature deep dive</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.04; letter-spacing: -0.03em">Safety, locks and authentication</h1>
+<p style="margin: 0; color: #475467; font-size: 17px; max-width: 720px">How Commonplace asks before consequential actions, guards what a person chooses to lock, and stays honest about what a lock can and cannot protect.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526">7 features</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>7 incomplete</span>
+</div>
+<nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#authenticator" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Built-in authenticator</a>
+<a href="#element-locks" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Independent per-element experience locks</a>
+<a href="#honest-monetization" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Clear pricing and no promotional nagging</a>
+<a href="#qr-pairing" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">QR authenticator pairing</a>
+<a href="#super-confirmation" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Two-key destructive action confirmation</a>
+<a href="#support-tickets" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Local fictional recovery desk</a>
+<a href="#unlock-ladder" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Lockout wait recovery activities</a>
+</nav>
+</section>
+
+<!-- authenticator -->
+<article id="authenticator" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">authenticator</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Built-in authenticator</h2>
+<p style="margin: 0">Keeps two-step sign-in codes for any account on this device, with copy, a countdown and the next code.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Generate standard time-based codes (SHA-1, SHA-256, SHA-512; 6 to 8 digits; any period) that match the published test vectors.</li>
+<li>Enroll by setup link, QR image, clipboard, camera where available, or a typed key.</li>
+<li>Show each code large with copy, a readable countdown and a peek at the next code; say plainly when the device clock is off.</li>
+<li>Keep secrets on this device; ordinary exports leave them out and say so, and a secrets export needs two-key confirmation.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Test vectors for every hash at 6 and 8 digits, rollover, a skewed clock and restart persistence.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 8px">
+<label style="flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467">
+<span class="ms" aria-hidden="true">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search codes</span>
+<input type="search" placeholder="Search codes" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent">
+</label>
+<button type="button" aria-label="Add an account" style="flex: none; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">add</span></button>
+</div>
+<div style="background: #E8EDFF; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-weight: 600">Example workspace</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #16309F">SHA-1 · 6 digits · 30 s</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; line-height: 1.2; letter-spacing: 0.04em; color: #0D1526; margin-right: auto">000 000</span>
+<button type="button" style="min-height: 44px; padding: 0 14px 0 12px; border: 0; border-radius: 12px; background: #FFFFFF; color: #16309F; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">content_copy</span>Copy</button>
+</div>
+<div aria-hidden="true" style="height: 6px; border-radius: 3px; background: #FFFFFF; overflow: hidden"><div style="width: 60%; height: 6px; background: #2546D6"></div></div>
+<div style="display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #16309F"><span>Refreshes in 18 s</span><span>Next code after that: <span style="font-family: 'JetBrains Mono', monospace">111 111</span></span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 8px 4px; border-top: 1px solid #E9EDF4">
+<span style="flex: 1; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 58%; height: 7px; border-radius: 4px; background: #DCE2EC"></span><span style="display: block; width: 36%; height: 6px; border-radius: 3px; background: #E9EDF4"></span></span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #475467">00 000 000</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 8px 4px; border-top: 1px solid #E9EDF4">
+<span style="flex: 1; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 44%; height: 7px; border-radius: 4px; background: #DCE2EC"></span><span style="display: block; width: 30%; height: 6px; border-radius: 3px; background: #E9EDF4"></span></span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #475467">000 000</span>
+</div>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(13,21,38,.08)">
+<span style="padding: 8px 12px 4px; font-size: 13px; font-weight: 600; color: #475467">Add an account</span>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: #EEF1F6; color: #0D1526; text-align: left; display: flex; align-items: center; gap: 10px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #2546D6">qr_code_scanner</span>Scan a QR image</button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; text-align: left; display: flex; align-items: center; gap: 10px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">content_paste</span>Paste a setup link</button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; text-align: left; display: flex; align-items: center; gap: 10px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">keyboard</span>Type a key</button>
+</div>
+<p style="margin: 0; padding: 12px 14px; border-radius: 14px; background: #FFEEDD; color: #7A2F06; font-size: 13px; display: flex; gap: 8px; align-items: flex-start"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; margin-top: 1px; color: #C2570C">info</span><span>Exports leave secrets out. A secrets export asks for two keys.</span></p>
+</div>
+</div>
+</div>
+</article>
+
+<!-- element-locks -->
+<article id="element-locks" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">element-locks</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Independent per-element experience locks</h2>
+<p style="margin: 0">Lets a person put a playful PIN, password or code lock on any single element, each with its own credentials.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Offer "Lock this element" on every element, tab, tab group and appearance value, through a small anchored wizard.</li>
+<li>Choose exactly one of six mixes: PIN, password, PIN and password, password and code, PIN and code, or all three.</li>
+<li>Give each lock its own credentials, with no master key and no inheritance; a locked element stays disabled, and no shortcut, palette jump or automation gets around it.</li>
+<li>Say on every lock that it is for fun, not security, and that clearing this site's local data resets it.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>All six mixes, keypad and typed PIN on one attempt budget, and shortcut and palette bypass attempts failing.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 1px 2px rgba(13,21,38,.06); opacity: 0.72">
+<div style="display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">lock</span><span style="font-weight: 600">Holiday plans</span></div>
+<span style="display: block; width: 70%; height: 6px; border-radius: 3px; background: #E9EDF4; margin-top: 4px"></span>
+<span style="display: block; width: 48%; height: 6px; border-radius: 3px; background: #E9EDF4"></span>
+</div>
+<button type="button" style="min-height: 44px; padding: 0 14px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; cursor: pointer"><span class="ms" aria-hidden="true">lock_open</span>Unlock this element</button>
+</div>
+<div style="flex: 2 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 8px 24px rgba(13,21,38,.08)">
+<div style="display: flex; align-items: center; gap: 8px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; flex: 1">Lock this element</span><span style="font-size: 13px; color: #475467">Step 1 of 3</span></div>
+<fieldset style="margin: 0; padding: 0; border: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px">
+<legend style="padding: 0 0 8px; font-size: 14px; font-weight: 600">Unlock with</legend>
+<label style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="mix" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none">PIN</label>
+<label style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="mix" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none">Password</label>
+<label style="min-height: 44px; padding: 0 12px; border: 2px solid #2546D6; border-radius: 12px; background: #E8EDFF; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: #16309F"><input type="radio" name="mix" checked style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none">PIN + password</label>
+<label style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="mix" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none">Password + code</label>
+<label style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="mix" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none">PIN + code</label>
+<label style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="mix" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none">All three</label>
+</fieldset>
+<p style="margin: 0; padding: 12px 14px; border-radius: 12px; background: #FFEEDD; color: #7A2F06; font-size: 13px; display: flex; gap: 8px; align-items: flex-start"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; margin-top: 1px; color: #C2570C">info</span><span>Just for fun, not security. Forgot it? Clear this site's local data to reset every lock.</span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Cancel</button>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Next</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+
+<!-- honest-monetization -->
+<article id="honest-monetization" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">honest-monetization</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Clear pricing and no promotional nagging</h2>
+<p style="margin: 0">Keeps the core free and any paid extra clearly priced, with no pop-ups asking for money or reviews.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Stay free by default; charging is the owner's deliberate choice.</li>
+<li>Never put accessibility, the language modes, school mode, the lockout activities, or export and import of a person's own data behind a purchase.</li>
+<li>Show the exact price, what is included and every licensing limit on any purchase screen; nothing lapses.</li>
+<li>Never prompt unasked for purchases, donations, reviews, upgrades or support.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Every protected feature reachable without paying, and an audit of every flow for unsolicited prompts.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 2px solid #2546D6; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #16309F">Included for everyone</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.2">Free</span>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+<li style="display: flex; gap: 8px; align-items: center"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 18px; width: 18px; height: 18px">check_circle</span>Accessibility settings</li>
+<li style="display: flex; gap: 8px; align-items: center"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 18px; width: 18px; height: 18px">check_circle</span>English, Cantonese and bilingual</li>
+<li style="display: flex; gap: 8px; align-items: center"><span class="ms" aria-hidden="true" style="color: #2546D6; font-size: 18px; width: 18px; height: 18px">check_circle</span>Export and import your data</li>
+</ul>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Optional purchase</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 1.4">[EXACT PRICE]</span>
+<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 14px">
+<dt style="color: #475467">Includes</dt><dd style="margin: 0">Extra colour themes</dd>
+<dt style="color: #475467">Licence limits</dt><dd style="margin: 0">One person, their own devices</dd>
+<dt style="color: #475467">Expires</dt><dd style="margin: 0; font-weight: 600">Never</dd>
+</dl>
+<button type="button" style="margin-top: auto; min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; align-self: flex-start; cursor: pointer">Review and buy</button>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px">
+<div style="padding: 8px 12px; font-size: 13px; font-weight: 600; color: #475467">Settings · About</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; border-top: 1px solid #E9EDF4"><span style="flex: 1 1 160px; font-size: 14px">Version</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">0.4.0</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; border-top: 1px solid #E9EDF4"><span style="flex: 1 1 160px; font-size: 14px">Purchases</span><span style="font-size: 13px; color: #475467">None. Nothing lapses.</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 6px 4px 6px 12px; border-top: 1px solid #E9EDF4"><span style="flex: 1 1 160px; font-size: 14px">Support the project</span><a href="#top" style="min-height: 44px; padding: 0 12px; display: inline-flex; align-items: center; gap: 6px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none">Only if you choose <span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">arrow_forward</span></a></div>
+</div>
+<p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #475467"><span class="ms" aria-hidden="true" style="color: #2546D6">do_not_disturb_on</span>No pop-ups asking for reviews, donations or upgrades.</p>
+</div>
+</article>
+
+<!-- qr-pairing -->
+<article id="qr-pairing" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">qr-pairing</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">QR authenticator pairing</h2>
+<p style="margin: 0">Pairs an authenticator by scanning a QR code drawn on this device or typing the key, then confirms with one code.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Generate the secret on this device and draw the QR locally, never through an online service.</li>
+<li>Show the grouped key, algorithm, digits and period beside the QR, matching what it encodes.</li>
+<li>Keep the QR dark-on-light with its quiet zone in both themes; reveal the key only on request and never write it to logs, exports or history.</li>
+<li>Turn the factor on only after the person types back one current code.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>A standard authenticator accepts the QR, no network request is made, and a wrong code is refused.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<ol aria-label="Pairing steps" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #2546D6">check_circle</span>Scan or type the key</li>
+<li aria-current="step" style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #0D1526; color: #FFFFFF; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #B9C6FF">pin</span>Confirm one code</li>
+<li style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">verified_user</span>Turned on</li>
+</ol>
+
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 20px 24px; align-items: flex-start">
+<div style="flex: none; width: 176px; height: 176px; border-radius: 12px; background: #FFFFFF; border: 1px solid #DCE2EC; display: grid; place-items: center">
+<span class="ms" aria-label="QR code for setup" style="font-size: 144px; width: 144px; height: 144px; color: #0D1526; font-variation-settings: 'FILL' 1,'wght' 500,'opsz' 24">qr_code_2</span>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px">Pair an authenticator</span>
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap">
+<span style="flex: 1 1 160px; min-width: 0; min-height: 44px; padding: 0 12px; border-radius: 12px; background: #EEF1F6; display: flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.08em; color: #475467">•••• •••• •••• ••••</span>
+<button type="button" style="min-height: 44px; padding: 0 14px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">visibility</span>Reveal key</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="padding: 4px 10px; border-radius: 8px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace; font-size: 12px">SHA-1</span>
+<span style="padding: 4px 10px; border-radius: 8px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace; font-size: 12px">6 digits</span>
+<span style="padding: 4px 10px; border-radius: 8px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace; font-size: 12px">30 s</span>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Type the current code to finish
+<span style="display: flex; gap: 8px">
+<input type="text" inputmode="numeric" value="000 000" style="flex: 1 1 auto; min-width: 0; min-height: 44px; box-sizing: border-box; padding: 0 12px; border: 2px solid #2546D6; border-radius: 12px; background: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #0D1526">
+<button type="button" style="flex: none; min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Confirm</button>
+</span>
+</label>
+<p style="margin: 0; padding: 10px 12px; border-radius: 12px; background: #FFEEDD; color: #7A2F06; font-size: 13px; display: flex; gap: 8px; align-items: flex-start"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">error</span><span>That code did not match. Type the code showing now; nothing has been turned on yet.</span></p>
+<p style="margin: 0; font-size: 13px; color: #475467; display: flex; gap: 6px; align-items: center"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">wifi_off</span>Made on this device. Nothing is sent.</p>
+</div>
+</div>
+</div>
+</article>
+
+<!-- super-confirmation -->
+<article id="super-confirmation" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">super-confirmation</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Two-key destructive action confirmation</h2>
+<p style="margin: 0">Holds back a destructive action until two keys are turned and a slider is pulled all the way across.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Build it in the app's own interface, anchored beside the destructive control; never a hosted page or an outside challenge.</li>
+<li>Name the exact action and the data it affects.</li>
+<li>Require two independently turned keys before a full-range slider wakes; act only when the slider reaches the end.</li>
+<li>Keep Emergency exit, Escape and Back always available; they do nothing and return focus.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Untouched, one key, both keys, partial and full slider, cancel and Escape, with reduced motion.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">delete</span>Delete selected</button>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px; box-shadow: 0 8px 24px rgba(13,21,38,.08)">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">Delete 3 selected tasks?</span>
+<span style="font-size: 14px; color: #475467">Their notes go too. History can still restore them.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" aria-pressed="true" style="flex: 1 1 180px; min-height: 52px; padding: 0 16px; border: 0; border-radius: 14px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">key</span>Key 1 turned</button>
+<button type="button" aria-pressed="false" style="flex: 1 1 180px; min-height: 52px; padding: 0 16px; border: 2px dashed #98A2B3; border-radius: 14px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">key</span>Turn key 2</button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border-radius: 14px; background: #EEF1F6; color: #475467">
+<span style="display: flex; justify-content: space-between; gap: 12px; font-weight: 600; font-size: 14px"><span>Slide to delete</span><span style="font-weight: 500">Waiting for key 2</span></span>
+<input type="range" min="0" max="100" value="0" disabled style="accent-color: #2546D6; width: 100%">
+</label>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">logout</span>Emergency exit</button>
+<span style="font-size: 13px; color: #475467">Esc also cancels. Nothing is deleted until the slider ends.</span>
+</div>
+</div>
+</div>
+</article>
+
+<!-- support-tickets -->
+<article id="support-tickets" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">support-tickets</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Local fictional recovery desk</h2>
+<p style="margin: 0">Gives a locked-out person a playful, entirely local help desk that points to the one real fix.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Open the playful desk from the unlock prompt, the lock setting and Help.</li>
+<li>Resolve a ticket by showing where the local data lives, copyable, and opening it; the desk itself never deletes anything.</li>
+<li>Keep one plain line outside the joke, unchanged by the playfulness level: nothing is sent and nobody reads it.</li>
+<li>Never imitate a real company's support branding or promise a reply time.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>All three entry routes, the disclosure line intact at every level, and no network call.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; color: #475467"><span>Opened from</span>
+<span style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #0D1526; color: #FFFFFF; display: inline-flex; align-items: center; gap: 6px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #B9C6FF">lock</span>Unlock prompt</span>
+<span style="min-height: 36px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center">Lock settings</span>
+<span style="min-height: 36px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center">Help</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 2px">
+<span style="padding: 8px 12px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px">Support Tickets</span>
+<div style="padding: 10px 12px; border-radius: 10px; background: #E8EDFF; display: flex; flex-direction: column; gap: 2px">
+<span style="font-weight: 600; font-size: 14px; color: #16309F">Locked out of my notes</span>
+<span style="font-size: 12px; color: #16309F">Resolved</span>
+</div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 66%; height: 7px; border-radius: 4px; background: #DCE2EC"></span><span style="display: block; width: 32%; height: 6px; border-radius: 3px; background: #E9EDF4"></span></div>
+<div style="padding: 12px; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 52%; height: 7px; border-radius: 4px; background: #DCE2EC"></span><span style="display: block; width: 28%; height: 6px; border-radius: 3px; background: #E9EDF4"></span></div>
+</div>
+<div style="flex: 2 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-weight: 600">To reset your locks, clear this app's local data:</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="flex: 1 1 180px; min-width: 0; min-height: 44px; padding: 0 12px; border-radius: 12px; background: #EEF1F6; display: flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 13px">[APP DATA LOCATION]</span>
+<button type="button" style="min-height: 44px; padding: 0 14px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">content_copy</span>Copy</button>
+</div>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px 0 12px; border: 0; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">folder_open</span>Show the data location</button>
+<p style="margin: 4px 0 0; padding-top: 12px; border-top: 1px solid #E9EDF4; font-size: 13px; color: #475467; display: flex; gap: 8px; align-items: flex-start"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; margin-top: 1px">info</span><span>Nothing is sent anywhere. Nobody reads these tickets.</span></p>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end">
+<label style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">New ticket: what happened?
+<input type="text" value="I forgot the PIN on Holiday plans" style="min-height: 44px; max-width: 100%; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font: inherit; font-weight: 400; color: #0D1526"></label>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">File ticket</button>
+</div>
+</div>
+</article>
+
+<!-- unlock-ladder -->
+<article id="unlock-ladder" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">unlock-ladder</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Lockout wait recovery activities</h2>
+<p style="margin: 0">Lets a person shorten a lockout wait with quick activities, without ever skipping the credential.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Offer the rungs in order: pick the dim sum dish, ten easy sums, whack-a-mole, then simply wait.</li>
+<li>Clear only the waiting time, never the credential; used attempts stay used and escalation is unchanged.</li>
+<li>Cap ladder rounds per rolling hour and grade each answer against a single-use challenge; timed rounds cannot end early.</li>
+<li>In school mode, start at the sums with the dim sum rung left out.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Each rung won and lost, a replayed or expired challenge refused, and the hourly cap reached.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 12px 12px 12px 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<span class="ms" aria-hidden="true" style="color: #C2570C">lock_clock</span><span style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Holiday plans is locked for 5 minutes</span><span style="font-size: 13px; color: #475467">Too many wrong PINs. Play to shorten the wait.</span></span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #7A2F06">04:59</span>
+</div>
+<ol aria-label="Ladder rungs" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #2546D6">check_circle</span>Dim sum</li>
+<li aria-current="step" style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #0D1526; color: #FFFFFF; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #B9C6FF">calculate</span>Ten sums</li>
+<li style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">sports_esports</span>Whack-a-mole</li>
+<li style="min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">schedule</span>Wait it out</li>
+</ol>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Sum 4 of 10</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2">7 + 5 =</span>
+<span aria-hidden="true" style="display: flex; gap: 4px; padding-top: 6px"><span style="width: 14px; height: 6px; border-radius: 3px; background: #2546D6"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #2546D6"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #2546D6"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span style="width: 14px; height: 6px; border-radius: 3px; background: #DCE2EC"></span></span>
+</div>
+<label style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Your answer
+<span style="display: flex; gap: 8px">
+<input type="text" inputmode="numeric" value="12" style="flex: 1 1 auto; min-width: 0; min-height: 44px; box-sizing: border-box; padding: 0 12px; border: 2px solid #2546D6; border-radius: 12px; background: #FFFFFF; font: inherit; font-size: 18px; color: #0D1526">
+<button type="button" style="flex: none; min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Check</button>
+</span>
+</label>
+</div>
+<p style="margin: 0; padding: 12px 14px; border-radius: 14px; background: #FFEEDD; color: #7A2F06; font-size: 13px; display: flex; gap: 8px; align-items: flex-start"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; margin-top: 1px; color: #C2570C">info</span><span>This only ends the wait. You still need your PIN, and used attempts stay used. Rounds left this hour: 2.</span></p>
+</div>
+</article>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4418}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

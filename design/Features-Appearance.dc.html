@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Appearance and layout</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.well{padding:10px!important;margin:0 -12px!important;width:calc(100% + 24px)!important;border-radius:12px!important}.well *{max-width:100%}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 40px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Feature deep dive</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -0.03em">Appearance and layout</h1>
+<p style="margin: 0; max-width: 720px; color: #475467; font-size: 17px">How Commonplace looks, sizes and arranges itself, with Material Design 3 styling that holds up from a 320px phone to a wide desktop.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 600">12 features</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>6 partial</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>6 incomplete</span>
+</div>
+<nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#accessibility-sizing" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Accessible controls and text sizing</a>
+<a href="#appearance-editor" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Per-element appearance editing</a>
+<a href="#collapse-filters" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Collapsible filters and statistics</a>
+<a href="#color-picker" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Full color picker and format conversion</a>
+<a href="#functional-ui" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Controls with real outcomes</a>
+<a href="#logo-customization" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Local logo customization</a>
+<a href="#material-design" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Material appearance system</a>
+<a href="#motion" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Motion</a>
+<a href="#overlay-panels" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Readable anchored overlays</a>
+<a href="#workflow-navigation" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Task-oriented navigation</a>
+<a href="#mobile-site" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Mobile-friendly documentation</a>
+<a href="#responsive-layout-matrix" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Responsive layout acceptance matrix</a>
+</nav>
+</section>
+
+<!-- 1 accessibility-sizing -->
+<article id="accessibility-sizing" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">accessibility-sizing</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Accessible controls and text sizing</h2>
+<p style="margin: 0; color: #0D1526">Lets you set text size, contrast, motion and target size from a menu that is always within reach.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Keep an accessibility menu visible and reachable on every page: text size, contrast, reduced motion, visible focus, larger targets and keyboard help.</li>
+<li>Hiding the menu asks first, with Cancel focused, and keeps every preference; settings search and reset bring it back.</li>
+<li>No text or control is clipped, overlapped or pushed off-screen at 100, 125, 150 or 200% scale, in either language.</li>
+<li>Read-aloud is started by the person and never speaks secrets.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: captures at every scale and narrow width, plus keyboard-only and screen-reader passes.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<section aria-label="Accessibility tools" style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 6px 18px rgba(13,21,38,.08)">
+<h4 style="margin: 0; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">accessibility_new</span>Accessibility tools</h4>
+<label style="display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; justify-content: space-between; font-weight: 600; font-size: 14px">Text size <output style="font-variant-numeric: tabular-nums; color: #2546D6">125%</output></span>
+<input type="range" min="100" max="200" step="25" value="125" style="accent-color: #2546D6; width: 100%; margin: 0">
+</label>
+<button type="button" role="switch" aria-checked="true" style="min-height: 44px; padding: 0; border: 0; background: transparent; color: #0D1526; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; font-size: 14px; text-align: left">Reduced motion<span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #2546D6; display: flex; justify-content: flex-end; padding: 3px; box-sizing: border-box; flex: none"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span></button>
+<button type="button" role="switch" aria-checked="false" style="min-height: 44px; padding: 0; border: 0; background: transparent; color: #0D1526; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; font-size: 14px; text-align: left">Larger targets<span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #98A2B3; display: flex; padding: 3px; box-sizing: border-box; flex: none"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span></button>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 600; font-size: 14px">Contrast</span><div role="group" aria-label="Contrast" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px"><button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">Standard</button><button type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">More</button><button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">Highest</button></div></div>
+<div style="border-top: 1px solid #DCE2EC; padding-top: 12px">
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: #7A2F06; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">visibility_off</span>Hide this menu</button>
+</div>
+</section>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<section aria-label="Confirm hide" style=" min-width: 0; background: #FFFFFF; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 12px 32px rgba(13,21,38,.16)">
+<h4 style="margin: 0; font-size: 16px; font-weight: 600">Hide the accessibility menu?</h4>
+<p style="margin: 0; font-size: 14px; color: #475467">Your choices stay. Settings can show it again.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; padding-top: 4px">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; outline: 3px solid #2546D6; outline-offset: 2px">Cancel</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; cursor: pointer">Hide</button>
+</div>
+</section>
+<section aria-label="Keyboard help" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #475467">keyboard</span>Keyboard help</h4>
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px">Open accessibility tools<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6">Alt A</span></span>
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px">Larger text<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6">Ctrl +</span></span>
+</section>
+</div>
+</div>
+</article>
+
+<!-- 2 appearance-editor -->
+<article id="appearance-editor" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">appearance-editor</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Per-element appearance editing</h2>
+<p style="margin: 0; color: #0D1526">Lets you restyle any single element, such as a task card, and undo or reset each change.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Every element offers Edit appearance from its context menu and the keyboard, opening a non-modal editor beside it that returns focus on close.</li>
+<li>Full typography, color, spacing and an Animation tab, across hover, focus, pressed and disabled states.</li>
+<li>Undo, redo and reset per property, per element and globally; named presets, copy style, import and export.</li>
+<li>Properties it cannot change stay visible with a plain explanation.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: every supported property shown applying, persisting and undoing in the built app.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<article style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; outline: 2px dashed #2546D6; outline-offset: 3px">
+<span style="font-size: 17px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em">Write the next useful step</span>
+<span aria-hidden="true" style="height: 8px; width: 70%; border-radius: 4px; background: #E9EDF4"></span>
+<span aria-hidden="true" style="height: 8px; width: 45%; border-radius: 4px; background: #E9EDF4"></span>
+</article>
+<div role="menu" aria-label="Task card" style="align-self: flex-start; margin-left: 24px; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 12px; padding: 6px; box-shadow: 0 8px 24px rgba(13,21,38,.12); display: flex; flex-direction: column; min-width: 180px">
+<button type="button" role="menuitem" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 8px; background: #E8EDFF; color: #16309F; font-weight: 600; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true">format_paint</span>Edit appearance…</button>
+<button type="button" role="menuitem" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true" style="color: #475467">content_copy</span>Copy style</button>
+<button type="button" role="menuitem" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true" style="color: #475467">restart_alt</span>Reset this element</button>
+</div>
+<article style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; margin-top: 6px">
+<span style="font-size: 15px; font-weight: 600">Try the command palette</span>
+<span aria-hidden="true" style="height: 8px; width: 55%; border-radius: 4px; background: #E9EDF4"></span>
+</article>
+</div>
+<section aria-label="Appearance editor" style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 6px 18px rgba(13,21,38,.08)">
+<div role="tablist" aria-label="Editor sections" style="display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px">
+<button type="button" role="tab" aria-selected="true" style="flex: 1 1 auto; min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Typography</button>
+<button type="button" role="tab" aria-selected="false" style="flex: 1 1 auto; min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 14px; cursor: pointer">Color</button>
+<button type="button" role="tab" aria-selected="false" style="flex: 1 1 auto; min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 14px; cursor: pointer">Animation</button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; justify-content: space-between; font-weight: 600; font-size: 14px">Font size <output style="font-variant-numeric: tabular-nums; color: #2546D6">17 px</output></span>
+<input type="range" min="12" max="32" value="17" style="accent-color: #2546D6; width: 100%; margin: 0">
+</label>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-weight: 600; font-size: 14px">Weight</span><div role="group" aria-label="Weight" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px"><button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">Regular</button><button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">Medium</button><button type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Semibold</button></div></div>
+<label style="display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; justify-content: space-between; font-weight: 600; font-size: 14px">Line height <output style="font-variant-numeric: tabular-nums; color: #2546D6">1.35</output></span>
+<input type="range" min="1" max="2" step="0.05" value="1.35" style="accent-color: #2546D6; width: 100%; margin: 0">
+</label>
+<p style="margin: 0; font-size: 13px; color: #475467; display: flex; align-items: flex-start; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">info</span><span>Letter case is fixed for this element, so it is shown but cannot change.</span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="flex: 1 1 120px; min-height: 44px; padding: 0 12px; border-radius: 12px; background: #EEF1F6; display: flex; align-items: center; gap: 8px; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #475467">bookmark</span>Calm reading</span>
+<button type="button" aria-label="Undo" style="width: 44px; height: 44px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">undo</span></button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer">Reset size</button>
+</div>
+</section>
+</div>
+</article>
+
+<!-- 3 collapse-filters -->
+<article id="collapse-filters" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">collapse-filters</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Collapsible filters and statistics</h2>
+<p style="margin: 0; color: #0D1526">Keeps search, filters and statistics folded away until you need them, without hiding active filters.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Search, filter rows and statistics panels can collapse; panels that only describe a list start collapsed.</li>
+<li>A collapsed filter bar still says how many filters are active and offers to clear them.</li>
+<li>The open or closed state is remembered after a restart, works from the keyboard and is announced.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: a collapsed bar showing active filters, and the state surviving a restart.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+<section aria-label="Task list" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" aria-expanded="false" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">chevron_right</span>Filters<span style="padding: 2px 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 12px; font-weight: 600">2 active</span></button>
+<button type="button" aria-expanded="false" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">chevron_right</span>Statistics</button>
+<button type="button" style="margin-left: auto; min-height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: #2546D6; font-weight: 600; cursor: pointer">Clear filters</button>
+</div>
+<p style="margin: 0; padding: 8px 12px; border-radius: 10px; background: #FFEEDD; color: #7A2F06; font-size: 14px; display: flex; align-items: flex-start; gap: 8px"><span class="ms" aria-hidden="true" style="margin-top: 1px">filter_alt</span><span>Showing In progress tasks edited this week.</span></p>
+<div style="display: flex; flex-direction: column; gap: 6px; padding-top: 4px">
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C2570C; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Write the next useful step</span><span style="font-size: 13px; color: #475467">Edited today</span></span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C2570C; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Try the command palette</span><span style="font-size: 13px; color: #475467">Edited Monday</span></span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C2570C; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Draft the weekly review</span><span style="font-size: 13px; color: #475467">Edited Sunday</span></span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C2570C; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Choose a comfortable text size</span><span style="font-size: 13px; color: #475467">Edited Saturday</span></span>
+<span style="padding: 4px 12px 0; font-size: 13px; color: #475467">4 of 12 tasks shown. Panels stay closed after restart.</span>
+</div>
+</section>
+</div>
+</article>
+
+<!-- 4 color-picker -->
+<article id="color-picker" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">color-picker</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Full color picker and format conversion</h2>
+<p style="margin: 0; color: #0D1526">Lets you pick any color precisely and copy it in the format you need.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Every color control is a continuous field and hue slider with typed values, never swatches alone.</li>
+<li>Converts between named colors, HEX, RGB, HSL, HSV, HWB, Lab, LCH, OKLab, OKLCH and CMYK, keeping alpha.</li>
+<li>Names the active color space, warns before a value falls outside the gamut, and shows contrast.</li>
+<li>An animated rainbow option settles on one hue when reduced motion is on.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: round-trip conversions in both directions with no silent loss.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+<section aria-label="Accent color" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-wrap: wrap; gap: 16px; box-shadow: 0 6px 18px rgba(13,21,38,.08)">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div aria-hidden="true" style="position: relative; height: 160px; border-radius: 12px; background: linear-gradient(to top, #000000, rgba(0,0,0,0)), linear-gradient(to right, #FFFFFF, hsl(229, 100%, 50%))">
+<span style="position: absolute; left: 66%; top: 18%; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 0 0 1px rgba(13,21,38,.4); background: #2546D6"></span>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Hue</span>
+<input type="range" min="0" max="360" value="229" style="width: 100%; margin: 0; accent-color: #2546D6">
+</label>
+<label style="display: flex; flex-direction: column; gap: 6px"><span style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; color: #475467">Alpha <output style="color: #2546D6; font-variant-numeric: tabular-nums">100%</output></span><input type="range" min="0" max="100" value="100" style="width: 100%; margin: 0; accent-color: #2546D6"></label>
+<span aria-hidden="true" style="height: 10px; border-radius: 5px; background: linear-gradient(to right, hsl(0,100%,50%), hsl(60,100%,50%), hsl(120,100%,50%), hsl(180,100%,50%), hsl(240,100%,50%), hsl(300,100%,50%), hsl(360,100%,50%))"></span>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div role="group" aria-label="Format" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px">
+<button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">HEX</button>
+<button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">RGB</button>
+<button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">HSL</button>
+<button type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">OKLCH</button>
+</div>
+<label style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">OKLCH</span>
+<input type="text" value="oklch(0.475 0.222 266.7)" style="min-height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 13px; width: 100%">
+</label>
+<label style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">HEX</span>
+<input type="text" value="#2546D6" style="min-height: 44px; box-sizing: border-box; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 13px; width: 100%">
+</label>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<span style="min-height: 28px; padding: 0 10px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; background: #EEF1F6; font-size: 12px; font-weight: 600">In sRGB gamut</span>
+<span style="min-height: 28px; padding: 0 10px; display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">contrast</span>7.2:1 on white</span>
+</div>
+<p style="margin: 0; padding: 8px 10px; border-radius: 10px; background: #FFEEDD; color: #7A2F06; font-size: 13px; display: flex; align-items: flex-start; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">warning</span><span>CMYK cannot hold this blue exactly. Converting will shift it slightly.</span></p>
+</div>
+</section>
+</div>
+</article>
+
+<!-- 5 functional-ui -->
+<article id="functional-ui" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">functional-ui</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Controls with real outcomes</h2>
+<p style="margin: 0; color: #0D1526">Makes sure every button and icon does what it says, and empty screens offer real next steps.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Every icon, card, tab or badge that looks usable performs its labelled action and has a keyboard equivalent.</li>
+<li>Anything illustrative is labelled as a static preview and is never styled as a live control.</li>
+<li>No seeded sample content: an empty workspace says so and offers real ways to create or open work.</li>
+<li>Discarding unsaved work is written to local history first, so it can be restored.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: an interaction check for every small control, plus a restorable discard entry.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+<section aria-label="Empty workspace" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: #E8EDFF; color: #2546D6; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="font-size: 24px; width: 24px; height: 24px">inbox</span></span>
+<h4 style="margin: 0; font-size: 18px; font-weight: 600">No tasks yet</h4>
+<p style="margin: 0; color: #475467; font-size: 14px; max-width: 320px">Start with one task, or open a backup you saved earlier.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding-top: 6px">
+<button type="button" style="min-height: 44px; padding: 0 18px 0 14px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">add</span>New task</button>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">folder_open</span>Open a backup</button>
+</div>
+</section>
+<figure style="margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; border: 1px dashed #98A2B3; background: #FFFFFF">
+<span aria-hidden="true" style="width: 64px; height: 40px; border-radius: 8px; background: #E9EDF4; display: flex; gap: 4px; padding: 6px; box-sizing: border-box"><span style="flex: 1; border-radius: 3px; background: #FFFFFF"></span><span style="flex: 1; border-radius: 3px; background: #FFEEDD"></span><span style="flex: 1; border-radius: 3px; background: #E8EDFF"></span></span>
+<figcaption style="flex: 1 1 200px; font-size: 14px"><strong style="font-weight: 600">Board layout</strong> <span style="color: #475467">Static preview, not a control.</span></figcaption>
+</figure>
+<div role="status" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 8px 8px 16px; border-radius: 14px; background: #0D1526; color: #FFFFFF">
+<span class="ms" aria-hidden="true" style="color: #B9C6FF">history</span>
+<span style="flex: 1 1 200px; font-size: 14px">Draft discarded. <span style="color: #C9D2E3">Saved to local history.</span></span>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #B9C6FF; font-weight: 600; cursor: pointer">Restore</button>
+</div>
+</div>
+</article>
+
+<!-- 6 logo-customization -->
+<article id="logo-customization" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">logo-customization</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Local logo customization</h2>
+<p style="margin: 0; color: #0D1526">Lets you choose or upload a logo that is checked on your device and never uploaded.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Offer a few built-in logo presets and a custom image that is decoded on this device and never uploaded.</li>
+<li>Check the real file bytes; reject malformed, animated or oversized images without applying any part of them.</li>
+<li>Crop, fit, focal point and background color, then show every derived size before applying.</li>
+<li>If conversion fails, keep the previous logo; the installed app identity is never rewritten.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: rejected-file, rollback and no-network checks, plus the logo at every display size.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+<section aria-label="Logo" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-wrap: wrap; gap: 16px 20px">
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; aspect-ratio: 1; max-width: 220px; width: 100%; border-radius: 14px; background: #E8EDFF; display: grid; place-items: center; overflow: hidden">
+<span aria-hidden="true" style="position: absolute; inset: 14%; border: 2px dashed #2546D6; border-radius: 24%"></span>
+<span class="ms" aria-hidden="true" style="font-size: 88px; width: 88px; height: 88px; color: #2546D6">eco</span>
+</div>
+<span style="font-size: 13px; color: #475467">Safe area shown dashed</span>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<div role="group" aria-label="Logo presets" style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" aria-pressed="true" aria-label="Leaf preset" style="width: 48px; height: 48px; border: 2px solid #2546D6; border-radius: 12px; background: #E8EDFF; color: #2546D6; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">eco</span></button>
+<button type="button" aria-pressed="false" aria-label="Notebook preset" style="width: 48px; height: 48px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">menu_book</span></button>
+<button type="button" aria-pressed="false" aria-label="Check preset" style="width: 48px; height: 48px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">task_alt</span></button>
+<button type="button" style="min-height: 48px; padding: 0 14px 0 10px; border: 1px dashed #98A2B3; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">upload</span>Upload image</button>
+</div>
+<div role="group" aria-label="Fit" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px">
+<button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 14px; cursor: pointer">Fill</button>
+<button type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Fit</button>
+<button type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 14px; cursor: pointer">Crop</button>
+</div>
+<div aria-label="Derived sizes" style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px">
+<span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="width: 16px; height: 16px; border-radius: 4px; background: #E8EDFF; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="font-size: 12px; width: 12px; height: 12px; color: #2546D6">eco</span></span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #475467">16</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="width: 32px; height: 32px; border-radius: 8px; background: #E8EDFF; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="font-size: 22px; width: 22px; height: 22px; color: #2546D6">eco</span></span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #475467">32</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="width: 48px; height: 48px; border-radius: 12px; background: #E8EDFF; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="font-size: 32px; width: 32px; height: 32px; color: #2546D6">eco</span></span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #475467">48</span></span>
+<span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="width: 64px; height: 64px; border-radius: 16px; background: #E8EDFF; display: grid; place-items: center"><span class="ms" aria-hidden="true" style="font-size: 44px; width: 44px; height: 44px; color: #2546D6">eco</span></span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #475467">192</span></span>
+</div>
+<p style="margin: 0; font-size: 14px; display: flex; align-items: flex-start; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6; margin-top: 1px">verified_user</span><span>Checked on this device. Nothing was uploaded.</span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Use this logo</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Keep current</button>
+</div>
+</div>
+</section>
+</div>
+</article>
+
+<!-- 7 material-design -->
+<article id="material-design" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">material-design</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Material appearance system</h2>
+<p style="margin: 0; color: #0D1526">Gives every screen one consistent Material Design 3 look, in light and dark, with readable contrast.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Every page follows Material Design 3 Expressive: color, type, shape, elevation, motion and component anatomy.</li>
+<li>Every control is a registered Material Design 3 component; plain HTML is only document structure.</li>
+<li>Light and dark themes are complete and meet accessible contrast; data colors stay separate from chrome.</li>
+<li>A written inventory lists each page's components and where they come from.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: the component inventory and a check that fails when a generic stand-in appears.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<section aria-label="Light theme" style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<span style="display: flex; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 600; color: #475467">Light <span style="color: #16309F">18.2:1</span></span>
+<span aria-hidden="true" style="height: 8px; width: 70%; border-radius: 4px; background: #E9EDF4"></span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Filled</button>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #E8EDFF; color: #16309F; font-weight: 600; cursor: pointer">Tonal</button>
+</div>
+</section>
+<section aria-label="Dark theme" style="flex: 1 1 220px; min-width: 0; background: #172238; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 12px; color: #F2F5FA">
+<span style="display: flex; justify-content: space-between; gap: 8px; font-size: 13px; font-weight: 600; color: #A9B4C8">Dark <span style="color: #8EA2FF">14.5:1</span></span>
+<span aria-hidden="true" style="height: 8px; width: 70%; border-radius: 4px; background: #0B1220"></span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #8EA2FF; color: #0B1220; font-weight: 600; cursor: pointer">Filled</button>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: #0B1220; color: #8EA2FF; font-weight: 600; cursor: pointer">Tonal</button>
+</div>
+</section>
+</div>
+<section aria-label="Component inventory" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span style="flex: 1 1 120px; font-weight: 600">Button</span><span style="font-size: 13px; color: #475467">Material Design 3</span><span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check_circle</span>Registered</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span style="flex: 1 1 120px; font-weight: 600">Switch</span><span style="font-size: 13px; color: #475467">Material Design 3</span><span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check_circle</span>Registered</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span style="flex: 1 1 120px; font-weight: 600">Navigation rail</span><span style="font-size: 13px; color: #475467">Material Design 3</span><span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check_circle</span>Registered</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span style="flex: 1 1 120px; font-weight: 600">Dialog</span><span style="font-size: 13px; color: #475467">Material Design 3</span><span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check_circle</span>Registered</span></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px"><span style="flex: 1 1 120px; font-weight: 600">Task card</span><span style="font-size: 13px; color: #475467">Custom</span><span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Not yet registered</span></div>
+</section>
+</div>
+</article>
+
+<!-- 8 motion -->
+<article id="motion" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">motion</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Motion</h2>
+<p style="margin: 0; color: #0D1526">Uses calm, consistent animation that you can reduce or turn off without losing any meaning.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Motion follows Material Design 3 timing and is a saved appearance setting a person can change or schedule.</li>
+<li>Every animated surface has a reduced-motion version that is just as understandable.</li>
+<li>Low stimulation combines with the system's reduced-motion setting instead of overriding it.</li>
+<li>Motion is never the only sign that something changed; text says it too.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: a reduced-motion check and a capture in both modes for each animated surface.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<section aria-label="Standard motion" style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Standard</span>
+<div aria-hidden="true" style="position: relative; height: 72px">
+<span style="position: absolute; left: 0; top: 12px; width: 52%; height: 48px; border-radius: 12px; background: #E9EDF4; opacity: .35"></span>
+<span style="position: absolute; left: 16%; top: 12px; width: 52%; height: 48px; border-radius: 12px; background: #E9EDF4; opacity: .6"></span>
+<span style="position: absolute; right: 0; top: 12px; width: 52%; height: 48px; border-radius: 12px; background: #E8EDFF; box-shadow: 0 6px 18px rgba(13,21,38,.12); display: flex; align-items: center; padding: 0 12px; box-sizing: border-box"><span style="height: 8px; width: 70%; border-radius: 4px; background: #B9C6FF"></span></span>
+</div>
+<span style="font-size: 13px; color: #475467; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">timer</span>Slides across, then settles</span>
+</section>
+<section aria-label="Reduced motion" style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Reduced motion</span>
+<div aria-hidden="true" style="position: relative; height: 72px">
+<span style="position: absolute; right: 0; top: 12px; width: 52%; height: 48px; border-radius: 12px; background: #E8EDFF; display: flex; align-items: center; padding: 0 12px; box-sizing: border-box"><span style="height: 8px; width: 70%; border-radius: 4px; background: #B9C6FF"></span></span>
+</div>
+<span style="font-size: 13px; color: #475467; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">blur_on</span>Short fade, no travel</span>
+</section>
+</div>
+<p role="status" style="margin: 0; padding: 10px 14px; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true">check_circle</span>Moved to Done</p>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 4px 16px">
+<button type="button" role="switch" aria-checked="true" style="width: 100%; min-height: 48px; padding: 0; border: 0; border-bottom: 1px solid #DCE2EC; background: transparent; color: #0D1526; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; text-align: left">Follow system setting<span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #2546D6; display: flex; justify-content: flex-end; padding: 3px; box-sizing: border-box; flex: none"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span></button>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; padding: 8px 0; border-bottom: 1px solid #DCE2EC"><span>Animation speed</span><div role="group" aria-label="Animation speed" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 12px"><button type="button" aria-pressed="false" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">Slower</button><button type="button" aria-pressed="true" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Standard</button><button type="button" aria-pressed="false" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 9px; background: transparent; color: #475467; font-weight: 600; font-size: 13px; cursor: pointer">Faster</button></div></div>
+<button type="button" role="switch" aria-checked="false" style="width: 100%; min-height: 48px; padding: 0; border: 0; background: transparent; color: #0D1526; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; text-align: left">Low stimulation<span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #98A2B3; display: flex; padding: 3px; box-sizing: border-box; flex: none"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span></button>
+</div>
+</div>
+</article>
+
+<!-- 9 overlay-panels -->
+<article id="overlay-panels" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">overlay-panels</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Readable anchored overlays</h2>
+<p style="margin: 0; color: #0D1526">Keeps menus and panels readable, on screen, and resizable, remembering where you put them.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Menus, popovers, tooltips and panels paint their own background, border and shadow.</li>
+<li>They stay inside the viewport, scroll when content does not fit, and never cover the control that opened them.</li>
+<li>Panels resize from edges and corners; floating panels also move by their header, both with keyboard paths.</li>
+<li>Size and position are remembered per surface, with a reset.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: clipping checks at narrow widths and every scale, plus keyboard resize, move and reset.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<button type="button" aria-expanded="true" style="align-self: flex-start; min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #2546D6; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">Sort by<span class="ms" aria-hidden="true">expand_less</span></button>
+<div role="menu" aria-label="Sort by" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 12px; padding: 6px 10px 6px 6px; box-shadow: 0 8px 24px rgba(13,21,38,.14); display: flex; gap: 6px; max-width: 260px">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+<button type="button" role="menuitemradio" aria-checked="true" style="min-height: 44px; padding: 0 10px; border: 0; border-radius: 8px; background: #E8EDFF; color: #16309F; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true">check</span>Due date</button>
+<button type="button" role="menuitemradio" aria-checked="false" style="min-height: 44px; padding: 0 10px 0 38px; border: 0; border-radius: 8px; background: transparent; color: #0D1526; display: flex; align-items: center; cursor: pointer; text-align: left">Title</button>
+<button type="button" role="menuitemradio" aria-checked="false" style="min-height: 44px; padding: 0 10px 0 38px; border: 0; border-radius: 8px; background: transparent; color: #0D1526; display: flex; align-items: center; cursor: pointer; text-align: left">Last edited</button>
+</div>
+<span aria-hidden="true" style="width: 4px; border-radius: 2px; background: #E9EDF4; display: flex; flex-direction: column"><span style="height: 60%; border-radius: 2px; background: #98A2B3"></span></span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding-top: 14px">
+<button type="button" aria-label="Local history" aria-describedby="tip-history" style="width: 44px; height: 44px; padding: 0; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">history</span></button>
+<span id="tip-history" role="tooltip" style="padding: 6px 10px; border-radius: 8px; background: #0D1526; color: #FFFFFF; font-size: 13px; box-shadow: 0 6px 18px rgba(13,21,38,.2)">Local history</span>
+</div>
+</div>
+<section aria-label="Task details" style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.14); display: flex; flex-direction: column; position: relative">
+<div style="display: flex; align-items: center; gap: 8px; padding: 4px 4px 4px 8px; border-bottom: 1px solid #DCE2EC">
+<button type="button" aria-label="Move panel" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: transparent; color: #475467; display: grid; place-items: center; cursor: grab"><span class="ms" aria-hidden="true">drag_indicator</span></button>
+<h4 style="margin: 0 auto 0 0; font-size: 15px; font-weight: 600">Task details</h4>
+<button type="button" aria-label="Close panel" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">close</span></button>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 10px; max-height: 220px; overflow-y: auto">
+<span style="font-size: 16px; font-weight: 600">Write the next useful step</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px"><span style="color: #475467">Status</span>In progress</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 14px"><span style="color: #475467">Due</span>2026-11-06</span>
+<span aria-hidden="true" style="height: 8px; width: 70%; border-radius: 4px; background: #E9EDF4"></span>
+<span aria-hidden="true" style="height: 8px; width: 52%; border-radius: 4px; background: #E9EDF4"></span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 4px 4px 8px">
+<button type="button" style="min-height: 44px; padding: 0 8px; border: 0; border-radius: 10px; background: transparent; color: #2546D6; font-weight: 600; font-size: 14px; cursor: pointer">Reset size and position</button>
+<button type="button" aria-label="Resize panel" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: transparent; color: #475467; display: grid; place-items: center; cursor: nwse-resize"><span class="ms" aria-hidden="true">open_in_full</span></button>
+</div>
+</section>
+<p style="flex: 1 1 100%; margin: 0; font-size: 13px; color: #475467; display: flex; align-items: flex-start; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">keyboard</span><span>Keyboard: Alt plus arrow keys move the panel; Alt Shift plus arrows resize it.</span></p>
+</div>
+</article>
+
+<!-- 10 workflow-navigation -->
+<article id="workflow-navigation" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">workflow-navigation</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Task-oriented navigation</h2>
+<p style="margin: 0; color: #0D1526">Splits the app into clear places to work, with a title bar and controls that all work.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Content lives in separate destinations a person moves between, not one long scrolling page.</li>
+<li>Every navigation control, from window buttons to overflow menus, does what its label says.</li>
+<li>The Windows desktop app uses a frameless window with its own Material Design 3 title bar and working controls.</li>
+<li>The app opens straight into working records, never a marketing page or a catalogue of commands.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: an interaction check per window control and a capture of the built title bar.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+<section aria-label="Desktop window" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 32px rgba(13,21,38,.12)">
+<div style="display: flex; align-items: center; gap: 8px; padding-left: 16px; background: #EEF1F6">
+<span style="margin-right: auto; font-size: 13px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">Commonplace</span>
+<span style="display: flex">
+<button type="button" aria-label="Minimize" style="width: 44px; height: 40px; border: 0; background: transparent; color: #0D1526; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">remove</span></button>
+<button type="button" aria-label="Maximize" style="width: 44px; height: 40px; border: 0; background: transparent; color: #0D1526; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true" style="font-variation-settings: 'FILL' 0, 'wght' 500, 'opsz' 20">crop_square</span></button>
+<button type="button" aria-label="Close" style="width: 44px; height: 40px; border: 0; background: transparent; color: #0D1526; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">close</span></button>
+</span>
+</div>
+<div style="display: flex; flex-wrap: wrap">
+<nav aria-label="Destinations" style="flex: 1 1 140px; max-width: 100%; padding: 12px; display: flex; flex-direction: column; gap: 4px; border-right: 1px solid #DCE2EC">
+<a href="#top" aria-current="page" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 10px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-weight: 600; text-decoration: none"><span class="ms" aria-hidden="true">checklist</span>Tasks</a>
+<a href="#top" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 10px; border-radius: 999px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">sticky_note_2</span>Notes</a>
+<a href="#top" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 10px; border-radius: 999px; color: #0D1526; font-weight: 500; text-decoration: none"><span class="ms" aria-hidden="true" style="color: #475467">history</span>History</a>
+</nav>
+<div style="flex: 999 1 240px; min-width: 0; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 4px"><span style="margin-right: auto; font-size: 18px; font-weight: 600">Tasks</span><button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">add</span>New task</button></div>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #98A2B3; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Export a backup before experimenting</span><span style="font-size: 13px; color: #475467">To do</span></span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #98A2B3; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Choose a comfortable text size</span><span style="font-size: 13px; color: #475467">To do</span></span>
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-radius: 12px; background: #F3F5F9"><span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #C2570C; box-sizing: border-box; flex: none"></span><span style="flex: 1 1 160px; min-width: 0; font-weight: 500">Write the next useful step</span><span style="font-size: 13px; color: #475467">In progress</span></span>
+</div>
+</div>
+</section>
+</div>
+</article>
+
+<!-- 11 mobile-site -->
+<article id="mobile-site" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">mobile-site</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Mobile-friendly documentation</h2>
+<p style="margin: 0; color: #0D1526">Makes the documentation comfortable to read and tap on a phone or tablet.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>The documentation site works from about 320px wide upward with no sideways page scroll.</li>
+<li>Every link and button is at least 44px tall for touch.</li>
+<li>Wide content such as code and tables scrolls inside its own box instead of stretching the page.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: recorded phone and tablet checks at each listed width.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; justify-content: center">
+<section aria-label="Documentation on a phone" style="flex: 0 1 260px; min-width: 0; background: #0D1526; border-radius: 28px; padding: 8px">
+<div style="background: #FFFFFF; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 4px; padding: 6px 6px 6px 14px; border-bottom: 1px solid #DCE2EC">
+<span style="margin-right: auto; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 16px">Guide</span>
+<button type="button" aria-label="Open menu" style="width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; color: #0D1526; display: grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">menu</span></button>
+</div>
+<div style="padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<h4 style="margin: 0; font-size: 18px; font-weight: 600">Back up your tasks</h4>
+<span aria-hidden="true" style="height: 8px; width: 90%; border-radius: 4px; background: #E9EDF4"></span>
+<span aria-hidden="true" style="height: 8px; width: 70%; border-radius: 4px; background: #E9EDF4"></span>
+<div style="position: relative; border-radius: 10px; background: #0D1526; overflow: hidden">
+<pre style="margin: 0; padding: 12px; overflow-x: auto; color: #C9D2E3; font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.5; white-space: pre">Settings › Data &amp; recovery › Export backup file</pre>
+<span aria-hidden="true" style="position: absolute; top: 0; right: 0; bottom: 0; width: 28px; background: linear-gradient(to right, rgba(13,21,38,0), #0D1526)"></span>
+</div>
+<span style="font-size: 12px; color: #475467; display: flex; align-items: center; gap: 4px"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">swipe</span>Scrolls sideways inside the box</span>
+<a href="#top" style="min-height: 44px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; text-decoration: none">Next: Restore<span class="ms" aria-hidden="true">arrow_forward</span></a>
+</div>
+</div>
+</section>
+<section aria-label="Width checks" style="flex: 1 1 220px; min-width: 0; max-width: 320px; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px 16px">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span class="ms" aria-hidden="true" style="color: #475467">smartphone</span><span style="flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 13px">320px</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Not checked</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span class="ms" aria-hidden="true" style="color: #475467">smartphone</span><span style="flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 13px">390px</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Not checked</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span class="ms" aria-hidden="true" style="color: #475467">tablet</span><span style="flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 13px">768px</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Not checked</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; border-bottom: 1px solid #DCE2EC"><span class="ms" aria-hidden="true" style="color: #475467">touch_app</span><span style="flex: 1; font-size: 14px">Targets at least 44px</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Not checked</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px"><span class="ms" aria-hidden="true" style="color: #475467">swap_horiz</span><span style="flex: 1; font-size: 14px">No sideways page scroll</span><span style="font-size: 13px; font-weight: 600; color: #7A2F06">Not checked</span></div>
+</section>
+</div>
+</article>
+
+<!-- 12 responsive-layout-matrix -->
+<article id="responsive-layout-matrix" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">responsive-layout-matrix</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Responsive layout acceptance matrix</h2>
+<p style="margin: 0; color: #0D1526">Records which screens have been checked at each size, language, theme and input method.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Check every screen at narrow widths and high display scale, in English and Cantonese, in light and dark.</li>
+<li>Repeat with keyboard only, a screen reader and reduced motion.</li>
+<li>Any clipped or overlapping text fails the cell; a cell only passes with a recorded capture.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: a filled matrix where every cell links to its capture.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+<section aria-label="Layout matrix" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px 12px 12px">
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) repeat(3, 52px); align-items: center; column-gap: 4px">
+<span style="min-height: 40px; display: flex; align-items: center; font-size: 13px; font-weight: 600; color: #475467">Condition</span>
+<span style="font-size: 12px; font-weight: 600; color: #475467; text-align: center">Tasks</span>
+<span style="font-size: 12px; font-weight: 600; color: #475467; text-align: center">Settings</span>
+<span style="font-size: 12px; font-weight: 600; color: #475467; text-align: center">Guide</span>
+<span style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">320px width</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+<span style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">200% scale</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+<span lang="yue-Hant" style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">廣東話</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+<span style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">Dark theme</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+<span style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">Keyboard only</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+<span style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">Screen reader</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+<span style="min-height: 44px; display: flex; align-items: center; border-top: 1px solid #DCE2EC; font-size: 14px">Reduced motion</span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span><span style="min-height: 44px; display: grid; place-items: center; border-top: 1px solid #DCE2EC; color: #C2570C"><span class="ms" aria-hidden="true">pending</span></span>
+</div>
+<p style="margin: 8px 0 0; padding-top: 10px; border-top: 1px solid #DCE2EC; font-size: 13px; color: #475467; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Not run yet. A cell passes only with a recorded capture.</p>
+</section>
+</div>
+</article>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6775}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

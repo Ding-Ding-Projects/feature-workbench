@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Built-in tools and hand-off</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.well{padding:10px!important;margin:0 -12px!important;width:calc(100% + 24px)!important;border-radius:12px!important}.well *{max-width:100%}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; align-content: center; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 40px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Feature deep dive</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -0.03em">Built-in tools and hand-off</h1>
+<p style="margin: 0; color: #475467; font-size: 17px; max-width: 680px">Practical work the app hands to a real local program or service: downloads, editors, conversion, publishing, game servers and local models, each with honest progress and recovery.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px"><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; box-sizing: border-box; border-radius: 999px; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600">8 features</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>1 partial</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>7 incomplete</span></div>
+<nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px"><a href="#download-handoff" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Extension download lifecycle</a><a href="#external-editor" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">External editor handoff</a><a href="#file-converter" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Offline file conversion and PDF tools</a><a href="#forge-publishing" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Repository publishing workflow</a><a href="#minecraft-server-manager" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Minecraft server creator and manager</a><a href="#minecraft-world-generator" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Version-specific Minecraft world generator</a><a href="#ollama-suite" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Local Ollama model and runtime manager</a><a href="#progress-recovery" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Progress, cancellation and recovery</a></nav>
+</section>
+
+<!-- download-handoff -->
+<article id="download-handoff" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">download-handoff</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Extension download lifecycle</h2>
+<p style="margin: 0; color: #0D1526">Gives every file the browser extension hands over a clear start, a live transfer and an honest finish, never claiming success early.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Open a Start download dialog that names the file, source, destination and action before any data moves.</li>
+<li>Switch to a separate Downloading surface whose Pause and Cancel operate the real transfer.</li>
+<li>Show a non-blocking Download complete notice only after the transfer has truly finished.</li>
+<li>Keep start and completion on top until resolved, and label browser demonstrations as demonstrations.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: One installed-extension transfer captured in all three states; injected markup or mocked messages do not count.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #E9EDF4; color: #475467; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">science</span>Browser demonstration, not a verified transfer</span>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch">
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">download</span>Start download</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px">
+<span style="font-family: 'JetBrains Mono', monospace; overflow-wrap: anywhere">field-notes.pdf</span>
+<span style="color: #475467">From example.org</span>
+<span style="color: #475467">To Downloads</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 4px">
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Start</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Cancel</button>
+</div>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #C2570C">clock_loader_40</span>Downloading</div>
+<span aria-hidden="true" style="display: block; height: 8px; border-radius: 4px; background: #E9EDF4; overflow: hidden"><span style="display: block; height: 100%; width: 58%; border-radius: 4px; background: #2546D6"></span></span>
+<span style="font-size: 13px; color: #475467; font-variant-numeric: tabular-nums">18.4 MB of 31.7 MB</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto">
+<button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">pause</span>Pause</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Cancel</button>
+</div>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span>Download complete</div>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px"><span style="font-family: 'JetBrains Mono', monospace; overflow-wrap: anywhere">field-notes.pdf</span><span style="color: #475467">31.7 MB, saved to Downloads</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto">
+<button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 0; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">folder_open</span>Show in folder</button>
+<button type="button" aria-label="Dismiss" style="width: 44px; height: 44px; padding: 0; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">close</span></button>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><div style="font-size: 13px; font-weight: 600; color: #475467">Recent transfers</div><div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1 1 160px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">field-notes.pdf</span><span style="font-size: 13px; color: #475467">Finished, saved to Downloads</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">cancel</span><span style="flex: 1 1 160px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">backup-2026-11-01.zip</span><span style="font-size: 13px; color: #475467">Cancelled at 40%, nothing kept</span></div></div></div>
+</div>
+</article>
+
+<!-- external-editor -->
+<article id="external-editor" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">external-editor</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">External editor handoff</h2>
+<p style="margin: 0; color: #0D1526">Opens the file or folder you are looking at in your own code editor, and says plainly when none is installed.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Detect installed editors, including per-user, system-wide, preview and portable installs of Visual Studio Code.</li>
+<li>Let the person add or choose an editor, and remember that choice between sessions.</li>
+<li>Open a single file, or a folder as the workspace root, in one action.</li>
+<li>When no editor is found, say so plainly and offer a download instead of simulating a launch.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: A real launch from an installed build, the no-editor path, and a folder opened as a workspace.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
+<div style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">code</span>Open in editor</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; background: #E8EDFF; color: #16309F; font-weight: 600"><input type="radio" name="ed" checked style="width: 18px; height: 18px; accent-color: #2546D6; flex: none; margin: 0"><span style="flex: 1; min-width: 0">Visual Studio Code</span><span style="font-size: 12px; font-weight: 600">Found</span></label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 12px; color: #0D1526"><input type="radio" name="ed" style="width: 18px; height: 18px; accent-color: #2546D6; flex: none; margin: 0"><span aria-hidden="true" style="display: block; height: 7px; width: 45%; border-radius: 4px; background: #DCE2EC"></span></label>
+</div>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; border-top: 1px solid #E9EDF4; padding-top: 4px">
+<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="font-size: 14px">Open folder as workspace</span>
+</label>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Open</button>
+<button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">add</span>Add editor</button>
+</div>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFEEDD; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; color: #7A2F06">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #C2570C">error</span>No editor found</div>
+<p style="margin: 0; font-size: 14px">Nothing was opened. Choose an editor, or get Visual Studio Code.</p>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 14px 0 10px; border: 0; border-radius: 12px; background: #FFFFFF; color: #7A2F06; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">download</span>Get the editor</button>
+</div>
+<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><div style="font-size: 13px; font-weight: 600; color: #475467">Detected editors</div><div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Visual Studio Code</span><span style="font-size: 13px; color: #475467">Per-user install</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">radio_button_unchecked</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Visual Studio Code Insiders</span><span style="font-size: 13px; color: #475467">Not found</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">radio_button_unchecked</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Portable Visual Studio Code</span><span style="font-size: 13px; color: #475467">Not found</span></div></div></div>
+</div>
+</article>
+
+<!-- file-converter -->
+<article id="file-converter" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">file-converter</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Offline file conversion and PDF tools</h2>
+<p style="margin: 0; color: #0D1526">Converts documents, media, archives and data on this computer without going online, and keeps your originals untouched.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Detect each file's type from a bounded read of its bytes, then offer searchable formats in eight categories.</li>
+<li>Enable a format only when everything it needs is bundled and proven offline; list the rest as disabled, naming the missing component.</li>
+<li>Write PDF split, merge, extract, reorder, rotate and metadata results atomically, then reopen them to verify.</li>
+<li>Leave sources untouched, warn before lossy changes, and ask for strong confirmation before overwriting.</li>
+<li>Process a queue of any length in fixed memory, with pause, resume, cancel, crash recovery and a storage check.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: Every category converting offline from bundled parts, outputs reopened, and a long queue in constant memory.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px; margin-right: auto"><span class="ms" aria-hidden="true" style="color: #2546D6">swap_horiz</span>Convert files</div>
+<label style="flex: 1 1 200px; max-width: 280px; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; box-sizing: border-box">
+<span class="ms" aria-hidden="true">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search formats</span>
+<input type="search" placeholder="Search formats" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent">
+</label>
+</div>
+<div role="group" aria-label="Category" style="display: flex; flex-wrap: wrap; gap: 6px">
+<button type="button" aria-pressed="true" style="min-height: 36px; padding: 0 12px; border: 0; border-radius: 999px; background: #0D1526; color: #FFFFFF; font-size: 13px; font-weight: 600; cursor: pointer">Documents and PDF</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Images</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Audio</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Video</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Archives</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Data</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Code and text</button>
+<button type="button" aria-pressed="false" style="min-height: 36px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 999px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Encodings</button>
+</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #E9EDF4; border-radius: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; min-height: 44px; box-sizing: border-box">
+<span class="ms" aria-hidden="true" style="color: #2546D6">picture_as_pdf</span>
+<span style="flex: 1 1 160px; min-width: 0; font-weight: 600; font-size: 14px">PDF tools</span>
+<span style="display: flex; flex-wrap: wrap; gap: 6px">
+<button type="button" style="min-height: 36px; padding: 0 10px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Split</button>
+<button type="button" style="min-height: 36px; padding: 0 10px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Merge</button>
+<button type="button" style="min-height: 36px; padding: 0 10px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Rotate</button>
+<button type="button" style="min-height: 36px; padding: 0 10px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600; cursor: pointer">Reorder</button>
+</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; min-height: 44px; box-sizing: border-box; border-top: 1px solid #E9EDF4; color: #475467">
+<span class="ms" aria-hidden="true">block</span>
+<span style="flex: 1 1 160px; min-width: 0; font-size: 14px"><span style="font-family: 'JetBrains Mono', monospace">HEIC</span> unavailable</span>
+<span style="font-size: 13px">Needs image decoder bundled</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 12px; border-radius: 12px; background: #F3F5F9">
+<span style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; font-weight: 600">Queue · <span style="font-variant-numeric: tabular-nums">240</span> files</span>
+<span aria-hidden="true" style="display: block; height: 8px; border-radius: 4px; background: #E9EDF4; overflow: hidden"><span style="display: block; height: 100%; width: 34%; border-radius: 4px; background: #2546D6"></span></span>
+</span>
+<button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">pause</span>Pause</button>
+</div>
+<div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #2546D6">description</span><span style="flex: 1 1 160px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">minutes-march.docx → PDF</span><span style="font-size: 13px; color: #475467">Done, reopened and checked</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #C2570C">image</span><span style="flex: 1 1 160px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">site-photo.png → JPG</span><span style="font-size: 13px; color: #475467">Lossy: quality 85, original kept</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">schedule</span><span style="flex: 1 1 160px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">budget.xlsx → CSV</span><span style="font-size: 13px; color: #475467">Waiting</span></div></div>
+</div>
+</div>
+</article>
+
+<!-- forge-publishing -->
+<article id="forge-publishing" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">forge-publishing</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Repository publishing workflow</h2>
+<p style="margin: 0; color: #0D1526">Publishes a repository to the account you choose and confirms it really arrived before saying so.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Let the person pick the account and owner from a searchable list with set active, refresh and sign out.</li>
+<li>Support several signed-in accounts, each token kept only in the operating-system credential store.</li>
+<li>Report sign-in, upload progress and failure honestly, then read the remote back before claiming success.</li>
+<li>Offer copy-and-push where a provider cannot fork, and always say which route was taken.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: Several accounts at once, a publish read back from the remote, and no token in settings, data or exports.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
+<div style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">publish</span>Publish repository</div>
+<label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; box-sizing: border-box">
+<span class="ms" aria-hidden="true">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search accounts</span>
+<input type="search" placeholder="Search accounts" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent">
+</label>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 8px 0 12px; border-radius: 12px; background: #E8EDFF">
+<span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 50%; background: #2546D6; flex: none"></span>
+<span style="flex: 1; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #16309F">ding-ding-projects</span>
+<span style="font-size: 12px; font-weight: 600; color: #16309F; padding-right: 4px">Active</span>
+</div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 8px 0 12px; border-radius: 12px">
+<span aria-hidden="true" style="width: 24px; height: 24px; border-radius: 50%; background: #DCE2EC; flex: none"></span>
+<span aria-hidden="true" style="display: block; height: 7px; width: 42%; border-radius: 4px; background: #DCE2EC"></span>
+<button type="button" style="margin-left: auto; min-height: 36px; padding: 0 8px; border: 0; border-radius: 10px; background: transparent; color: #2546D6; font-size: 13px; font-weight: 600; cursor: pointer">Set active</button>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #475467">Repository name<input type="text" value="feature-workbench" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0D1526; box-sizing: border-box; width: 100%; max-width: 100%"></label>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Publish</button>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="font-size: 13px; font-weight: 600; color: #475467; padding-bottom: 6px">Route: copy and push</div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 36px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="font-size: 14px">Signed in</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 36px"><span class="ms" aria-hidden="true" style="color: #C2570C">clock_loader_40</span><span style="font-size: 14px; font-weight: 600">Uploading</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 36px; color: #475467"><span class="ms" aria-hidden="true">radio_button_unchecked</span><span style="font-size: 14px">Read back from remote</span></div>
+<p style="margin: 6px 0 0; padding-top: 10px; border-top: 1px solid #E9EDF4; font-size: 13px; color: #475467">This provider cannot fork, so the repository is copied and pushed instead.</p>
+</div>
+</div>
+</article>
+
+<!-- minecraft-server-manager -->
+<article id="minecraft-server-manager" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">minecraft-server-manager</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Minecraft server creator and manager</h2>
+<p style="margin: 0; color: #0D1526">Creates and runs a Minecraft server of any version, here or on a remote machine, with every setting as a real control.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Discover every Java and Bedrock server version, past and current, plus development channels where they exist.</li>
+<li>Tie configuration, commands, runtime and compatibility to the chosen version, and show gaps honestly.</li>
+<li>Install flavours and plugins, then create and manage servers as a local process, local container, SSH process or SSH container.</li>
+<li>Give every setting a typed control; a version picker beside a plain text editor is not full support.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: All four targets working in the built app, a version compatibility matrix, and install, manage and recovery runs.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">dns</span>Create server</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div role="group" aria-label="Edition" style="flex: 1 1 200px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px">
+<button type="button" aria-pressed="true" style="min-height: 44px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Java</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; cursor: pointer">Bedrock</button>
+</div>
+<label style="flex: 1 1 200px; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; box-sizing: border-box">
+<span style="font-size: 13px; color: #475467">Version</span>
+<select style="flex: 1; min-width: 0; min-height: 44px; border: 0; background: transparent; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0D1526"><option>1.21.1</option></select>
+</label>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Run on</span>
+<div role="group" aria-label="Run on" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 12px; border: 2px solid #2546D6; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true" style="color: #2546D6">computer</span>Local process</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true" style="color: #475467">deployed_code</span>Local container</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true" style="color: #475467">terminal</span>SSH process</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: flex; align-items: center; gap: 8px; cursor: pointer; text-align: left"><span class="ms" aria-hidden="true" style="color: #475467">cloud</span>SSH container</button>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 12px; background: #F3F5F9">
+<span style="display: flex; justify-content: space-between; gap: 8px; font-size: 14px; font-weight: 600">View distance <output style="font-variant-numeric: tabular-nums; color: #2546D6">10</output></span>
+<input type="range" min="2" max="32" value="10" style="accent-color: #2546D6; width: 100%">
+</label>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; padding: 8px 12px; border-radius: 12px; background: #F3F5F9">
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="font-size: 14px">Install Paper with plugins</span></label>
+</div>
+</div>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Create server</button>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #E9EDF4; padding-top: 6px"><div style="font-size: 13px; font-weight: 600; color: #475467">Your servers</div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #2546D6">play_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Survival · Java 1.21.1</span><span style="font-size: 13px; color: #475467">Local process · running</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">stop_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Creative · Bedrock 1.21.40</span><span style="font-size: 13px; color: #475467">SSH container · stopped</span></div></div>
+</div>
+</div>
+</article>
+
+<!-- minecraft-world-generator -->
+<article id="minecraft-world-generator" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">minecraft-world-generator</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Version-specific Minecraft world generator</h2>
+<p style="margin: 0; color: #0D1526">Pre-generates a world with the exact server version you picked and saves it as a folder or ZIP where you choose.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Read the world options from the selected version's own server and give each one a typed control.</li>
+<li>Default the area to 100 × 100 chunks, with a drawing canvas for a custom area.</li>
+<li>Run that exact version only after the licence is accepted in the app, generating in bounded batches.</li>
+<li>Save to a folder or ZIP picked through the system Browse dialog, then verify what was written.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: A generated world, from folder and from ZIP, reopened by the same server version.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-wrap: wrap; gap: 16px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">landscape</span>Generate world</div>
+<div style="display: flex; justify-content: space-between; gap: 8px; font-size: 13px; color: #475467"><span>Area</span><span style="font-weight: 600; color: #0D1526">100 × 100 chunks</span></div>
+<div aria-hidden="true" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; padding: 8px; border-radius: 10px; background: #E9EDF4">
+<span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span>
+<span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span>
+<span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span>
+<span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span>
+<span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span>
+<span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #2546D6"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span><span style="aspect-ratio: 1; border-radius: 2px; background: #FFFFFF"></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">draw</span>Draw area</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 12px; background: transparent; color: #2546D6; font-weight: 600; cursor: pointer">Reset to default</button>
+</div>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #475467">Seed
+<input type="text" value="20261102" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0D1526; box-sizing: border-box; width: 100%">
+</label>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Save as</span>
+<div role="group" aria-label="Save as" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px">
+<button type="button" aria-pressed="false" style="min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; cursor: pointer">Folder</button>
+<button type="button" aria-pressed="true" style="min-height: 44px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">ZIP</button>
+</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: center">
+<span style="flex: 1; min-width: 0; min-height: 44px; padding: 0 12px; display: flex; align-items: center; border-radius: 12px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467; overflow: hidden; white-space: nowrap">worlds/survival.zip</span>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Browse</button>
+</div>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px">
+<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="font-size: 14px">I accept the Minecraft licence (EULA)</span>
+</label>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; cursor: pointer">Generate</button>
+</div>
+<div style="flex: 1 1 100%; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid #E9EDF4; padding-top: 12px"><span style="font-size: 13px; color: #475467">Generating with Java 1.21.1, batch 3 of 40</span><span aria-hidden="true" style="display: block; height: 8px; border-radius: 4px; background: #E9EDF4; overflow: hidden"><span style="display: block; height: 100%; width: 8%; border-radius: 4px; background: #2546D6"></span></span></div>
+</div>
+</div>
+</article>
+
+<!-- ollama-suite -->
+<article id="ollama-suite" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">ollama-suite</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Local Ollama model and runtime manager</h2>
+<p style="margin: 0; color: #0D1526">Installs Ollama, shows which models suit your hardware, downloads them in a batch and lets you chat with them locally.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Install Ollama in one click, recover a missing runtime, and respect existing installs and offline states.</li>
+<li>List the whole official catalogue and every tag, marked stale or offline when it cannot refresh.</li>
+<li>Give every variant an evidence-based fit: runs well, runs with limits, unlikely or unknown.</li>
+<li>Use the selection only for batch pulls, reporting partial results; chat streams locally with attachments only where a model supports them.</li>
+<li>Launch saved profiles from an allowlist with preview, snapshots, one-click restore and automatic rollback.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: A complete multi-page catalogue, all four fit verdicts on real hardware, and rollback after a failed launch.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; border-radius: 12px; background: #F3F5F9; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1 1 180px; min-width: 0">Ollama <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px">0.4.0</span> is running</span><button type="button" style="min-height: 44px; padding: 0 14px 0 10px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">restore</span>Restore snapshot</button></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px; margin-right: auto"><span class="ms" aria-hidden="true" style="color: #2546D6">storefront</span>Model store</div>
+<span style="font-size: 13px; color: #475467">Catalogue checked 2026-11-02 09:40</span>
+</div>
+<div style="display: flex; flex-direction: column; border: 1px solid #E9EDF4; border-radius: 12px">
+<label style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box">
+<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0">
+<span style="flex: 1 1 120px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">llama3.2:3b</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">check_circle</span>Runs well</span>
+</label>
+<label style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-top: 1px solid #E9EDF4">
+<input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0">
+<span style="flex: 1 1 120px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">qwen2.5:14b</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">speed</span>Runs with limits</span>
+</label>
+<label style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-top: 1px solid #E9EDF4">
+<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0">
+<span style="flex: 1 1 120px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">llama3.1:70b</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #E9EDF4; color: #475467; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">block</span>Unlikely</span>
+</label>
+<label style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 44px; padding: 8px 12px; box-sizing: border-box; border-top: 1px solid #E9EDF4">
+<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0">
+<span style="flex: 1 1 120px; min-width: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">new-model:7b</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #475467; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">help</span>Unknown</span>
+</label>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-top: 4px">
+<span style="font-size: 14px; color: #475467; margin-right: auto">2 selected</span>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Open chat</button>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">download</span>Pull selected</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 12px; border-radius: 12px; background: #F3F5F9; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true">memory</span><span style="flex: 1 1 200px; min-width: 0">Fit is based on this computer: 16 GB memory, 8 GB graphics memory. The last two unselected models were found in the catalogue but have no size data yet.</span></div>
+</div>
+</div>
+</article>
+
+<!-- progress-recovery -->
+<article id="progress-recovery" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">progress-recovery</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Progress, cancellation and recovery</h2>
+<p style="margin: 0; color: #0D1526">Shows how a long job is going where you started it, lets you stop it, and puts the fix beside whatever went wrong.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Show the operation's real progress inside the dialog that started it, with its submit control disabled.</li>
+<li>Block re-entry in the handler too, so a keyboard submit cannot start the work twice.</li>
+<li>Offer slow optional steps as an explicit choice that names what skipping leaves undone.</li>
+<li>Place recovery beside the control that failed, with sign-in on the spot for expired access and no work-losing remedies.</li>
+<li>Report partial and failed outcomes distinctly from success.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: A keyboard submit that cannot re-enter, a declined optional step honoured, and captures of partial and failed states.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
+<div style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">ios_share</span>Export workspace</div>
+<span style="font-size: 14px; color: #475467">12 tasks and settings to one JSON file.</span>
+<label style="display: flex; align-items: flex-start; gap: 12px; padding: 10px 12px; border-radius: 12px; background: #F3F5F9">
+<input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 2px 0 0">
+<span style="font-size: 14px">Also check every file (slower). Skipping leaves the export unchecked.</span>
+</label>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span aria-hidden="true" style="display: block; height: 8px; border-radius: 4px; background: #E9EDF4; overflow: hidden"><span style="display: block; height: 100%; width: 46%; border-radius: 4px; background: #2546D6"></span></span>
+<span style="font-size: 13px; color: #475467">Step <span style="font-variant-numeric: tabular-nums">3</span> of <span style="font-variant-numeric: tabular-nums">5</span>, writing tasks</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" disabled style="min-height: 44px; padding: 0 16px; border: 0; border-radius: 12px; background: #DCE2EC; color: #475467; font-weight: 600">Exporting</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Cancel</button>
+</div>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFEEDD; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; color: #7A2F06">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #C2570C">warning</span>Partly done</div>
+<p style="margin: 0; font-size: 14px">Some items were saved. Sign-in expired before the rest.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 12px; background: #FFFFFF; color: #7A2F06; font-weight: 600; cursor: pointer">Sign in again</button>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #F3C9A4; border-radius: 12px; background: transparent; color: #7A2F06; font-weight: 600; cursor: pointer">Retry</button>
+</div>
+</div>
+<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><div style="font-size: 13px; font-weight: 600; color: #475467">Steps</div><div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Gather tasks</span><span style="font-size: 13px; color: #475467">Done</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Gather settings</span><span style="font-size: 13px; color: #475467">Done</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #C2570C">clock_loader_40</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Write file</span><span style="font-size: 13px; color: #475467">In progress</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">remove_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Check every file</span><span style="font-size: 13px; color: #475467">Skipped by you</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">radio_button_unchecked</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Confirm saved copy</span><span style="font-size: 13px; color: #475467">Next</span></div></div></div>
+</div>
+</article>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5443}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -12,7 +12,8 @@ A fully new visual design for the Commonplace sample workbench (the GitHub Pages
 | `Settings.dc.html` | Settings as a full page with a section rail (a chip row on phones). |
 | `Setup.dc.html` | Setup wizard, step 2 of 3 (Look and comfort). |
 | `Mobile.dc.html` | Workspace on a 390 x 844 phone, dark theme (interactive lane tabs). |
-| `frames/*.png` | Rendered stills of every artboard at 1440 and 390 wide, after review fixes. |
+| `frames/*.jpg` | Rendered stills of every artboard at 1440 and 390 wide, after review fixes (deep-dive 1440 stills are scaled to 1080 wide to keep the repository small). |
+| `Features-*.dc.html` | Feature deep dive: 14 pages (canvas page "Feature deep dive") covering all 112 tracked features in `src/features.json`, one card per feature with its spec and a drawn mock. |
 | `REHEARSAL.md` | Review record: what was checked, what was found and fixed. |
 
 Artboards are Design Component HTML files. They open in the design canvas this was made in; for a plain browser preview, a small renderer is needed for the `{{...}}` holes, `<sc-if>` and `<sc-for>` tags.
@@ -50,6 +51,14 @@ Artboards are Design Component HTML files. They open in the design canvas this w
 - References read: `SKILL.md`, `references/craft.md`, `references/framing.md`, `references/rehearse.md`, `references/review.md`.
 - Gold examples used for calibration: `static-card` (quiet hierarchy, restraint) and `linear` (lead with the product surface). No gold folder was copied, because these are real application screens rather than a marketing illustration.
 - Stageshow rules that do not apply to real application screens and were recorded as not applicable: hero bleed and crop, satellites, the no-real-headings rule, cursor, motion and loop rules.
+
+## Feature deep dive
+
+Every one of the 112 features tracked in `src/features.json` (statuses as of `8157584`) has a card on one of 14 pages: Language, voice and personalization (13), Games (2), Appearance and layout (12), Navigation, search and commands (11), Safety, locks and authentication (7), Records, history and messages (7), Built-in tools and hand-off (8), Status Hub (4), Completeness and evidence (6), Landing site and shared links (10), Build and install (8), Release pipeline (8), Repository records and README (13), Canonical instruction deliverables (3).
+
+Each card shows the feature id and status, a one-line summary, what it must do, the proof it needs, and a drawn mock of the feature working in the Commonplace look. Each page has a jump list. Sample values in mocks (versions, counts, commits, codes like `000 000`) are illustrative only. Mocks never claim a feature has shipped; status pills follow the ledger.
+
+Eleven features had no detailed specification under their id (food discovery and its photo source, release food code names and photo, mobile site, responsive layout matrix, private documentation companion, wiki sync, public evidence gallery, dialog tone and emoji, portable editions); their cards are drawn from the public requirement text and are thinner.
 
 ## Source version
 

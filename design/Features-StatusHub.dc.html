@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Status Hub</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.well{padding:10px!important;margin:0 -12px!important;width:calc(100% + 24px)!important;border-radius:12px!important}.well *{max-width:100%}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; align-content: center; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 48px 24px 40px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Feature deep dive</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -0.03em">Status Hub</h1>
+<p style="margin: 0; color: #475467; font-size: 17px; max-width: 680px">A shared service that shows each project's real state, carries answers back to running work, and raises alarms only through destinations the owner set up on purpose.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px"><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px; box-sizing: border-box; border-radius: 999px; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526; font-size: 13px; font-weight: 600">4 features</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px 0 8px; box-sizing: border-box; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>4 incomplete</span></div>
+<nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px"><a href="#discord-status-bridge" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Discord status integration</a><a href="#panic-webhooks" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Emergency status webhooks</a><a href="#status-hub" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Status dashboard service</a><a href="#tidbyt-displays" style="min-height: 36px; padding: 0 12px; display: inline-flex; align-items: center; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Status display integration</a></nav>
+</section>
+
+<!-- discord-status-bridge -->
+<article id="discord-status-bridge" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">discord-status-bridge</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Discord status integration</h2>
+<p style="margin: 0; color: #0D1526">Lets you follow work and answer its questions from Discord, through the same inbox the Hub already uses.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Read the same session status the Hub shows, and write answers into the same session inbox.</li>
+<li>Keep the bridge token on the Hub host only; reading it back reports that one is saved, never its value.</li>
+<li>Limit the bridge token to reading and replying, and refuse to start if it matches the worker enrolment token.</li>
+<li>Name every Hub behaviour Discord cannot show, and what it shows instead.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: A Discord answer arriving through the ordinary replies route, and a refused start with a shared token.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
+<div style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">forum</span>Discord bridge</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Bridge token</span>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="flex: 1 1 140px; min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 12px; background: #E8EDFF; color: #16309F; font-size: 14px; font-weight: 600; box-sizing: border-box"><span class="ms" aria-hidden="true">key</span>Saved on host</span>
+<button type="button" style="min-height: 44px; padding: 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer">Replace</button>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; border-top: 1px solid #E9EDF4; padding-top: 8px">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 36px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="font-size: 14px">Read and reply only</span></div>
+<div style="display: flex; align-items: center; gap: 10px; min-height: 36px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="font-size: 14px">Differs from enrolment token</span></div>
+</div>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="font-size: 13px; font-weight: 600; color: #475467">Answer path</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="min-height: 40px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 10px; background: #F3F5F9; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #475467">chat</span>Reply in Discord</span>
+<span class="ms" aria-hidden="true" style="align-self: center; color: #475467">arrow_downward</span>
+<span style="min-height: 40px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 10px; background: #F3F5F9; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #475467">hub</span>Bridge</span>
+<span class="ms" aria-hidden="true" style="align-self: center; color: #475467">arrow_downward</span>
+<span style="min-height: 40px; padding: 0 12px; display: flex; align-items: center; gap: 8px; border-radius: 10px; background: #E8EDFF; color: #16309F; font-size: 14px; font-weight: 600"><span class="ms" aria-hidden="true">inbox</span>Session inbox</span>
+</div>
+</div>
+<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><div style="font-size: 13px; font-weight: 600; color: #475467">What Discord shows instead</div><div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #475467">progress_activity</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Live progress bar</span><span style="font-size: 13px; color: #475467">Posted as a percentage</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">smart_button</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Answer buttons</span><span style="font-size: 13px; color: #475467">Reply with the option number</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #475467">image</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Evidence captures</span><span style="font-size: 13px; color: #475467">Sent as a link to the Hub</span></div></div></div>
+</div>
+</article>
+
+<!-- panic-webhooks -->
+<article id="panic-webhooks" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">panic-webhooks</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Emergency status webhooks</h2>
+<p style="margin: 0; color: #0D1526">Alerts the destinations the owner chose, in a fixed order, only when an emergency is verified.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Send only verified emergencies, such as destroyed, intrusion attempt, reset or unavailable; suspicion alone never sends.</li>
+<li>Deliver in a fixed order: Home Assistant, then Discord, then generic webhooks, with safe retries and no failure blocking the next.</li>
+<li>Let only the owner register destinations; secrets stay on the host and read back as present or absent.</li>
+<li>Refuse unsafe targets, redirects, oversized payloads and DNS rebinding, and send only the fixed alert fields.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: Truthful per-destination results, and checks that block forged internal targets.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px; margin-right: auto"><span class="ms" aria-hidden="true" style="color: #C2570C">emergency_home</span>Alert sent: unavailable</div>
+<span style="font-size: 13px; color: #475467">2026-11-02 14:05</span>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border: 1px solid #E9EDF4; border-radius: 12px">
+<li style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 52px; padding: 8px 12px; box-sizing: border-box">
+<span style="width: 28px; height: 28px; border-radius: 50%; background: #0D1526; color: #FFFFFF; display: grid; place-items: center; font-size: 13px; font-weight: 600; flex: none">1</span>
+<span style="flex: 1 1 140px; min-width: 0; font-weight: 600; font-size: 14px">Home Assistant</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">check_circle</span>Delivered</span>
+</li>
+<li style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 52px; padding: 8px 12px; box-sizing: border-box; border-top: 1px solid #E9EDF4">
+<span style="width: 28px; height: 28px; border-radius: 50%; background: #0D1526; color: #FFFFFF; display: grid; place-items: center; font-size: 13px; font-weight: 600; flex: none">2</span>
+<span style="flex: 1 1 140px; min-width: 0; font-weight: 600; font-size: 14px">Discord bridge</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">replay</span>Retrying, attempt 2</span>
+</li>
+<li style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 52px; padding: 8px 12px; box-sizing: border-box; border-top: 1px solid #E9EDF4">
+<span style="width: 28px; height: 28px; border-radius: 50%; background: #0D1526; color: #FFFFFF; display: grid; place-items: center; font-size: 13px; font-weight: 600; flex: none">3</span>
+<span style="flex: 1 1 140px; min-width: 0; font-weight: 600; font-size: 14px">Webhook</span>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #E9EDF4; color: #475467; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">block</span>Blocked: redirect</span>
+</li>
+</ol>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-top: 4px">
+<span style="font-size: 14px; color: #475467; margin-right: auto; display: inline-flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true">lock</span>Owner only</span>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">add</span>Add destination</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 12px; border-top: 1px solid #E9EDF4; padding-top: 12px"><label style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #475467">Webhook address<input type="url" value="https://hooks.example.com/alert" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0D1526; box-sizing: border-box; width: 100%; max-width: 100%"></label><span style="min-height: 44px; padding: 0 12px; display: inline-flex; align-items: center; gap: 6px; border-radius: 12px; background: #E8EDFF; color: #16309F; font-size: 14px; font-weight: 600"><span class="ms" aria-hidden="true">key</span>Secret saved on host</span></div>
+</div>
+</div>
+</article>
+
+<!-- status-hub -->
+<article id="status-hub" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">status-hub</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Status dashboard service</h2>
+<p style="margin: 0; color: #0D1526">Shows each project's real state in one shared place, with the evidence behind every claim.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Register each project with its repository, default branch, release channel, real check results and a stable link.</li>
+<li>Give the app its own status page showing what the Hub sees, with the evidence behind each claim.</li>
+<li>Treat Hub rows as evidence, never intent: an answer counts as sent only once the session inbox confirms it.</li>
+<li>Carry a Status Hub row in every completeness checklist, like any other feature.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: The registration visible on the Hub, inbox delivery confirmed by polling, and status page captures.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start">
+<div style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08), 0 8px 24px rgba(13,21,38,.06)">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px; margin-right: auto"><span class="ms" aria-hidden="true" style="color: #2546D6">monitor_heart</span>Commonplace</div>
+<span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 12px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">check_circle</span>Registered</span>
+</div>
+<dl style="margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px 16px; font-size: 14px">
+<dt style="color: #475467">Repository</dt><dd style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; overflow-wrap: anywhere">feature-workbench</dd>
+<dt style="color: #475467">Default branch</dt><dd style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">main</dd>
+<dt style="color: #475467">Release channel</dt><dd style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px">stable</dd>
+<dt style="color: #475467">Checks</dt><dd style="margin: 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #E8EDFF; color: #16309F; font-size: 12px; font-weight: 600; white-space: nowrap"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">check_circle</span>12 passed</span><span style="display: inline-flex; align-items: center; gap: 4px; min-height: 26px; padding: 0 10px 0 6px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 12px; font-weight: 600; white-space: nowrap"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">error</span>1 failed</span></dd>
+</dl>
+<a href="#top" style="align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; text-decoration: none">View evidence <span class="ms" aria-hidden="true">arrow_forward</span></a>
+</div>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #C2570C">help</span>Question waiting</div>
+<span style="font-size: 14px">Keep the current folder layout, or use the default?</span>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #475467">Your answer
+<input type="text" value="Use the default" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font: inherit; font-weight: 400; color: #0D1526; box-sizing: border-box; width: 100%">
+</label>
+<button type="button" disabled style="align-self: flex-start; min-height: 44px; padding: 0 14px 0 10px; border: 0; border-radius: 12px; background: #E9EDF4; color: #475467; font-weight: 600; display: inline-flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true">hourglass_top</span>Waiting for inbox</button>
+</div>
+<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><div style="font-size: 13px; font-weight: 600; color: #475467">Recent evidence</div><div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Checks ran on main</span><span style="font-size: 13px; color: #475467">2026-11-02 13:58</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #2546D6">rocket_launch</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Release 0.4.0 published</span><span style="font-size: 13px; color: #475467">2026-11-01</span></div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; border-top: 1px solid #E9EDF4; "><span class="ms" aria-hidden="true" style="color: #2546D6">mark_email_read</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Answer reached session inbox</span><span style="font-size: 13px; color: #475467">Confirmed by polling</span></div></div></div>
+</div>
+</article>
+
+<!-- tidbyt-displays -->
+<article id="tidbyt-displays" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">tidbyt-displays</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 0 12px 0 8px; border-radius: 999px; background: #FFEEDD; color: #7A2F06; font-size: 13px; font-weight: 600"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Status display integration</h2>
+<p style="margin: 0; color: #0D1526">Shows live progress on a Tidbyt display on your desk; updates are paused for now.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Paused for now: no frames are sent, and a missing frame never blocks work.</li>
+<li>When resumed, send registered Tidbyt displays an animated scrolling frame with a factual progress bar for each key event.</li>
+<li>Batch simultaneous events, and keep each image within the host's 32 KiB limit.</li>
+<li>Show an animated idle frame at 100% when work stops, and say plainly when the Hub cannot be reached.</li>
+</ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Proof needed: A delivery receipt per event, an idle frame that moves, and every frame under the size limit.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; background: #F3F5F9; border-radius: 16px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; background: #FFEEDD; color: #7A2F06">
+<span class="ms" aria-hidden="true" style="color: #C2570C">pause_circle</span>
+<span style="flex: 1 1 0; min-width: 0; font-size: 14px; font-weight: 600">Display updates are paused. No frames are being sent.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch">
+<figure style="flex: 1 1 240px; min-width: 0; margin: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="aspect-ratio: 2 / 1; border-radius: 10px; background: #0D1526; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #B9C6FF; white-space: nowrap">Release published</span>
+<span aria-hidden="true" style="display: block; height: 8px; border-radius: 2px; background: #172238; overflow: hidden"><span style="display: block; height: 100%; width: 62%; background: #8EA2FF"></span></span>
+</div>
+<figcaption style="font-size: 13px; color: #475467">Event frame, scrolling</figcaption>
+</figure>
+<figure style="flex: 1 1 240px; min-width: 0; margin: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)">
+<div style="aspect-ratio: 2 / 1; border-radius: 10px; background: #0D1526; padding: 14px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #C9D2E3">IDLE</span>
+<span aria-hidden="true" style="display: block; height: 8px; border-radius: 2px; background: #8EA2FF"></span>
+</div>
+<figcaption style="font-size: 13px; color: #475467">Idle frame at 100%, animated</figcaption>
+</figure>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 12px 16px; border-radius: 14px; background: #FFFFFF; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 6px; margin-right: auto"><span class="ms" aria-hidden="true" style="color: #475467">image</span><span>Frame size 21 KiB of 32 KiB</span></span>
+<span style="display: inline-flex; align-items: center; gap: 6px; color: #475467"><span class="ms" aria-hidden="true">receipt_long</span><span>Last receipt <span style="font-family: 'JetBrains Mono', monospace">a1b2c3d</span></span></span>
+</div>
+<div style="flex: 1 1 100%; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 1px 2px rgba(13,21,38,.08)"><div style="font-size: 13px; font-weight: 600; color: #475467">Registered displays</div><div style="display: flex; flex-direction: column"><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; min-height: 44px; padding: 8px 0; box-sizing: border-box; "><span class="ms" aria-hidden="true" style="color: #475467">tv</span><span style="flex: 1 1 160px; min-width: 0; font-size: 14px">Desk display</span><span style="font-size: 13px; color: #475467">Paused, no frames sent</span></div></div></div>
+</div>
+</article>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2789}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

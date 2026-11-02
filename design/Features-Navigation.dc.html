@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Navigation, search and commands</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.well{padding:10px!important;margin:0 -12px!important;width:calc(100% + 24px)!important;border-radius:12px!important}.well *{max-width:100%}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; align-content: center; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Feature deep dive</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.05; letter-spacing: -0.03em">Navigation, search and commands</h1>
+<p style="margin: 0; color: #475467; font-size: 17px; max-width: 720px">How people find any task, setting or control and act on it without losing their place.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526">11 features</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>6 partial</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>5 incomplete</span></div>
+<nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px"><a href="#blank-editors" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Useful presets for empty editors</a><a href="#command-palette" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Command palette</a><a href="#context-menus" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Context menus</a><a href="#guided-forms" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Guided forms</a><a href="#info-icon-guidance" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Contextual help for every control</a><a href="#menu-shortcuts" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Visible menu keyboard shortcuts</a><a href="#onboarding-wizard" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Practical setup wizard</a><a href="#regex-search" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Independent full regex search builders</a><a href="#rich-controls" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Rich controls</a><a href="#settings-explanations" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Settings, defaults and real consumers</a><a href="#tabs" style="display: inline-flex; align-items: center; min-height: 36px; box-sizing: border-box; padding: 0 12px; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Complete tab navigation</a></nav>
+</section>
+
+<article id="blank-editors" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">blank-editors</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Useful presets for empty editors</h2>
+<p style="margin: 0; color: #475467">An empty editor offers ready-made starting points built from the real defaults, so you never face a blank screen.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Opens an empty editor with presets instead of a blank space.</li><li>Builds every preset from the real defaults, so a preset and Reset to defaults always agree.</li><li>States exactly what each preset creates and sets before you apply it.</li><li>Records applying a preset in local history, so one undo reverses it.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: Preset and reset produce the same result, and undo restores the empty state.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<h3 style="margin: 0 auto 0 0; font-size: 16px; font-weight: 600">Board columns</h3>
+<button type="button" aria-label="Undo last change" style="width: 44px; height: 44px; padding: 0; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; display: inline-grid; place-items: center; cursor: pointer; flex: none"><span class="ms" aria-hidden="true">undo</span></button>
+</div>
+<p style="margin: 0; color: #475467; font-size: 14px">This board has no columns yet. Start from a preset; each one says what it creates.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<button type="button" aria-pressed="true" style="padding: 14px; border: 2px solid #2546D6; border-radius: 14px; background: #FFFFFF; color: #0D1526; text-align: left; display: flex; flex-direction: column; gap: 10px; cursor: pointer">
+<span style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #2546D6">restart_alt</span>Start from defaults</span>
+<span aria-hidden="true" style="display: flex; gap: 6px"><span style="flex: 1; height: 28px; border-radius: 6px; background: #E9EDF4"></span><span style="flex: 1; height: 28px; border-radius: 6px; background: #FFEEDD"></span><span style="flex: 1; height: 28px; border-radius: 6px; background: #E8EDFF"></span></span>
+<span style="font-size: 13px; color: #475467">Creates To do, In progress and Done. Same as Reset to defaults.</span>
+</button>
+<button type="button" aria-pressed="false" style="padding: 14px; border: 1px solid #DCE2EC; border-radius: 14px; background: #FFFFFF; color: #0D1526; text-align: left; display: flex; flex-direction: column; gap: 10px; cursor: pointer">
+<span style="font-weight: 600; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true" style="color: #475467">event_repeat</span>Weekly review</span>
+<span aria-hidden="true" style="display: flex; gap: 6px"><span style="flex: 1; height: 28px; border-radius: 6px; background: #E9EDF4"></span><span style="flex: 1; height: 28px; border-radius: 6px; background: #E9EDF4"></span></span>
+<span aria-hidden="true" style="display: flex; flex-direction: column; gap: 7px; padding-top: 2px"><span aria-hidden="true" style="display: block; width: 80%; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span aria-hidden="true" style="display: block; width: 55%; height: 6px; border-radius: 3px; background: #DCE2EC"></span></span>
+</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-top: 4px">
+<span style="flex: 1 1 220px; display: flex; align-items: center; gap: 8px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">history</span>Applying is recorded in local history and can be undone.</span>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: #2546D6; color: #FFFFFF"><span class="ms" aria-hidden="true">check</span>Apply preset</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="command-palette" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">command-palette</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Command palette</h2>
+<p style="margin: 0; color: #475467">One shortcut finds any command, page or setting and takes you straight to the exact control.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Opens with Ctrl+Shift+F from anywhere; no competing Ctrl+K default.</li><li>Lists every command, page, article, setting and appearance control, with live controls in rows.</li><li>Jumps to the exact control: right tab, scroll position, focus and a brief highlight.</li><li>Shows locked items as locked and asks first instead of jumping past the lock.</li><li>Remembers card or full-window size; has its own pattern search.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: Every setting and page reachable by shortcut and jump, captured from the built app.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 12px; display: flex; flex-direction: column; gap: 8px; max-width: 620px; margin: 0 auto; width: 100%; box-sizing: border-box">
+<div style="display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 6px 0 12px; border: 2px solid #2546D6; border-radius: 12px">
+<span class="ms" aria-hidden="true" style="color: #475467">search</span>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search commands and settings</span>
+<input type="text" value="text size" style="flex: 1; min-width: 0; border: 0; font: inherit; font-size: 16px; color: #0D1526; background: transparent; outline: none">
+<button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 52px; padding: 6px 12px; border-radius: 12px; background: #E8EDFF">
+<span class="ms" aria-hidden="true" style="color: #16309F">format_size</span>
+<span style="flex: 1 1 140px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 14px">Text size</span><span aria-hidden="true" style="display: block; width: 120px; height: 6px; border-radius: 3px; background: #B9C6FF"></span></span>
+<label style="display: flex; align-items: center; gap: 10px; flex: none"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Text size</span><input type="range" min="1" max="5" value="3" style="accent-color: #2546D6; width: 120px"><output style="font-variant-numeric: tabular-nums; font-weight: 600; color: #16309F">100%</output></label>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 52px; padding: 6px 12px; border-radius: 12px; background: transparent">
+<span class="ms" aria-hidden="true" style="color: #475467">palette</span>
+<span style="flex: 1 1 140px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 14px">Appearance settings</span><span aria-hidden="true" style="display: block; width: 140px; height: 6px; border-radius: 3px; background: #DCE2EC"></span></span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Go to</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; min-height: 52px; padding: 6px 12px; border-radius: 12px; background: transparent">
+<span class="ms" aria-hidden="true" style="color: #475467">lock</span>
+<span style="flex: 1 1 140px; min-width: 0; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 14px; color: #475467">Theme</span><span style="font-size: 12px; color: #7A2F06">Locked. Unlock to change.</span></span>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; flex: none">Unlock</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 4px 0; border-top: 1px solid #EEF1F6">
+<span style="margin-right: auto; flex: 1 1 200px; font-size: 13px; color: #475467; line-height: 1.9"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Ctrl Shift F</span> opens it. Enter jumps to the control and highlights it.</span>
+<fieldset style="margin: 0; border: 0; min-width: 0; display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px"><legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Palette size</legend><button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1); white-space: nowrap">Card</button><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">Full window</button></fieldset>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="context-menus" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">context-menus</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Context menus</h2>
+<p style="margin: 0; color: #475467">Right-click, long-press or the menu key on any element gives the actions for that element, with a filter.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Gives every element its own right-click menu, with keyboard and touch equivalents.</li><li>Includes Edit appearance and Lock this element on every menu.</li><li>Opens with a focused filter field and its own pattern tools, however short the menu.</li><li>Arrows move, Enter runs, Esc clears then closes, and focus returns to the opener.</li><li>Announces the match count and says plainly when nothing matches.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: Menus on small, disabled and state elements, each with a working filter.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 200px; min-width: 0; background: #FFEEDD; border-radius: 20px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<span style="margin: 4px 8px; font-size: 14px; font-weight: 600; color: #7A2F06; display: flex; align-items: center; gap: 8px"><span class="ms" aria-hidden="true">clock_loader_40</span>In progress</span>
+<article style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 1px 2px rgba(13,21,38,.06); outline: 2px solid #2546D6; outline-offset: 2px">
+<h4 style="margin: 0; font-size: 15px; font-weight: 600">Write the next useful step</h4>
+<span aria-hidden="true" style="display: flex; flex-direction: column; gap: 7px"><span aria-hidden="true" style="display: block; width: 85%; height: 6px; border-radius: 3px; background: #DCE2EC"></span><span aria-hidden="true" style="display: block; width: 60%; height: 6px; border-radius: 3px; background: #DCE2EC"></span></span>
+</article>
+<div aria-hidden="true" style="background: #FFFFFF; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 7px"><span aria-hidden="true" style="display: block; width: 70%; height: 8px; border-radius: 4px; background: #DCE2EC"></span><span aria-hidden="true" style="display: block; width: 45%; height: 6px; border-radius: 3px; background: #DCE2EC"></span></div>
+</div>
+<section aria-label="Task actions" style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 8px; display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; gap: 6px; padding-bottom: 6px">
+<label style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border: 2px solid #2546D6; border-radius: 10px"><span class="ms" aria-hidden="true" style="color: #475467">filter_list</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Filter actions</span><input type="text" value="edit" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent; outline: none"></label>
+<button type="button" aria-label="Pattern tools for this menu" style="width: 44px; height: 44px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer; flex: none">.*</button>
+</div>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: #E8EDFF; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">edit</span><span style="flex: 1 1 auto; min-width: 0">Edit task</span></button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">brush</span><span style="flex: 1 1 auto; min-width: 0">Edit appearance&#8230;</span></button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">lock</span><span style="flex: 1 1 auto; min-width: 0">Lock this element&#8230;</span></button>
+<span aria-live="polite" style="padding: 8px 12px 4px; font-size: 12px; color: #475467; border-top: 1px solid #EEF1F6; margin-top: 4px">3 of 9 actions match. Esc clears, then closes.</span>
+</section>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-top: 16px">
+<div style="flex: 1 1 200px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">Same menu without a mouse</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Shift F10</span><span>or</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Menu</span><span>on the focused card; long-press on touch.</span></div>
+</div>
+<section aria-label="Move to dropdown" style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 8px; display: flex; flex-direction: column; gap: 6px">
+<label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 10px; border: 2px solid #2546D6; border-radius: 10px"><span class="ms" aria-hidden="true" style="color: #475467">filter_list</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Filter columns</span><input type="text" value="archive" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent; outline: none"></label>
+<span style="padding: 8px 12px; font-size: 13px; color: #475467">No columns match &#8220;archive&#8221;. Clear the filter to see all 3.</span>
+</section>
+</div>
+</div>
+</div>
+</article>
+<article id="guided-forms" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">guided-forms</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Guided forms</h2>
+<p style="margin: 0; color: #475467">Forms suggest valid values and can walk you through a choice step by step, without blocking the direct route.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Offers real suggestions and valid defaults instead of blank boxes.</li><li>Checks typed and picked values the same way, inline, as you go.</li><li>Keeps simple choices for beginners, with a Custom state that never overwrites advanced values.</li><li>Offers an optional step-by-step guide with Back, Cancel and a clear result; the direct route stays.</li><li>Gives every editable text box its own clear button.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: The guided and direct routes save the same value through the same checks.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px; max-width: 560px; margin: 0 auto; width: 100%; box-sizing: border-box">
+<div style="background: #E8EDFF; border-radius: 14px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">assistant_navigation</span>Guided, step 1 of 2</span>
+<span style="font-weight: 600">When should this task be due?</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 1px solid #B9C6FF; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer">Today</button>
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: #2546D6; color: #FFFFFF; font-weight: 600; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check</span>Friday</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 1px solid #B9C6FF; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer">Custom</button>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span style="display: contents"><span style="font-size: 13px; font-weight: 600; color: #0D1526">Due date</span></span><span style="display: flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF"><span class="ms" aria-hidden="true" style="color: #475467">event</span><input type="text" value="2026-11-06" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent; outline: none"><button type="button" aria-label="Clear due date" style="width: 32px; height: 32px; padding: 0; border: 0; border-radius: 8px; background: transparent; color: #475467; display: inline-grid; place-items: center; cursor: pointer; flex: none"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">close</span></button></span></label>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #16309F; margin-top: -8px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check_circle</span>Valid. Typed and picked dates are checked the same way.</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end">
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: transparent; color: #2546D6">Cancel</button><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526"><span class="ms" aria-hidden="true">arrow_back</span>Back</button><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: #2546D6; color: #FFFFFF">Next</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="info-icon-guidance" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">info-icon-guidance</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Contextual help for every control</h2>
+<p style="margin: 0; color: #475467">A small info button above each control explains it and lets you practise safely before changing anything real.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Places a small info button directly above each capable control.</li><li>Opens help written for that control: purpose, options, default and a worked example.</li><li>Includes a practice area with its own reset that never touches real data.</li><li>Works by keyboard, has an accessible name, and returns focus when closed.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: Removing any icon, its binding or its panel fails a check; restoring it passes.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start">
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; margin-right: auto">Reminder lead time</span>
+<button type="button" aria-label="About reminder lead time" aria-expanded="true" style="width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: #E8EDFF; color: #16309F; display: inline-grid; place-items: center; cursor: pointer; flex: none"><span class="ms" aria-hidden="true">info</span></button>
+</div>
+<select aria-label="Reminder lead time" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font: inherit; color: #0D1526"><option>1 day before</option></select>
+<div style="display: flex; align-items: center; gap: 8px; margin-top: 10px">
+<span style="font-size: 13px; font-weight: 600; margin-right: auto">Repeat</span>
+<button type="button" aria-label="About repeat" style="width: 44px; height: 44px; padding: 0; border: 0; border-radius: 12px; background: transparent; color: #475467; display: inline-grid; place-items: center; cursor: pointer; flex: none"><span class="ms" aria-hidden="true">info</span></button>
+</div>
+<select aria-label="Repeat" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font: inherit; color: #0D1526"><option>Every week</option></select>
+<span style="font-size: 12px; color: #475467; margin-top: 6px">Each control has its own help.</span>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-weight: 600">How far ahead you are reminded</span>
+<span style="font-size: 14px; color: #475467">Sends a reminder this long before the due date. Default: 1 day before. Choose None to turn reminders off for this task.</span>
+<span style="font-size: 13px; color: #0D1526"><strong style="font-weight: 600">Example:</strong> a task due Friday reminds you on Thursday.</span>
+<div style="background: #F3F5F9; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 600; color: #475467; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">science</span>Practice area. Nothing here is saved.</span>
+<input type="range" aria-label="Practice lead time" min="0" max="7" value="1" style="accent-color: #2546D6; width: 100%">
+<div style="display: flex; align-items: center; gap: 8px"><span style="flex: 1; font-size: 13px; color: #475467">Due Fri 2026-11-06, reminder Thu 2026-11-05</span><button type="button" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer; flex: none">Reset</button></div>
+</div>
+<div style="display: flex; justify-content: flex-end"><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526">Close</button></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="menu-shortcuts" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">menu-shortcuts</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Visible menu keyboard shortcuts</h2>
+<p style="margin: 0; color: #475467">Menu items show the keyboard shortcut that really works for them, so you learn the faster route as you go.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Shows each working shortcut right-aligned in the platform's own notation.</li><li>Reads the label from the same source that registers the key, so they cannot drift.</li><li>Shows nothing for items without a shortcut.</li><li>Announces the shortcut to screen readers once.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: A check compares displayed and registered shortcuts in every menu context.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; justify-content: center">
+<section aria-label="Task actions with shortcuts" style="flex: 0 1 340px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 8px; display: flex; flex-direction: column; gap: 2px">
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">content_copy</span><span style="flex: 1 1 auto; min-width: 0">Copy</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Ctrl C</span></button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: #E8EDFF; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">library_add</span><span style="flex: 1 1 auto; min-width: 0">Duplicate</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Ctrl D</span></button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">drive_file_move</span><span style="flex: 1 1 auto; min-width: 0">Move to&#8230;</span></button>
+<span aria-hidden="true" style="height: 1px; background: #EEF1F6; margin: 4px 8px"></span>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #7A2F06; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #C2570C">delete</span><span style="flex: 1 1 auto; min-width: 0">Delete</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Delete</span></button>
+<span aria-hidden="true" style="height: 1px; background: #EEF1F6; margin: 4px 8px"></span>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">brush</span><span style="flex: 1 1 auto; min-width: 0">Edit appearance&#8230;</span></button>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; font-size: 14px; font-weight: 500; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">lock</span><span style="flex: 1 1 auto; min-width: 0">Lock this element&#8230;</span></button>
+</section>
+<div style="flex: 1 1 220px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; color: #475467">One source for both</span>
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; padding: 6px 10px; border-radius: 8px; background: #0D1526; color: #B9C6FF">duplicate &#8594; Ctrl+D</span></div>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">arrow_downward</span>registers the key and draws the label</span>
+<div style="display: flex; flex-direction: column; gap: 2px; border-top: 1px solid #EEF1F6; padding-top: 8px">
+<span style="display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 13px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #2546D6">check_circle</span><span style="flex: 1">Windows and Linux</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Ctrl D</span></span>
+<span style="display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 13px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #2546D6">check_circle</span><span style="flex: 1">macOS</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 3px 7px; border-radius: 6px; background: #EEF1F6; color: #475467; white-space: nowrap">Cmd D</span></span>
+<span style="display: flex; align-items: center; gap: 8px; min-height: 32px; font-size: 13px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">record_voice_over</span><span style="flex: 1">Read aloud once</span><span style="font-size: 12px; color: #475467">&#8220;Duplicate, Control D&#8221;</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="onboarding-wizard" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">onboarding-wizard</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Practical setup wizard</h2>
+<p style="margin: 0; color: #475467">First run walks you through real setup, saves progress, and leaves you in a working workspace.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Performs real setup actions and reports each result.</li><li>Shows progress with Back and Next; optional steps can be skipped.</li><li>Saves progress so setup resumes where it stopped.</li><li>Works by keyboard and in both languages, and ends in the working workspace.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: A first run completes real setup, resumes after reload and lands in the workspace.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 18px; max-width: 600px; margin: 0 auto; width: 100%; box-sizing: border-box">
+<ol aria-label="Setup progress" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px">
+<li style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: #0D1526"><span style="width: 28px; height: 28px; border-radius: 50%; background: #2546D6; color: #FFFFFF; display: inline-grid; place-items: center; flex: none"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check</span></span>Language</li><li style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #0D1526"><span style="width: 28px; height: 28px; box-sizing: border-box; border-radius: 50%; border: 2px solid #2546D6; color: #16309F; display: inline-grid; place-items: center; font-weight: 600; font-size: 13px; flex: none">2</span>Backup</li><li style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: #475467"><span style="width: 28px; height: 28px; border-radius: 50%; background: #E9EDF4; color: #475467; display: inline-grid; place-items: center; font-weight: 600; font-size: 13px; flex: none">3</span>First task</li>
+</ol>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em">Make your first backup</h3>
+<span aria-hidden="true" style="display: flex; flex-direction: column; gap: 7px; padding-top: 4px"><span aria-hidden="true" style="display: block; width: 80%; height: 6px; border-radius: 3px; background: #DCE2EC"></span></span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; background: #E8EDFF; color: #16309F">
+<span class="ms" aria-hidden="true">task_alt</span><span style="flex: 1; min-width: 0; font-weight: 600; font-size: 14px">Backup saved as <span style="font-family: 'JetBrains Mono', monospace; font-weight: 500">commonplace-backup-2026-11-02.json</span></span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="margin-right: auto; font-size: 13px; color: #475467; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">bookmark</span>Progress saved. You can resume later.</span>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526"><span class="ms" aria-hidden="true">arrow_back</span>Back</button><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: transparent; color: #2546D6">Skip</button><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: #2546D6; color: #FFFFFF">Next</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="regex-search" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">regex-search</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Independent full regex search builders</h2>
+<p style="margin: 0; color: #475467">Each search box has its own pattern builder, so precise searches never disturb another search.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Gives every search its own pattern builder beside it; plain text by default.</li><li>Keeps query, pattern, flags, mode and history separate per search.</li><li>Validates as you type and runs locally with a time limit.</li><li>Labels anything not built yet as not available rather than hiding it.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: Valid, invalid, no-match, Unicode and multiline cases on the real engine for every search.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467">
+<span class="ms" aria-hidden="true">search</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Filter tasks</span>
+<input type="search" value="review" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent; outline: none">
+<button type="button" aria-label="Pattern tools" aria-expanded="true" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #2546D6; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button>
+</label>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<span style="font-weight: 600; margin-right: auto">Pattern builder for this search</span>
+<fieldset style="margin: 0; border: 0; min-width: 0; display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px"><legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Mode</legend><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">Plain text</button><button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1); white-space: nowrap">Pattern</button></fieldset>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end">
+<div style="flex: 1 1 240px; min-width: 0"><label style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span style="display: contents"><span style="font-size: 13px; font-weight: 600; color: #0D1526">Pattern</span></span><span style="display: flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF"><input type="text" value="^Review\b.*week" style="flex: 1; min-width: 0; border: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #0D1526; background: transparent; outline: none"></span></label></div>
+<fieldset style="margin: 0; padding: 0; border: 0; min-width: 0; display: flex; gap: 6px"><legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Flags</legend><button type="button" aria-pressed="true" aria-label="Ignore case" title="Ignore case" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: #2546D6; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 13px; cursor: pointer; flex: none">i</button><button type="button" aria-pressed="false" aria-label="Multiline" title="Multiline" style="width: 44px; height: 44px; border: 1px solid #DCE2EC; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 13px; cursor: pointer; flex: none">m</button><button type="button" aria-pressed="true" aria-label="Unicode" title="Unicode" style="width: 44px; height: 44px; border: 0; border-radius: 10px; background: #2546D6; color: #FFFFFF; font-family: 'JetBrains Mono', monospace; font-size: 13px; cursor: pointer; flex: none">u</button></fieldset>
+</div>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">check_circle</span>Valid. Runs locally with a time limit.</span>
+<div style="background: #F3F5F9; border-radius: 12px; padding: 8px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 12px; border-radius: 10px; background: #FFFFFF"><span class="ms" aria-hidden="true" style="color: #475467; font-size: 18px; width: 18px; height: 18px">radio_button_unchecked</span><span style="font-size: 14px"><mark style="background: #E8EDFF; color: #16309F; border-radius: 4px; padding: 0 2px">Review last week</mark></span></div>
+<div aria-hidden="true" style="display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 12px; border-radius: 10px; background: #FFFFFF"><span aria-hidden="true" style="display: block; width: 18px; height: 18px; border-radius: 9px; background: #E9EDF4"></span><span aria-hidden="true" style="display: block; width: 55%; height: 8px; border-radius: 4px; background: #DCE2EC"></span></div>
+</div>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Benchmarking is not available in this builder yet.</span>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="rich-controls" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">rich-controls</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Rich controls</h2>
+<p style="margin: 0; color: #475467">Wherever a value appears, you can change it right there with the same control the settings page uses.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Shows the real control wherever a value appears: rows, cells, results, cards.</li><li>Uses the same checks, saving, language and history as the original setting.</li><li>Allows a plain readout only for a named reason, with the full control one step away.</li><li>Keeps long lists fast and keyboard travel free of traps.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: An embedded control and its source never disagree about a value.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; overflow: hidden">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #F8F9FC; border-bottom: 1px solid #DCE2EC">
+<span style="font-weight: 600; margin-right: auto">Search results</span>
+<span style="font-size: 13px; color: #475467">Values are live controls</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 12px 16px; border-bottom: 1px solid #EEF1F6">
+<span style="flex: 1 1 200px; min-width: 0; font-weight: 600; font-size: 14px">Export a backup before experimenting</span>
+<fieldset style="margin: 0; border: 0; min-width: 0; display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px"><legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Status</legend><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">To do</button><button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1); white-space: nowrap">Doing</button><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">Done</button></fieldset>
+<button type="button" role="switch" aria-checked="true" aria-label="Pinned" style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: #0D1526; cursor: pointer"><span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #2546D6; display: flex; justify-content: flex-end; padding: 3px; box-sizing: border-box; flex: none"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span>Pinned</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 12px 16px; border-bottom: 1px solid #EEF1F6">
+<span style="flex: 1 1 200px; min-width: 0; font-weight: 600; font-size: 14px">Text size</span>
+<label style="display: flex; align-items: center; gap: 10px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Text size</span><input type="range" min="1" max="5" value="3" style="accent-color: #2546D6; width: 160px"><output style="font-variant-numeric: tabular-nums; font-weight: 600; color: #16309F">100%</output></label>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 12px 16px; border-bottom: 1px solid #EEF1F6">
+<span style="flex: 1 1 200px; min-width: 0; font-weight: 600; font-size: 14px">Write the next useful step</span>
+<label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF"><span class="ms" aria-hidden="true" style="color: #475467">event</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Due date</span><input type="text" value="2026-11-06" style="width: 104px; border: 0; font: inherit; color: #0D1526; background: transparent; outline: none"></label>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; padding: 12px 16px">
+<span style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; font-size: 14px">Created</span><span style="font-size: 12px; color: #475467">Read-only: set once when the task was made.</span></span>
+<span style="font-size: 14px; font-variant-numeric: tabular-nums">2026-11-02</span>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #2546D6; font-weight: 600; font-size: 13px; cursor: pointer">Open task</button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article id="settings-explanations" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">settings-explanations</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Settings, defaults and real consumers</h2>
+<p style="margin: 0; color: #475467">Each setting says what it changes, whether it is still the default, and how to reset it.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Explains what each setting does, not just its label, behind a disclosure.</li><li>Says whether the value is the built-in default or one you saved, and names the default.</li><li>Every setting has search, reset and a real place where it takes effect.</li><li>A written list of all settings fails a check when one has no explanation.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: The settings list check turns red for any setting without an explanation.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; max-width: 580px; margin: 0 auto; width: 100%; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px">
+<label style="flex: 1 1 220px; min-width: 0; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 13px; font-weight: 600">Week starts on</span>
+<select style="min-height: 44px; padding: 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; font: inherit; color: #0D1526"><option>Monday</option></select></label>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526"><span class="ms" aria-hidden="true">restart_alt</span>Reset</button>
+</div>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #2546D6">info</span>Using the built-in default: Monday. You have not changed it.</span>
+<details open="" style="border-top: 1px solid #EEF1F6; padding-top: 10px">
+<summary style="min-height: 44px; display: flex; align-items: center; gap: 8px; font-weight: 600; color: #2546D6; cursor: pointer; list-style: none"><span class="ms" aria-hidden="true">expand_more</span>What this changes</summary>
+<p style="margin: 4px 0 0; font-size: 14px; color: #0D1526">Sets the first column of calendar views and which days count as this week in due-date filters.</p>
+</details>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; max-width: 580px; margin: 16px auto 0; width: 100%; box-sizing: border-box">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<button type="button" role="switch" aria-checked="false" style="flex: 1 1 220px; min-height: 44px; padding: 0; border: 0; background: transparent; display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 14px; color: #0D1526; text-align: left; cursor: pointer"><span aria-hidden="true" style="width: 36px; height: 22px; border-radius: 11px; background: #98A2B3; display: flex; padding: 3px; box-sizing: border-box; flex: none"><span style="width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF"></span></span>Show completed tasks on the board</button>
+<button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 1px solid #DCE2EC; background: #FFFFFF; color: #0D1526"><span class="ms" aria-hidden="true">restart_alt</span>Reset</button>
+</div>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">edit</span>Saved by you. The built-in default is On.</span>
+<button type="button" style="min-height: 44px; padding: 0; border: 0; background: transparent; display: flex; align-items: center; gap: 8px; font-weight: 600; color: #2546D6; cursor: pointer; border-top: 1px solid #EEF1F6"><span class="ms" aria-hidden="true">chevron_right</span>What this changes</button>
+</div>
+</div>
+</div>
+</article>
+<article id="tabs" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">tabs</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em">Complete tab navigation</h2>
+<p style="margin: 0; color: #475467">Browser-style tabs keep places open side by side, pinned, grouped and remembered across restarts.</p>
+<p style="margin: 6px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li>Docks the tab strip to any edge, left by default, with overflow at every edge.</li><li>Supports reordering, pinning and named groups, kept across restarts.</li><li>Opens extra tabs only on an explicit New tab choice; ordinary visits reuse the main tab.</li><li>Closes tabs containing, or not containing, text with a preview; pinned tabs are kept.</li></ul>
+<p style="margin: 4px 0 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467; margin-top: 1px">verified</span><span>Proof needed: Every dock edge, overflow, bulk close and restart persistence, captured from the built app.</span></p>
+</div>
+<div style="flex: 999 1 560px; min-width: 0; display: flex">
+<div class="well" style="background: #F3F5F9; border-radius: 16px; padding: 20px; align-self: flex-start; width: 100%; box-sizing: border-box">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; overflow: hidden; display: flex; flex-wrap: wrap">
+<nav aria-label="Open tabs" style="flex: 1 1 200px; max-width: 240px; min-width: 0; background: #E9EDF4; padding: 10px; display: flex; flex-direction: column; gap: 4px">
+<button type="button"  aria-current="page" style="min-height: 44px; padding: 0 10px; border: 0; border-radius: 10px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(13,21,38,.1); color: #0D1526; display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; font-weight: 600; font-size: 14px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #2546D6">dashboard</span><span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Workspace</span><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px; color: #475467">keep</span></button>
+<span style="display: flex; align-items: center; gap: 6px; padding: 8px 10px 2px; font-size: 12px; font-weight: 600; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px; color: #C2570C">folder</span>Planning</span>
+<button type="button"  style="min-height: 44px; padding: 0 10px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; font-weight: 500; font-size: 14px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">tune</span><span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Settings</span></button>
+<button type="button"  style="min-height: 44px; padding: 0 10px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; font-weight: 500; font-size: 14px; cursor: pointer"><span class="ms" aria-hidden="true" style="color: #475467">menu_book</span><span style="flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Field guide</span></button>
+<button type="button" style="min-height: 44px; padding: 0 10px; border: 1px dashed #98A2B3; border-radius: 10px; background: transparent; color: #475467; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 4px"><span class="ms" aria-hidden="true">more_horiz</span>4 more tabs</button>
+</nav>
+<div style="flex: 999 1 260px; min-width: 0; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="font-size: 13px; font-weight: 600; color: #475467; margin-right: auto">Dock tabs</span>
+<fieldset style="margin: 0; border: 0; min-width: 0; display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 14px"><legend style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Dock edge</legend><button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1); white-space: nowrap">Left</button><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">Top</button><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">Right</button><button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; font-size: 14px; cursor: pointer; white-space: nowrap">Bottom</button></fieldset>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; box-shadow: 0 12px 32px rgba(13,21,38,.12), 0 1px 2px rgba(13,21,38,.06); padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600">Close tabs containing text</span>
+<label style="display: flex; flex-direction: column; gap: 6px; min-width: 0"><span style="display: contents"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Text to match</span></span><span style="display: flex; align-items: center; gap: 8px; min-height: 44px; box-sizing: border-box; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF"><span class="ms" aria-hidden="true" style="color: #475467">search</span><input type="text" value="guide" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent; outline: none"><button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button></span></label>
+<span style="font-size: 13px; color: #475467">Will close: Field guide. Pinned tabs are kept.</span>
+<div style="display: flex; justify-content: flex-end; gap: 8px"><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: transparent; color: #2546D6">Cancel</button><button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; flex: none; border: 0; background: #2546D6; color: #FFFFFF">Close 1 tab</button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6267}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

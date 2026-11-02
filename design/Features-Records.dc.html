@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Records, history and messages</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Noto+Sans+HK:wght@500&amp;family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,500,1,0&amp;display=swap">
+<style>
+body{margin:0;background:#F3F5F9}
+a{color:#2546D6}a:hover{color:#16309F}
+button{font:inherit}
+.ms{font-family:'Material Symbols Rounded';font-weight:normal;font-style:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;font-variation-settings:'FILL' 1,'wght' 500,'opsz' 20;flex:none;width:20px;height:20px;overflow:hidden;display:inline-block}
+@media (max-width:640px){.well{padding:10px!important;margin:0 -12px!important;width:calc(100% + 24px)!important;border-radius:12px!important}.well *{max-width:100%}}
+</style>
+</helmet>
+<div style="min-height: 100vh; background: #F3F5F9; color: #0D1526; font-family: Inter, 'Noto Sans HK', system-ui, sans-serif; font-size: 15px; line-height: 1.5">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px">
+<a href="Main.dc.html" style="display: flex; align-items: baseline; gap: 10px; text-decoration: none; color: #0D1526; margin-right: auto; min-height: 44px; align-content: center; flex-wrap: wrap">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; line-height: 44px">Commonplace</span>
+<span style="font-size: 13px; color: #475467">Sample workbench</span>
+</a>
+<nav aria-label="Main" style="display: flex; gap: 4px; padding: 4px; background: #EEF1F6; border-radius: 999px">
+<a href="Main.dc.html" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; color: #0D1526; text-decoration: none; font-weight: 600; font-size: 14px">Workspace</a>
+<a href="Guide.dc.html" aria-current="page" style="min-height: 40px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; background: #0D1526; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px">Field guide</a>
+</nav>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button type="button" style="min-height: 44px; padding: 0 12px 0 14px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467; display: inline-flex; align-items: center; gap: 10px; cursor: pointer">
+<span class="ms" aria-hidden="true">search</span><span>Find an action</span>
+<span style="font-size: 12px; font-weight: 600; padding: 4px 8px; border-radius: 8px; background: #EEF1F6; color: #0D1526">Ctrl Shift F</span>
+</button>
+<a href="Settings.dc.html" aria-label="Settings" style="width: 44px; height: 44px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; display: grid; place-items: center; color: #0D1526; background: #FFFFFF; text-decoration: none"><span class="ms" aria-hidden="true">tune</span></a>
+</div>
+</div>
+</header>
+
+<main id="top" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 40px; display: flex; flex-direction: column; gap: 24px">
+
+<section style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; color: #475467">Feature deep dive</p>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 48px; line-height: 1.04; letter-spacing: -0.03em">Records, history and messages</h1>
+<p style="margin: 0; color: #475467; font-size: 17px; max-width: 720px">How Commonplace lets people review what happened, keep faithful copies of their work, and recover from a change they did not mean to make.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526">7 features</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>4 partial</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>3 incomplete</span>
+</div>
+<nav aria-label="Features on this page" style="display: flex; flex-wrap: wrap; gap: 8px">
+<a href="#bulk-actions" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Previewable batch actions</a>
+<a href="#changelog" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Searchable changelog</a>
+<a href="#exports" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Faithful data exports</a>
+<a href="#local-history" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Local version history and recovery</a>
+<a href="#notifications" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Non-blocking notification history</a>
+<a href="#offline-docs" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Offline documentation reader</a>
+<a href="#rendered-provider-text" style="min-height: 36px; box-sizing: border-box; padding: 0 12px; display: inline-flex; align-items: center; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE2EC; color: #0D1526; font-size: 13px; font-weight: 500; text-decoration: none">Formatted provider responses</a>
+</nav>
+</section>
+
+<!-- bulk-actions -->
+<article id="bulk-actions" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">bulk-actions</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Previewable batch actions</h2>
+<p style="margin: 0">Lets a person select many items, preview what will happen to each, and run one action on all of them.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Select with click, shift-click or keyboard in every list, including notifications and history.</li><li>Word select-all honestly: this page, or every match of the current filter; offer invert selection.</li><li>Show the exact count and a preview before running; report every skipped item and why.</li><li>Ask with two-key confirmation only for destructive batches; every batch stays undoable from history.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Select-all scope wording, skipped-item reports, and bulk delete behind two-key confirmation.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 12px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 8px 12px; border-radius: 12px; background: #0D1526; color: #FFFFFF">
+<span style="font-weight: 600; margin-right: auto">3 selected</span>
+<button type="button" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #B9C6FF; font-weight: 600; cursor: pointer">Select all 24 matches</button>
+<button type="button" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; cursor: pointer"><span class="ms" aria-hidden="true">drive_file_move</span>Move to Done</button>
+</div>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 10px; background: #E8EDFF"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="flex: 1; min-width: 0; font-weight: 500">Write the next useful step</span></label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 10px; background: #E8EDFF"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="flex: 1; min-width: 0; font-weight: 500">Try the command palette</span></label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 10px; background: #E8EDFF"><input type="checkbox" checked style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; font-weight: 500">Holiday plans<span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #C2570C">lock</span></span></label>
+<label style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 10px;"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #2546D6; flex: none; margin: 0"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 52%; height: 7px; border-radius: 4px; background: #DCE2EC"></span><span style="display: block; width: 30%; height: 6px; border-radius: 3px; background: #E9EDF4"></span></span></label>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px">Preview: move 3 tasks to Done</span>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span>2 will move</span></div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #7A2F06"><span class="ms" aria-hidden="true" style="color: #C2570C">block</span><span>1 skipped: Holiday plans is locked</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; padding-top: 4px">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">Cancel</button>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">Move 2 tasks</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- changelog -->
+<article id="changelog" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">changelog</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Searchable changelog</h2>
+<p style="margin: 0">Shows every released version and what changed in it, searchable and filterable by date.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>List every released version with its date, grouped changes and a short commit link, reachable from Help.</li><li>Filter by a date range (picked or typed) and by pattern search; the two combine.</li><li>Copy or export exactly the filtered view, with its range and commits.</li><li>Keep entries factual; report invalid or partial dates inline without losing what was typed.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Every linked commit exists, and an export matches the visible filter.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; display: flex; flex-direction: column; overflow: hidden">
+<div style="padding: 16px; display: flex; flex-wrap: wrap; gap: 8px">
+<label style="flex: 1 1 200px; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467"><span class="ms" aria-hidden="true">search</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search changes</span><input type="search" placeholder="Search changes" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent"><button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button></label>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">date_range</span>2026-10-01 to 2026-11-02</button>
+</div>
+<div style="padding: 14px 16px; border-top: 1px solid #E9EDF4; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500">0.4.0</span><span style="font-size: 13px; color: #475467">2026-11-02</span><a href="#top" style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 13px">a1b2c3d</a></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li style="display: flex; gap: 8px; align-items: baseline"><span style="flex: none; padding: 2px 8px; border-radius: 6px; background: #E8EDFF; color: #16309F; font-size: 12px; font-weight: 600">Added</span><span style="flex: 1; min-width: 0">Searchable changelog in Help</span></li><li style="display: flex; gap: 8px; align-items: baseline"><span style="flex: none; padding: 2px 8px; border-radius: 6px; background: #EEF1F6; color: #475467; font-size: 12px; font-weight: 600">Fixed</span><span style="flex: 1; min-width: 0"><span style="display: inline-block; width: 60%; height: 7px; border-radius: 4px; background: #DCE2EC; vertical-align: middle"></span></span></li></ul>
+</div>
+<div style="padding: 14px 16px; border-top: 1px solid #E9EDF4; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 500">0.3.2</span><span style="font-size: 13px; color: #475467">2026-10-18</span><a href="#top" style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 13px">9f8e7d6</a></div>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14px"><li style="display: flex; gap: 8px; align-items: baseline"><span style="flex: none; padding: 2px 8px; border-radius: 6px; background: #EEF1F6; color: #475467; font-size: 12px; font-weight: 600">Changed</span><span style="flex: 1; min-width: 0"><span style="display: inline-block; width: 45%; height: 7px; border-radius: 4px; background: #DCE2EC; vertical-align: middle"></span></span></li></ul>
+</div>
+<div style="padding: 12px 16px; border-top: 1px solid #E9EDF4; background: #F8F9FC; display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-size: 13px; color: #475467; margin-right: auto">Showing 2 releases in range</span>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">content_copy</span>Copy view</button>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">download</span>Export view</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- exports -->
+<article id="exports" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">exports</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Faithful data exports</h2>
+<p style="margin: 0">Saves a person's data in the format they choose, saying up front what each format keeps or drops.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Offer every format that can faithfully carry the data, chosen per item.</li><li>State any loss before the export runs, and which formats can be imported back.</li><li>Record encoding, line endings and schema version in each file.</li><li>Leave out credentials and personal wording, and say so.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>A round-trip import for each format and the stated omissions present.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 8px 24px rgba(13,21,38,.08)">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">Export workspace</span>
+<fieldset style="margin: 0; padding: 0; border: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px">
+<legend style="padding: 0 0 8px; font-size: 14px; font-weight: 600">Format</legend>
+<label style="min-height: 44px; padding: 8px 12px; box-sizing: border-box; border: 2px solid #2546D6; border-radius: 12px; background: #E8EDFF; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="fmt" checked style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 500">JSON</span><span style="font-size: 12px; color: #475467">Complete, re-importable</span></span></label>
+<label style="min-height: 44px; padding: 8px 12px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="fmt" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 500">CSV</span><span style="font-size: 12px; color: #475467">Tasks only</span></span></label>
+<label style="min-height: 44px; padding: 8px 12px; box-sizing: border-box; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; display: flex; align-items: center; gap: 10px; font-size: 14px"><input type="radio" name="fmt" style="accent-color: #2546D6; width: 18px; height: 18px; margin: 0; flex: none"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: 'JetBrains Mono', monospace; font-weight: 500">Markdown</span><span style="font-size: 12px; color: #475467">Readable, not re-importable</span></span></label>
+</fieldset>
+<p style="margin: 0; padding: 12px 14px; border-radius: 12px; background: #FFEEDD; color: #7A2F06; font-size: 13px; display: flex; gap: 8px; align-items: flex-start"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; margin-top: 1px; color: #C2570C">info</span><span>Lock credentials and personal wording are left out of every export.</span></p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 12px; color: #475467">
+<span style="padding: 4px 10px; border-radius: 8px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace">UTF-8</span>
+<span style="padding: 4px 10px; border-radius: 8px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace">LF</span>
+<span style="padding: 4px 10px; border-radius: 8px; background: #EEF1F6; font-family: 'JetBrains Mono', monospace">schema 3</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end">
+<button type="button" style="min-height: 44px; padding: 0 16px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer">Cancel</button>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">download</span>Export JSON</button>
+</div>
+</div>
+</div>
+</article>
+
+<!-- local-history -->
+<article id="local-history" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">local-history</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Local version history and recovery</h2>
+<p style="margin: 0">Records every change on this device so any edit or deletion can be compared and undone.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Keep an append-only local record of changes to tasks, rules and settings, labelled by what changed.</li><li>Make every restore a new revision, so a restore can itself be restored.</li><li>Browse, compare, filter by date and action, search, label, prune and export.</li><li>Never record a credential in plain form or bring back a secret that is no longer available; a history failure never blocks the person's own change.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>A restore of a restore, combined filters, and recovery after a restart.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 18px; margin-right: 4px">Local history</span>
+<label style="flex: 1 1 200px; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467"><span class="ms" aria-hidden="true">search</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search history</span><input type="search" placeholder="Search history" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent"><button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button></label>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">date_range</span>Last 7 days</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
+<div style="flex: 1 1 240px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; flex-wrap: wrap; gap: 6px; padding: 8px">
+<span style="padding: 4px 10px; border-radius: 999px; background: #0D1526; color: #FFFFFF; font-size: 12px; font-weight: 600">All</span>
+<span style="padding: 4px 10px; border-radius: 999px; background: #EEF1F6; font-size: 12px; font-weight: 600">Edited 4</span>
+<span style="padding: 4px 10px; border-radius: 999px; background: #EEF1F6; font-size: 12px; font-weight: 600">Deleted 1</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; background: #E8EDFF;"><span class="ms" aria-hidden="true" style="color: #2546D6">edit</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600">Renamed task</span><span style="font-size: 12px; color: #475467">10:42</span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; "><span class="ms" aria-hidden="true" style="color: #475467">delete</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 500">Deleted 2 tasks</span><span style="font-size: 12px; color: #475467">Yesterday</span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; "><span class="ms" aria-hidden="true" style="color: #475467">restore</span><span style="flex: 1; min-width: 0; font-size: 14px; font-weight: 500">Restored a revision</span><span style="font-size: 12px; color: #475467">Yesterday</span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px"><span class="ms" aria-hidden="true" style="color: #98A2B3">edit</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 46%; height: 7px; border-radius: 4px; background: #DCE2EC"></span></span></div>
+</div>
+<div style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600">Renamed task</span>
+<div style="border-radius: 10px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+<div style="padding: 8px 12px; background: #FFEEDD; color: #7A2F06">− Write the next step</div>
+<div style="padding: 8px 12px; background: #E8EDFF; color: #16309F">+ Write the next useful step</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #475467">Restoring adds a new revision. Nothing is overwritten; credentials are never stored here.</p>
+<button type="button" style="min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; background: #2546D6; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer; align-self: flex-start; margin-top: auto"><span class="ms" aria-hidden="true">restore</span>Restore this version</button>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<span style="font-size: 13px; color: #475467; margin-right: auto">Kept on this device, beside your data.</span>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">label</span>Label</button>
+<button type="button" style="min-height: 44px; padding: 0 16px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #0D1526; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; cursor: pointer"><span class="ms" aria-hidden="true">download</span>Export history</button>
+</div>
+</div>
+</article>
+
+<!-- notifications -->
+<article id="notifications" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">notifications</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Non-blocking notification history</h2>
+<p style="margin: 0">Reports results in small notices that never block work, and keeps them reviewable afterwards.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Show information, success and progress as toasts in a bottom corner, never as a blocking dialog.</li><li>Let toasts close themselves, but keep errors and warnings until dismissed; stack without overlap.</li><li>Keep dismissed notices in a centre that can be searched and cleared in bulk.</li><li>Make every notice translated, announced, focusable and dismissible with a 44px target.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>No dialog for a non-decision, warnings that persist, and centre search and bulk dismiss.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end">
+<div style="flex: 1 1 280px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 8px; display: flex; flex-direction: column; gap: 2px">
+<div style="display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 12px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 17px; margin-right: auto">Notifications</span><button type="button" style="min-height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: #EEF1F6; color: #0D1526; font-weight: 600; font-size: 13px; cursor: pointer">Dismiss all</button></div>
+<div style="padding: 0 8px 8px"><label style="flex: 1 1 200px; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467"><span class="ms" aria-hidden="true">search</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search notifications</span><input type="search" placeholder="Search notifications" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent"><button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button></label></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px"><span class="ms" aria-hidden="true" style="color: #2546D6">check_circle</span><span style="flex: 1; min-width: 0; font-size: 14px">Backup exported</span><span style="font-size: 12px; color: #475467">Just now</span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px"><span class="ms" aria-hidden="true" style="color: #C2570C">warning</span><span style="flex: 1; min-width: 0; font-size: 14px">Storage is nearly full</span><span style="font-size: 12px; color: #475467">09:15</span></div>
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px"><span class="ms" aria-hidden="true" style="color: #98A2B3">info</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 50%; height: 7px; border-radius: 4px; background: #DCE2EC"></span></span></div>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div role="alert" style="background: #FFEEDD; color: #7A2F06; border-radius: 14px; padding: 8px 8px 8px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 24px rgba(13,21,38,.12)">
+<span class="ms" aria-hidden="true" style="color: #C2570C">warning</span><span style="flex: 1; min-width: 0; font-size: 14px">Storage is nearly full. Stays until dismissed.</span>
+<button type="button" aria-label="Dismiss" style="flex: none; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 10px; background: transparent; color: #7A2F06; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">close</span></button>
+</div>
+<div role="status" style="background: #0D1526; color: #FFFFFF; border-radius: 14px; padding: 8px 8px 8px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 24px rgba(13,21,38,.18)">
+<span class="ms" aria-hidden="true" style="color: #B9C6FF">check_circle</span><span style="flex: 1; min-width: 0; font-size: 14px">3 tasks moved to Done</span>
+<button type="button" style="min-height: 44px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: #B9C6FF; font-weight: 600; cursor: pointer">Undo</button>
+<button type="button" aria-label="Dismiss" style="flex: none; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 10px; background: transparent; color: #C9D2E3; display: inline-grid; place-items: center; cursor: pointer"><span class="ms" aria-hidden="true">close</span></button>
+</div>
+<span style="font-size: 12px; color: #475467; padding-left: 4px">Toast, bottom corner. Closes itself; warnings stay.</span>
+</div>
+</div>
+</div>
+</article>
+
+<!-- offline-docs -->
+<article id="offline-docs" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">offline-docs</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #E8EDFF; color: #16309F"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">contrast</span>Partial</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Offline documentation reader</h2>
+<p style="margin: 0">Puts every feature article inside the app, readable and searchable without a connection.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Bundle every feature article at build time into a reader that works without a connection.</li><li>Render articles with the same formatter used elsewhere, and resolve article links inside the app.</li><li>Search titles and bodies, including pattern search.</li><li>Fail the build when an article is missing from the bundle.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Bundled article count matches the source articles, and the reader works offline.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; display: flex; flex-wrap: wrap; overflow: hidden">
+<nav aria-label="Articles" style="flex: 1 1 200px; min-width: 0; padding: 12px; background: #F8F9FC; border-right: 1px solid #E9EDF4; display: flex; flex-direction: column; gap: 4px">
+<div style="padding: 0 0 8px"><label style="flex: 1 1 200px; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 6px 0 12px; border: 1px solid #DCE2EC; border-radius: 12px; background: #FFFFFF; color: #475467"><span class="ms" aria-hidden="true">search</span><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0)">Search articles</span><input type="search" placeholder="Search articles" style="flex: 1; min-width: 0; border: 0; font: inherit; color: #0D1526; background: transparent"><button type="button" aria-label="Pattern tools" style="flex: none; min-height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: #EEF1F6; color: #0D1526; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer">.*</button></label></div>
+<a href="#top" style="min-height: 44px; padding: 0 12px; display: flex; align-items: center; border-radius: 10px; background: #E8EDFF; color: #16309F; font-weight: 600; font-size: 14px; text-decoration: none">Keep a copy of your work</a>
+<div style="min-height: 44px; padding: 0 12px; display: flex; align-items: center"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 64%; height: 7px; border-radius: 4px; background: #DCE2EC"></span></span></div>
+<div style="min-height: 44px; padding: 0 12px; display: flex; align-items: center"><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 7px"><span style="display: block; width: 48%; height: 7px; border-radius: 4px; background: #DCE2EC"></span></span></div>
+</nav>
+<div style="flex: 2 1 280px; min-width: 0; padding: 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="display: inline-flex; align-self: flex-start; align-items: center; gap: 6px; padding: 4px 10px 4px 8px; border-radius: 999px; background: #EEF1F6; font-size: 12px; font-weight: 600; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">cloud_off</span>Works offline</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px; line-height: 1.2">Keep a copy of your work</span>
+<p style="margin: 0; font-size: 14px; color: #475467">Export a backup from Settings, then <a href="#top">restore a revision</a> if something goes wrong.</p>
+<ol style="margin: 0; padding-left: 20px; font-size: 14px; display: flex; flex-direction: column; gap: 4px">
+<li>Open Settings, then Data &amp; recovery.</li>
+<li>Choose Export backup.</li>
+<li>Keep the file somewhere safe.</li>
+</ol>
+<span style="display: block; width: 82%; height: 7px; border-radius: 4px; background: #E9EDF4"></span>
+<span style="display: block; width: 64%; height: 7px; border-radius: 4px; background: #E9EDF4"></span>
+<span style="margin-top: 6px; padding-top: 10px; border-top: 1px solid #E9EDF4; font-size: 12px; color: #475467">Bundled with version <span style="font-family: 'JetBrains Mono', monospace">0.4.0</span> · readable offline</span>
+</div>
+</div>
+</div>
+</article>
+
+<!-- rendered-provider-text -->
+<article id="rendered-provider-text" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 20px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 32px; align-items: flex-start">
+<div style="flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #475467">rendered-provider-text</span><span style="display: inline-flex; align-items: center; gap: 6px; min-height: 36px; box-sizing: border-box; border-radius: 999px; font-size: 13px; font-weight: 600; padding: 0 12px 0 8px; background: #FFEEDD; color: #7A2F06"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px">pending</span>Incomplete</span></div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.2; letter-spacing: -0.015em">Formatted provider responses</h2>
+<p style="margin: 0">Shows release notes and other provider text as formatted, safely sandboxed content.</p>
+<p style="margin: 4px 0 0; font-size: 13px; font-weight: 600; color: #475467">What it must do</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 14px">
+<li>Show release notes, issue and pull request bodies, commit messages and README previews as formatted text.</li><li>Use one shared formatter, isolated so the content never runs with the app's own permissions.</li><li>Resolve relative links against the source, and label the region for assistive technology.</li><li>Show an honest "no notes were provided" state when the source is empty.</li>
+</ul>
+<p style="margin: 0; font-size: 13px; display: flex; gap: 8px; color: #475467"><span class="ms" aria-hidden="true" style="font-size: 18px; width: 18px; height: 18px; color: #475467">verified</span><span>Headings, links, lists and code render, markup stays sandboxed, and the empty state appears.</span></p>
+</div>
+<div class="well" style="flex: 999 1 560px; min-width: 0; align-self: flex-start; width: 100%; box-sizing: border-box; background: #F3F5F9; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 16px">
+<div role="group" aria-label="Text source" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; background: #E9EDF4; border-radius: 14px">
+<button type="button" aria-pressed="true" style="min-height: 44px; border: 0; border-radius: 10px; background: #FFFFFF; color: #0D1526; font-weight: 600; cursor: pointer; box-shadow: 0 1px 2px rgba(13,21,38,.1)">Release notes</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; cursor: pointer">README</button>
+<button type="button" aria-pressed="false" style="min-height: 44px; border: 0; border-radius: 10px; background: transparent; color: #0D1526; font-weight: 600; cursor: pointer">Commits</button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch">
+<div style="flex: 1 1 220px; min-width: 0; background: #0D1526; color: #C9D2E3; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6">
+<span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; color: #B9C6FF">Source</span>
+<span>## What changed</span>
+<span>- Faster **search**</span>
+<span>- See [the guide](./guide)</span>
+<span>`Ctrl Shift F` opens it</span>
+</div>
+<section aria-label="Release notes" style="flex: 1 1 260px; min-width: 0; background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; color: #475467; display: flex; align-items: center; gap: 6px"><span class="ms" aria-hidden="true" style="font-size: 16px; width: 16px; height: 16px">shield</span>Rendered in a sandbox</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 20px">What changed</span>
+<ul style="margin: 0; padding-left: 20px; font-size: 14px; display: flex; flex-direction: column; gap: 4px">
+<li>Faster <strong>search</strong></li>
+<li>See <a href="#top">the guide</a></li>
+</ul>
+<p style="margin: 0; font-size: 14px"><code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 2px 6px; border-radius: 6px; background: #EEF1F6">Ctrl Shift F</code> opens it</p>
+</section>
+</div>
+<section aria-label="Release notes for 0.3.2" style="background: #FFFFFF; border: 1px solid #DCE2EC; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px">0.3.2</span><span style="font-size: 13px; color: #475467">2026-10-18</span></div>
+<div style="padding: 14px 16px; border-radius: 12px; background: #F8F9FC; display: flex; align-items: center; gap: 10px; color: #475467; font-size: 14px"><span class="ms" aria-hidden="true">notes</span><span>No notes were provided for this release.</span></div>
+</section>
+</div>
+</article>
+
+</main>
+
+<footer style="border-top: 1px solid #DCE2EC">
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: #475467; font-size: 13px">
+<span>No accounts. No telemetry. No remote writes. <span lang="yue-Hant">無需帳戶，冇遙測，唔會寫入遠端。</span></span>
+<span title="Build provenance: the source commit's timestamp, not your launch time.">Running version <span style="font-family: 'JetBrains Mono', monospace">[VERSION]</span> · source commit <span style="font-family: 'JetBrains Mono', monospace">[COMMIT TIME]</span></span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4116}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
