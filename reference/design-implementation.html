@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Designer implementation pass | Reference</title><style>body{font:1rem/1.65 system-ui,sans-serif;color:#183337;background:#faf9f5;max-width:55rem;margin:auto;padding:2rem}a{color:#146d62}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e7efeb;padding:1rem}code{font-family:monospace}h1,h2{line-height:1.2}nav{display:flex;gap:1rem;flex-wrap:wrap}</style></head><body><nav><a href="../#guide">Interactive guide</a><a href="index.html">Reference index</a></nav><h1>Designer implementation pass</h1>
+<h2>Reference evidence</h2>
+<p>Inspected the actual pixels of <code>design/frames/Main-1440.png</code>,</p>
+<p><code>design/frames/Settings-1440.png</code>, and <code>design/frames/Mobile-390.png</code> before</p>
+<p>editing CSS. These are designer reference screenshots, **not screenshots of this</p>
+<p>implementation**. Read <code>design/HANDOFF.md</code> as design data. Incoming design commit</p>
+<p>at baseline: <code>3b76a24</code>; implementation baseline: <code>0522716</code>.</p>
+<p>Applied a cobalt/navy light theme and the reference dark palette; neutral, amber,</p>
+<p>and cobalt status lanes; system sans-serif heading hierarchy; 12px controls,</p>
+<p>16px cards, 20px lanes/panels; pill route navigation; compact page spacing; a dark</p>
+<p>field-guide panel; and grouped settings sections. The letter tile is decorative</p>
+<p>and now hidden; the existing localized text wordmark remains. No functional</p>
+<p>controls were removed. The command launcher, formerly hidden below 1000px, now</p>
+<p>wraps instead. Top version and source timestamp remain visible by contract.</p>
+<h2>Deliberate deviations and unresolved parity</h2>
+<ul>
+<li>Bricolage Grotesque, Inter, Noto Sans HK and JetBrains Mono are now vendored</li>
+</ul>
+<p>  from reviewed pinned official sources with their original OFL licenses. See</p>
+<p>  font-provenance.md. Runtime loading and visual comparison still need proof;</p>
+<p>  system fallbacks remain available without remote/CDN loads.</p>
+<ul>
+<li>Existing text/native controls remain. Material Symbols were not acquired. This</li>
+</ul>
+<p>  is <strong>not genuine Material 3 component compliance</strong>; the app&#39;s disclaimer stays.</p>
+<ul>
+<li>Settings remains the working accessible modal with all current settings. It is</li>
+</ul>
+<p>  wider and grouped visually, but is not the reference full-page rail layout or</p>
+<p>  theme preview tiles. Keyboard trapping/dismissal are owned by existing app code.</p>
+<ul>
+<li>Setup retains the working inline three-step form rather than hiding it behind</li>
+</ul>
+<p>  a resume strip or pretending the reference split-screen wizard exists.</p>
+<ul>
+<li>On small screens all lanes stack; there are no fake lane tabs, fixed action bar,</li>
+</ul>
+<p>  or CSS-hidden task groups. This preserves keyboard access and all actions. The</p>
+<p>  reference mobile screenshot shows only In progress and much fewer controls.</p>
+<ul>
+<li>Notifications, bulk actions, selection checkboxes, task tags, additional Local</li>
+</ul>
+<p>  tools route, expandable filtering/regex tools, narration, walkthroughs and</p>
+<p>  requirement reader remain. Their extra space means screenshots cannot exactly</p>
+<p>  match the simplified reference. The empty starting state is not replaced by</p>
+<p>  the six illustrative designer tasks.</p>
+<ul>
+<li>Build provenance deliberately remains above the content as well as in the</li>
+</ul>
+<p>  footer, contrary to the reference footer-only arrangement.</p>
+<ul>
+<li>CSS preserves reduced-motion behavior, focus outlines, wrapping, minmax grid</li>
+</ul>
+<p>  tracks and 44px card/action targets. Dark desktop/high scale are extrapolations</p>
+<p>  because the handoff has no corresponding artboards, not approved exact parity.</p>
+<h2>Verification boundary</h2>
+<p><code>tests/design-style.test.mjs</code> checks source contracts: palette, no remote font</p>
+<p>loads, decorative tile removal, retention of provenance/actions, narrow grid,</p>
+<p>range layout, reduced-motion and modal structure. These assertions are not</p>
+<p>browser runtime proof, computed-style checks, accessibility certification, or</p>
+<p>screenshot comparison.</p>
+<p>Runtime review must use the parent&#39;s authorized managed preview and CUA: desktop</p>
+<p>light, desktop dark, 390px, and 150% text with English and Cantonese; inspect</p>
+<p>navigation, top provenance, all toolbar/card actions, settings scrolling and</p>
+<p>close, focus visibility, notices, and no horizontal clipping. No standalone</p>
+<p>browser route was opened by this styling task. No implementation screenshots</p>
+<p>were captured here; runtime visual parity remains unverified until that review.</p>
+<h2>Source checks for this commit</h2>
+<p>Full Node suite: 135 tests, 134 passed, 1 skipped, 0 failed. Syntax/required</p>
+<p>entrypoint check passed; static build passed (pre-commit dirty-source provenance,</p>
+<p>not release evidence). <code>git fetch origin main</code> immediately before finalization</p>
+<p>reported no incoming commits relative to baseline <code>0522716</code>; no merge, force</p>
+<p>push, remote mutation, or edit to original designer files was performed.</p></body></html>

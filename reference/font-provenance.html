@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Offline designer fonts | Reference</title><style>body{font:1rem/1.65 system-ui,sans-serif;color:#183337;background:#faf9f5;max-width:55rem;margin:auto;padding:2rem}a{color:#146d62}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e7efeb;padding:1rem}code{font-family:monospace}h1,h2{line-height:1.2}nav{display:flex;gap:1rem;flex-wrap:wrap}</style></head><body><nav><a href="../#guide">Interactive guide</a><a href="index.html">Reference index</a></nav><h1>Offline designer fonts</h1>
+<p>This pass supersedes the initial system-font-only limitation in</p>
+<p><code>design-implementation.md</code>. The four requested families were obtainable from</p>
+<p>the official <a href="https://github.com/google/fonts" rel="noreferrer">Google Fonts repository</a>, pinned</p>
+<p>to commit <code>6c1dbe27dcf7d817d4b62cec033ba77fa8e2a5ec</code> (reviewed 2026-11-02).</p>
+<p>The family metadata and full OFL 1.1 licenses were read before acquiring binaries.</p>
+<p>All files are unmodified upstream data; no package or downloaded script was run,</p>
+<p>no font conversion/subsetting occurred, and product CSS has no CDN dependency.</p>
+<p>| Family | Intended role | Variable axes / normal style |</p>
+<p>|---|---|---|</p>
+<p>| Bricolage Grotesque | Headings/wordmark at 700 | weight 200–800, optical size 12–96, width 75–100 |</p>
+<p>| Inter | UI | weight 100–900, optical size 14–32 |</p>
+<p>| Noto Sans HK | Cantonese fallback | weight 100–900 |</p>
+<p>| JetBrains Mono | Identifiers/build provenance | weight 100–800 |</p>
+<p><code>src/fonts/provenance.json</code> records exact commit-pinned raw source URLs, byte</p>
+<p>sizes and SHA-256 values for each font, license and metadata file. Each family</p>
+<p>folder contains its exact upstream <code>OFL.txt</code> and <code>METADATA.pb</code>, including original</p>
+<p>copyright statements and upstream author repository/commit details. The font</p>
+<p>licenses remain OFL-1.1, not the application&#39;s license. No endorsement is implied.</p>
+<h2>Integration</h2>
+<p>Load <code>fonts/fonts.css</code> <strong>after</strong> <code>styles.css</code> and recursively include all of</p>
+<p><code>src/fonts/</code> in distribution, including licenses and provenance. The font sheet</p>
+<p>sets family roles as well as local <code>@font-face</code> declarations. Existing stylesheet</p>
+<p>and entrypoint are intentionally unchanged in this font-only commit; the parent</p>
+<p>owns that integration. Fonts are fetched from the same deployed site, never from</p>
+<p>Google at runtime. System fallback remains during <code>font-display:swap</code> loading.</p>
+<p>Only normal-style faces were needed by the design and vendored.</p>
+<p>The full Noto Sans HK TTF is about 11.9MB. This intentionally preserves the</p>
+<p>unmodified official multilingual font rather than silently narrowing Cantonese</p>
+<p>coverage; it is a bandwidth tradeoff, not an optimized web-font claim. Fonts</p>
+<p>need a successful initial download/cache like other site assets; this change</p>
+<p>does not itself implement an offline service worker or guarantee first-visit</p>
+<p>network-free operation.</p>
+<h2>Verification boundary</h2>
+<p><code>tests/font-provenance.test.mjs</code> verifies 12 exact files, hashes, lengths, TTF</p>
+<p>headers, license presence and four resolvable local font URLs. These are source</p>
+<p>and asset-integrity checks, not a font-security audit or rendered parity proof.</p>
+<p>Browser font loading, Cantonese glyph selection, layout after swap and visual</p>
+<p>parity still require the parent&#39;s managed-preview/CUA review after integration.</p></body></html>

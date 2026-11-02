@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Optional synthesized action sounds | Reference</title><style>body{font:1rem/1.65 system-ui,sans-serif;color:#183337;background:#faf9f5;max-width:55rem;margin:auto;padding:2rem}a{color:#146d62}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e7efeb;padding:1rem}code{font-family:monospace}h1,h2{line-height:1.2}nav{display:flex;gap:1rem;flex-wrap:wrap}</style></head><body><nav><a href="../#guide">Interactive guide</a><a href="index.html">Reference index</a></nav><h1>Optional synthesized action sounds</h1>
+<p><code>src/sounds.js</code> provides original, short sine-wave cues for <code>success</code>, <code>refused</code>, and <code>delete</code>. The sequences were composed directly as frequencies and durations in source. They contain no recorded sample, downloaded asset, operating-system sound, or imitation claim. In particular, they are <strong>not</strong> the Windows “tada” sound.</p>
+<h2>Integration</h2>
+<pre><code>
+import {createSoundPlayer, SOUND_DEFAULTS} from &#39;./sounds.js&#39;;
+
+const sounds = createSoundPlayer({getPreferences: () =&gt; preferences});
+
+// Only after an intentional user action has actually succeeded:
+
+void sounds.play(&#39;success&#39;);
+
+// On sound preference changes, route teardown, or cancellation:
+
+sounds.stop();
+
+// At application teardown:
+
+sounds.destroy();
+
+</code></pre>
+<p>Defaults are <code>soundEffects: false</code>, <code>soundVolume: 0.4</code>, and <code>soundMuted: false</code>. The host owns the opt-in settings controls, accessible labels, language, persistence, and event-result classification. A <code>success</code> cue must never be sent optimistically before success. A <code>delete</code> cue is for a completed intentional deletion, not opening a confirmation dialog. Sounds complement rather than replace visible and screen-reader status. No construction, startup, timer, or background event automatically plays a cue.</p>
+<p><code>play(kind)</code> resolves <code>{played, reason}</code>. <code>played:true</code> with <code>reason:&#39;scheduled&#39;</code> means Web Audio accepted scheduling; it does <strong>not</strong> prove audible playback, a connected output device, or the OS volume. Failures and suppression return <code>played:false</code> with generic codes: <code>disabled</code>, <code>muted</code>, <code>reduced-sound</code>, <code>quiet-hours</code>, <code>zero-volume</code>, <code>busy</code>, <code>cooldown</code>, <code>unavailable</code>, <code>suspended</code>, <code>audio-refused</code>, <code>preferences-unavailable</code>, <code>unknown-cue</code>, <code>cancelled</code>, or <code>destroyed</code>. Optional <code>onStatus</code> receives the same object, never user content or exception details. Do not block the user&#39;s operation while waiting for audio or turn audio failure into operation failure.</p>
+<p>All cues use the same lazy AudioContext and gain/envelope path. Volume is bounded to 0–1 and gain peaks at 0.12 times volume; this is an internal amplitude limit, <strong>not</strong> a hardware loudness guarantee. Gain ramps avoid abrupt starts and endings. Overlapping requests are refused instead of queued, and a 350 ms cooldown avoids rapid repeated cues. Each cue lasts less than half a second. Audio nodes disconnect after completion; <code>stop</code> cancels current/pending scheduling and <code>destroy</code> also attempts to close the context. Both are safe to call repeatedly.</p>
+<p>Playback checks current <code>reducedSound</code>, <code>quietHours</code>, mute, opt-in and volume settings before context creation and again after asynchronous resume. The host must call <code>stop()</code> when these settings change to immediately halt a cue already scheduled. <code>reducedMotion</code> alone intentionally does not mute sound. Browser autoplay restrictions may leave a context suspended or refuse resume; no workaround or automatic retry is attempted. A later explicit user action may retry. No network, browser storage, external dependency, host sound setting, or system audio device configuration is accessed.</p>
+<p>Test injections: <code>AudioContext</code>, <code>now</code>, <code>setTimer</code>, <code>clearTimer</code>, <code>cooldownMs</code>, <code>getPreferences</code>, and <code>onStatus</code>. Production defaults use platform APIs. Only host calls to <code>play</code> authorize sound; the module cannot independently establish whether an application result succeeded or whether its caller represents an intentional user gesture.</p>
+<h2>Verification scope</h2>
+<p><code>node --test tests/sounds.test.mjs</code> tests a fake Web Audio API: opt-in defaults, lazy initialization, actual node/envelope scheduling, bounded gain, shared context, no overlap, cooldown, cleanup, suppression preferences, resume races, failures, and callback isolation. These are unit tests, not proof of actual audible output or browser autoplay behavior. Browser smoke testing and listening verification remain separate; no exact operating-system sound parity is claimed.</p></body></html>

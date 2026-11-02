@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Process and delivery verification | Reference</title><style>body{font:1rem/1.65 system-ui,sans-serif;color:#183337;background:#faf9f5;max-width:55rem;margin:auto;padding:2rem}a{color:#146d62}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e7efeb;padding:1rem}code{font-family:monospace}h1,h2{line-height:1.2}nav{display:flex;gap:1rem;flex-wrap:wrap}</style></head><body><nav><a href="../#guide">Interactive guide</a><a href="index.html">Reference index</a></nav><h1>Process and delivery verification</h1>
+<p>This is an evidence audit, not a completion certificate. It covers 30 process/documentation requirements and 10 external-service requirements. A feasible next step is not a blocker; conditional requirements are not completed features. This document intentionally contains only independent public product descriptions.</p>
+<h2>Audit boundary</h2>
+<ul>
+<li>Baseline inspected: <code>b98d433</code> (2026-11-02). Later integration changes require rechecking affected rows.</li>
+<li>Read-only GitHub metadata: public repository, matching About/Pages homepage, legacy <code>gh-pages</code> source, built deployment, zero repository self-hosted runners, no releases, Discussions disabled.</li>
+<li>Project listing failed for missing <code>read:project</code>; no credentials were read, printed, created or expanded. No external recipients were contacted.</li>
+<li>Workflow-scope rejection is inherited verified delivery evidence from the integration owner; it was not retried.</li>
+<li>Historical screenshots remain historical. No new recording, native run, service integration or full interaction matrix is claimed.</li>
+</ul>
+<h2>Verification commands</h2>
+<pre><code>
+node --test tests/process-verification.test.mjs
+
+node scripts/source-count.mjs HEAD
+
+</code></pre>
+<p>The counter uses committed blobs rather than a dirty worktree. Its default attribution is unknown: supply an explicit reviewed author-role mapping outside this public repository to classify authors. Names and email addresses never appear in its output. Line counts and illustrative time arithmetic are not release proof.</p>
+<h2>Requirements</h2>
+<h3>job-experience-document-label</h3>
+<p><strong>Status: conditional.</strong> No employment-document workflow exists. If introduced, use the default product label and persistent restoration switch without changing user files or API identities.</p>
+<h3>forge-publishing</h3>
+<p><strong>Status: blocked.</strong> Repository CLI authentication enables this task delivery, not product multi-account publishing. The product requires real account selection/sign-in, account-scoped OS credential storage, sign-out/refresh and verified publication/fallback readback. A static browser has no such trusted host adapter.</p>
+<h3>product-evidence</h3>
+<p><strong>Status: open.</strong> One historical inspected capture exists. Complete current built-surface, dialog, error, narrow and theme captures and source-controlled workflow diagrams remain required. Refresh references after interface changes; retain historical originals.</p>
+<h3>screen-recording</h3>
+<p><strong>Status: open.</strong> No genuine end-to-end renderer recording is retained. Record only the application renderer, inspect the complete recording for privacy, and bind it to source and artifact; a scenario script is not video evidence.</p>
+<h3>design-folder</h3>
+<p><strong>Status: open.</strong> No reviewed design-input archive exists. Store design inputs and revisions under design/ with provenance; a prototype is not shipped behavior.</p>
+<h3>responsive-layout-matrix</h3>
+<p><strong>Status: open.</strong> Full matrix not exercised. Cover three language modes, two tone extremes, both themes, narrow/desktop widths, high scale, keyboard/pointer input and reduced motion. Record actual dimensions and results.</p>
+<h3>public-evidence-gallery</h3>
+<p><strong>Status: open.</strong> A historical image is tracked, but no complete current published gallery is verified. Review genuine captures and safe metadata, publish within the authorized project, then fetch and inspect every live image. No new service account is inherently required.</p>
+<h3>installer-download-button</h3>
+<p><strong>Status: conditional.</strong> There is no verified native installer or release asset. Keep a native download button absent until its exact immutable asset resolves and has been verified. Static website output is not an installer.</p>
+<h3>homepage-link</h3>
+<p><strong>Status: partial.</strong> Read-only GitHub API confirmed the public repository About homepage equals its legacy Pages URL and Pages reports built on 2026-11-02. Final source-bound live page and asset validation must follow every new deployment.</p>
+<h3>status-hub</h3>
+<p><strong>Status: blocked.</strong> No verified owned Hub endpoint/enrollment configuration has been established for this product. Needs host registration, projection readback and actual inbox polling before claiming delivery. Implementing a local status label does not satisfy this.</p>
+<h3>discord-status-bridge</h3>
+<p><strong>Status: blocked.</strong> Requires an owned Hub deployment and separately owner-registered read-plus-reply bridge credential, distinct from enrollment credential. Credentials remain host-side, readback presence-only. A real reply must arrive through the ordinary session inbox; no messages were sent in this audit.</p>
+<h3>panic-webhooks</h3>
+<p><strong>Status: blocked.</strong> Requires an owned Hub and verified owner-managed receivers. Before delivery, implement fixed-schema confirmed-event handling, ordered independent destinations, idempotency, and fail-closed redirect/DNS-rebinding/SSRF limits. No receiver was contacted or credential created.</p>
+<h3>tidbyt-displays</h3>
+<p><strong>Status: suspended.</strong> Agent event display reporting is suspended; absent frames are not a blocker and this task must not activate reporting. Any independently requested product display implementation still needs an owned target and real evidence.</p>
+<h3>dependency-fetcher</h3>
+<p><strong>Status: partial.</strong> Pinned Windows portable bootstrap and offline archive-safety tests exist. Standalone root fetchers, cold/warm Windows acquisition, cancellation, UAC and silent runtime evidence remain outstanding; do not infer them from parser tests.</p>
+<h3>app-icon</h3>
+<p><strong>Status: open.</strong> A coherent tracked master and validated target icon derivatives need built-output inspection. Native executable/installer icons require a real native packaging target.</p>
+<h3>release-workflow</h3>
+<p><strong>Status: blocked.</strong> Custom workflow publication was rejected for missing workflow scope. Do not retry without new authorization/evidence. Built-in Pages publication is not a native release. The release route must build/package/publish one unique non-draft release without test/lint gating; report local checks separately.</p>
+<h3>release-timing</h3>
+<p><strong>Status: open.</strong> No releases exist. A future release must record actual first-job start, final publication completion and consistent UTC duration, not estimated timestamps.</p>
+<h3>release-line-counts</h3>
+<p><strong>Status: partial.</strong> The source counter in scripts/source-count.mjs reads an exact tracked revision, separates categories and exclusions, and reports explicit attribution uncertainty. Release-pipeline integration and a published release report remain outstanding.</p>
+<h3>ci-bootstrap</h3>
+<p><strong>Status: blocked.</strong> No authorized custom workflow is published. An eventual workflow needs a declared job/tool inventory, clean-cache execution and always-upload safe diagnostics without masking the original failure.</p>
+<h3>runner-selection</h3>
+<p><strong>Status: partial.</strong> Read-only repository runner inventory returned zero self-hosted runners on 2026-11-02. Do not queue work on invented labels. Select an available pinned hosted platform before authorized dispatch; no Windows run is claimed.</p>
+<h3>encrypted-public-builder</h3>
+<p><strong>Status: not-applicable.</strong> This repository is public source. Private-source encrypted build routing is conditional on private source and must not be fabricated here.</p>
+<h3>tabbed-readme</h3>
+<p><strong>Status: open.</strong> First-reader build/privacy essentials exist, but full visible index, collapsible references and accurate contribution/license/security/conduct tabs are not complete. Do not invent a license grant.</p>
+<h3>human-time-estimate</h3>
+<p><strong>Status: partial.</strong> The source counter derives a labeled illustrative range using the same count and explicit rate. It is not measured effort. README numbers must be refreshed from a real published release, not a development count.</p>
+<h3>sanitized-instruction-copy</h3>
+<p><strong>Status: open.</strong> A full reviewed neutral instruction mirror is not present. Never copy private locations, accounts, addresses, vocabulary or source payloads into this public repository.</p>
+<h3>agents-md-vocabulary-block</h3>
+<p><strong>Status: open.</strong> The approved term-free communication-discipline block requires byte-exact private-side verification and leak scanning before publication. This audit deliberately does not substitute an invented block.</p>
+<h3>vocabulary-hash-lock</h3>
+<p><strong>Status: open.</strong> No build/pre-push private-source currency gate is installed. Keep terms and expected digest outside public source; missing private input must explicitly skip, whereas present stale input must fail closed. This proves currency, not use of wording.</p>
+<h3>roadmap-checklist</h3>
+<p><strong>Status: partial.</strong> A scope roadmap exists; root milestone checklist and evidence-backed updates remain required. Do not tick features based on documentation or registry presence.</p>
+<h3>feature-docs</h3>
+<p><strong>Status: partial.</strong> Generated reference coverage exists, but each feature needs maintained category-indexed Markdown covering behavior, configuration, failures, security and verification; documentation coverage is not implementation proof.</p>
+<h3>postman-collections</h3>
+<p><strong>Status: conditional.</strong> The current product exposes no HTTP application API. The loopback static file server is not a business API. When host/service APIs are added, create category and master collections and document authentication without embedding credentials.</p>
+<h3>wiki-documentation-sync</h3>
+<p><strong>Status: open.</strong> No remote wiki publication verified. Keep tracked full documentation and wiki source in sync, validate links, then read back the authorized remote update without recursive commits.</p>
+<h3>handoff-record</h3>
+<p><strong>Status: open.</strong> Final exact-source handoff and verified remote issue section belong to integration closeout. Include changed scope, actual checks, unresolved work, blockers and next owner.</p>
+<h3>closeout-prompt</h3>
+<p><strong>Status: open.</strong> Integration must commit a current copy-ready root continuation record, sanitize it, push the owning branch and verify the exact remote ref. This audit is not final delivery proof.</p>
+<h3>discussion-records</h3>
+<p><strong>Status: open.</strong> Read-only repository metadata reports Discussions disabled. This is configuration, not proof of insufficient permission. Before an authorized enable/create action, inventory categories and existing records; maintain one task record and deduplicated release announcements without altering user-managed pins.</p>
+<h3>project-board</h3>
+<p><strong>Status: blocked.</strong> The authenticated read-only project listing failed: missing read:project scope. No scope expansion or retry performed. Repository work can continue; selecting/creating/updating a project requires authorized access and an exact target. Never mark Done before delivery evidence.</p>
+<h3>operational-skill</h3>
+<p><strong>Status: open.</strong> A reusable operational skill must describe routes actually exercised and pass skill validation. This checklist is not an installed or validated skill.</p>
+<h3>readme-prompt-banner</h3>
+<p><strong>Status: not-applicable.</strong> Applies to an instruction-authoring repository, not this consumer sample. Do not publish private prompts here.</p>
+<h3>canonical-portable-editions</h3>
+<p><strong>Status: not-applicable.</strong> Instruction-authoring export formats are outside this consumer repository. Do not generate private instruction editions as public artifacts.</p>
+<h3>project-profile</h3>
+<p><strong>Status: conditional.</strong> Project memory profiles belong in their owning memory system. This public consumer does not create or mirror private project snapshots.</p>
+<h3>roblox-model-catalogue</h3>
+<p><strong>Status: not-applicable.</strong> This is not a native game. If a game is introduced, licensed model acquisition, an actual integration ledger and native interaction evidence are required.</p>
+<h3>roblox-visual-realism</h3>
+<p><strong>Status: not-applicable.</strong> No native game world exists. Browser illustrations cannot prove native object form, contact, support or operation.</p>
+<h2>Release evidence checklist</h2>
+<ul>
+<li>[ ] Exact clean source revision and artifact digest recorded; remote main readback matches intended source.</li>
+<li>[ ] Tests/checks actually run recorded separately from release automation.</li>
+<li>[ ] Built workflow interactions, current capture metadata and complete renderer recording inspected.</li>
+<li>[ ] Every current image reference checked for stale source/artifact; historical originals retained.</li>
+<li>[ ] Required native/host flows exercised on a supported owned target, or explicitly blocked.</li>
+<li>[ ] Immutable release assets downloaded and verified; actual workflow timing and source counts recorded.</li>
+<li>[ ] Public leak scan passes before transmission; final handoff and continuation record stored and read back.</li>
+</ul>
+<p>Do not tick these boxes from the existence of this file or a green structural test.</p></body></html>

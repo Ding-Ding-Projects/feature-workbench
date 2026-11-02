@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 browser workbench expansion
+
+- Integrated the incoming cobalt/navy design direction without dropping current functions.
+- Added bulk task review/undo, payload-free outcome history, display name and opt-in synthesized audio.
+- Added robust speech preferences, local converters, safe logo generation and exact phrase-matching compatibility.
+- Added automatic pinned Windows build acquisition and a real loopback run route.
+- Prepared reusable bounded search and timezone schedule modules; final host integration is under verification.
+- Native and complete visual parity remain explicitly unverified.
+
 ## 0.1.0 initial reference implementation
 
 - Added a browser-local task workspace, practical setup wizard, and persisted preferences.

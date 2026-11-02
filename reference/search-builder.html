@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Local search builder | Reference</title><style>body{font:1rem/1.65 system-ui,sans-serif;color:#183337;background:#faf9f5;max-width:55rem;margin:auto;padding:2rem}a{color:#146d62}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e7efeb;padding:1rem}code{font-family:monospace}h1,h2{line-height:1.2}nav{display:flex;gap:1rem;flex-wrap:wrap}</style></head><body><nav><a href="../#guide">Interactive guide</a><a href="index.html">Reference index</a></nav><h1>Local search builder</h1>
+<p>Every integration can create its own adjacent, inline-anchored panel using <code>createSearchBuilder</code>. Plain text is the default. Source items are never rewritten or reordered. All matching, including previews and replacements, runs in a fresh disposable worker using the same browser ECMAScript <code>RegExp</code> engine. There is no network or main-thread regex fallback.</p>
+<pre><code>
+import { createSearchBuilder } from &#39;./search-builder.js&#39;;
+
+const section = createSearchBuilder({
+
+  id: &#39;task-filter&#39;, // stable, unique per surface
+
+  language: &#39;both&#39;, // en / yue / both, or a function returning one
+
+  label: &#39;Filter tasks&#39;,
+
+  getItems: () =&gt; tasks.map(task =&gt; ({ ...task, text: task.title + &#39;\n&#39; + task.notes })),
+
+  onResults: (items, report) =&gt; renderVisibleTasks(items),
+
+  onStatus: ({ state, message }) =&gt; { /* optional status integration */ }
+
+});
+
+container.append(section);
+
+// Refresh when the underlying collection changes:
+
+section.searchBuilder.refresh();
+
+// Teardown before removing the owning surface:
+
+section.searchBuilder.destroy();
+
+</code></pre>
+<p><code>getItems</code> is synchronous and returns strings or objects. Objects use <code>text</code>, then <code>label</code>, then <code>title</code> as searchable content. <code>onResults</code> receives the original matching item references and an engine report. Errors return an empty list and <code>{ok:false,code}</code>; callers must not treat that as authorization for a destructive action. <code>onStatus</code> emits actual running, error, and result states. Each field owns its own evaluator and state.</p>
+<p>The returned DOM section has <code>searchBuilder</code> methods:</p>
+<ul>
+<li><code>refresh()</code> reevaluates current source items, sample, and replacement.</li>
+<li><code>setQuery(text, {regex, flags})</code> synchronizes query and builder, with debounced evaluation.</li>
+<li><code>getState()</code> returns a copy of <code>{query, regex, flags}</code>.</li>
+<li><code>open()</code> / <code>close()</code> disclose the anchored panel and restore focus.</li>
+<li><code>destroy()</code> terminates pending work, removes document listeners, and cancels timers.</li>
+</ul>
+<p>The query input has <code>data-search-query</code>. The owning section has <code>data-search-builder</code> containing its stable ID. Host applications should catalog all required search surfaces, use unique IDs, refresh when source data changes, and destroy removed controls. Recreate the control when interface language changes; a language function affects subsequent messages but does not rewrite already-created labels.</p>
+<h2>Functionality</h2>
+<ul>
+<li>Bidirectional query/raw-pattern editing; explicit regex mode; editable <code>d g i m s u v y</code> flags.</li>
+<li>Grouped syntax insertion: anchors, classes and Unicode escapes, capture/noncapture groups and backreferences, alternation, greedy/lazy quantifiers, lookahead and lookbehind.</li>
+<li>Literal escaping; working sample presets; static syntax and replacement guidance (not a parser).</li>
+<li>Real match preview: text, UTF-16 start/end, numbered and named captures, <code>d</code> capture indices. Zero-width advancement is Unicode-aware with <code>u</code>/<code>v</code>.</li>
+<li>Replacement preview uses ECMAScript templates (<code>$$</code>, <code>$&amp;</code>, numbered/named captures, prefix and suffix). <code>g</code> replaces all occurrences; without it, only the first occurrence is replaced. The match inspection preview lists all matches even without <code>g</code>.</li>
+<li>Explicit local save/load/delete with up to 30 named patterns per field. Copy and JSON export preserve pattern/flags/mode; they do not include sample text or source items.</li>
+<li>Optional per-field “Remember” persists query/mode/flags after explicit opt-in. Default queries and samples are not persisted. Clear remembered state resets query/mode/flags but leaves deliberately saved patterns intact. Storage failures are visible.</li>
+<li>English, Cantonese and bilingual controls; semantic inputs/buttons; live status; Escape and outside dismissal. The panel is in normal flow directly beneath its field, so does not cover its trigger. Narrow layouts wrap controls and keep long output within the panel. There is no required animation.</li>
+</ul>
+<h2>Safety and exact semantics</h2>
+<p>The worker is terminated after <strong>150 ms maximum configured deadline</strong>, including worker startup. Browser scheduling can delay when the termination callback runs; this is not a hard real-time guarantee. There is no synchronous matching fallback if workers are unavailable or forbidden by Content Security Policy. The app must permit its own Blob worker if it wants regex search.</p>
+<p>Bounds: 4,096 pattern UTF-16 code units; 1 MiB combined UTF-8 source/sample/replacement input; 10,000 source items; 200 preview matches/replacements; replacement template 4,096 code units; replacement output 1,048,576 code units. Truncation is explicit. Search result indices cover the complete allowed source collection, not only the preview limit. New evaluations terminate older workers; stale results cannot overwrite the current state. The module does not run a user-provided pattern on the UI thread, even for validation.</p>
+<p>Plain text matches case-insensitive substrings with metacharacters escaped. Regex flags are literal and engine-validated; <code>u</code> and <code>v</code> cannot coexist. Unsupported flags/syntax produce an error rather than silent substitution. Empty queries include all source items (bulk actions must independently prohibit empty queries). The actual browser engine version is not exposed. No other dialect is claimed. Prefix/suffix replacement expansion is bounded rather than allocating arbitrary repeated copies of sample text.</p>
+<h2>Explicit open capability gaps</h2>
+<p>This is a real single-engine search component, <strong>not complete multi-engine regex workbench parity</strong>. It does not implement other engines or proven dialect conversion; full syntax parsing/annotated analysis; atomic groups, possessive quantifiers, conditionals or subroutines; engine tracing or backtracking debug hooks; test-suite management; benchmarking/growth analysis; file/folder GREP and backed-up replacement; generated code or editable language templates; parameterized libraries/import; multi-pattern history; external tools/CLI automation; or configurable workspace layout. Those require additional engines, adapters, and separately tested workflows. Unsupported capabilities remain disclosed in the panel. Newer native syntax, including Unicode sets, depends on the browser and is checked by actual worker compilation.</p>
+<h2>Verification</h2>
+<p><code>node --test tests/search-builder.test.mjs</code> exercises the same serialized production worker using Node worker threads: literal punctuation/case, empty query, invalid syntax, Unicode/named captures/indices, multiline and sticky flags, replacement semantics, zero-width Unicode, no matches, truncation, byte/count/pattern/flag bounds, isolated normalized state, adversarial timeout, supersession, and worker creation failure. Node is engine-level coverage, not browser UI verification. Browser integration must additionally verify every cataloged consumer, keyboard/focus/scroll behavior, theme and 320px layout, per-ID saved-state isolation and storage denial, all language modes, and actual browser Worker/CSP availability. The module does not claim those host-level checks from unit tests alone.</p></body></html>

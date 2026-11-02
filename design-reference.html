@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static design references · Commonplace</title>
+  <link rel="stylesheet" href="./design-reference.css">
+  <script type="module" src="./design-reference.js"></script>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Developer reference · original designer PNGs</p>
+    <h1>Static design references</h1>
+    <p>These are unchanged design images, not the interactive product. Controls pictured inside an image do not work.</p>
+    <nav aria-label="Interactive product"><a href="./#workspace">Open interactive workspace</a> <a href="./#guide">Open interactive field guide</a></nav>
+  </header>
+  <main>
+    <form id="reference-controls" aria-label="Choose design reference">
+      <label>Screen<select name="screen"><option>Main</option><option>Guide</option><option>Settings</option><option>Setup</option><option>Mobile</option></select></label>
+      <label>Design width<select name="width"><option value="1440">1440 px</option><option value="390">390 px</option></select></label>
+      <label>Design theme<select name="theme"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+      <button type="submit">View reference</button>
+    </form>
+    <p class="help">Use Tab to reach a selector, arrow keys to choose, then View reference. Missing combinations are not substituted. Images display at native pixel size; scroll the frame to inspect.</p>
+    <p id="reference-status" role="status" aria-live="polite">Loading reference inventory…</p>
+    <section id="reference-details" hidden aria-label="Reference metadata">
+      <h2 id="reference-title"></h2>
+      <p id="reference-state"></p>
+      <p id="reference-size"></p>
+      <p><a id="original-image">Open original PNG</a> · <a id="source-link">Original public GitHub source</a> · <a id="product-link">Open interactive product separately</a></p>
+      <p id="product-state"></p>
+      <p class="verification">Real product capture: unavailable. Image diff: unavailable. Visual parity has not been verified.</p>
+      <details><summary>Original file SHA-256</summary><code id="reference-hash"></code></details>
+    </section>
+    <div id="reference-frame" tabindex="0" role="region" aria-label="Original design image; scroll horizontally for full width" hidden></div>
+    <noscript>This reference viewer requires JavaScript to validate the selected frame. <a href="./design/frames/Main-1440.png">Open the original Main 1440 PNG</a>.</noscript>
+  </main>
+</body>
+</html>
