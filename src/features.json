@@ -588,6 +588,18 @@
     "blocker": "Browser work is feasible now; full acceptance additionally requires a real host runtime and platform-specific evidence not supplied by the browser implementation."
   },
   {
+    "id": "base64-tools",
+    "title": "Local Base64 toolkit",
+    "benefit": "Convert text and files privately without sending their contents to a service.",
+    "requirement": "Provide standard, URL-safe and MIME Base64; padding, wrapping and selectable text encodings; exact strict-decoder errors; data URLs; streamed multi-file conversion with pause, resume, cancel and SHA-256 round-trip verification; sandboxed previews; clipboard, file, metadata JSON and bulk ZIP exports; persistent undo and redo.",
+    "status": "incomplete",
+    "reason": "No dedicated Base64 toolkit exists in this restored source. The retained tools only convert string tables and generate a simple SVG logo.",
+    "evidence": [],
+    "deliveryKind": "browser",
+    "nextAction": "Implement a bounded streaming byte codec and encoding/error tests first, then mount text/file workflows with explicit local storage capabilities, verified downloads, safe previews, conversion history and all documented options. Do not report arbitrary-size or constant-memory support until the actual storage and streaming path is measured.",
+    "blocker": null
+  },
+  {
     "id": "minecraft-server-manager",
     "title": "Minecraft server creator and manager",
     "benefit": "Complete a practical workflow through a verified local or host capability.",

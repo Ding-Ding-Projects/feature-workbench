@@ -48,6 +48,7 @@
   "rendered-provider-text",
   "notifications",
   "file-converter",
+  "base64-tools",
   "minecraft-server-manager",
   "minecraft-world-generator",
   "ollama-suite",
