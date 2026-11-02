@@ -13,8 +13,8 @@
     "title": "Language",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Persist English, Cantonese and bilingual modes; verify all surfaces and long bilingual labels at narrow widths.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -22,8 +22,8 @@
     "title": "Independent language tone and dialog emoji",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Provide separate persisted English and Cantonese tone levels 1–5 and a dialog-only emoji switch; keep factual meaning unchanged.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -31,8 +31,8 @@
     "title": "Local personal wording import",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Validate bounded versioned local JSON atomically; provide empty, invalid, replace and clear states; never transmit or export imported wording.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -40,8 +40,8 @@
     "title": "Drag-and-drop personal wording",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Accept window-wide file drops through the same validator as Settings, persist valid imports and preserve previous data on failure.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -58,8 +58,8 @@
     "title": "Spoken narration and voice selection",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Offer actual installed voices, separate language selectors, rate and pitch, serialized speech and truthful missing-voice states.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -94,8 +94,8 @@
     "title": "Independent focus and attention preferences",
     "benefit": "Adapt wording, sound and presentation to personal preferences.",
     "requirement": "Provide five independent opt-in attention preferences with persistence, clear interactions and no medical or scoring claims.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -130,8 +130,8 @@
     "title": "Task-oriented navigation",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide task-oriented navigation with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -139,8 +139,8 @@
     "title": "Motion",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide motion with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -175,8 +175,8 @@
     "title": "Readable anchored overlays",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide readable anchored overlays with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -184,8 +184,8 @@
     "title": "Collapsible filters and statistics",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide collapsible filters and statistics with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -193,8 +193,8 @@
     "title": "Accessible controls and text sizing",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide accessible controls and text sizing with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -202,8 +202,8 @@
     "title": "Controls with real outcomes",
     "benefit": "Read and operate the interface comfortably across layouts and input methods.",
     "requirement": "Provide controls with real outcomes with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -211,8 +211,8 @@
     "title": "Practical setup wizard",
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Perform real setup actions with progress, Back/Next, optional skipping and saved resume state; finish in the productive workspace.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -229,8 +229,8 @@
     "title": "Independent full regex search builders",
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Every search owns a full adjacent regex builder with synchronized query, pattern, flags, validation, bounded execution and unsupported-capability disclosure.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -238,8 +238,8 @@
     "title": "Command palette",
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Open with Ctrl+Shift+F and navigate to the exact requested control while respecting locks and focus.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -274,8 +274,8 @@
     "title": "Guided forms",
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide guided forms with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -292,8 +292,8 @@
     "title": "Settings, defaults and real consumers",
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Give every applicable setting a real consumer, default, contextual help, search, persistence, reset and recovery.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -301,8 +301,8 @@
     "title": "Useful presets for empty editors",
     "benefit": "Find the right task, setting or item without losing context.",
     "requirement": "Provide useful presets for empty editors with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -373,8 +373,8 @@
     "title": "Local version history and recovery",
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Record append-only redacted changes and safe restoration without including credentials or resurrecting unavailable secrets.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -382,8 +382,8 @@
     "title": "Faithful data exports",
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Export every faithfully supported format with explicit limitations, validation and no private credential or wording payload.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -409,8 +409,8 @@
     "title": "Offline documentation reader",
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Provide offline documentation reader with an actual consumer, documented limits and reproducible acceptance evidence; listing the capability does not implement it.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -427,8 +427,8 @@
     "title": "Non-blocking notification history",
     "benefit": "Review outcomes, preserve work and recover visitor-owned state.",
     "requirement": "Provide accessible non-blocking notices and a reviewable notification centre.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -499,8 +499,8 @@
     "title": "Progress, cancellation and recovery",
     "benefit": "Complete a practical workflow through a verified local or host capability.",
     "requirement": "Report progress at the initiating control with cancellation, durable recovery and distinct partial or failed outcomes.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -508,8 +508,8 @@
     "title": "Per-surface completeness gates",
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Keep a fixed required inventory per surface; removing implementation, article, localization, tests or runtime evidence must fail acceptance.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -517,8 +517,8 @@
     "title": "Visible build and source provenance",
     "benefit": "Distinguish real delivery from a listed or simulated capability.",
     "requirement": "Display source/build identity tied to the actual running artifact, not a guessed current revision.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -580,8 +580,8 @@
     "title": "Task-led product documentation",
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Provide task-led guided explanations and complete articles; clearly state that the website is not the installed application.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
@@ -607,8 +607,8 @@
     "title": "Complete articles per feature",
     "benefit": "Understand the product through complete, accessible task-led explanations.",
     "requirement": "Publish complete organized articles including localized counterparts, real workflows, failure modes and evidence boundaries.",
-    "status": "incomplete",
-    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "status": "partial",
+    "reason": "A working browser-local subset exists. Full contract, localization, accessibility and source-bound interaction/capture proof remain incomplete.",
     "evidence": []
   },
   {
