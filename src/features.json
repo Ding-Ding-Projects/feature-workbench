@@ -1,0 +1,786 @@
+[
+  {
+    "id": "job-experience-document-label",
+    "title": "Job Experience Document wording",
+    "status": "incomplete",
+    "reason": "Required when a job-related workflow is present; this generic sample has none.",
+    "evidence": []
+  },
+  {
+    "id": "language",
+    "title": "Language",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "tone-and-dialog-emoji",
+    "title": "Independent language tone and dialog emoji",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "personal-vocabulary",
+    "title": "Local personal wording import",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "vocabulary-drop-apply",
+    "title": "Drag-and-drop personal wording",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "school-mode",
+    "title": "Shared distraction-reduction mode",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "narration",
+    "title": "Spoken narration and voice selection",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "action-sound-effects",
+    "title": "Action sound effects",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "scheduled-settings",
+    "title": "Scheduled appearance and settings",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "display-name",
+    "title": "Custom display name",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "adhd-modes",
+    "title": "Independent focus and attention preferences",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "food-discovery",
+    "title": "Food discovery at startup",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "food-photo-provenance",
+    "title": "Verified food photograph source",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "material-design",
+    "title": "Material appearance system",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "workflow-navigation",
+    "title": "Task-oriented navigation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "motion",
+    "title": "Motion",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "appearance-editor",
+    "title": "Per-element appearance editing",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "color-picker",
+    "title": "Full color picker and format conversion",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "logo-customization",
+    "title": "Local logo customization",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "overlay-panels",
+    "title": "Readable anchored overlays",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "collapse-filters",
+    "title": "Collapsible filters and statistics",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "accessibility-sizing",
+    "title": "Accessible controls and text sizing",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "functional-ui",
+    "title": "Controls with real outcomes",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "onboarding-wizard",
+    "title": "Practical setup wizard",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "tabs",
+    "title": "Complete tab navigation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "regex-search",
+    "title": "Independent full regex search builders",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "command-palette",
+    "title": "Command palette",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "context-menus",
+    "title": "Context menus",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "menu-shortcuts",
+    "title": "Visible menu keyboard shortcuts",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "rich-controls",
+    "title": "Rich controls",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "guided-forms",
+    "title": "Guided forms",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "info-icon-guidance",
+    "title": "Contextual help for every control",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "settings-explanations",
+    "title": "Settings, defaults and real consumers",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "blank-editors",
+    "title": "Useful presets for empty editors",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "super-confirmation",
+    "title": "Two-key destructive action confirmation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "element-locks",
+    "title": "Independent per-element experience locks",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "support-tickets",
+    "title": "Local fictional recovery desk",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "unlock-ladder",
+    "title": "Lockout wait recovery activities",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "authenticator",
+    "title": "Built-in authenticator",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "qr-pairing",
+    "title": "QR authenticator pairing",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "honest-monetization",
+    "title": "Clear pricing and no promotional nagging",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "local-history",
+    "title": "Local version history and recovery",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "exports",
+    "title": "Faithful data exports",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "bulk-actions",
+    "title": "Previewable batch actions",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "changelog",
+    "title": "Searchable changelog",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "offline-docs",
+    "title": "Offline documentation reader",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "rendered-provider-text",
+    "title": "Formatted provider responses",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "notifications",
+    "title": "Non-blocking notification history",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "file-converter",
+    "title": "Offline file conversion and PDF tools",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "minecraft-server-manager",
+    "title": "Minecraft server creator and manager",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "minecraft-world-generator",
+    "title": "Version-specific Minecraft world generator",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "ollama-suite",
+    "title": "Local Ollama model and runtime manager",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "external-editor",
+    "title": "External editor handoff",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "download-handoff",
+    "title": "Extension download lifecycle",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "forge-publishing",
+    "title": "Repository publishing workflow",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "progress-recovery",
+    "title": "Progress, cancellation and recovery",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "completeness-parity",
+    "title": "Per-surface completeness gates",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "front-provenance",
+    "title": "Visible build and source provenance",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "product-evidence",
+    "title": "Verified product screenshots",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "screen-recording",
+    "title": "Real workflow recording",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "design-reference-parity",
+    "title": "Verified design-reference parity",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "design-folder",
+    "title": "Preserved design source",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "responsive-layout-matrix",
+    "title": "Responsive layout acceptance matrix",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "public-evidence-gallery",
+    "title": "Reviewed public evidence gallery",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "landing-site",
+    "title": "Task-led product documentation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "mobile-site",
+    "title": "Mobile-friendly documentation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "installer-download-button",
+    "title": "Verified installer downloads",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "feature-articles",
+    "title": "Complete articles per feature",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "vendored-fonts",
+    "title": "Bundled offline fonts",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "shared-link-embed",
+    "title": "Share-link image previews",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "homepage-link",
+    "title": "Verified repository homepage",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "vocabulary-unlock-boundary",
+    "title": "Private wording and unlock boundaries",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "private-documentation-companion",
+    "title": "Private offline documentation companion",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "status-hub",
+    "title": "Status dashboard service",
+    "status": "incomplete",
+    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
+    "evidence": []
+  },
+  {
+    "id": "discord-status-bridge",
+    "title": "Discord status integration",
+    "status": "incomplete",
+    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
+    "evidence": []
+  },
+  {
+    "id": "panic-webhooks",
+    "title": "Emergency status webhooks",
+    "status": "incomplete",
+    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
+    "evidence": []
+  },
+  {
+    "id": "tidbyt-displays",
+    "title": "Status display integration",
+    "status": "incomplete",
+    "reason": "Requires an explicitly configured, authorized integration and live acceptance evidence.",
+    "evidence": []
+  },
+  {
+    "id": "build-entrypoints",
+    "title": "One-click build entrypoints",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "fresh-build-run-command",
+    "title": "Fresh build and run command",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "dependency-fetcher",
+    "title": "Verified dependency acquisition",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "bundled-dependencies",
+    "title": "Bundled runtime dependencies",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "squirrel-installer",
+    "title": "Windows installer lifecycle",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "self-signing",
+    "title": "Required-format signing",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "auto-updates",
+    "title": "Verified update and rollback",
+    "status": "incomplete",
+    "reason": "Requires a real installed or authenticated host adapter; browser demonstration cannot prove native execution.",
+    "evidence": []
+  },
+  {
+    "id": "app-icon",
+    "title": "Consistent application icon",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "release-workflow",
+    "title": "Normal release automation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "release-timing",
+    "title": "Source-bound release timing",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "release-line-counts",
+    "title": "Automated source line counts",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "release-food-photo",
+    "title": "Release food photograph",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "release-food-codenames",
+    "title": "Release food code names",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "ci-bootstrap",
+    "title": "Clean build environment bootstrap",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "runner-selection",
+    "title": "Verified build runner selection",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "encrypted-public-builder",
+    "title": "Encrypted private-source build pipeline",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "tabbed-readme",
+    "title": "Concise tabbed README",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "human-time-estimate",
+    "title": "Transparent implementation effort estimate",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "sanitized-instruction-copy",
+    "title": "Sanitized instruction mirror",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "agents-md-vocabulary-block",
+    "title": "Agent communication discipline block",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "vocabulary-hash-lock",
+    "title": "Private vocabulary currency check",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "roadmap-checklist",
+    "title": "Evidence-backed roadmap",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "feature-docs",
+    "title": "Categorized feature documentation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "postman-collections",
+    "title": "API collections and examples",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "wiki-documentation-sync",
+    "title": "Synchronized wiki and documentation",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "handoff-record",
+    "title": "Factual project handoff",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "closeout-prompt",
+    "title": "Versioned continuation handoff",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "discussion-records",
+    "title": "Deduplicated progress discussions",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "project-board",
+    "title": "Linked project tracking",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "operational-skill",
+    "title": "Reproducible operating guide",
+    "status": "incomplete",
+    "reason": "Not implemented or verified in this initial sample. Documentation coverage is not delivery proof.",
+    "evidence": []
+  },
+  {
+    "id": "readme-prompt-banner",
+    "title": "Canonical prompt banner",
+    "status": "incomplete",
+    "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
+    "evidence": []
+  },
+  {
+    "id": "canonical-portable-editions",
+    "title": "Canonical portable instruction editions",
+    "status": "incomplete",
+    "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
+    "evidence": []
+  },
+  {
+    "id": "project-profile",
+    "title": "Canonical scoped project profile",
+    "status": "incomplete",
+    "reason": "Canonical-only requirement; this sample is not the canonical instruction repository.",
+    "evidence": []
+  },
+  {
+    "id": "roblox-model-catalogue",
+    "title": "Shared Roblox model integration",
+    "status": "incomplete",
+    "reason": "Game-specific requirement; this sample is not a Roblox game.",
+    "evidence": []
+  },
+  {
+    "id": "roblox-visual-realism",
+    "title": "Native Roblox visual realism",
+    "status": "incomplete",
+    "reason": "Game-specific requirement; this sample is not a Roblox game.",
+    "evidence": []
+  }
+]
